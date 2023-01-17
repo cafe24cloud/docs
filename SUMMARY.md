@@ -10,6 +10,11 @@
 
 * [가상서버](server/page-1.md)
   * [가상서버 생성 방법](server/server/create.md)
+  * [가상서버 사용 방법](server/server/use/README.md)
+    * [APM 사용 방법](server/server/use/apm.md)
+    * [NFS 사용 방법](server/server/use/nfs.md)
+    * [FTP 사용 방법](server/server/use/ftp.md)
+    * [SFTP 사용 방법](server/server/use/sftp.md)
 * [가상서버 스냅샷](server/snapshot.md)
 * [오토스케일](server/autoscale.md)
 * [스냅샷 스케줄러](server/scheduler.md)
