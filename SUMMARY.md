@@ -15,15 +15,20 @@
     * [NFS 사용 방법](server/server/use/nfs.md)
     * [FTP 사용 방법](server/server/use/ftp.md)
     * [SFTP 사용 방법](server/server/use/sftp.md)
+    * [웹서버 성능 튜닝 방법](server/server/use/tuning.md)
 * [가상서버 스냅샷](server/snapshot.md)
-* [오토스케일](server/autoscale.md)
-* [스냅샷 스케줄러](server/scheduler.md)
+* [오토스케일](server/autoscale/README.md)
+  * [오토스케일 사용 방법](server/autoscale/use.md)
+* [스냅샷 스케줄러](server/scheduler/README.md)
+  * [스냅샷 스케줄러 사용 방법](server/scheduler/use.md)
 
 ## 스토리지 <a href="#storage" id="storage"></a>
 
 * [블록 스토리지](storage/block.md)
 * [블록 스토리지 스냅샷](storage/snapshot.md)
 * [오브젝트 스토리지](storage/object/README.md)
+  * [오브젝트 스토리지 사용 방법](storage/object/use.md)
+  * [오브젝트 스토리지 S3cmd 사용 방법](storage/object/s3cmd.md)
   * [오브젝트 스토리지 API 사용 방법](storage/object/api/README.md)
     * [S3 Compatible API 사용 방법](storage/object/api/s3-compatible.md)
   * [오브젝트 스토리지 SDK 사용 방법](storage/object/sdk/README.md)
@@ -33,8 +38,10 @@
 
 ## 네트워킹 <a href="#network" id="network"></a>
 
-* [로드밸런서](network/loadbalancer.md)
-* [DNS](network/dns.md)
+* [로드밸런서](network/loadbalancer/README.md)
+  * [로드밸런서 사용 방법](network/loadbalancer/use.md)
+* [DNS](network/dns/README.md)
+  * [DNS 사용 방법](network/dns/use.md)
 * [공인IP](network/floatingip.md)
 
 ## 보안 서비스 <a href="#security" id="security"></a>
