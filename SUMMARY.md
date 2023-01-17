@@ -23,7 +23,13 @@
 
 * [블록 스토리지](storage/block.md)
 * [블록 스토리지 스냅샷](storage/snapshot.md)
-* [오브젝트 스토리지](storage/object.md)
+* [오브젝트 스토리지](storage/object/README.md)
+  * [오브젝트 스토리지 API 사용 방법](storage/object/api/README.md)
+    * [S3 Compatible API 사용 방법](storage/object/api/s3-compatible.md)
+  * [오브젝트 스토리지 SDK 사용 방법](storage/object/sdk/README.md)
+    * [AWS Javascript SDK 사용 방법](storage/object/sdk/aws-javascript.md)
+    * [AWS Java SDK 사용 방법](storage/object/sdk/aws-java.md)
+    * [AWS Python SDK 사용 방법](storage/object/sdk/aws-python.md)
 
 ## 네트워킹 <a href="#network" id="network"></a>
 
