@@ -15,10 +15,14 @@
     * [VSCode 접속 방법](server/server/connect/vscode.md)
   * [가상서버 사용 방법](server/server/use/README.md)
     * [APM 사용 방법](server/server/use/apm.md)
-    * [NFS 사용 방법](server/server/use/nfs.md)
+    * [NTP 사용 방법](server/server/use/ntp.md)
     * [FTP 사용 방법](server/server/use/ftp.md)
     * [SFTP 사용 방법](server/server/use/sftp.md)
+    * [Docker 사용 방법](server/server/use/docker.md)
+    * [NFS 사용 방법](server/server/use/nfs.md)
     * [웹서버 성능 튜닝 방법](server/server/use/tuning.md)
+  * [가상서버 문제 해결 방법](server/server/solution/README.md)
+    * [접속 오류 해결 방법](server/server/solution/disconnect.md)
 * [가상서버 스냅샷](server/snapshot.md)
 * [오토스케일](server/autoscale/README.md)
   * [오토스케일 사용 방법](server/autoscale/use.md)
@@ -52,9 +56,13 @@
 
 ## 보안 서비스 <a href="#security" id="security"></a>
 
-* [방화벽](security/security.md)
-* [SSH 키페어](security/keypair.md)
-* [인증서 관리](security/certificate.md)
+* [방화벽](security/security/README.md)
+  * [방화벽 설정 방법](security/security/config.md)
+* [SSH 키페어](security/keypair/README.md)
+  * [분실 시 해결 방법](security/keypair/lost.md)
+  * [사용자 계정 추가 방법](security/keypair/useradd.md)
+* [인증서 관리](security/certificate/README.md)
+  * [인증서 사용 방법](security/certificate/use.md)
 
 ## 매니지먼트 서비스 <a href="#managed" id="managed"></a>
 
