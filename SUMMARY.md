@@ -10,6 +10,9 @@
 
 * [가상서버](server/page-1.md)
   * [가상서버 생성 방법](server/server/create.md)
+  * [가상서버 접속 방법](server/server/connect/README.md)
+    * [SSH 키페어 접속 방법](server/server/connect/keypair.md)
+    * [VSCode 접속 방법](server/server/connect/vscode.md)
   * [가상서버 사용 방법](server/server/use/README.md)
     * [APM 사용 방법](server/server/use/apm.md)
     * [NFS 사용 방법](server/server/use/nfs.md)
@@ -24,7 +27,10 @@
 
 ## 스토리지 <a href="#storage" id="storage"></a>
 
-* [블록 스토리지](storage/block.md)
+* [블록 스토리지](storage/block/README.md)
+  * [블록 스토리지 연결 방법](storage/block/connect.md)
+  * [블록 스토리지 확장 방법](storage/block/add.md)
+  * [블록 스토리지 해제 방법](storage/block/disconnect.md)
 * [블록 스토리지 스냅샷](storage/snapshot.md)
 * [오브젝트 스토리지](storage/object/README.md)
   * [오브젝트 스토리지 사용 방법](storage/object/use.md)
