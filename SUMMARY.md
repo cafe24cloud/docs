@@ -34,4 +34,5 @@
 
 ## 매니지먼트 서비스 <a href="#managed" id="managed"></a>
 
-* [기술지원](managed/technical.md)
+* [기술지원](managed/technical/README.md)
+  * [기술지원 신청 방법](managed/technical/create.md)
