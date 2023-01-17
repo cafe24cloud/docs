@@ -162,11 +162,11 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다. 잃어
 
 설정한 가상서버 및 블록 스토리지의 사양에 따라 시간당 과금액이 결정됩니다.&#x20;
 
-\[가상서버 생성] 버튼을 눌러 주세요.
+\[가상서버 생성] 버튼을 누릅니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/a5337e19fcf5309c8235ce58c152828b_1582528992.png" alt=""><figcaption></figcaption></figure>
 
-생성할 내역들을 확인한 후 \[확인] 버튼을 눌러 주세요.
+생성할 내역들을 확인한 후 \[확인] 버튼을 누릅니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/614e1fe5da56bd04cd9508e50e7be38b_1582529009.png" alt=""><figcaption></figcaption></figure>
 
