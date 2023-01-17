@@ -8,7 +8,7 @@
 
 ## 서버 <a href="#server" id="server"></a>
 
-* [가상서버](server/server/README.md)
+* [가상서버](server/page-1.md)
   * [가상서버 생성 방법](server/server/create.md)
 * [가상서버 스냅샷](server/snapshot.md)
 * [오토스케일](server/autoscale.md)
