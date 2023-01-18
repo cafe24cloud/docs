@@ -6,6 +6,7 @@ description: 가상서버를 생성하는 방법은 아래와 같습니다.
 
 ## 1. 가상서버 생성
 
+github에서 수정함.
 서버 > 가상서버 > 가상서버 생성하기 순으로 클릭합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/19721a16c543b5901674cf57fe87fbc8_1582521749.png" alt=""><figcaption></figcaption></figure>
