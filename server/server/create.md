@@ -105,6 +105,8 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/233dd4df8b8227ca0bbbd5425c29ceea_1582527961.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
+<mark style="color:red;">**주의사항**</mark>
+
 SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다. 잃어버리지 않도록 보관에 유의해 주시기 바랍니다.
 {% endhint %}
 
