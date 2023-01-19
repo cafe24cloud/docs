@@ -4,17 +4,13 @@ description: 가상서버를 생성하는 방법은 아래와 같습니다.
 
 # 가상서버 생성 방법
 
-## 1. 가상서버 생성
+## 1. 가상서버 생성하기
 
 서버 > 가상서버 > 가상서버 생성하기 순으로 클릭합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/19721a16c543b5901674cf57fe87fbc8_1582521749.png" alt=""><figcaption></figcaption></figure>
 
-
-
-
-
-## 2. OS 이미지 선택
+## 2. OS 이미지 선택하기
 
 OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 원할 시에는 가상서버를 삭제하고 다시 만들어야 합니다.
 
@@ -22,11 +18,7 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/15bf717eeb660432396a287f9147e368_1582525122.png" alt=""><figcaption></figcaption></figure>
 
-
-
-
-
-## 3. 하드웨어 상품 선택
+## 3. 하드웨어 상품 선택하기
 
 제공되는 하드웨어의 상품을 사용 용도에 맞게 선택합니다.
 
@@ -34,21 +26,13 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/7140e12d2557da7e02474d0fa93306d5_1582525242.png" alt=""><figcaption></figcaption></figure>
 
+## 4. 가상서버 이름 설정하기
 
-
-
-
-## 4. 가상서버 이름 설정
-
-가상서버 이름은 20자까지 지원이 가능하며, 영어, 숫자 및 특수문자 '-'만 사용  가능합니다.
+가상서버 이름은 20자까지 지원이 가능하며, 영어, 숫자 및 특수문자 '-'만 사용 가능합니다.
 
 가상서버 이름은 생성 후에도 변경할 수 있습니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/ee785d7baec674f5aae85dd2deb0a306_1582525303.png" alt=""><figcaption></figcaption></figure>
-
-
-
-
 
 ## 5. SSH 키페어 설정
 
@@ -58,15 +42,11 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 가상서버에 SSH 키페어를 설정하는 방법은 다음과 같습니다.
 
-
-
 #### (1) 기존에 등록되어 있는 키페어를 사용
 
 이전에 카페24 클라우드 콘솔에서 생성한 키페어를 적용할 수 있습니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/7c4ba23274531abf51cc31b05242ffd9_1621834120.png" alt=""><figcaption></figcaption></figure>
-
-
 
 #### (2) 사용중인 공개키를 등록
 
@@ -84,9 +64,7 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/12b8c0d104fd54977cb906d0634a59a2_1621834733.jpg" alt=""><figcaption></figcaption></figure>
 
-
-
-#### (3)  새로운 공개키 생성
+#### (3) 새로운 공개키 생성
 
 \[새로만들기] 버튼을 클릭합니다.
 
@@ -98,7 +76,7 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/22053d1bbf2f53f96a104c7a88d44cce_1582527935.png" alt=""><figcaption></figcaption></figure>
 
-개인키가 다운로드 받아지는 것을 확인합니다.&#x20;
+개인키가 다운로드 받아지는 것을 확인합니다.
 
 키페어를 사용한 로그인 방법은 다음 링크를 참조해 주시기 바랍니다. [\[SSH 키페어 사용법\]](https://console.cafe24.com/support/faq/view?idx=71)
 
@@ -110,11 +88,7 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다. 잃어버리지 않도록 보관에 유의해 주시기 바랍니다.
 {% endhint %}
 
-
-
-
-
-## 6. 공인IP 할당
+## 6. 공인IP 할당하기
 
 공인 IP 할당은 선택 사항이지만, 외부에서 가상서버로 접속하기 위해서는 필요합니다.
 
@@ -124,13 +98,9 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다. 잃어
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/11/13/bbaa88e39fd7cad174bddc7d6963a8ea_1605251451.jpg" alt=""><figcaption></figcaption></figure>
 
-
-
 #### (1) 기존에 신청되어 있는 공인IP를 할당
 
 기존에 생성한 공인IP가 있는 경우 선택합니다.
-
-
 
 #### (2) 새로운 공인IP 신청하고 자동으로 할당
 
@@ -138,19 +108,13 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다. 잃어
 
 가상서버 생성과 동시에 새로운 공인 IP가 할당됩니다.
 
-
-
 #### (3) 가상서버 생성 후 공인IP를 직접 할당
 
 사설망만을 이용해 가상서버를 이용하실 경우 선택합니다.
 
 추후 공인IP 연동이 필요하면 네트워킹 > 공인IP 메뉴에서 연결할 수 있습니다.
 
-
-
-
-
-## 7. 방화벽 선택
+## 7. 방화벽 선택하기
 
 가상서버에 접근을 제어할 수 있는 방화벽을 설정할 수 있습니다.
 
@@ -160,13 +124,9 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다. 잃어
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/cb6ccb8a018c9acc891f0da3d20a48b2_1582528000.png" alt=""><figcaption></figcaption></figure>
 
+## 8. 블록 스토리지 생성하기
 
-
-
-
-## 8. 블록 스토리지 생성
-
-블록 스토리지를 생성하여 추가 공간을 확보할 수 있습니다.&#x20;
+블록 스토리지를 생성하여 추가 공간을 확보할 수 있습니다.
 
 해당 설정은 선택 사항이며, 가상서버 생성과 함께 블록 스토리지가 연결됩니다.
 
@@ -186,13 +146,9 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다. 잃어
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/93770250fa2c8ed6933b671bafcae27c_1582528609.png" alt=""><figcaption></figcaption></figure>
 
+## 9. 가상서버 확인하기
 
-
-
-
-## 9. 가상서버 확인
-
-설정한 가상서버 및 블록 스토리지의 사양에 따라 시간당 과금액이 결정됩니다.&#x20;
+설정한 가상서버 및 블록 스토리지의 사양에 따라 시간당 과금액이 결정됩니다.
 
 \[가상서버 생성] 버튼을 누릅니다.
 
