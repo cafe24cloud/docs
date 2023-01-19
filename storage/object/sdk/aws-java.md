@@ -69,9 +69,9 @@ EOF
 {% hint style="danger" %}
 <mark style="color:red;">**주의사항**</mark>
 
-사용하는 Javascript 및 SDK 버전에 따라 변경이 필요할 수 있습니다.&#x20;
+사용하는 Java 및 SDK 버전에 따라 변경이 필요할 수 있습니다.&#x20;
 
-해당 내용은 AWS Javascript SDK를 사용하여 카페24 클라우드의 오브젝트 스토리지를 이용하는 예제 코드로, 필요에 따라 응용할 수 있습니다.
+해당 내용은 AWS Java SDK를 사용하여 카페24 클라우드의 오브젝트 스토리지를 이용하는 예제 코드로, 필요에 따라 응용할 수 있습니다.
 {% endhint %}
 
 #### (1) 버킷 생성
@@ -79,39 +79,62 @@ EOF
 버킷을 생성합니다.
 
 ```shell
-import {CreateBucketCommand, S3Client} from "@aws-sdk/client-s3";
+package cafe24.demo;
 
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.core.waiters.WaiterResponse;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.CreateBucketRequest;
+import software.amazon.awssdk.services.s3.model.HeadBucketRequest;
+import software.amazon.awssdk.services.s3.model.HeadBucketResponse;
+import software.amazon.awssdk.services.s3.model.S3Exception;
+import software.amazon.awssdk.services.s3.waiters.S3Waiter;
+import java.net.URI;
 
-export const bucketParams = {
-  Bucket: "test-bucket"
-};
+public class bucket_create {
+    public static void main(String[] args) {
+        final String endpoint_url = "https://kr.cafe24obs.com";
+        final String region_name = "zone-group-cafe24cloud";
+        String bucketName = "test-bucket";
+        Region newRegion = Region.of(region_name);
+        ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
 
-export const run = async () => {
-  try {
-    const data = await s3Client.send(new CreateBucketCommand(bucketParams));
-    console.log("Success : Bucket [" + bucketParams.Bucket + "] has been created.\n",)
-    console.log("Response :", JSON.stringify(data, null, 4));
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
+        S3Client s3Client = S3Client.builder()
+            .region(newRegion)
+            .endpointOverride(URI.create(endpoint_url))
+            .credentialsProvider(credentialsProvider)
+            .build();
 
-run();
+        System.out.format("Creating a bucket named %s\n", bucketName);
+            try {
+                S3Waiter s3Waiter = s3Client.waiter();
+                CreateBucketRequest bucketRequest = CreateBucketRequest.builder()
+                    .bucket(bucketName)
+                    .build();
+    
+                s3Client.createBucket(bucketRequest);
+                HeadBucketRequest bucketRequestWait = HeadBucketRequest.builder()
+                    .bucket(bucketName)
+                    .build();
+                
+                // 버킷이 생성되기까지 대기
+                WaiterResponse<HeadBucketResponse> waiterResponse = s3Waiter.waitUntilBucketExists(bucketRequestWait);
+                waiterResponse.matched().response().ifPresent(System.out::println);
+                System.out.println(bucketName +" has been created.");
+            } catch (S3Exception e) {
+                System.err.println(e.awsErrorDetails().errorMessage());
+                System.exit(1);
+            }
+            s3Client.close();
+    }
+}
 ```
 
 output 예시는 다음과 같습니다.
 
 ```shell
-Success : Bucket [test-bucket] has been created.
-Response : {
-    "$metadata": {
-        "httpStatusCode": 200,
-        "requestId": "tx0000084051beac6c5643e-0063b28289-1682e4f-zone-cafe24cloud-prd-obs",
-        "attempts": 1,
-        "totalRetryDelay": 0
-    }
-}
+Bucket [test-bucket] has been created.
 ```
 
 
@@ -121,38 +144,70 @@ Response : {
 오브젝트가 모두 삭제된 빈 버킷에 대해서만 삭제가 가능합니다.
 
 ```shell
-import { DeleteBucketCommand, S3Client } from "@aws-sdk/client-s3";
+package cafe24.demo;
 
-const s3Client  = new S3Client({ endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud" });
+import java.net.URI;
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.DeleteBucketRequest;
+import software.amazon.awssdk.services.s3.model.DeleteObjectRequest;
+import software.amazon.awssdk.services.s3.model.ListObjectsV2Request;
+import software.amazon.awssdk.services.s3.model.ListObjectsV2Response;
+import software.amazon.awssdk.services.s3.model.S3Exception;
+import software.amazon.awssdk.services.s3.model.S3Object;
 
-export const bucketParams = { Bucket: "test-bucket" };
+public class bucket_delete {
+    public static void main(String[] args) {
+        final String endpoint_url = "https://kr.cafe24obs.com";
+        final String region_name = "zone-group-cafe24cloud";
+        Region newRegion = Region.of(region_name);
+        ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
+        String bucketName = "test-bucket";
 
-export const run = async () => {
-  try {
-    const data = await s3Client.send(new DeleteBucketCommand(bucketParams));
-    console.log("Success : Bucket ["+bucketParams.Bucket+"] has been deleted.");
-    console.log("Response : ",JSON.stringify(data, null, 4))
-    return data; 
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
+        S3Client s3Client = S3Client.builder()
+                .region(newRegion)
+                .endpointOverride(URI.create(endpoint_url))
+                .credentialsProvider(credentialsProvider)
+                .build();
+       
+        try {
+            // 버킷 삭제를 위해 버킷에 있는 모든 오브젝트 삭제
+            ListObjectsV2Request listObjectsV2Request = ListObjectsV2Request.builder()
+                    .bucket(bucketName)
+                    .build();
+            ListObjectsV2Response listObjectsV2Response;
 
-run();
+            do {
+                listObjectsV2Response = s3Client.listObjectsV2(listObjectsV2Request);
+                for (S3Object s3Object : listObjectsV2Response.contents()) {
+                    DeleteObjectRequest request = DeleteObjectRequest.builder()
+                            .bucket(bucketName)
+                            .key(s3Object.key())
+                            .build();
+                    s3Client.deleteObject(request);
+                }
+            } while (listObjectsV2Response.isTruncated());
+            System.out.println("All objects in the bucket are deleted.");
+
+            // 비어 있는 버킷 삭제
+            DeleteBucketRequest deleteBucketRequest = DeleteBucketRequest.builder().bucket(bucketName).build();
+            s3Client.deleteBucket(deleteBucketRequest);
+            System.out.println("Bucket ["+bucketName+"] has been deleted.");
+            
+        } catch (S3Exception e) {
+            System.err.println(e.awsErrorDetails().errorMessage());
+            System.exit(1);
+        }
+    }
+}
 ```
 
 output 예시는 다음과 같습니다.
 
 ```shell
-Success : Bucket [test-bucket] has been deleted.
-Response :  {
-    "$metadata": {
-        "httpStatusCode": 204,
-        "requestId": "tx000003362f71a7f0eb52a-0063b28242-168a1f1-zone-cafe24cloud-prd-obs",
-        "attempts": 1,
-        "totalRetryDelay": 0
-    }
-}
+All objects in the bucket are deleted.
+Bucket [test-bucket] has been deleted.
 ```
 
 
@@ -162,110 +217,136 @@ Response :  {
 존재하는 모든 버킷을 조회합니다.&#x20;
 
 ```shell
-import { ListBucketsCommand, S3Client } from "@aws-sdk/client-s3";
+package cafe24.demo;
 
-const s3Client  = new S3Client({ endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud" });
+import java.net.URI;
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.ListBucketsRequest;
+import software.amazon.awssdk.services.s3.model.ListBucketsResponse;
 
-export const run = async () => {
-  try {
-    const data = await s3Client.send(new ListBucketsCommand({}));
-    console.log("Success", JSON.stringify(data.Buckets, null, 4));
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
+public class bucket_list {
+    public static void main(String[] args) {
+        final String endpoint_url = "https://kr.cafe24obs.com";
+        final String region_name = "zone-group-cafe24cloud";
+        Region newRegion = Region.of(region_name);
+        ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
 
-run();
+        S3Client s3Client = S3Client.builder()
+            .region(newRegion)
+            .endpointOverride(URI.create(endpoint_url))
+            .credentialsProvider(credentialsProvider)
+            .build();
+            
+        System.out.println("--Existing buckets--");
+        ListBucketsRequest listBucketsRequest = ListBucketsRequest.builder().build();
+        ListBucketsResponse listBucketsResponse = s3Client.listBuckets(listBucketsRequest);
+        listBucketsResponse.buckets().stream().forEach(x -> System.out.println("Name : " +x.name()+ " CreationDate : " + x.creationDate()));
+        s3Client.close();
+    }
+}
 ```
 
 output 예시는 다음과 같습니다.
 
 ```shell
-Success [
-    {
-        "Name": "test-bucket",
-        "CreationDate": "2022-12-30T01:44:29.104Z"
-    },
-    {
-        "Name": "test-bucket1",
-        "CreationDate": "2022-12-29T06:04:09.457Z"
-    },
-    {
-        "Name": "test-bucket2",
-        "CreationDate": "2022-12-29T06:04:16.613Z"
-    }
-]
+--Existing buckets--
+Name : test-bucket CreationDate : 2022-12-30T01:44:29.104Z
+Name : test-bucket1 CreationDate : 2022-12-29T06:04:09.457Z
+Name : test-bucket2 CreationDate : 2022-12-29T06:04:16.613Z
 ```
 
 
 
 #### (4) 오브젝트 업로드&#x20;
 
-파일을 특정 버킷에 업로드합니다.
+로컬에 있는 파일을 특정 버킷에 업로드합니다.
 
-* **새로운 파일 업로드**: 코드상에서 파일명, 파일 내용(Body)을 선언하여 버킷에 업로드하는 방법입니다.
+파일 업로드 시에 파일의 contentType은 기본으로 binary/octet-stream으로 지정됩니다.&#x20;
+
+특정 타입으로 업로드 하기 위해서는 PutObjectRequest 객체에 contentType 정보를 담아야 합니다.
 
 ```shell
-import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
+package cafe24.demo;
 
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.Paths;
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.awscore.exception.AwsServiceException;
+import software.amazon.awssdk.core.exception.SdkClientException;
+import software.amazon.awssdk.core.sync.RequestBody;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.PutObjectRequest;
+import software.amazon.awssdk.services.s3.model.PutObjectResponse;
+import software.amazon.awssdk.services.s3.model.S3Exception;
 
-export const bucketParams = {
-  Bucket: "test-bucket",
-  Key: "test-file.txt",
-  Body: "Content of test-file.txt - Hello World!"
-};
+public class object_upload {
+    public static void main(String[] args) throws S3Exception, AwsServiceException, SdkClientException, IOException {
+        final String endpoint_url = "https://kr.cafe24obs.com";
+        final String region_name = "zone-group-cafe24cloud";
+        Region newRegion = Region.of(region_name);
+        ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
+        String bucketName = "test-bucket";
 
-export const run = async () => {
-  try {
-    await s3Client.send(new PutObjectCommand(bucketParams));
-    console.log("Success : Successfully uploaded newly created file: " + bucketParams.Bucket + "/" + bucketParams.Key);
-    return;
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
+        //업로드할 파일의 로컬 경로
+        String filePath = "demo\\src\\main\\java\\cafe24\\demo\\files\\test-file.txt";
+        String keyName = Paths.get(filePath).getFileName().toString();
 
-run();
+        //업로드할 파일의 contentType 지정
+        String contentType = "text/plain";
+  
+        S3Client s3Client = S3Client.builder()
+                .region(newRegion)
+                .endpointOverride(URI.create(endpoint_url))
+                .credentialsProvider(credentialsProvider)
+                .build();
+
+        PutObjectRequest objectRequest = PutObjectRequest.builder()
+                .bucket(bucketName)
+                .contentType(contentType)
+                .key(keyName)
+                .build();
+
+        PutObjectResponse response = s3Client.putObject(objectRequest, RequestBody.fromBytes(getObjectFile(filePath)));
+        System.out.println(response);
+        System.out.println("Object ["+keyName+"] has been uploaded to the bucket ["+bucketName+"].");
+    }
+    private static byte[] getObjectFile(String filePath) {
+        FileInputStream fileInputStream = null;
+        byte[] bytesArray = null;
+
+        try {
+            File file = new File(filePath);
+            bytesArray = new byte[(int) file.length()];
+            fileInputStream = new FileInputStream(file);
+            fileInputStream.read(bytesArray);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fileInputStream != null) {
+                try {
+                    fileInputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return bytesArray;
+    }
+}
 ```
 
-```shell
-Success : Successfully uploaded newly created file: test-bucket/test-file.txt
-```
-
-* **로컬에 있는 파일 업로드**: 기존의 로컬에 있는 파일을 버킷에 업로드하는 방법입니다. &#x20;
+output 예시는 다음과 같습니다.
 
 ```shell
-import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
-import * as path from 'path';
-import * as fs from 'fs';
-
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
-# 로컬에 위치한 업로드할 파일의 경로
-const file = "clients\\client-s3\\src\\commands\\cafe24-demo\\files\\test-file-local.txt"
-const fileStream = fs.createReadStream(file);
-
-export const uploadParams = {
-  Bucket: "test-bucket",
-  Key: path.basename(file),
-  Body: fileStream
-};
-
-export const run = async () => {
-  try {
-    await s3Client.send(new PutObjectCommand(uploadParams));
-    console.log("Success : Successfully uploaded exsisting file " + uploadParams.Bucket + "/" + uploadParams.Key);
-    return;
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
-
-run()
-```
-
-```shell
-Success : Successfully uploaded exsisting file test-bucket/test-file-local.pdf
+PutObjectResponse(ETag="056f5ca5dbd6a49717737a6e4ede4f78")
+Object [test-file.txt] has been uploaded to the bucket [test-bucket].
 ```
 
 
@@ -274,44 +355,58 @@ Success : Successfully uploaded exsisting file test-bucket/test-file-local.pdf
 
 버킷에 있는 파일을 로컬의 특정 경로로 다운로드합니다.&#x20;
 
+다운받으려는 경로에 동일한 이름의 파일이 있으면 다운로드 실패합니다.
+
 ```shell
-import {GetObjectCommand, S3Client} from "@aws-sdk/client-s3"
-import * as fs from 'fs';
+package cafe24.demo;
 
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.awscore.exception.AwsServiceException;
+import software.amazon.awssdk.core.exception.SdkClientException;
+import software.amazon.awssdk.core.sync.ResponseTransformer;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.GetObjectRequest;
+import software.amazon.awssdk.services.s3.model.S3Exception;
 
-export const run = async () => {
-  try {
-    const bucket_name = "test-bucket";
-    const key_name = "test-file.txt";
-    const download_bucket_params = {
-      Bucket: bucket_name,
-      Key: key_name
-  };
+public class object_download {
+    public static void main(String[] args) throws S3Exception, AwsServiceException, SdkClientException, IOException {
+        final String endpoint_url = "https://kr.cafe24obs.com";
+        final String region_name = "zone-group-cafe24cloud";
+        Region newRegion = Region.of(region_name);
+        ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
+        String bucketName = "test-bucket";
+        String keyName = "test-file.txt";
 
-  # 파일을 다운받을 경로
-  const downloadPath = 'clients\\client-s3\\src\\commands\\cafe24-demo\\files\\downloaded-file.txt';
-  const data = await s3Client.send(new GetObjectCommand(download_bucket_params));
+        //오브젝트를 다운로드할 경로
+        Path destination =  Paths.get("demo\\src\\main\\java\\cafe24\\demo\\files\\downloaded-file.txt");
 
-  console.log("\nDownloading " + key_name + " from " + bucket_name + " ...\n")
+        S3Client s3Client = S3Client.builder()
+                .region(newRegion)
+                .endpointOverride(URI.create(endpoint_url))
+                .credentialsProvider(credentialsProvider)
+                .build();
 
-  data.Body.pipe(fs.createWriteStream(downloadPath));
+        GetObjectRequest getObjectRequest = GetObjectRequest.builder()
+                .bucket(bucketName)
+                .key(keyName)
+                .build();
 
-  console.log(key_name + " is now downloaded to [" + downloadPath + "]")
-  } catch (err) {
-    console.log("Error creating and upload object to bucket", err);
-    process.exit(1);
-  };
-};
-
-run();
+        s3Client.getObject(getObjectRequest, ResponseTransformer.toFile(destination));
+        System.out.println("Object has been downloaded to local. \n Downloaded Path : ["+destination+"]");
+    }
+}
 ```
 
 output 예시는 다음과 같습니다.
 
 ```shell
-Downloading test-file.txt from test-bucket ...
-test-file.txt is now downloaded to [clients\client-s3\src\commands\cafe24-demo\files\downloaded-file.txt]
+Object has been downloaded to local. 
+ Downloaded Path : [demo\src\main\java\cafe24\demo\files\downloaded-file.txt]
 ```
 
 
@@ -321,201 +416,123 @@ test-file.txt is now downloaded to [clients\client-s3\src\commands\cafe24-demo\f
 버킷에 있는 모든 파일과 폴더를 조회합니다.&#x20;
 
 ```shell
-import { ListObjectsCommand, S3Client } from "@aws-sdk/client-s3";
+package cafe24.demo;
 
-const s3Client  = new S3Client({ endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud" });
+import java.net.URI;
+import java.util.List;
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.ListObjectsRequest;
+import software.amazon.awssdk.services.s3.model.ListObjectsResponse;
+import software.amazon.awssdk.services.s3.model.S3Exception;
+import software.amazon.awssdk.services.s3.model.S3Object;
 
-export const bucketParams = { Bucket: "test-bucket" };
+public class object_get_list {
+    public static void main(String[] args) {
+        final String endpoint_url = "https://kr.cafe24obs.com";
+        final String region_name = "zone-group-cafe24cloud";
+        String bucketName = "test-bucket";
+        Region newRegion = Region.of(region_name);
+        ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
 
-export const run = async () => {
-  try {
-    const data = await s3Client.send(new ListObjectsCommand(bucketParams));
-    console.log("Success : \n", JSON.stringify(data, null, 4));
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
+        S3Client s3Client = S3Client.builder()
+                .region(newRegion)
+                .endpointOverride(URI.create(endpoint_url))
+                .credentialsProvider(credentialsProvider)
+                .build();
+                
+        System.out.println("Get list of all objects in the bucket.");
+        
+        try {
+            ListObjectsRequest listObjects = ListObjectsRequest
+                    .builder()
+                    .bucket(bucketName)
+                    .build();
 
-run();
+            ListObjectsResponse res = s3Client.listObjects(listObjects);
+            List<S3Object> objects = res.contents();
+            
+            if (objects == null || objects.isEmpty()) {
+                System.out.println("The bucket is empty.");
+                return;
+            }
+            
+            for (S3Object value : objects) {
+                System.out.print("\n Name : " + value.key() + "\tSize : " + calKb(value.size()) + "KBs\tOwner ID : "
+                        + value.owner().id());
+            }
+        } catch (S3Exception e) {
+            System.err.println(e.awsErrorDetails().errorMessage());
+            System.exit(1);
+        }
+        s3Client.close();
+    }
+    // bytes를 kbs로 변환
+    private static long calKb(Long val) {
+        return val / 1024;
+    }
+}
 ```
 
 output 예시는 다음과 같습니다.
 
 ```shell
-Success : 
- {
-    "$metadata": {
-        "httpStatusCode": 200,
-        "requestId": "tx00000ea81126555bcc2de-0063b27c2f-1682e4f-zone-cafe24cloud-prd-obs",
-        "attempts": 1,
-        "totalRetryDelay": 0
-    },
-    "Contents": [
-        {
-            "Key": "folder/",
-            "LastModified": "2023-01-01T14:09:25.283Z",
-            "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
-            "Size": 0,
-            "StorageClass": "STANDARD",
-            "Owner": {
-                "DisplayName": "clouduser",
-                "ID": "clouduser"
-            }
-        },
-        {
-            "Key": "folder/test-file-04",
-            "LastModified": "2023-01-01T14:10:04.636Z",
-            "ETag": "\"620f0b67a91f7f74151bc5be745b7110\"",
-            "Size": 4096,
-            "StorageClass": "STANDARD",
-            "Owner": {
-                "DisplayName": "clouduser",
-                "ID": "clouduser"
-            }
-        },
-        {
-            "Key": "test-file-01",
-            "LastModified": "2023-01-01T14:08:50.154Z",
-            "ETag": "\"620f0b67a91f7f74151bc5be745b7110\"",
-            "Size": 4096,
-            "StorageClass": "STANDARD",
-            "Owner": {
-                "DisplayName": "clouduser",
-                "ID": "clouduser"
-            }
-        }
-    ],
-    "IsTruncated": false,
-    "Marker": "",
-    "MaxKeys": 1000,
-    "Name": "test-bucket",
-    "Prefix": ""
-}
+Get list of all objects in the bucket.
+ Name : folder/    Size : 0KBs    Owner ID : clouduser
+ Name : folder/test-file-04    Size : 4KBs    Owner ID : clouduser
+ Name : folder/test-file-05    Size : 4KBs    Owner ID : clouduser
+ Name : folder/test-file-06    Size : 4KBs    Owner ID : clouduser
+ Name : test-file-01    Size : 4KBs    Owner ID : clouduser
+ Name : test-file-02    Size : 4KBs    Owner ID : clouduser
+ Name : test-file-03    Size : 4KBs    Owner ID : clouduser
 ```
 
 
 
 #### (7) 오브젝트 삭제&#x20;
 
-버킷에서 파일을 삭제합니다.
-
-* **하나의 오브젝트 삭제**: 특정 버킷에 있는 오브젝트를 삭제합니다.&#x20;
+특정 버킷에 있는 파일을 삭제합니다.
 
 ```shell
-import {DeleteObjectCommand, S3Client} from "@aws-sdk/client-s3";
+package cafe24.demo;
 
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+import java.net.URI;
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.DeleteObjectRequest;
 
-export const bucketParams = {
-  Bucket: "test-bucket",
-  Key: "test-file.txt"
-};
+public class object_delete {
+    public static void main(String[] args) {
+        final String endpoint_url = "https://kr.cafe24obs.com";
+        final String region_name = "zone-group-cafe24cloud";
+        Region newRegion = Region.of(region_name);
+        ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
+        String bucketName = "test-bucket";
+        String fileName = "test-file.txt";
+        
+        S3Client s3Client = S3Client.builder()
+                .region(newRegion)
+                .endpointOverride(URI.create(endpoint_url))
+                .credentialsProvider(credentialsProvider)
+                .build();
+                
+        DeleteObjectRequest deleteObjectRequest = DeleteObjectRequest.builder()
+                .bucket(bucketName)
+                .key(fileName)
+                .build();
 
-export const run = async () => {
-  try {
-    const data = await s3Client.send(new DeleteObjectCommand(bucketParams));
-    console.log("Success : Object [" + bucketParams.Key + "] has been deleted.");
-    console.log("Response : ", JSON.stringify(data, null, 4))
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
-
-run();
-```
-
-```shell
-Success : Object [test-file.txt] has been deleted.
-Response :  {
-    "$metadata": {
-        "httpStatusCode": 204,
-        "requestId": "tx000008ed66bc303224d6c-0063b3e19b-168a1f1-zone-cafe24cloud-prd-obs",
-        "attempts": 1,
-        "totalRetryDelay": 0
+        s3Client.deleteObject(deleteObjectRequest);
+        System.out.println("Object ["+fileName+"] has been deleted from the bucket.");
+    }
 }
 ```
 
-* **모든 오브젝트 삭제**: 특정 버킷에 있는 모든 오브젝트를 삭제합니다. &#x20;
+output 예시는 다음과 같습니다.
 
 ```shell
-import {ListObjectsCommand, DeleteObjectCommand, S3Client} from "@aws-sdk/client-s3";
-
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
-
-export const bucketParams = {
-  Bucket: "test-bucket"
-};
-
-export const run = async () => {
-  try {
-    console.log("Deleting all objects in the bucket.");
-    const data = await s3Client.send(new ListObjectsCommand(bucketParams))
-    let noOfObjects = data.Contents;
-    for (let i = 0; i < noOfObjects.length; i++) {
-      await s3Client.send(new DeleteObjectCommand({Bucket: bucketParams.Bucket, Key: noOfObjects[i].Key}));
-  }
-
-  console.log("Success. All objects in bucket [" + bucketParams.Bucket + "] are deleted. : \n", JSON.stringify(data, null, 4));
-
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
-
-run();
-```
-
-```shell
-Deleting all objects in the bucket.
-Success. All objects in bucket [test-bucket] are deleted. : 
- {
-    "$metadata": {
-        "httpStatusCode": 200,
-        "requestId": "tx0000042e054f120512bdb-0063b45ac4-1682e4f-zone-cafe24cloud-prd-obs",
-        "attempts": 1,
-        "totalRetryDelay": 0
-    },
-    "Contents": [
-        {
-            "Key": "folder/",
-            "LastModified": "2023-01-03T16:40:55.335Z",
-            "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
-            "Size": 0,
-            "StorageClass": "STANDARD",
-            "Owner": {
-                "DisplayName": "clouduser",
-                "ID": "clouduser"
-            }
-        },
-        {
-            "Key": "folder/test-file-01",
-            "LastModified": "2023-01-03T16:41:07.694Z",
-            "ETag": "\"620f0b67a91f7f74151bc5be745b7110\"",
-            "Size": 4096,
-            "StorageClass": "STANDARD",
-            "Owner": {
-                "DisplayName": "clouduser",
-                "ID": "clouduser"
-            }
-        },
-        {
-            "Key": "test-file-02",
-            "LastModified": "2023-01-03T16:41:35.762Z",
-            "ETag": "\"620f0b67a91f7f74151bc5be745b7110\"",
-            "Size": 4096,
-            "StorageClass": "STANDARD",
-            "Owner": {
-                "DisplayName": "clouduser",
-                "ID": "clouduser"
-            }
-        },
-    ],
-    "IsTruncated": false,
-    "Marker": "",
-    "MaxKeys": 1000,
-    "Name": "test-bucket",
-    "Prefix": ""
-}
+Object [test-file.txt] has been deleted from the bucket.
 ```
 
 
@@ -525,45 +542,58 @@ Success. All objects in bucket [test-bucket] are deleted. :
 파일을 다른 버킷으로 복사합니다.
 
 ```shell
-import {CopyObjectCommand, S3Client} from "@aws-sdk/client-s3";
+package cafe24.demo;
 
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+import java.net.URI;
+import software.amazon.awssdk.auth.credentials.ProfileCredentialsProvider;
+import software.amazon.awssdk.regions.Region;
+import software.amazon.awssdk.services.s3.S3Client;
+import software.amazon.awssdk.services.s3.model.CopyObjectRequest;
+import software.amazon.awssdk.services.s3.model.CopyObjectResponse;
+import software.amazon.awssdk.services.s3.model.S3Exception;
 
-# Bucket : 복사한 파일을 붙여넣기 할 버킷
-# Key : 붙여넣기 할 파일의 이름
-# CopySource : 복사할 파일을 지정. "버킷명/파일경로"
-export const bucketParams = {
-  Bucket: "test-bucket",
-  CopySource: "test-bucket1/bucket-1-file.txt",
-  Key: "copied-file.txt"
-};
+public class object_copy {
+    public static void main(String[] args) {
+        final String endpoint_url = "https://kr.cafe24obs.com";
+        final String region_name = "zone-group-cafe24cloud";
+        Region newRegion = Region.of(region_name);
+        ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
 
-export const run = async () => {
-  try {
-    const data = await s3Client.send(new CopyObjectCommand(bucketParams));
-    console.log("Success : \n", JSON.stringify(data, null, 4));
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
+        // 복사하려는 오브젝트의 이름
+        String objectKey = "bucket1-file.txt";
+        // 복사하려는 오브젝트가 위치한 버킷
+        String fromBucket = "test-bucket1";
+        // 붙여넣기 할 버킷
+        String toBucket = "test-bucket";
 
-run();
+        S3Client s3Client = S3Client.builder()
+        .region(newRegion)
+        .endpointOverride(URI.create(endpoint_url))
+        .credentialsProvider(credentialsProvider)
+        .build();
+        
+        CopyObjectRequest copyReq = CopyObjectRequest.builder()
+            .sourceKey(objectKey)
+            .sourceBucket(fromBucket) 
+            .destinationBucket(toBucket)
+            .destinationKey(objectKey)
+            .build();
+
+        try {
+            CopyObjectResponse copyRes = s3Client.copyObject(copyReq);
+            System.out.println("Copying object ["+objectKey+"] from ["+fromBucket+"] to ["+toBucket+"] has been completed");
+            System.out.println(copyRes.copyObjectResult().toString());        
+        } catch (S3Exception e) {
+            System.err.println(e.awsErrorDetails().errorMessage());
+            System.exit(1);
+        }
+    }
+}
 ```
 
 output 예시는 다음과 같습니다.
 
 ```shell
-Success : 
- {
-    "$metadata": {
-        "httpStatusCode": 200,
-        "requestId": "tx000007c0798553d2790ae-0063b45773-1682e4f-zone-cafe24cloud-prd-obs",
-        "attempts": 1,
-        "totalRetryDelay": 0
-    },
-    "CopyObjectResult": {
-        "ETag": "d9ebe4d6aeb33dea41ddb2b57e7b6d80",
-        "LastModified": "2023-01-03T16:27:31.755Z"
-    }
-}
+Copying object [bucket1-file.txt] from [test-bucket1] to [test-bucket] has been completed
+CopyObjectResult(ETag=d9ebe4d6aeb33dea41ddb2b57e7b6d80, LastModified=2023-01-03T18:05:31.688Z)
 ```
