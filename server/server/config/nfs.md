@@ -271,16 +271,21 @@ NFS Server 경우, 마운트를 해제하지 않고 재부팅하면 장애가 �
 
 마찬가지로 등록된 저장소 내 패키지 정보를 최신으로 업데이트한 후, nfs 패키지 설치를 진행합니다.
 
-*   **# rocky / centos**\
-    \[rocky@nfs-server \~]$ sudo yum update\
-    \[rocky@nfs-server \~]$ sudo yum install nfs-utils\
-    &#x20;
+{% tabs %}
+{% tab title="CentOS / Rocky" %}
+```shell-session
+[centos@nfs-server ~]$ sudo yum update
+[centos@nfs-server ~]$ sudo yum install nfs-utils
+```
+{% endtab %}
 
-    **# ubuntu**
-
-    \[ubuntu@nfs-server \~]$ sudo apt-get update
-
-    \[ubuntu@nfs-server \~]$ sudo apt-get install nfs-common
+{% tab title="Ubuntu" %}
+```shell-session
+[ubuntu@nfs-server ~]$ sudo apt-get update
+[ubuntu@nfs-server ~]$ sudo apt-get install nfs-common
+```
+{% endtab %}
+{% endtabs %}
 
 &#x20;
 
@@ -290,31 +295,34 @@ NFS Server 경우, 마운트를 해제하지 않고 재부팅하면 장애가 �
 
 "**mount -t nfs \[NFS Server 사설 IP]:\[NFS Server 마운트 포인트] \[NFS Client 마운트 포인트]**" 형식으로 명령어를 실행합니다.
 
-※ 이 때, 가상서버에 연결된 방화벽의 "내부 네트워크 허용"이 체크되어 있어야 합니다.
+```shell-session
+[user@nfs-client ~]$ sudo mkdir /data
+[user@nfs-client ~]$ sudo mount -t nfs 192.168.1.17:/nfs /data
+```
 
-* \[user@nfs-client \~]$ sudo mkdir /data\
-  \
-  \[user@nfs-client \~]$ sudo mount -t nfs 192.168.1.17:/nfs /data
-* &#x20;
+{% hint style="danger" %}
+<mark style="color:red;">**주의사항**</mark>
+
+가상서버에 연결된 방화벽의 "내부 네트워크 허용"이 체크되어 있어야 합니다.
+{% endhint %}
 
 마운트가 되었으며, 마운트한 디렉터리를 확인해 보면 NFS Server에서 생성한 테스트 파일을 볼 수 있습니다.
 
-*   \[user@nfs-client \~]$ df -h\
-    Filesystem         Size  Used Avail Use% Mounted on\
-    devtmpfs           366M     0  366M   0% /dev\
-    tmpfs              403M     0  403M   0% /dev/shm\
-    tmpfs              403M  5.5M  397M   2% /run\
-    tmpfs              403M     0  403M   0% /sys/fs/cgroup\
-    /dev/vda4           29G  1.4G   28G   5% /\
-    /dev/vda2          994M  227M  768M  23% /boot\
-    /dev/vda1          100M  5.8M   95M   6% /boot/efi\
-    tmpfs               81M     0   81M   0% /run/user/1000\
-    192.168.1.17:/nfs   10G  104M  9.9G   2% /data
-
-    &#x20;
-
-    \[user@nfs-client \~]$ ls /data\
-    test.txt
+```shell-session
+[user@nfs-client ~]$ df -h
+Filesystem         Size  Used Avail Use% Mounted on
+devtmpfs           366M     0  366M   0% /dev
+tmpfs              403M     0  403M   0% /dev/shm
+tmpfs              403M  5.5M  397M   2% /run
+tmpfs              403M     0  403M   0% /sys/fs/cgroup
+/dev/vda4           29G  1.4G   28G   5% /
+/dev/vda2          994M  227M  768M  23% /boot
+/dev/vda1          100M  5.8M   95M   6% /boot/efi
+tmpfs               81M     0   81M   0% /run/user/1000
+192.168.1.17:/nfs   10G  104M  9.9G   2% /data
+[user@nfs-client ~]$ ls /data
+test.txt
+```
 
 &#x20;
 
@@ -322,43 +330,46 @@ NFS Server 경우, 마운트를 해제하지 않고 재부팅하면 장애가 �
 
 NFS Client 재부팅 시, 마운트가 해제되기 때문에 마찬가지로 /etc/rc.local 파일에 마운트 명령어를 추가하여 자동으로 마운트될 수 있도록 합니다.
 
-*   **# rocky / centos**
+{% tabs %}
+{% tab title="CentOS / Rocky" %}
+```shell-session
+[centos@nfs-client ~]$ sudo vi /etc/rc.local
+mount -t nfs 192.168.1.17:/nfs /data
+[centos@nfs-client ~]$ sudo chmod u+x /etc/rc.local
+[centos@nfs-client ~]$ sudo systemctl start rc-local
+```
+{% endtab %}
 
-    \[rocky@nfs-client \~]$ sudo vi /etc/rc.local
-
-    mount -t nfs 192.168.1.17:/nfs /data
-
-    \[rocky@nfs-client \~]$ sudo chmod u+x /etc/rc.local\
-    \[rocky@nfs-client \~]$ sudo systemctl start rc-local
-
-    &#x20;
-
-    **# ubuntu**
-
-    \[ubuntu@nfs-client \~]$ sudo vi /etc/rc.local\
-    \#!/bin/bash\
-    mount -t nfs 192.168.1.17:/nfs /data
-
-    \[ubuntu@nfs-client \~]$ sudo chmod u+x /etc/rc.local
-
-    \[ubuntu@nfs-client \~]$ sudo systemctl start rc-local
-* &#x20;
+{% tab title="Ubuntu" %}
+```shell-session
+[ubuntu@nfs-client ~]$ sudo vi /etc/rc.local
+#!/bin/bash
+mount -t nfs 192.168.1.17:/nfs /data
+[ubuntu@nfs-client ~]$ sudo chmod u+x /etc/rc.local
+[ubuntu@nfs-client ~]$ sudo systemctl start rc-local
+```
+{% endtab %}
+{% endtabs %}
 
 설정을 한 후, 재부팅을 해보면 마운트가 잘 되어 있는 것을 확인할 수 있습니다.
 
-※ 자동 마운트 설정을 하였음에도 불구하고, 마운트가 되지 않을 경우에는 수동으로 마운트를 진행해주셔야 합니다.
+```shell-session
+[user@nfs-client ~]$ sudo reboot
+[user@nfs-client ~]$ df -h
+Filesystem         Size  Used Avail Use% Mounted on
+devtmpfs           366M     0  366M   0% /dev
+tmpfs              403M     0  403M   0% /dev/shm
+tmpfs              403M  5.5M  397M   2% /run
+tmpfs              403M     0  403M   0% /sys/fs/cgroup
+/dev/vda4           29G  1.5G   28G   5% /
+/dev/vda2          994M  227M  768M  23% /boot
+/dev/vda1          100M  5.8M   95M   6% /boot/efi
+192.168.1.17:/nfs   10G  104M  9.9G   2% /data
+tmpfs               81M     0   81M   0% /run/user/1000
+```
 
-*   \[user@nfs-client \~]$ sudo reboot
+{% hint style="info" %}
+<mark style="color:blue;">**참고사항**</mark>
 
-    \
-    \[user@nfs-client \~]$ df -h\
-    Filesystem         Size  Used Avail Use% Mounted on\
-    devtmpfs           366M     0  366M   0% /dev\
-    tmpfs              403M     0  403M   0% /dev/shm\
-    tmpfs              403M  5.5M  397M   2% /run\
-    tmpfs              403M     0  403M   0% /sys/fs/cgroup\
-    /dev/vda4           29G  1.5G   28G   5% /\
-    /dev/vda2          994M  227M  768M  23% /boot\
-    /dev/vda1          100M  5.8M   95M   6% /boot/efi\
-    192.168.1.17:/nfs   10G  104M  9.9G   2% /data\
-    tmpfs               81M     0   81M   0% /run/user/1000
+자동 마운트 설정을 하였음에도 불구하고, 마운트가 되지 않을 경우에는 수동으로 마운트를 진행해주셔야 합니다.
+{% endhint %}
