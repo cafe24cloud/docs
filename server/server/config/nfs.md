@@ -142,7 +142,6 @@ Syncing disks.
 
 ```shell-session
 [user@nfs-server ~]$ sudo mkfs.xfs /dev/vdb1
-
 [user@nfs-server ~]$ sudo mkdir /nfs
 ```
 
@@ -150,7 +149,6 @@ Syncing disks.
 
 ```shell-session
 [user@nfs-server ~]$ sudo mount /dev/vdb1 /nfs
-
 [user@nfs-server ~]$ df -h
 Filesystem      Size  Used Avail Use% Mounted on
 devtmpfs        366M     0  366M   0% /dev
@@ -168,76 +166,111 @@ tmpfs            81M     0   81M   0% /run/user/1000
 
 #### (3) NFS 설정하기
 
-* NFS Server는 /etc/exports 구성 파일을 참조하여 NFS Client에서 파일 시스템에 액세스할 수 있는지 여부를 확인합니다.
-* 따라서 /etc/exports 파일에 "**\[마운트 포인트]    \[NFS Client 사설 IP]\(옵션)**" 형식으로 입력합니다.
-* 옵션 정보는 아래 [※ 참고사항](https://console.cafe24.com/support/faq/view?idx=530#0)을 확인해 주시길 바랍니다.
-* \[user@nfs-server \~]$ sudo vi /etc/exports\
-  /nfs    192.168.1.52(rw,no\_root\_squash,sync)
-* &#x20;
-* 입력한 설정을 적용시킨 후, 테스트 파일을 생성합니다.
-* \[user@nfs-server \~]$ sudo exportfs -r\
-  &#x20;\
-  \[user@nfs-server \~]$ sudo touch /nfs/test.txt
+NFS Server는 /etc/exports 구성 파일을 참조하여 NFS Client에서 파일 시스템에 액세스할 수 있는지 여부를 확인합니다.
+
+따라서 /etc/exports 파일에 "**\[마운트 포인트]    \[NFS Client 사설 IP]\(옵션)**" 형식으로 입력합니다.
+
+```shell-session
+[user@nfs-server ~]$ sudo vi /etc/exports
+/nfs    192.168.1.52(rw,no_root_squash,sync)
+```
+
+{% hint style="info" %}
+<mark style="color:blue;">**참고사항**</mark>
+
+옵션 정보는 다음과 같습니다.
+
+* **ro**: 읽기 요청만 허용&#x20;
+* **rw**: 읽기 및 쓰기 요청 허용&#x20;
+* **wdelay**: 다른 쓰기 요청이 진행 중인 경우 디스크에 대한 쓰기 요청을 지연&#x20;
+* **no\_wdelay wdelay**: 기능을 해제&#x20;
+* **root\_squash**: 원격으로 연결된 root 사용자가 root 권한을 갖는 것을 방지&#x20;
+* **no\_root\_squash**: root\_squash 기능을 해제&#x20;
+* **all\_squash**: root를 포함한 모든 원격 사용자가 root 권한을 갖는 것을 방지&#x20;
+* **sync**: 변경 사항이 커밋된 후에만 요청에 응답
+{% endhint %}
+
+입력한 설정을 적용시킨 후, 테스트 파일을 생성합니다.
+
+```shell-session
+[user@nfs-server ~]$ sudo exportfs -r
+[user@nfs-server ~]$ sudo touch /nfs/test.txt
+```
 
 &#x20;
 
 #### (4) NFS 자동 마운트 설정하기
 
-* NFS Server 재부팅 시, 마운트가 해제되기 때문에 /etc/rc.local 파일에 마운트 명령어를 추가하여 자동으로 마운트될 수 있도록 합니다.
-* /etc/fstab 파일에 자동 마운트 설정을 할 수도 있지만, 마운트가 되지 않을 경우에 싱글 모드로 진입할 수 있기 때문에 /etc/rc.local 파일에 설정하는 것을 권장드립니다.
-*   **# rocky / centos**
+NFS Server 재부팅 시, 마운트가 해제되기 때문에 /etc/rc.local 파일에 마운트 명령어를 추가하여 자동으로 마운트될 수 있도록 합니다.
 
-    \[rocky@nfs-server \~]$ sudo umount /dev/vdb1
+{% tabs %}
+{% tab title="CentOS / Rocky" %}
+```shell-session
+[centos@nfs-server ~]$ sudo umount /dev/vdb1
+[centos@nfs-server ~]$ sudo vi /etc/rc.local
+mount /dev/vdb1 /nfs
+[centos@nfs-server ~]$ sudo chmod u+x /etc/rc.local
+[centos@nfs-server ~]$ sudo systemctl start rc-local
+```
+{% endtab %}
 
-    \[rocky@nfs-server \~]$ sudo vi /etc/rc.local
+{% tab title="Ubuntu" %}
+```shell-session
+[ubuntu@nfs-server ~]$ sudo umount /dev/vdb1
+[ubuntu@nfs-server ~]$ sudo vi /etc/rc.local
+#!/bin/bash
+mount /dev/vdb1 /nfs
+[ubuntu@nfs-server ~]$ sudo chmod u+x /etc/rc.local
+[ubuntu@nfs-server ~]$ sudo systemctl start rc-local
+```
+{% endtab %}
+{% endtabs %}
 
-    mount /dev/vdb1 /nfs
+{% hint style="info" %}
+<mark style="color:blue;">**참고사항**</mark>
 
-    \[rocky@nfs-server \~]$ sudo chmod u+x /etc/rc.local\
-    \[rocky@nfs-server \~]$ sudo systemctl start rc-local
+/etc/fstab 파일에 자동 마운트 설정을 할 수도 있지만, 마운트가 되지 않을 경우에 싱글 모드로 진입할 수 있기 때문에 /etc/rc.local 파일에 설정하는 것을 권장드립니다.
+{% endhint %}
 
-    &#x20;
+설정을 한 후, 재부팅을 해보면 마운트가 잘 되어 있는 것을 확인할 수 있습니다.
 
-    **# ubuntu**
+```shell-session
+[user@nfs-server ~]$ sudo reboot
+[user@nfs-server ~]$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        366M     0  366M   0% /dev
+tmpfs           403M     0  403M   0% /dev/shm
+tmpfs           403M  5.6M  397M   2% /run
+tmpfs           403M     0  403M   0% /sys/fs/cgroup
+/dev/vda4        29G  1.5G   28G   5% /
+/dev/vda2       994M  227M  768M  23% /boot
+/dev/vda1       100M  5.8M   95M   6% /boot/efi
+/dev/vdb1        10G  104M  9.9G   2% /nfs
+tmpfs            81M     0   81M   0% /run/user/1000
+```
 
-    \[ubuntu@nfs-server \~]$ sudo umount /dev/vdb1
+{% hint style="info" %}
+<mark style="color:blue;">**참고사항**</mark>
 
-    \[ubuntu@nfs-server \~]$ sudo vi /etc/rc.local\
-    \#!/bin/bash\
-    mount /dev/vdb1 /nfs
+자동 마운트 설정을 하였음에도 불구하고, 마운트가 되지 않을 경우에는 수동으로 마운트를 진행해주셔야 합니다.
+{% endhint %}
 
-    \[ubuntu@nfs-server \~]$ sudo chmod u+x /etc/rc.local
+{% hint style="danger" %}
+<mark style="color:red;">**주의사항**</mark>
 
-    \[ubuntu@nfs-server \~]$ sudo systemctl start rc-local
-* &#x20;
-* 설정을 한 후, 재부팅을 해보면 마운트가 잘 되어 있는 것을 확인할 수 있습니다.
-* ※ 자동 마운트 설정을 하였음에도 불구하고, 마운트가 되지 않을 경우에는 수동으로 마운트를 진행해주셔야 합니다.
-* **※ NFS Server 경우, 마운트를 해제하지 않고 재부팅하면 장애가 발생할 수 있으므로 재부팅 전 마운트 해제를 권장드립니다.**
-*   \[user@nfs-server \~]$ sudo reboot
-
-    &#x20;
-
-    \[user@nfs-server \~]$ df -h\
-    Filesystem      Size  Used Avail Use% Mounted on\
-    devtmpfs        366M     0  366M   0% /dev\
-    tmpfs           403M     0  403M   0% /dev/shm\
-    tmpfs           403M  5.6M  397M   2% /run\
-    tmpfs           403M     0  403M   0% /sys/fs/cgroup\
-    /dev/vda4        29G  1.5G   28G   5% /\
-    /dev/vda2       994M  227M  768M  23% /boot\
-    /dev/vda1       100M  5.8M   95M   6% /boot/efi\
-    /dev/vdb1        10G  104M  9.9G   2% /nfs\
-    tmpfs            81M     0   81M   0% /run/user/1000
+NFS Server 경우, 마운트를 해제하지 않고 재부팅하면 장애가 발생할 수 있으므로 재부팅 전 마운트 해제를 권장드립니다.
+{% endhint %}
 
 &#x20;
 
 &#x20;
 
-### 3. NFS Client 구성하기
+## 3. NFS Client 구성하기
 
 #### (1) 패키지 설치하기
 
-* 마찬가지로 등록된 저장소 내 패키지 정보를 최신으로 업데이트한 후, nfs 패키지 설치를 진행합니다.
+마찬가지로 등록된 저장소 내 패키지 정보를 최신으로 업데이트한 후, nfs 패키지 설치를 진행합니다.
+
 *   **# rocky / centos**\
     \[rocky@nfs-server \~]$ sudo yum update\
     \[rocky@nfs-server \~]$ sudo yum install nfs-utils\
@@ -253,14 +286,19 @@ tmpfs            81M     0   81M   0% /run/user/1000
 
 #### (2) NFS 마운트하기
 
-* 마운트할 디렉터리를 생성한 후, NFS Server에 마운트합니다.
-* "**mount -t nfs \[NFS Server 사설 IP]:\[NFS Server 마운트 포인트] \[NFS Client 마운트 포인트]**" 형식으로 명령어를 실행합니다.
-* ※ 이 때, 가상서버에 연결된 방화벽의 "내부 네트워크 허용"이 체크되어 있어야 합니다.
+마운트할 디렉터리를 생성한 후, NFS Server에 마운트합니다.
+
+"**mount -t nfs \[NFS Server 사설 IP]:\[NFS Server 마운트 포인트] \[NFS Client 마운트 포인트]**" 형식으로 명령어를 실행합니다.
+
+※ 이 때, 가상서버에 연결된 방화벽의 "내부 네트워크 허용"이 체크되어 있어야 합니다.
+
 * \[user@nfs-client \~]$ sudo mkdir /data\
   \
   \[user@nfs-client \~]$ sudo mount -t nfs 192.168.1.17:/nfs /data
 * &#x20;
-* 마운트가 되었으며, 마운트한 디렉터리를 확인해 보면 NFS Server에서 생성한 테스트 파일을 볼 수 있습니다.
+
+마운트가 되었으며, 마운트한 디렉터리를 확인해 보면 NFS Server에서 생성한 테스트 파일을 볼 수 있습니다.
+
 *   \[user@nfs-client \~]$ df -h\
     Filesystem         Size  Used Avail Use% Mounted on\
     devtmpfs           366M     0  366M   0% /dev\
@@ -282,7 +320,8 @@ tmpfs            81M     0   81M   0% /run/user/1000
 
 #### (3) NFS 자동 마운트 설정하기
 
-* NFS Client 재부팅 시, 마운트가 해제되기 때문에 마찬가지로 /etc/rc.local 파일에 마운트 명령어를 추가하여 자동으로 마운트될 수 있도록 합니다.
+NFS Client 재부팅 시, 마운트가 해제되기 때문에 마찬가지로 /etc/rc.local 파일에 마운트 명령어를 추가하여 자동으로 마운트될 수 있도록 합니다.
+
 *   **# rocky / centos**
 
     \[rocky@nfs-client \~]$ sudo vi /etc/rc.local
@@ -304,8 +343,11 @@ tmpfs            81M     0   81M   0% /run/user/1000
 
     \[ubuntu@nfs-client \~]$ sudo systemctl start rc-local
 * &#x20;
-* 설정을 한 후, 재부팅을 해보면 마운트가 잘 되어 있는 것을 확인할 수 있습니다.
-* ※ 자동 마운트 설정을 하였음에도 불구하고, 마운트가 되지 않을 경우에는 수동으로 마운트를 진행해주셔야 합니다.
+
+설정을 한 후, 재부팅을 해보면 마운트가 잘 되어 있는 것을 확인할 수 있습니다.
+
+※ 자동 마운트 설정을 하였음에도 불구하고, 마운트가 되지 않을 경우에는 수동으로 마운트를 진행해주셔야 합니다.
+
 *   \[user@nfs-client \~]$ sudo reboot
 
     \
@@ -320,22 +362,3 @@ tmpfs            81M     0   81M   0% /run/user/1000
     /dev/vda1          100M  5.8M   95M   6% /boot/efi\
     192.168.1.17:/nfs   10G  104M  9.9G   2% /data\
     tmpfs               81M     0   81M   0% /run/user/1000
-* &#x20;
-
-&#x20;
-
-&#x20;
-
-**※ 참고사항**
-
-* /etc/exports 파일의 옵션 정보는 다음과 같습니다.
-* | 옵션               | 정보                                     |
-  | ---------------- | -------------------------------------- |
-  | ro               | 읽기 요청만 허용                              |
-  | rw               | 읽기 및 쓰기 요청 허용                          |
-  | wdelay           | 다른 쓰기 요청이 진행 중인 경우 디스크에 대한 쓰기 요청을 지연   |
-  | no\_wdelay       | wdelay 기능을 해제                          |
-  | root\_squash     | 원격으로 연결된 root 사용자가 root 권한을 갖는 것을 방지   |
-  | no\_root\_squash | root\_squash 기능을 해제                    |
-  | all\_squash      | root를 포함한 모든 원격 사용자가 root 권한을 갖는 것을 방지 |
-  | sync             | 변경 사항이 커밋된 후에만 요청에 응답                  |
