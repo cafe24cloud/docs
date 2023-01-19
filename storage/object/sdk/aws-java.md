@@ -1,31 +1,35 @@
 ---
-description: AWS Javascript SDK를 사용하여 오브젝트 스토리지를 사용하는 방법은 다음과 같습니다.
+description: AWS Java SDK를 사용하여 오브젝트 스토리지를 사용하는 방법은 다음과 같습니다.
 ---
 
 # AWS Java SDK 사용 방법
 
-## 1. AWS Javascript v3 S3 SDK 사용하기
+## 1. AWS Java v2 S3 SDK 사용하기
 
-AWS Javascript v3 S3 SDK는 AWS에서 Javascript 코드를 통해 S3를 이용할 수 있도록 제공하는 도구입니다.&#x20;
+AWS Java v2 S3 SDK는 AWS에서 Java 코드를 통해 S3를 이용할 수 있도록 제공하는 도구입니다.&#x20;
 
 카페24 클라우드의 오브젝트 스토리지는 S3 API와 호환이 되므로 해당 SDK 사용이 가능합니다.&#x20;
 
-|                                                매뉴얼 테스트 버전                                                |                                                                                                                                          Javascript v3 S3 SDK 참고 링크                                                                                                                                         |
-| :------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| <p>AWS Javascript SDK version : 3.231.0 </p><p>Node.js version : 14.17.1</p><p>Npm version : 6.14.13</p> | <p>문서 : <a href="https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html">Developer guide - AWS SDK for Javascript 3.x</a></p><p>예제 : <a href="https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/javascript_s3_code_examples.html">Javascript v3 S3 examples</a></p> |
+|                              매뉴얼 테스트 버전                              |                                                                                                                                             Java v2 S3 SDK 참고 링크                                                                                                                                            |
+| :------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <p> AWS Java SDK version : 2.17.230</p><p>Java version : 11.0.11</p> | <p>문서 : <a href="https://docs.aws.amazon.com/ko_kr/sdk-for-java/latest/developer-guide/home.html">Developer guide - AWS SDK for Java 2.x</a></p><p>예제 : <a href="https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/s3/src/main/java/com/example/s3">Java v2 S3 examples</a></p> |
 
 
 
 
 
-## 2. AWS Javascript v3 S3 SDK 설치하기
+## 2. AWS Java v2 S3 SDK 설치하기
 
-Javascript 개발을 위한 실행 환경 Node.js가 설치된 상태에서 진행합니다.&#x20;
+Maven 프로젝트의 pom.xml에 dependency를 추가합니다.
 
-npm 프로젝트 디렉터리로 이동한 다음, AWS Javascript v3 SDK를 설치합니다.
-
-```shell-session
-$ npm install @aws-sdk/client-s3
+```shell
+<dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>bom</artifactId>
+    <version>2.17.230</version>
+    <type>pom</type>
+    <scope>import</scope>
+</dependency>
 ```
 
 

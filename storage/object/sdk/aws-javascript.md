@@ -44,7 +44,7 @@ $ npm install @aws-sdk/client-s3
 
 인증 파일을 생성하여 Access Key와 Secret Key를 등록합니다.
 
-자세한 정보는 [AWS SDK for Java v2 - Using Credentials](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/credentials.html)에서 확인할 수 있습니다.
+자세한 정보는 [**AWS SDK for Java v2 - Using Credentials**](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/credentials.html)에서 확인할 수 있습니다.
 
 인증 파일의 기본 경로는 "\~/.aws/credentials"입니다.
 
@@ -222,7 +222,7 @@ export const run = async () => {
   }
 };
 
-run();
+run()
 ```
 
 ```shell
@@ -420,6 +420,8 @@ export const run = async () => {
 run();
 ```
 
+output 예시는 다음과 같습니다.
+
 ```shell
 Success : Object [test-file.txt] has been deleted.
 Response :  {
@@ -459,107 +461,4 @@ export const run = async () => {
 };
 
 run();
-```
-
-```shell
-Deleting all objects in the bucket.
-Success. All objects in bucket [test-bucket] are deleted. : 
- {
-    "$metadata": {
-        "httpStatusCode": 200,
-        "requestId": "tx0000042e054f120512bdb-0063b45ac4-1682e4f-zone-cafe24cloud-prd-obs",
-        "attempts": 1,
-        "totalRetryDelay": 0
-    },
-    "Contents": [
-        {
-            "Key": "folder/",
-            "LastModified": "2023-01-03T16:40:55.335Z",
-            "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
-            "Size": 0,
-            "StorageClass": "STANDARD",
-            "Owner": {
-                "DisplayName": "clouduser",
-                "ID": "clouduser"
-            }
-        },
-        {
-            "Key": "folder/test-file-01",
-            "LastModified": "2023-01-03T16:41:07.694Z",
-            "ETag": "\"620f0b67a91f7f74151bc5be745b7110\"",
-            "Size": 4096,
-            "StorageClass": "STANDARD",
-            "Owner": {
-                "DisplayName": "clouduser",
-                "ID": "clouduser"
-            }
-        },
-        {
-            "Key": "test-file-02",
-            "LastModified": "2023-01-03T16:41:35.762Z",
-            "ETag": "\"620f0b67a91f7f74151bc5be745b7110\"",
-            "Size": 4096,
-            "StorageClass": "STANDARD",
-            "Owner": {
-                "DisplayName": "clouduser",
-                "ID": "clouduser"
-            }
-        },
-    ],
-    "IsTruncated": false,
-    "Marker": "",
-    "MaxKeys": 1000,
-    "Name": "test-bucket",
-    "Prefix": ""
-}
-```
-
-
-
-#### (8) 오브젝트 복사&#x20;
-
-파일을 다른 버킷으로 복사합니다.
-
-```shell
-import {CopyObjectCommand, S3Client} from "@aws-sdk/client-s3";
-
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
-
-# Bucket : 복사한 파일을 붙여넣기 할 버킷
-# Key : 붙여넣기 할 파일의 이름
-# CopySource : 복사할 파일을 지정. "버킷명/파일경로"
-export const bucketParams = {
-  Bucket: "test-bucket",
-  CopySource: "test-bucket1/bucket-1-file.txt",
-  Key: "copied-file.txt"
-};
-
-export const run = async () => {
-  try {
-    const data = await s3Client.send(new CopyObjectCommand(bucketParams));
-    console.log("Success : \n", JSON.stringify(data, null, 4));
-  } catch (err) {
-    console.log("Error", err);
-  }
-};
-
-run();
-```
-
-output 예시는 다음과 같습니다.
-
-```shell
-Success : 
- {
-    "$metadata": {
-        "httpStatusCode": 200,
-        "requestId": "tx000007c0798553d2790ae-0063b45773-1682e4f-zone-cafe24cloud-prd-obs",
-        "attempts": 1,
-        "totalRetryDelay": 0
-    },
-    "CopyObjectResult": {
-        "ETag": "d9ebe4d6aeb33dea41ddb2b57e7b6d80",
-        "LastModified": "2023-01-03T16:27:31.755Z"
-    }
-}
 ```
