@@ -197,7 +197,7 @@ Success [
 
 #### (4) 오브젝트 업로드&#x20;
 
-파일을 오브젝트 스토리지의 특정 버킷에 업로드 합니다.
+파일을 특정 버킷에 업로드합니다.
 
 * **새로운 파일 업로드**: 코드상에서 파일명, 파일 내용(Body)을 선언하여 버킷에 업로드하는 방법입니다.
 
@@ -229,7 +229,7 @@ run()
 Success : Successfully uploaded newly created file: test-bucket/test-file.txt
 ```
 
-* **로컬에 있는 파일 업로드**: 기존의 로컬에 있는 파일을 버킷에 업로드 하는 방법입니다. &#x20;
+* **로컬에 있는 파일 업로드**: 기존의 로컬에 있는 파일을 버킷에 업로드하는 방법입니다. &#x20;
 
 ```shell
 import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
@@ -268,7 +268,7 @@ Success : Successfully uploaded exsisting file test-bucket/test-file-local.pdf
 
 #### (5) 오브젝트 다운로드&#x20;
 
-버킷에 있는 파일을 로컬의 특정 경로로 다운로드 합니다.&#x20;
+버킷에 있는 파일을 로컬의 특정 경로로 다운로드합니다.&#x20;
 
 ```shell
 import {GetObjectCommand, S3Client} from "@aws-sdk/client-s3"
@@ -312,4 +312,153 @@ test-file.txt is now downloaded to [clients\client-s3\src\commands\cafe24-demo\f
 
 
 
-####
+#### (6) 오브젝트 리스트 조회&#x20;
+
+버킷에 있는 모든 파일과 폴더를 조회합니다.&#x20;
+
+```shell
+import { ListObjectsCommand, S3Client } from "@aws-sdk/client-s3";
+
+const s3Client  = new S3Client({ endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud" });
+
+export const bucketParams = { Bucket: "test-bucket" };
+
+export const run = async () => {
+  try {
+    const data = await s3Client.send(new ListObjectsCommand(bucketParams));
+    console.log("Success : \n", JSON.stringify(data, null, 4));
+  } catch (err) {
+    console.log("Error", err);
+  }
+};
+
+run();
+```
+
+output 예시는 다음과 같습니다.
+
+```shell
+Success : 
+ {
+    "$metadata": {
+        "httpStatusCode": 200,
+        "requestId": "tx00000ea81126555bcc2de-0063b27c2f-1682e4f-zone-cafe24cloud-prd-obs",
+        "attempts": 1,
+        "totalRetryDelay": 0
+    },
+    "Contents": [
+        {
+            "Key": "folder/",
+            "LastModified": "2023-01-01T14:09:25.283Z",
+            "ETag": "\"d41d8cd98f00b204e9800998ecf8427e\"",
+            "Size": 0,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "clouduser",
+                "ID": "clouduser"
+            }
+        },
+        {
+            "Key": "folder/test-file-04",
+            "LastModified": "2023-01-01T14:10:04.636Z",
+            "ETag": "\"620f0b67a91f7f74151bc5be745b7110\"",
+            "Size": 4096,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "clouduser",
+                "ID": "clouduser"
+            }
+        },
+        {
+            "Key": "test-file-01",
+            "LastModified": "2023-01-01T14:08:50.154Z",
+            "ETag": "\"620f0b67a91f7f74151bc5be745b7110\"",
+            "Size": 4096,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "clouduser",
+                "ID": "clouduser"
+            }
+        }
+    ],
+    "IsTruncated": false,
+    "Marker": "",
+    "MaxKeys": 1000,
+    "Name": "test-bucket",
+    "Prefix": ""
+}
+```
+
+
+
+#### (7) 오브젝트 삭제&#x20;
+
+버킷에서 파일을 삭제합니다.
+
+* **하나의 오브젝트 삭제**: 특정 버킷에 있는 오브젝트를 삭제합니다.&#x20;
+
+```shell
+import {DeleteObjectCommand, S3Client} from "@aws-sdk/client-s3";
+
+const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+
+export const bucketParams = {
+  Bucket: "test-bucket",
+  Key: "test-file.txt"
+};
+
+export const run = async () => {
+  try {
+    const data = await s3Client.send(new DeleteObjectCommand(bucketParams));
+    console.log("Success : Object [" + bucketParams.Key + "] has been deleted.");
+    console.log("Response : ", JSON.stringify(data, null, 4))
+  } catch (err) {
+    console.log("Error", err);
+  }
+};
+
+run();
+```
+
+output 예시는 다음과 같습니다.
+
+```shell
+Success : Object [test-file.txt] has been deleted.
+Response :  {
+    "$metadata": {
+        "httpStatusCode": 204,
+        "requestId": "tx000008ed66bc303224d6c-0063b3e19b-168a1f1-zone-cafe24cloud-prd-obs",
+        "attempts": 1,
+        "totalRetryDelay": 0
+}
+```
+
+* **모든 오브젝트 삭제**: 특정 버킷에 있는 모든 오브젝트를 삭제합니다. &#x20;
+
+```shell
+import {ListObjectsCommand, DeleteObjectCommand, S3Client} from "@aws-sdk/client-s3";
+
+const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+
+export const bucketParams = {
+  Bucket: "test-bucket"
+};
+
+export const run = async () => {
+  try {
+    console.log("Deleting all objects in the bucket.");
+    const data = await s3Client.send(new ListObjectsCommand(bucketParams))
+    let noOfObjects = data.Contents;
+    for (let i = 0; i < noOfObjects.length; i++) {
+      await s3Client.send(new DeleteObjectCommand({Bucket: bucketParams.Bucket, Key: noOfObjects[i].Key}));
+  }
+
+  console.log("Success. All objects in bucket [" + bucketParams.Bucket + "] are deleted. : \n", JSON.stringify(data, null, 4));
+
+  } catch (err) {
+    console.log("Error", err);
+  }
+};
+
+run();
+```
