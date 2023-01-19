@@ -30,7 +30,7 @@ description: 카페24 클라우드의 기술지원을 신청하는 방법은 아
 
 
 
-## 3. 기술 지원 신청하기
+## 3. 기술지원 신청하기
 
 매니지드 서비스 > 기술지원에서 \[기술지원 신청] 버튼을 클릭합니다.&#x20;
 
@@ -57,23 +57,19 @@ description: 카페24 클라우드의 기술지원을 신청하는 방법은 아
 
 
 
-## 4. 기술지원 사전 작업 진행하기&#x20;
+## 4. 기술지원 사전 작업 진행하기기&#x20;
 
 &#x20;매니지드 서비스 > 기술지원 > 기술 지원 서비스 신청 내역에서 접수된 기술 지원을 확인할 수 있습니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/5a7a2afead270a8bbf521c2d2b12458c_1673405348.jpg" alt=""><figcaption></figcaption></figure>
 
+기술지원을 위해서는 담당 엔지니어가 대상 가상서버에 SSH 접속할 수 있어야 합니다.
 
+따라서 <mark style="color:blue;">클라우드 서비스 Key File 등록 매뉴얼</mark>을 따라 키페어 등록을 진행해 주세요.&#x20;
 
-기술 지원을 위해서는 담당 엔지니어가 대상 가상서버에 SSH 접속할 수 있어야 합니다. &#x20;
-
-(1) [**클라우드 서비스 Key File 등록 매뉴얼**](http://img.cafe24.com/manual/TechFiles/cloud\_tech\_support\_public\_key\_registration\_manual.pdf)을 따라 키페어 등록을 진행해 주세요.&#x20;
-
-(2) "방화벽 접근 허용" 버튼을 클릭하여 엔지니어의 접근을 위한 방화벽을 허용합니다.&#x20;
+그리고 \[방화벽 접근 허용] 버튼을 클릭하여 엔지니어의 접근을 위한 방화벽을 허용합니다.&#x20;
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/fb03f3d2c759d2fba5e82476b196d25a_1673410599.jpg" alt=""><figcaption></figcaption></figure>
-
-
 
 방화벽이 활성화된 경우, 아래와 같이 보여집니다.
 
@@ -85,30 +81,42 @@ description: 카페24 클라우드의 기술지원을 신청하는 방법은 아
 
 ## 5. 작업 승인하기
 
-1. &#x20; 담당 엔지니어가 작업 시작을 하기 위해서는 신청자의 작업 승인이 이뤄져야 합니다.
-2. &#x20; 우측 하단의 "작업 승인 확인" 버튼을 클릭하여 기술 지원 내역을 확인합니다.
-3. &#x20; ![](https://filesystem.cafe24.com/hosting/cloud\_service/2023/01/11/ce0d47db1324de6f0a282c71d1b858aa\_1673411766.jpg)
-4. &#x20;&#x20;
-5. &#x20;
-6. &#x20; 담당 엔지니어와 논의 내용 및 신청서 내역에 동의할 경우 "기술지원 확정" 버튼을 클릭합니다.
-7. &#x20; 재검토가 필요할 경우 "재검토 요청" 버튼을 클릭합니다.
-8. &#x20; 재검토를 요청하실 경우, 요청 사유를 댓글로 남겨 주시기 바랍니다.
-9. &#x20;&#x20;
-10. &#x20; **※ 주의 사항**
-11. &#x20; 기술지원을 확정한 후로는 기술 지원을 취소할 수 없습니다.
-12. &#x20; ![](https://filesystem.cafe24.com/hosting/cloud\_service/2023/01/11/b58c991512efbc643d6bb690da5a7975\_1673412335.jpg)
-13. &#x20;&#x20;
-14. &#x20; 기술지원 확정 버튼을 눌렀을 때 아래와 같은 메세지가 뜰 경우, "방화벽 접근 허용"이 활성된 상태인지 확인해 주세요.
-15. &#x20; ![](https://filesystem.cafe24.com/hosting/cloud\_service/2023/01/11/8aca2f3beb76a1e157323dd18579b489\_1673410899.jpg)
-16. &#x20;
-17. &#x20; 방화벽이 활성화된 경우, 아래와 같이 보여집니다.
-18. &#x20; ![](https://filesystem.cafe24.com/hosting/cloud\_service/2023/01/11/c37f62ea87d82a8e6bd7a37798465ea8\_1673410884.jpg)
-19. &#x20;
-20. &#x20;
-21. &#x20;
+담당 엔지니어가 작업 시작을 하기 위해서는 신청자의 작업 승인이 이뤄져야 합니다.
 
-### 6. 기술 지원 완료
+우측 하단의 "작업 승인 확인" 버튼을 클릭하여 기술지원 내역을 확인합니다.
 
-1. &#x20; 담당 엔지니어의 작업이 끝나 지원 지원이 완료 처리됩니다.
-2. &#x20; 해당 기술 지원에 대해 추가 문의가 있으실 경우 1:1 문의를 이용해 주시기 바랍니다. 또한 지원 내용은 익월에 과금됩니다.
-3. &#x20; ![](https://filesystem.cafe24.com/hosting/cloud\_service/2023/01/11/82ca729c9431522551ccab3ee5c1ffd8\_1673410965.jpg)
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/ce0d47db1324de6f0a282c71d1b858aa_1673411766.jpg" alt=""><figcaption></figcaption></figure>
+
+담당 엔지니어와 논의 내용 및 신청서 내역에 동의할 경우, \[기술지원 확정] 버튼을 클릭합니다.
+
+재검토가 필요할 경우, \[재검토 요청] 버튼을 클릭하고 요청 사유를 댓글로 남겨 주시기 바랍니다. &#x20;
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/b58c991512efbc643d6bb690da5a7975_1673412335.jpg" alt=""><figcaption></figcaption></figure>
+
+{% hint style="danger" %}
+<mark style="color:red;">**주의사항**</mark>
+
+기술지원을 확정한 후로는 기술 지원을 취소할 수 없습니다.
+{% endhint %}
+
+{% hint style="info" %}
+참고사항
+
+기술지원 확정 버튼을 눌렀을 때 아래와 같은 메세지가 뜰 경우, \[방화벽 접근 허용]이 활성된 상태인지 확인해 주세요.
+
+<img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/8aca2f3beb76a1e157323dd18579b489_1673410899.jpg" alt="" data-size="original">
+{% endhint %}
+
+
+
+
+
+## 6. 기술지원 완료하기
+
+담당 엔지니어의 작업이 끝나면 기술지원이 완료 처리됩니다.
+
+해당 기술지원에 대해 추가 문의가 있으실 경우, 1:1 문의를 이용해 주시기 바랍니다.
+
+또한 지원 내용은 익월에 과금됩니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/82ca729c9431522551ccab3ee5c1ffd8_1673410965.jpg" alt=""><figcaption></figcaption></figure>
