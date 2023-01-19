@@ -22,7 +22,7 @@ description: 카페24 클라우드의 기술지원을 신청하는 방법은 아
 
 ## 2. 기술 지원 진행 상태값
 
-접수된 기술 지원은 처리 상태에 따라 상태값이 변경되며, 각 상태값에 대한  설명은 아래와 같습니다.&#x20;
+접수된 기술지원은 처리 상태에 따라 상태값이 변경되며, 각 상태값에 대한 설명은 아래와 같습니다.&#x20;
 
 <table><thead><tr><th align="center">상태</th><th align="center">설명</th><th data-hidden></th></tr></thead><tbody><tr><td align="center">접수 완료</td><td align="center"> 기술지원이 성공적으로 접수된 상태입니다. </td><td></td></tr><tr><td align="center">처리 중</td><td align="center">담당 엔지니어가 확인을 시작한 상태입니다. </td><td></td></tr><tr><td align="center">지연 처리</td><td align="center">문의된 내용에 추가 확인이 필요한 사항이 있어 답변이 지연되고 있는 상태입니다. </td><td></td></tr><tr><td align="center">수정 요청 중</td><td align="center">담당 엔지니어가 기술지원 신청서의 수정을 요청한 상태입니다.</td><td></td></tr><tr><td align="center">승인 요청</td><td align="center">담당 엔지니어가 작업 시작을 위해 작업 승인 요청을 한 상태입니다. </td><td></td></tr><tr><td align="center">작업 중</td><td align="center">담당 엔지니어가 작업 중인 상태입니다. </td><td></td></tr><tr><td align="center">종료</td><td align="center">담당 엔지니어가 작업을 완료하여 기술 지원이 종료된 상태입니다. </td><td></td></tr><tr><td align="center">취소</td><td align="center">기술지원 신청자 혹은 담당 엔지니어가 취소 처리를 한 상태입니다.</td><td></td></tr><tr><td align="center">업무 시간 안내</td><td align="center">업무 시간 외에 접수된 문의에 대해 처리 가능한 시간을 안내합니다. </td><td></td></tr></tbody></table>
 
@@ -32,53 +32,58 @@ description: 카페24 클라우드의 기술지원을 신청하는 방법은 아
 
 ## 3. 기술 지원 신청하기
 
-콘솔 > 매니지드 서비스 > 기술지원
+매니지드 서비스 > 기술지원에서 \[기술지원 신청] 버튼을 클릭합니다.&#x20;
 
-매니지드매서비스뉴에서 **"기술지원 신청"** 버튼을 클릭합니다.&#x20;
-
-![](https://filesystem.cafe24.com/hosting/cloud\_service/2023/01/11/4fccdd148f0ffb5cca9567c5c27c42f1\_1673403845.jpg)
-
-
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/4fccdd148f0ffb5cca9567c5c27c42f1_1673403845.jpg" alt=""><figcaption></figcaption></figure>
 
 기술 지원 신청 시에 기입해야 하는 항목은 아래와 같습니다.&#x20;
 
-(1) 기술 지원 서버 선택 : 기술 지원을 적용할 대상 서버를 선택합니다.&#x20;
+* **기술지원 서버 선택** : 기술지원을 적용할 대상 서버를 선택합니다.&#x20;
+* **기술지원 서비스 선택** : 기술지원이 필요한 서비스를 선택합니다. 지원 서비스별로 ![(질문)](https://wiki.simplexi.com/s/s0exjg/8506/5d4cfda2b837dbf77e088aa916d969d565373c86/\_/images/icons/emoticons/help\_16.svg) 버튼을 클릭하여 상세 설명을 확인하실 수 있습니다. &#x20;
 
-1. &#x20; (2) 기술 지원 서비스 선택 : 기술 지원이 필요한 서비스를 선택합니다.&#x20;
-2. &#x20;                                 지원 서비스별로 ![(질문)](https://wiki.simplexi.com/s/s0exjg/8506/5d4cfda2b837dbf77e088aa916d969d565373c86/\_/images/icons/emoticons/help\_16.svg) 버튼을 클릭하여 상세 설명을 확인하실 수 있습니다.&#x20;
-3. &#x20; ![](https://filesystem.cafe24.com/hosting/cloud\_service/2023/01/11/fdfeba3685454f4ab3170ce9b41d4bf5\_1673404195.jpg)
-4. &#x20;
-5. &#x20; (3) 보안 정보 입력 : 특정 기술지원 서비스에 대하여 보안 정보를 요구할 수 있습니다.&#x20;
-6. &#x20;                         보안 정보 제공이 필요한 품목일 경우, 기재해 주시기 바랍니다.&#x20;
-7. &#x20; (4) 예상 비용 : 선택한 모든 기술 지원 서비스에 대하여 예상 비용을 확인합니다.&#x20;
-8. &#x20; (5) 담당자 정보 : 기술 지원과 관련된 처리사항을 수신할 담당자의 전화번호와 E-mail을 입력합니다.&#x20;
-9. &#x20; (6) 제목 : 기술 지원 신청에 대한 제목을 입력합니다.&#x20;
-10. &#x20; (7) 내용 : 기술 지원 요청 시에 필요한 세부 정보 및 요청 사항을 입력합니다.&#x20;
-11. &#x20; (8) 첨부 파일 : 기술 지원에 필요한 파일을 첨부할 수 있습니다.&#x20;
-12. &#x20; (9) 개인 정보 활용 동의 : 카페24클라우드 기술 지원의 접수 및 처리에 필요한 개인 정보 활용에 동의해야 신청을 완료할 수 있습니다.&#x20;
-13. &#x20; ![](https://filesystem.cafe24.com/hosting/cloud\_service/2023/01/11/cd6d7be6dafcc4f9d31ae3294772cbdb\_1673412202.jpg)
-14. &#x20;&#x20;
-15. &#x20;
-16. &#x20;
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/fdfeba3685454f4ab3170ce9b41d4bf5_1673404195.jpg" alt=""><figcaption></figcaption></figure>
 
-### 4. 기술지원 사전 작업 진행하기&#x20;
+* **보안 정보 입력** : 특정 기술지원 서비스에 대하여 보안 정보를 요구할 수 있습니다. 보안 정보 제공이 필요한 품목일 경우, 기재해 주시기 바랍니다.&#x20;
+* **예상 비용** : 선택한 모든 기술지원 서비스에 대하여 예상 비용을 확인합니다.&#x20;
+* **담당자 정보** : 기술지원과 관련된 처리 사항을 수신할 담당자의 전화번호와 E-mail을 입력합니다.&#x20;
+* **제목** : 기술지원 신청에 대한 제목을 입력합니다.&#x20;
+* **내용** : 기술지원 요청 시에 필요한 세부 정보 및 요청 사항을 입력합니다.&#x20;
+* **첨부 파일** : 기술지원에 필요한 파일을 첨부합니다.
+* **개인 정보 활용 동의** : 카페24 클라우드 기술지원의 접수 및 처리에 필요한 개인 정보 활용에 동의해야 신청을 완료할 수 있습니다. &#x20;
 
-1. &#x20; 콘솔 > 매니지드 서비스 > 기술지원
-2. &#x20; 기술 지원 서비스 신청 내역에서 접수된 기술 지원을 확인할 수 있습니다.
-3. &#x20; ![](https://filesystem.cafe24.com/hosting/cloud\_service/2023/01/11/5a7a2afead270a8bbf521c2d2b12458c\_1673405348.jpg)
-4. &#x20;&#x20;
-5. &#x20; 기술 지원을 위해서는 담당 엔지니어가 대상 가상서버에 SSH 접속할 수 있어야 합니다. &#x20;
-6. &#x20; (1) [**클라우드 서비스 Key File 등록 매뉴얼**](http://img.cafe24.com/manual/TechFiles/cloud\_tech\_support\_public\_key\_registration\_manual.pdf)을 따라 키페어 등록을 진행해 주세요.&#x20;
-7. &#x20; (2) "방화벽 접근 허용" 버튼을 클릭하여 엔지니어의 접근을 위한 방화벽을 허용합니다.&#x20;
-8. &#x20; ![](https://filesystem.cafe24.com/hosting/cloud\_service/2023/01/11/fb03f3d2c759d2fba5e82476b196d25a\_1673410599.jpg)
-9. &#x20;
-10. &#x20; 방화벽이 활성화된 경우, 아래와 같이 보여집니다.
-11. &#x20; ![](https://filesystem.cafe24.com/hosting/cloud\_service/2023/01/11/c242f59fdeebb3f743958779e414c490\_1673410620.jpg)
-12. &#x20;
-13. &#x20;&#x20;
-14. &#x20;
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/cd6d7be6dafcc4f9d31ae3294772cbdb_1673412202.jpg" alt=""><figcaption></figcaption></figure>
 
-### 5. 작업 승인하기
+
+
+
+
+## 4. 기술지원 사전 작업 진행하기&#x20;
+
+&#x20;매니지드 서비스 > 기술지원 > 기술 지원 서비스 신청 내역에서 접수된 기술 지원을 확인할 수 있습니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/5a7a2afead270a8bbf521c2d2b12458c_1673405348.jpg" alt=""><figcaption></figcaption></figure>
+
+
+
+기술 지원을 위해서는 담당 엔지니어가 대상 가상서버에 SSH 접속할 수 있어야 합니다. &#x20;
+
+(1) [**클라우드 서비스 Key File 등록 매뉴얼**](http://img.cafe24.com/manual/TechFiles/cloud\_tech\_support\_public\_key\_registration\_manual.pdf)을 따라 키페어 등록을 진행해 주세요.&#x20;
+
+(2) "방화벽 접근 허용" 버튼을 클릭하여 엔지니어의 접근을 위한 방화벽을 허용합니다.&#x20;
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/fb03f3d2c759d2fba5e82476b196d25a_1673410599.jpg" alt=""><figcaption></figcaption></figure>
+
+
+
+방화벽이 활성화된 경우, 아래와 같이 보여집니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/c242f59fdeebb3f743958779e414c490_1673410620.jpg" alt=""><figcaption></figcaption></figure>
+
+
+
+
+
+## 5. 작업 승인하기
 
 1. &#x20; 담당 엔지니어가 작업 시작을 하기 위해서는 신청자의 작업 승인이 이뤄져야 합니다.
 2. &#x20; 우측 하단의 "작업 승인 확인" 버튼을 클릭하여 기술 지원 내역을 확인합니다.
