@@ -12,32 +12,32 @@ description: S3 Compatible API를 사용하여 오브젝트 스토리지를 사�
 
 따라서 지원되는 Amazon S3 기능은 다음과 같습니다.
 
-|          Feature          |   Status  |  Description |
-| :-----------------------: | :-------: | :----------: |
-|        List Buckets       | Supported |              |
-|       Delete Bucket       | Supported |              |
-|       Create Bucket       | Supported |              |
-|      Bucket Lifecycle     | Supported |              |
-|     Bucket Replication    |  Partial  | Zone 간에만 허용됨 |
-| Policy (Buckets, Objects) | Supported |              |
-|       Bucket Website      | Supported |              |
-|   Bucket ACLs (Get, Put)  | Supported |              |
-|      Bucket Location      | Supported |              |
-|    Bucket Notification    | Supported |              |
-|   Bucket Object Versions  | Supported |              |
-|   Get Bucket Info (HEAD)  | Supported |              |
-|   Bucket Request Payment  | Supported |              |
-|         Put Object        | Supported |              |
-|       Delete Object       | Supported |              |
-|         Get Object        | Supported |              |
-|   Object ACLs (Get, Put)  | Supported |              |
-|   Get Object Info (HEAD)  | Supported |              |
-|        POST Object        | Supported |              |
-|        Copy Object        | Supported |              |
-|     Multipart Uploads     | Supported |              |
-|       Object Tagging      | Supported |              |
-|       Bucket Tagging      | Supported |              |
-|       Storage Class       | Supported |              |
+|          Feature          |   Status  |   Description   |
+| :-----------------------: | :-------: | :-------------: |
+|        List Buckets       | Supported |                 |
+|       Delete Bucket       | Supported |                 |
+|       Create Bucket       | Supported |                 |
+|      Bucket Lifecycle     | Supported |                 |
+|     Bucket Replication    |  Partial  | Zone 간에만 허용됩니다. |
+| Policy (Buckets, Objects) | Supported |                 |
+|       Bucket Website      | Supported |                 |
+|   Bucket ACLs (Get, Put)  | Supported |                 |
+|      Bucket Location      | Supported |                 |
+|    Bucket Notification    | Supported |                 |
+|   Bucket Object Versions  | Supported |                 |
+|   Get Bucket Info (HEAD)  | Supported |                 |
+|   Bucket Request Payment  | Supported |                 |
+|         Put Object        | Supported |                 |
+|       Delete Object       | Supported |                 |
+|         Get Object        | Supported |                 |
+|   Object ACLs (Get, Put)  | Supported |                 |
+|   Get Object Info (HEAD)  | Supported |                 |
+|        POST Object        | Supported |                 |
+|        Copy Object        | Supported |                 |
+|     Multipart Uploads     | Supported |                 |
+|       Object Tagging      | Supported |                 |
+|       Bucket Tagging      | Supported |                 |
+|       Storage Class       | Supported |                 |
 
 
 
@@ -452,10 +452,10 @@ GET /{bucket}?uploads에 대한 매개변수를 지정할 수 있지만 필수�
 |                `Key`                |   String  |                      멀티파트 업로드가 완료되면 객체의 키가 됩니다.                      |
 |              `UploadId`             |   String  |                         멀티파트 업로드를 식별하는 ID입니다.                        |
 |             `Initiator`             | Container |                 업로드를 시작한 사용자의 ID와 DisplayName을 포함합니다.                |
-|            `DisplayName`            |   String  |                         개시자의 Display name입니다.                        |
-|                 `ID`                |   String  |                              개시자의 ID입니다.                             |
+|            `DisplayName`            |   String  |                         게시자의 Display name입니다.                        |
+|                 `ID`                |   String  |                              게시자의 ID입니다.                             |
 |               `Owner`               | Container |            업로드된 객체를 소유한 사용자의 ID 및 DisplayName에 대한 컨테이너입니다.           |
-|            `StorageClass`           |   String  |         결과 객체를 저장하는 데 사용되는 메서드입니다. 표준 또는 REDUCED\_REDUNDANCY         |
+|            `StorageClass`           |   String  |        결과 객체를 저장하는 데 사용되는 메서드로, 표준 또는 REDUCED\_REDUNDANCY 입니다.       |
 |             `Initiated`             |    Date   |                       사용자가 업로드를 시작한 날짜와 시간입니다.                       |
 |           `CommonPrefixes`          | Container |                  여러 객체에 동일한 접두사가 포함된 경우 이 목록에 나타납니다.                 |
 |       `CommonPrefixes.Prefix`       |   String  |                 접두사 요청 매개변수로 정의된 접두사 뒤의 키 하위 문자열입니다.                 |
@@ -485,9 +485,9 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 |        Name      |          Description          |                             Valid Values                            | Required |
 | :--------------: | :---------------------------: | :-----------------------------------------------------------------: | :------: |
-|    content-md5   | 메시지의 base64로 인코딩된 MD-5 해시입니다. |                      문자열 (기본값이 아님. 제약 조건이 없음.)                      |    No    |
+|    content-md5   | 메시지의 base64로 인코딩된 MD-5 해시입니다. |                       문자열 (기본값 아님. 제약 조건 없음.)                       |    No    |
 |   content-type   |         표준 MIME 유형입니다.        |                모든 MIME 유형 (기본값: binary/octet-stream)                |    No    |
-| x-amz-meta-<...> |   사용자 메타데이터로, 개체와 함께 저장됩니다.   |                        최대 8KB의 문자열 (기본값이 아님.)                       |    No    |
+| x-amz-meta-<...> |   사용자 메타데이터로, 개체와 함께 저장됩니다.   |                        최대 8KB의 문자열 (기본값 아님.)                        |    No    |
 |     x-amz-acl    |  이미 사용할 수 있도록 만들어져 있는 ACL입니다. | `private`, `public-read`, `public-read-write`, `authenticated-read` |    No    |
 
 
@@ -675,9 +675,9 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 |       Name       |          Description          |                             Valid Values                            | Required |
 | :--------------: | :---------------------------: | :-----------------------------------------------------------------: | :------: |
-|    content-md5   | 메시지의 base64로 인코딩된 MD-5 해시입니다. |                      문자열 (기본값이 아님. 제약 조건이 없음.)                      |    No    |
+|    content-md5   | 메시지의 base64로 인코딩된 MD-5 해시입니다. |                       문자열 (기본값 아님. 제약 조건 없음.)                       |    No    |
 |   content-type   |         표준 MIME 유형입니다.        |                모든 MIME 유형 (기본값: binary/octet-stream)                |    No    |
-| x-amz-meta-<...> |   사용자 메타데이터로, 개체와 함께 저장됩니다.   |                        최대 8KB의 문자열 (기본값이 아님.)                       |    No    |
+| x-amz-meta-<...> |   사용자 메타데이터로, 개체와 함께 저장됩니다.   |                        최대 8KB의 문자열 (기본값 아님.)                        |    No    |
 |     x-amz-acl    |  이미 사용할 수 있도록 만들어져 있는 ACL입니다. | `private`, `public-read`, `public-read-write`, `authenticated-read` |    No    |
 
 * Response Entities
@@ -685,7 +685,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 |                Name               |    Type   |                  Description                  |
 | :-------------------------------: | :-------: | :-------------------------------------------: |
 | `InitiatedMultipartUploadsResult` | Container |                  결과 컨테이너입니다.                  |
-|              `Bucket`             |   String  |              객체 콘텐츠를 수신하는 버킷입니다.              |
+|              `Bucket`             |   String  |              객체 컨텐츠를 수신하는 버킷입니다.              |
 |               `Key`               |   String  |             키 요청 매개변수에서 지정한 키입니다.             |
 |             `UploadId`            |   String  | 멀티파트 업로드를 식별하는 upload-id 요청 매개 변수로 지정된 ID입니다. |
 
@@ -737,11 +737,11 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 |                `ID`               |   String  |                            게시자의 ID입니다.                           |
 |           `DisplayName`           |   String  |                          게시자의 표시 이름입니다.                          |
 |              `Owner`              | Container |          업로드된 개체를 소유한 사용자의 ID 및 DisplayName에 대한 컨테이너입니다.         |
-|           `StorageClass`          |   String  |   결과 객체를 저장하는 데 사용되는 메서로,`STANDARD` 또는 REDUCED\_REDUNDANCY 입니다.  |
+|           `StorageClass`          |   String  |  결과 객체를 저장하는 데 사용되는 메서드로,`STANDARD` 또는 REDUCED\_REDUNDANCY 입니다.  |
 |         `PartNumberMarker`        |   String  |      IsTruncated가 true인 경우 후속 요청에서 사용할 파트 마커입니다. 목록에 선행합니다.      |
 |       `NextPartNumberMarker`      |   String  |     IsTruncated가 true인 경우 후속 요청에서 사용할 다음 파트 마커입니다. 목록의 끝입니다.     |
 |             `MaxParts`            |  Integer  |           max-parts 요청 매개변수에 지정된 대로 응답에 허용되는 최대 파트입니다.           |
-|           `IsTruncated`           |  Boolean  |                true인 경우 객체 업로드 콘텐츠의 하위 집합만 반환됩니다.                |
+|           `IsTruncated`           |  Boolean  |                true인 경우 객체 업로드 컨텐츠의 하위 집합만 반환됩니다.                |
 |               `Part`              | Container | Key, Part, InitiatorOwner, StorageClass 및 Initiated 요소의 컨테이너입니다. |
 |            `PartNumber`           |  Integer  |                           파트의 식별 번호입니다.                          |
 |               `ETag`              |   String  |                          파트의 엔터티 태그입니다.                          |
