@@ -267,10 +267,11 @@ $ systemctl status mysqld
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-<pre class="language-shell-session"><code class="lang-shell-session">$ sudo systemctl start mysql
+```shell-session
+$ sudo systemctl start mysql
 $ sudo systemctl enable mysql
-<strong>$ systemctl status mysql
-</strong></code></pre>
+$ systemctl status mysql
+```
 {% endtab %}
 {% endtabs %}
 
