@@ -27,6 +27,7 @@
     * [웹서버 성능 튜닝 방법](server/server/config/tuning.md)
   * [가상서버 문제 해결 방법](server/server/solution/README.md)
     * [접속 오류 해결 방법](server/server/solution/disconnect.md)
+  * [가상서버 지원 종료](server/server/eol.md)
 * [가상서버 스냅샷](server/snapshot/README.md)
   * [가상서버 스냅샷 사용 방법](server/snapshot/use.md)
 * [오토스케일](server/autoscale/README.md)
