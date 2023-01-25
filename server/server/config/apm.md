@@ -185,9 +185,10 @@ $ sudo systemctl restart apache2
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
-<pre class="language-shell-session"><code class="lang-shell-session">$ yum info php-*
-<strong>$ sudo yum install php-mysqlnd
-</strong></code></pre>
+```shell-session
+$ yum info php-*
+$ sudo yum install php-mysqlnd
+```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
@@ -282,15 +283,16 @@ root 계정의 임시 비밀번호를 확인한 후, MySQL에 접속합니다.
 ```shell-session
 $ sudo grep 'temporary password' /var/log/mysqld.log
 2022-10-05T06:33:51.116320Z 1 [Note] A temporary password is generated for root@localhost: y(>j2pun:AN/
+$ mysql -u root -p
 ```
-
-<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/24/74775ef1256a5a4ea21ec6827629a97b_1666570620.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
 {% tab title="Ubuntu" %}
 설정한 비밀번호를 입력하여 MySQL에 접속합니다.
 
-<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/24/6014468302035c3a5eebe429aa9c9e60_1666570641.png" alt=""><figcaption></figcaption></figure>
+```shell-session
+$ mysql -u root -p
+```
 {% endtab %}
 {% endtabs %}
 
@@ -424,7 +426,7 @@ centos 7의 경우 php를 설치하면 5.x 버전으로 설치됩니다.
 여기서는 php 7.4로 설치해보겠습니다.
 {% endhint %}
 
-```
+```shell-session
 $ sudo yum remove php*
 $ sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 $ sudo yum-config-manager --enable remi-php74
@@ -487,22 +489,11 @@ $ sudo apt-get install mariadb-server
 
 설치가 완료되었다면 MySQL 서비스를 구동한 후, active 상태인지 확인합니다.
 
-{% tabs %}
-{% tab title="CentOS / Rocky" %}
 ```shell-session
 $ sudo systemctl start mariadb
 $ sudo systemctl enable mariadb
 $ systemctl status mariadb
 ```
-{% endtab %}
-
-{% tab title="Ubuntu" %}
-<pre class="language-shell-session"><code class="lang-shell-session">$ sudo systemctl start mariadb
-$ sudo systemctl enable mariadb
-<strong>$ systemctl status mariadb
-</strong></code></pre>
-{% endtab %}
-{% endtabs %}
 
 그리고 MySQL에 접속해봅니다.
 
@@ -510,13 +501,17 @@ $ sudo systemctl enable mariadb
 {% tab title="CentOS / Rocky" %}
 초기에는 비밀번호가 없기 때문에 비밀번호 없이 MariaDB에 접속합니다.
 
-<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/05/45e0508c353cdd0e2c469fdf5b90cb6e_1664957229.png" alt=""><figcaption></figcaption></figure>
+```shell-session
+$ mysql -u root
+```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
 초기에는 비밀번호가 없기 때문에 비밀번호 없이 root 권한으로 MariaDB에 접속합니다.
 
-<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/05/997d367c812c91bb66f4d9482e97f295_1664957273.png" alt=""><figcaption></figcaption></figure>
+```shell-session
+$ sudo mysql -u root
+```
 {% endtab %}
 {% endtabs %}
 
@@ -565,8 +560,6 @@ MariaDB [(none)]> grant all privileges on test.* to 'test'@'%';
 
 그리고 PHP가 test 데이터베이스에 잘 접속하는지 확인하는 test.php 파일을 /var/www/html 디렉터리에 생성합니다.
 
-{% tabs %}
-{% tab title="CentOS / Rocky" %}
 ```shell-session
 $ sudo vi /var/www/html/test.php
 <?php
@@ -580,24 +573,6 @@ echo "success!";
 ?>
 $ sudo systemctl restart httpd
 ```
-{% endtab %}
-
-{% tab title="Second Tab" %}
-```shell-session
-$ sudo vi /var/www/html/test.php
-<?php
-error_reporting(E_ALL);
-ini_set("display_errors",1);
-$con = mysqli_connect("localhost","test","test 계정의 비밀번호","test");
-if(!$con) {
-                die ("fail: ".mysqli_connect_error());
-}
-echo "success!";
-?>
-$ sudo systemctl restart httpd
-```
-{% endtab %}
-{% endtabs %}
 
 **http://가상서버의 공인 IP/test.php**로 접속하여 PHP와 MariaDB가 잘 연동되는지 확인합니다.
 
