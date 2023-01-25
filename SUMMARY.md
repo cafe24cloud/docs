@@ -74,3 +74,4 @@
 
 * [기술지원](managed/technical/README.md)
   * [기술지원 신청 방법](managed/technical/create.md)
+  * [기술지원 Key File 등록 방법](managed/technical/keyfile.md)
