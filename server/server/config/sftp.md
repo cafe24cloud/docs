@@ -42,7 +42,7 @@ SFTP는 SSH 방식으로 동작하기 때문에 기본적으로 22번 포트를 
 
 방화벽 설정에 대한 자세한 내용은 [가상서버에 방화벽 연결과 설정은 어떻게 하나요? ](../../../security/security/config.md)을 참고해 주세요.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -60,7 +60,7 @@ FileZilla를 실행한 뒤, 왼쪽 상단의 사이트 관리자 아이콘을 �
 
 사이트 관리자에서 New Site 버튼을 클릭하여 호스트를 추가해 주세요.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

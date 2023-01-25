@@ -44,7 +44,7 @@ $ npm install @aws-sdk/client-s3
 
 인증 파일을 생성하여 Access Key와 Secret Key를 등록합니다.
 
-자세한 정보는 [Loading credentials in Node.js from the shared credentials file](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/loading-node-credentials-shared.html)에서 확인할 수 있습니다.
+자세한 정보는 [<mark style="color:blue;">Loading credentials in Node.js from the shared credentials file</mark>](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/loading-node-credentials-shared.html)에서 확인할 수 있습니다.
 
 인증 파일의 기본 경로는 "\~/.aws/credentials"입니다.
 

@@ -1,18 +1,18 @@
 ---
-description: AWS Javascript SDK를 사용하여 오브젝트 스토리지를 사용하는 방법은 다음과 같습니다.
+description: AWS Python SDK를 사용하여 오브젝트 스토리지를 사용하는 방법은 다음과 같습니다.
 ---
 
 # AWS Python SDK 사용 방법
 
-## 1. AWS Javascript v3 S3 SDK 사용하기
+## 1. AWS Python S3 SDK 사용하기
 
-AWS Javascript v3 S3 SDK는 AWS에서 Javascript 코드를 통해 S3를 이용할 수 있도록 제공하는 도구입니다.&#x20;
+AWS Python S3 SDK는 AWS에서 Python 코드를 통해 S3를 이용할 수 있도록 제공하는 도구입니다.&#x20;
 
 카페24 클라우드의 오브젝트 스토리지는 S3 API와 호환이 되므로 해당 SDK 사용이 가능합니다.&#x20;
 
-|                                                매뉴얼 테스트 버전                                                |                                                                                                                                          Javascript v3 S3 SDK 참고 링크                                                                                                                                         |
-| :------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| <p>AWS Javascript SDK version : 3.231.0 </p><p>Node.js version : 14.17.1</p><p>Npm version : 6.14.13</p> | <p>문서 : <a href="https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html">Developer guide - AWS SDK for Javascript 3.x</a></p><p>예제 : <a href="https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/javascript_s3_code_examples.html">Javascript v3 S3 examples</a></p> |
+|                            매뉴얼 테스트 버전                            |                                                                                                                  Python S3 SDK 참고 링크                                                                                                                  |
+| :--------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| <p>Boto3 version : boto3 1.6.19</p><p>Python version : 3.8.5</p> | <p>문서 : <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html">Boto3 S3 Docs</a></p><p>예제 : <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-examples.html">Amazon S3 examples</a></p> |
 
 
 
