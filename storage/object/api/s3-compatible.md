@@ -483,8 +483,6 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 * Request Headers
 
-
-
 |        Name      |          Description          |                             Valid Values                            | Required |
 | :--------------: | :---------------------------: | :-----------------------------------------------------------------: | :------: |
 |    content-md5   | 메시지의 base64로 인코딩된 MD-5 해시입니다. |                      문자열 (기본값이 아님. 제약 조건이 없음.)                      |    No    |
@@ -499,10 +497,33 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 객체를 복사하기 위해 PUT을 사용하고, 대상 버킷과 객체 이름을 지정합니다.
 
 * Syntax
+
+```shell
+PUT /{dest-bucket}/{dest-object} HTTP/1.1
+x-amz-copy-source: {source-bucket}/{source-object}
+Host: kr.cafe24obs.com
+    
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
 * Request Headers
+
+|              Name              |           Description           |                             Valid Values                            | Required |
+| :----------------------------: | :-----------------------------: | :-----------------------------------------------------------------: | :------: |
+|        x-amz-copy-source       |       소스 버킷 이름과 객체 이름입니다.       |                            {bucket}/{obj}                           |    Yes   |
+|            x-amz-acl           |   이미 사용할 수 있도록 만들어져 있는 ACL입니다.  | `private`, `public-read`, `public-read-write`, `authenticated-read` |    No    |
+|  x-amz-copy-if-modified-since  |     타임스탬프 이후 수정된 경우에만 복사합니다.    |                              Timestamp                              |    No    |
+| x-amz-copy-if-unmodified-since |   타임스탬프 이후 수정되지 않은 경우에만 복사합니다.  |                              Timestamp                              |    No    |
+|       x-amz-copy-if-match      | 객체 ETag가 ETag와 일치하는 경우에만 복사합니다. |                              Entity Tag                             |    No    |
+|    x-amz-copy-if-none-match    |   객체 ETag가 일치하지 않는 경우에만 복사합니다.  |                              Entity Tag                             |    No    |
+
 * Response Entities
 
-
+|       Name       |    Type   |      Description     |
+| :--------------: | :-------: | :------------------: |
+| CopyObjectResult | Container |    응답 요소의 컨테이너입니다.   |
+|   LastModified   |    Date   | 원본 객체의 마지막 수정 날짜입니다. |
+|       Etag       |   String  |    새 객체의 ETag입니다.    |
 
 
 
@@ -514,7 +535,12 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 * Syntax
 
+```shell
+DELETE /{bucket}/{object} HTTP/1.1
+Host: kr.cafe24obs.com 
 
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
 
 
 
@@ -523,10 +549,29 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 버킷에서 객체를 검색합니다.
 
 * Syntax
+
+```shell
+GET /{bucket}/{object} HTTP/1.1
+Host: kr.cafe24obs.com     
+
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
 * Request Headers
-* Response Entities
 
+|         Name        |           Description           |          Valid Values          | Required |
+| :-----------------: | :-----------------------------: | :----------------------------: | :------: |
+|        range        |          검색할 개체의 범위입니다.         | Range: bytes=beginbyte-endbyte |    No    |
+|  if-modified-since  |     타임스탬프 이후 수정된 경우에만 가져옵니다.    |            Timestamp           |    No    |
+| if-unmodified-since |   타임스탬프 이후 수정되지 않은 경우에만 가져옵니다.  |            Timestamp           |    No    |
+|       if-match      | 객체 ETag가 ETag와 일치하는 경우에만 가져옵니다. |           Entity Tag           |    No    |
+|    if-none-match    | 객체 ETag가 ETag와 일치하는 경우에만 가져옵니다. |           Entity Tag           |    No    |
 
+* Response Headers
+
+|      Name     |               Description              |
+| :-----------: | :------------------------------------: |
+| Content-Range | 데이터 범위로, 범위 헤더 필드가 요청에 지정된 경우에만 반환됩니다. |
 
 
 
@@ -537,7 +582,23 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 이 요청은 Get Object 요청과 동일한 헤더 정보를 반환하지만, 객체 데이터 페이로드가 아닌 메타데이터만 포함합니다.
 
 * Syntax
+
+```shell
+HEAD /{bucket}/{object} HTTP/1.1
+Host: kr.cafe24obs.com     
+
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
 * Request Headers
+
+|         Name        |           Description           |          Valid Values          | Required |
+| :-----------------: | :-----------------------------: | :----------------------------: | :------: |
+|        range        |          검색할 개체의 범위입니다.         | Range: bytes=beginbyte-endbyte |    No    |
+|  if-modified-since  |     타임스탬프 이후 수정된 경우에만 가져옵니다.    |            Timestamp           |    No    |
+| if-unmodified-since |   타임스탬프 이후 수정되지 않은 경우에만 가져옵니다.  |            Timestamp           |    No    |
+|       if-match      | 객체 ETag가 ETag와 일치하는 경우에만 가져옵니다. |           Entity Tag           |    No    |
+|    if-none-match    | 객체 ETag가 ETag와 일치하는 경우에만 가져옵니다. |           Entity Tag           |    No    |
 
 
 
@@ -546,11 +607,26 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 객체에 대한 ACL 검색합니다.
 
 * Syntax
+
+```shell
+GET /{bucket}/{object}?acl HTTP/1.1
+Host: kr.cafe24obs.com     
+
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
 * Response Entities
 
-
-
-
+|          Name         |    Type   |                Description               |
+| :-------------------: | :-------: | :--------------------------------------: |
+| `AccessControlPolicy` | Container |                응답 컨테이너입니다.               |
+|  `AccessControlList`  | Container |             ACL 정보의 컨테이너입니다.             |
+|        `Owner`        | Container |   객체 소유자의 ID 및 DisplayName에 대한 컨테이너입니다.  |
+|          `ID`         |   String  |              객체 소유자의 ID입니다.              |
+|     `DisplayName`     |   String  |             객체 소유자의 표시 이름입니다.            |
+|        `Grant`        | Container |     Grantee 및 Permission을 위한 컨테이너입니다.    |
+|       `Grantee`       | Container | 권한 있는 사용자의 DisplayName 및 ID에 대한 컨테이너입니다. |
+|      `Permission`     |   String  |          Grantee 객체에 부여된 권한입니다.          |
 
 
 
@@ -559,7 +635,26 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 기존 객체에 대한 ACL을 설정합니다.
 
 * Syntax
+
+```shell
+PUT /{bucket}/{object}?acl
+Host: kr.cafe24obs.com     
+
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
 * Response Entities
+
+|          Name         |    Type   |                Description               |
+| :-------------------: | :-------: | :--------------------------------------: |
+| `AccessControlPolicy` | Container |                응답 컨테이너입니다.               |
+|  `AccessControlList`  | Container |             ACL 정보의 컨테이너입니다.             |
+|        `Owner`        | Container |   객체 소유자의 ID 및 DisplayName에 대한 컨테이너입니다.  |
+|          `ID`         |   String  |              객체 소유자의 ID입니다.              |
+|     `DisplayName`     |   String  |             객체 소유자의 표시 이름입니다.            |
+|        `Grant`        | Container |     Grantee 및 Permission을 위한 컨테이너입니다.    |
+|       `Grantee`       | Container | 권한 있는 사용자의 DisplayName 및 ID에 대한 컨테이너입니다. |
+|      `Permission`     |   String  |          Grantee 객체에 부여된 권한입니다.          |
 
 
 
@@ -568,8 +663,31 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 멀티파트 업로드 프로세스를 시작합니다.
 
 * Syntax
+
+```shell
+POST /{bucket}/{object}?uploads
+Host: kr.cafe24obs.com     
+
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
 * Request Headers
+
+|       Name       |          Description          |                             Valid Values                            | Required |
+| :--------------: | :---------------------------: | :-----------------------------------------------------------------: | :------: |
+|    content-md5   | 메시지의 base64로 인코딩된 MD-5 해시입니다. |                      문자열 (기본값이 아님. 제약 조건이 없음.)                      |    No    |
+|   content-type   |         표준 MIME 유형입니다.        |                모든 MIME 유형 (기본값: binary/octet-stream)                |    No    |
+| x-amz-meta-<...> |   사용자 메타데이터로, 개체와 함께 저장됩니다.   |                        최대 8KB의 문자열 (기본값이 아님.)                       |    No    |
+|     x-amz-acl    |  이미 사용할 수 있도록 만들어져 있는 ACL입니다. | `private`, `public-read`, `public-read-write`, `authenticated-read` |    No    |
+
 * Response Entities
+
+|                Name               |    Type   |                  Description                  |
+| :-------------------------------: | :-------: | :-------------------------------------------: |
+| `InitiatedMultipartUploadsResult` | Container |                  결과 컨테이너입니다.                  |
+|              `Bucket`             |   String  |              객체 콘텐츠를 수신하는 버킷입니다.              |
+|               `Key`               |   String  |             키 요청 매개변수에서 지정한 키입니다.             |
+|             `UploadId`            |   String  | 멀티파트 업로드를 식별하는 upload-id 요청 매개 변수로 지정된 ID입니다. |
 
 
 
@@ -578,9 +696,19 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 멀티파트 업로드를 사용하여 객체를 업로드합니다.
 
 * Syntax
+
+```shell
+PUT /{bucket}/{object}?partNumber=&uploadId= HTTP/1.1
+Host: kr.cafe24obs.com     
+                                                    
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
 * HTTP Response
 
-
+| HTTP Status |  Status Code |               Description              |
+| :---------: | :----------: | :------------------------------------: |
+|     404     | NoSuchUpload | 지정된 업로드 ID가 이 객체에서 시작된 업로드와 일치하지 않습니다. |
 
 
 
@@ -589,7 +717,35 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 특정 멀티파트 업로드를 위해 업로드된 파트를 나열합니다.
 
 * Syntax
+
+```shell
+GET /{bucket}/{object}?uploadId=123 HTTP/1.1
+Host: kr.cafe24obs.com     
+
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
 * Response Entities
+
+|                Name               |    Type   |                            Description                           |
+| :-------------------------------: | :-------: | :--------------------------------------------------------------: |
+| `InitiatedMultipartUploadsResult` | Container |                            결과 컨테이너입니다.                           |
+|              `Bucket`             |   String  |                        객체 컨텐츠를 수신하는 버킷입니다.                       |
+|               `Key`               |   String  |                       키 요청 매개변수에서 지정한 키입니다.                      |
+|             `UploadId`            |   String  |           멀티파트 업로드를 식별하는 upload-id 요청 매개 변수로 지정된 ID입니다.          |
+|            `Initiator`            | Container |               업로드를 시작한 사용자의 ID와 DisplayName을 포함합니다.              |
+|                `ID`               |   String  |                            게시자의 ID입니다.                           |
+|           `DisplayName`           |   String  |                          게시자의 표시 이름입니다.                          |
+|              `Owner`              | Container |          업로드된 개체를 소유한 사용자의 ID 및 DisplayName에 대한 컨테이너입니다.         |
+|           `StorageClass`          |   String  |   결과 객체를 저장하는 데 사용되는 메서로,`STANDARD` 또는 REDUCED\_REDUNDANCY 입니다.  |
+|         `PartNumberMarker`        |   String  |      IsTruncated가 true인 경우 후속 요청에서 사용할 파트 마커입니다. 목록에 선행합니다.      |
+|       `NextPartNumberMarker`      |   String  |     IsTruncated가 true인 경우 후속 요청에서 사용할 다음 파트 마커입니다. 목록의 끝입니다.     |
+|             `MaxParts`            |  Integer  |           max-parts 요청 매개변수에 지정된 대로 응답에 허용되는 최대 파트입니다.           |
+|           `IsTruncated`           |  Boolean  |                true인 경우 객체 업로드 콘텐츠의 하위 집합만 반환됩니다.                |
+|               `Part`              | Container | Key, Part, InitiatorOwner, StorageClass 및 Initiated 요소의 컨테이너입니다. |
+|            `PartNumber`           |  Integer  |                           파트의 식별 번호입니다.                          |
+|               `ETag`              |   String  |                          파트의 엔터티 태그입니다.                          |
+|               `Size`              |  Integer  |                          업로드된 파트의 크기입니다.                         |
 
 
 
@@ -598,8 +754,32 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 업로드된 부분을 조합하고, 새 개체를 생성하여 멀티파트 업로드를 완료합니다.
 
 * Syntax
+
+```shell
+POST /{bucket}/{object}?uploadId= HTTP/1.1
+Host: kr.cafe24obs.com     
+                                                    
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
 * Request Entities
+
+|            Name           |    Type   |           Description          | Required |
+| :-----------------------: | :-------: | :----------------------------: | :------: |
+| `CompleteMultipartUpload` | Container |    하나 이상의 파트로 구성된 컨테이너입니다다.    |    Yes   |
+|           `Part`          | Container | PartNumber 및 ETag에 대한 컨테이너입니다. |    Yes   |
+|        `PartNumber`       |  Integer  |           파트의 식별자입니다.          |    Yes   |
+|           `ETag`          |   String  |         파트의 엔터티 태그입니다.         |    Yes   |
+
 * Response Entities
+
+|              Name             |    Type   |      Description      |
+| :---------------------------: | :-------: | :-------------------: |
+| CompleteMultipartUploadResult | Container |      응답 컨테이너입니다.      |
+|            Location           |    URI    | 새 객체의 리소스 식별자(경로)입니다. |
+|             Bucket            |   String  |  새 객체가 포함된 버킷의 이름입니다. |
+|              Key              |   String  |       객체의 키입니다.       |
+|              ETag             |   String  |    새 객체의 엔터티 태그입니다.   |
 
 
 
@@ -609,3 +789,9 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 * Syntax
 
+```shell
+DELETE /{bucket}/{object}?uploadId= HTTP/1.1
+Host: kr.cafe24obs.com     
+
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
