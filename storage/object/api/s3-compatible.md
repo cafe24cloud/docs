@@ -767,7 +767,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 |            Name           |    Type   |           Description          | Required |
 | :-----------------------: | :-------: | :----------------------------: | :------: |
-| `CompleteMultipartUpload` | Container |    하나 이상의 파트로 구성된 컨테이너입니다다.    |    Yes   |
+| `CompleteMultipartUpload` | Container |     하나 이상의 파트로 구성된 컨테이너입니다.    |    Yes   |
 |           `Part`          | Container | PartNumber 및 ETag에 대한 컨테이너입니다. |    Yes   |
 |        `PartNumber`       |  Integer  |           파트의 식별자입니다.          |    Yes   |
 |           `ETag`          |   String  |         파트의 엔터티 태그입니다.         |    Yes   |
