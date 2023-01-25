@@ -247,9 +247,9 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 * Parameters
 
-|     Name    |  Description |                             Valid Values                            | Required |
-| :---------: | :----------: | :-----------------------------------------------------------------: | :------: |
-| `x-amz-acl` | Canned ACLs. | `private`, `public-read`, `public-read-write`, `authenticated-read` |    No    |
+|     Name    |   Description  |                             Valid Values                            | Required |
+| :---------: | :------------: | :-----------------------------------------------------------------: | :------: |
+| `x-amz-acl` | 미리 제공된 ACL입니다. | `private`, `public-read`, `public-read-write`, `authenticated-read` |    No    |
 
 * HTTP Response
 
