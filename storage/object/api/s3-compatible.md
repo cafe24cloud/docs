@@ -134,7 +134,7 @@ Host: kr.cafe24obs.com
 
 오브젝트 스토리지에 대한 요청은 인증되거나 인증되지 않을 수 있으며, 인증되지 않은 요청은 익명의 사용자에 의해 전송된다고 가정합니다.&#x20;
 
-요청을 인증하려면 요청에 ACCESS KEY와 HMAC(해시 기반 메시지 인증 코드)를 포함해야 합니다.
+요청을 인증하려면 아래와 같이 요청에 ACCESS KEY와 HMAC(해시 기반 메시지 인증 코드)를 포함해야 합니다.
 
 ```shell
 HTTP/1.1
@@ -253,10 +253,11 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 * HTTP Response
 
-<pre><code>- 버킷 이름이 고유하고 제약 조건 내에서 사용되지 않는 경우 작업이 성공합니다.
+```
+- 버킷 이름이 고유하고 제약 조건 내에서 사용되지 않는 경우 작업이 성공합니다.
 - 동일한 이름의 버킷이 이미 존재하고 사용자가 버킷 소유자인 경우 작업이 성공합니다.
-<strong>- 버킷 이름이 이미 사용 중인 경우 작업이 실패합니다.
-</strong></code></pre>
+- 버킷 이름이 이미 사용 중인 경우 작업이 실패합니다.
+```
 
 | HTTP Status |     Status Code     |        Description        |
 | :---------: | :-----------------: | :-----------------------: |
@@ -289,34 +290,322 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 #### (4) GET Bucket
 
+버킷 개체 목록을 반환합니다.
+
+* Syntax
+
+```shell
+GET /{bucket}?max-keys=25 HTTP/1.1
+Host: kr.cafe24obs.com
+
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
+* Parameters
+
+|     Name    |   Type  |            Description           |
+| :---------: | :-----: | :------------------------------: |
+|   `prefix`  |  String |      지정된 접두사가 포함된 객체만 반환합니다.     |
+| `delimiter` |  String | 접두사와 객체 이름의 나머지 부분 사이의 구분 기호입니다. |
+|   `marker`  |  String |       반환된 객체 목록의 시작 인덱스입니다.      |
+|  `max-keys` | Integer |   반환할 최대 키 수입니다. 기본값은 1000입니다.   |
+
+* HTTP Response
+
+| HTTP Status | Status Code | Description |
+| :---------: | :---------: | :---------: |
+|    `200`    |      OK     |  버킷을 검색합니다. |
+
+* Bucket Response Entities
+
+GET /{bucket}은 다음 필드가 버킷의 컨테이너를 반환합니다.
+
+|        Name        |    Type   |                    Description                   |
+| :----------------: | :-------: | :----------------------------------------------: |
+| `ListBucketResult` |   Entity  |                  객체 목록의 컨테이너입니다.                 |
+|       `Name`       |   String  |               컨텐츠가 반환되는 버킷의 이름입니다.               |
+|      `Prefix`      |   String  |                   객체 키의 접두사입니다.                  |
+|      `Marker`      |   String  |               반환된 객체 목록의 시작 인덱스입니다.              |
+|      `MaxKeys`     |  Integer  |                  반환되는 최대 키 수입니다.                 |
+|     `Delimiter`    |   String  | 설정된 경우 동일한 접두사를 가진 객체가 CommonPrefixes 목록에 나타납니다. |
+|    `IsTruncated`   |  Boolean  |          true인 경우 버킷 콘텐츠의 하위 집합만 반환됩니다.          |
+|  `CommonPrefixes`  | Container |        여러 개체에 동일한 접두사가 포함된 경우 이 목록에 나타납니다.       |
+
+* Object Response Entities
+
+ListBucketResult에는 객체가 포함되어 있으며, 각 객체는 Contents 컨테이너 내에 있습니다.
+
+|      Name      |   Type  |        Description       |
+| :------------: | :-----: | :----------------------: |
+|   `Contents`   |  Object |       객체의 컨테이너입니다.       |
+|      `Key`     |  String |         객체의 키입니다.        |
+| `LastModified` |   Date  |   객체의 마지막 수정 날짜/시간입니다.   |
+|     `ETag`     |  String | 객체의 MD-5 해시입니다. (엔티티 태그) |
+|     `Size`     | Integer |        객체의 크기입니다.        |
+| `StorageClass` |  String |  항상 STANDARD를 반환해야 합니다.  |
+
+
+
 #### (5) Get Bucket ACL
+
+버킷의 액세스 제어 목록을 검색합니다.&#x20;
+
+사용자는 버킷 소유자이거나 버킷에 대한 READ\_ACP 권한을 부여받아야 합니다.
+
+* Syntax
+
+```shell
+GET /{bucket}?acl HTTP/1.1
+Host: kr.cafe24obs.com
+
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
+* Response Entities
+
+|          Name         |    Type   |                Description               |
+| :-------------------: | :-------: | :--------------------------------------: |
+| `AccessControlPolicy` | Container |              응답에 대한 컨테이너입니다.             |
+|  `AccessControlList`  | Container |             ACL 정보의 컨테이너입니다.             |
+|        `Owner`        | Container |   버킷 소유자의 ID 및 DisplayName에 대한 컨테이너입니다.  |
+|          `ID`         |   String  |              버킷 소유자의 ID입니다.              |
+|     `DisplayName`     |   String  |             버킷 소유자의 표시 이름입니다.            |
+|        `Grant`        | Container |     Grantee 및 Permission을 위한 컨테이너입니다.    |
+|       `Grantee`       | Container | 권한 있는 사용자의 DisplayName 및 ID에 대한 컨테이너입니다. |
+|      `Permission`     |   String  |          Grantee 버킷에 부여된 권한입니다.          |
+
+
 
 #### (6) PUT Bucket ACL
 
+기존 버킷에 대한 액세스 제어 목록을 설정합니다.&#x20;
+
+사용자는 버킷 소유자이거나 버킷에 대한 WRITE\_ACP 권한이 부여되어야 합니다.
+
+* Syntax
+
+```shell
+PUT /{bucket}?acl HTTP/1.1
+Host: kr.cafe24obs.com
+
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
+* Request Entities
+
+|          Name         |    Type   |                  Description                 |
+| :-------------------: | :-------: | :------------------------------------------: |
+| `AccessControlPolicy` | Container |                요청에 대한 컨테이너입니다.               |
+|  `AccessControlList`  | Container |               ACL 정보의 컨테이너입니다.               |
+|        `Owner`        | Container |     버킷 소유자의 ID 및 DisplayName에 대한 컨테이너입니다.    |
+|          `ID`         |   String  |                버킷 소유자의 ID입니다.                |
+|     `DisplayName`     |   String  |               버킷 소유자의 표시 이름입니다.              |
+|        `Grant`        | Container |       Grantee 및 Permission을 위한 컨테이너입니다.      |
+|       `Grantee`       | Container | 권한 부여를 받는 사용자의 DisplayName 및 ID에 대한 컨테이너입니다. |
+|      `Permission`     |   String  |            Grantee 버킷에 부여된 권한입니다.            |
+
+
+
 #### (7) List Bucket Multipart Uploads
+
+GET /?uploads는 현재 진행 중인 멀티파트 업로드 목록을 반환합니다.
+
+즉, 애플리케이션이 멀티파트 업로드를 시작했지만, 아직 모든 업로드를 완료하지 않았습니다.
+
+* Syntax
+
+```shell
+GET /{bucket}?uploads HTTP/1.1
+Host: kr.cafe24obs.com
+
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
+* Parameters
+
+GET /{bucket}?uploads에 대한 매개변수를 지정할 수 있지만 필수는 아닙니다.
+
+|        Name        |   Type  |                            Description                            |
+| :----------------: | :-----: | :---------------------------------------------------------------: |
+|      `prefix`      |  String |                 키에 지정된 접두사가 포함된 진행 중인 업로드를 반환합니다.                 |
+|     `delimiter`    |  String |                  접두사와 개체 이름의 나머지 부분 사이의 구분 기호입니다.                 |
+|    `key-marker`    |  String |                         업로드 목록의 시작 마커입니다.                         |
+|     `max-keys`     | Integer |                 진행 중인 업로드의 최대 수입니다. 기본값은 1000입니다.                 |
+|    `max-uploads`   | Integer |          멀티파트 업로드의 최대 수입니다. 범위는 1-1000입니다. 기본값은 1000입니다.          |
+| `upload-id-marker` |  String | 키 마커가 지정되지 않은 경우 무시됩니다. ID 또는 그 뒤에 사전 순으로 나열할 첫 번째 업로드 ID를 지정합니다. |
+
+* Response Entities
+
+|                 Name                |    Type   |                              Description                             |
+| :---------------------------------: | :-------: | :------------------------------------------------------------------: |
+|     `ListMultipartUploadsResult`    | Container |                             결과 컨테이너입니다.                              |
+| `ListMultipartUploadsResult.Prefix` |   String  |                       접두사 요청 매개변수로 지정된 접두사입니다.                       |
+|               `Bucket`              |   String  |                          버킷 콘텐츠를 수신하는 버킷입니다.                         |
+|             `KeyMarker`             |   String  |                   key-marker 요청 매개변수로 지정된 키 마커입니다.                   |
+|           `UploadIdMarker`          |   String  |                 upload-id-marker 요청 매개변수로 지정된 마커입니다.                 |
+|           `NextKeyMarker`           |   String  |              IsTruncated가 true인 경우 후속 요청에서 사용할 키 마커입니다.              |
+|         `NextUploadIdMarker`        |   String  |            IsTruncated가 true인 경우 후속 요청에서 사용할 업로드 ID 마커입니다.           |
+|             `MaxUploads`            |  Integer  |                 max-uploads 요청 매개변수로 지정된 최대 업로드 수입니다.                |
+|             `Delimiter`             |   String  |           설정된 경우 동일한 접두사를 가진 개체가 CommonPrefixes 목록에 나타납니다.           |
+|            `IsTruncated`            |  Boolean  |                  true인 경우 버킷 업로드 콘텐츠의 하위 집합만 반환됩니다.                  |
+|               `Upload`              | Container | Key, UploadId, InitiatorOwner, StorageClass 및 Initiated 요소의 컨테이너입니다. |
+|                `Key`                |   String  |                      멀티파트 업로드가 완료되면 객체의 키가 됩니다.                      |
+|              `UploadId`             |   String  |                         멀티파트 업로드를 식별하는 ID입니다.                        |
+|             `Initiator`             | Container |                 업로드를 시작한 사용자의 ID와 DisplayName을 포함합니다.                |
+|            `DisplayName`            |   String  |                         개시자의 Display name입니다.                        |
+|                 `ID`                |   String  |                              개시자의 ID입니다.                             |
+|               `Owner`               | Container |            업로드된 객체를 소유한 사용자의 ID 및 DisplayName에 대한 컨테이너입니다.           |
+|            `StorageClass`           |   String  |         결과 객체를 저장하는 데 사용되는 메서드입니다. 표준 또는 REDUCED\_REDUNDANCY         |
+|             `Initiated`             |    Date   |                       사용자가 업로드를 시작한 날짜와 시간입니다.                       |
+|           `CommonPrefixes`          | Container |                  여러 객체에 동일한 접두사가 포함된 경우 이 목록에 나타납니다.                 |
+|       `CommonPrefixes.Prefix`       |   String  |                 접두사 요청 매개변수로 정의된 접두사 뒤의 키 하위 문자열입니다.                 |
+
+
+
+
 
 ## 4. Object Operation
 
 #### (1) Put Object
 
+버킷에 객체를 추가합니다.
+
+이 작업을 수행하려면 버킷에 대한 쓰기 권한이 있어야 합니다.
+
+* Syntax
+
+```shell
+PUT /{bucket}/{object} HTTP/1.1
+Host: kr.cafe24obs.com 
+
+Authorization: AWS {access-key}:{hash-of-header-and-secret}
+```
+
+* Request Headers
+
+
+
+|        Name      |          Description          |                             Valid Values                            | Required |
+| :--------------: | :---------------------------: | :-----------------------------------------------------------------: | :------: |
+|    content-md5   | 메시지의 base64로 인코딩된 MD-5 해시입니다. |                      문자열 (기본값이 아님. 제약 조건이 없음.)                      |    No    |
+|   content-type   |         표준 MIME 유형입니다.        |                모든 MIME 유형 (기본값: binary/octet-stream)                |    No    |
+| x-amz-meta-<...> |   사용자 메타데이터로, 개체와 함께 저장됩니다.   |                        최대 8KB의 문자열 (기본값이 아님.)                       |    No    |
+|     x-amz-acl    |  이미 사용할 수 있도록 만들어져 있는 ACL입니다. | `private`, `public-read`, `public-read-write`, `authenticated-read` |    No    |
+
+
+
 #### (2) Copy Object
+
+객체를 복사하기 위해 PUT을 사용하고, 대상 버킷과 객체 이름을 지정합니다.
+
+* Syntax
+* Request Headers
+* Response Entities
+
+
+
+
 
 #### (3) Remove Object
 
+개체를 제거합니다.
+
+포함하는 버킷에 설정된 WRITE 권한이 필요합니다.
+
+* Syntax
+
+
+
+
+
 #### (4) Get Object
+
+버킷에서 객체를 검색합니다.
+
+* Syntax
+* Request Headers
+* Response Entities
+
+
+
+
 
 #### (5) Get Object Info
 
+객체에 대한 정보를 반환합니다.&#x20;
+
+이 요청은 Get Object 요청과 동일한 헤더 정보를 반환하지만, 객체 데이터 페이로드가 아닌 메타데이터만 포함합니다.
+
+* Syntax
+* Request Headers
+
+
+
 #### (6) Get Object ACL
+
+객체에 대한 ACL 검색합니다.
+
+* Syntax
+* Response Entities
+
+
+
+
+
+
 
 #### (7) Set Object ACL
 
+기존 객체에 대한 ACL을 설정합니다.
+
+* Syntax
+* Response Entities
+
+
+
 #### (8) Initiate Multi-part Upload
+
+멀티파트 업로드 프로세스를 시작합니다.
+
+* Syntax
+* Request Headers
+* Response Entities
+
+
 
 #### (9) Multipart Upload Part
 
+멀티파트 업로드를 사용하여 객체를 업로드합니다.
+
+* Syntax
+* HTTP Response
+
+
+
+
+
 #### (10) List Multipart Upload Parts
+
+특정 멀티파트 업로드를 위해 업로드된 파트를 나열합니다.
+
+* Syntax
+* Response Entities
+
+
 
 #### (11) Complete Multipart Upload
 
+업로드된 부분을 조합하고, 새 개체를 생성하여 멀티파트 업로드를 완료합니다.
+
+* Syntax
+* Request Entities
+* Response Entities
+
+
+
 #### (12) Abort Multipart Upload
+
+멀티파트 업로드를 중단합니다.
+
+* Syntax
+
