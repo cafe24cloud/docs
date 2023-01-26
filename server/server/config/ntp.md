@@ -272,7 +272,7 @@ $ chronyc -a tracking
 
 출력 결과 예시는 다음과 같습니다.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
