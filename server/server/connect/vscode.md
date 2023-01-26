@@ -111,15 +111,11 @@ Host : 생성한 SSH 커넥션의 이름
 $ sudo sed -i $'s/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 ```
 
-
-
 접속할 계정의 패스워드를 설정합니다.
 
 ```shell-session
 $ sudo passwd 계정명
 ```
-
-
 
 SSH 데몬을 재시작 합니다.
 
@@ -143,7 +139,7 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 ④ 생성된 SSH Target 의 원격 접속 버튼을 클릭합니다.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -156,8 +152,6 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 새로운 VSCode window가 열리면 접속할 가상서버의 OS로 **Linux**를 선택합니다.
 
 <figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
-
-
 
 처음 접속하는 경우 fingerprint를 등록합니다.
 
