@@ -15,7 +15,7 @@
     * [SSH 키페어 접속 방법](server/server/connect/keypair.md)
     * [VSCode 접속 방법](server/server/connect/vscode.md)
   * [가상서버 사용 방법](server/server/use/README.md)
-    * [리소스 확인 방법](server/server/use/resource.md)
+    * [리소스 확인 및 증설 방법](server/server/use/resource.md)
     * [자동 스크립트 적용 방법](server/server/use/script.md)
     * [하드웨어 사양 변경 방법](server/server/use/spec.md)
   * [가상서버 구성 방법](server/server/config/README.md)

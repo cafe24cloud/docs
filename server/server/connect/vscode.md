@@ -28,7 +28,7 @@ VSCode를 이용해서 접속할 가상서버를 생성합니다.
 VSCode에서 SSH 접속을 하기 위해서는 해당 가상서버에서 Inbound 22번 포트가 허용되어야 합니다. [\[방화벽 설정방법\]](../../../security/security/config.md)&#x20;
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -54,11 +54,11 @@ VSCode를 연 다음, 다음 과정을 통해 가상서버 SSH 접속에 필요�
 
 F1 키를 눌러 명령어 입력창을 연 다음, **Remote-SSH: Open SSH Configuration File을** 입력합니다.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 업데이트할 SSH 설정 파일로 User 디렉터리 하위의 config 파일을 선택합니다.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -191,7 +191,7 @@ Ctrl + \`(backquote)으로 터미널을 열어 가상서버의 프롬포트가 �
 
 ③ **Install In SSH:HOST** 문구를 확인한 다음, 설치를 진행합니다.
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
 
 #### (2) 테스트 코드 구동
 
