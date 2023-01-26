@@ -69,20 +69,18 @@ F1 키를 눌러 명령어 입력창을 연 다음, **Remote-SSH: Open SSH Confi
 카페24클라우드는 보안상의 이유로 키페어 접속을 권장하며, 비밀번호 노출시 정보 유출 위험이 있어 패스워드 설정을 권장하지 않습니다.
 
 * [SSH Keypair 방식으로 접속](vscode.md#1-ssh-keypair)
-* [Password 방식으로 접속](https://console.cafe24.com/support/faq/view?idx=245#password)&#x20;
+* [Password 방식으로 접속](vscode.md#2-password)&#x20;
 
 #### (1) SSH Keypair 방식으로 접속
 
 가상서버를 생성할 때 다운로드된 .pem 확장자의 개인키 파일을 사용해 접속합니다.
-
-
 
 ① 접속할 가상머신의 정보를 입력하고, 파일을 저장합니다.
 
 Host : 생성한 SSH 커넥션의 이름
 
 * HostName : 가상머신의 공인 IP
-* User : 초기 사용자 계정 혹은 별도로 생성한 계정  [\[ 초기 사용자 계정 정보 \]](https://console.cafe24.com/support/faq/view?idx=245#username)
+* User : 초기 사용자 계정 혹은 별도로 생성한 계정  [\[ 초기 사용자 계정 정보 \]](vscode.md#undefined)
 * IdentityFile : 가상서버의 .pem 파일의 절대 경로
 
 ② 좌측 메뉴 하단에 생성된 원격 SSH 접속 메뉴를 클릭합니다.
@@ -109,7 +107,7 @@ Host : 생성한 SSH 커넥션의 이름
 
 패스워드 로그인을 허용하도록 SSH 설정 파일을 수정합니다.
 
-```
+```shell-session
 $ sudo sed -i $'s/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 ```
 
@@ -117,7 +115,7 @@ $ sudo sed -i $'s/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/s
 
 접속할 계정의 패스워드를 설정합니다.
 
-```
+```shell-session
 $ sudo passwd 계정명
 ```
 
@@ -125,7 +123,7 @@ $ sudo passwd 계정명
 
 SSH 데몬을 재시작 합니다.
 
-```
+```shell-session
 $ sudo systemctl restart sshd
 ```
 
@@ -137,7 +135,7 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 * Host : 생성한 SSH 커넥션의 이름
 * HostName : 가상머신의 공인 IP
-* User : 초기 사용자 계정 혹은 별도로 생성한 계정  [\[ 초기 사용자 계정 정보 \]](https://console.cafe24.com/support/faq/view?idx=245#username)
+* User : 초기 사용자 계정 혹은 별도로 생성한 계정  [\[ 초기 사용자 계정 정보 \]](vscode.md#undefined)
 
 ② 좌측 메뉴 하단에 생성된 원격 SSH 접속 메뉴를 클릭합니다.
 
