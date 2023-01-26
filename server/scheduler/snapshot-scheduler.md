@@ -40,7 +40,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 화면 우측 상단의 "**새로운 스케줄러 생성**"을 클릭합니다.&#x20;
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (3).png" alt=""><figcaption></figcaption></figure>
 
 스냅샷 스케줄러 생성 팝업에서 다음 항목을 확인하여 스케줄러를 생성합니다.
 
