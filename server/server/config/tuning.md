@@ -295,7 +295,7 @@ $ curl -sLf https://cloud-tech.cafe24.com/mpm | bash -
    4. RAM used by single httpd proc (avg) : 하나의 httpd 프로세스가 사용하는 메모리의 평균값
    5. RAM used by other processes (excepting httpd) : httpd 프로세스를 제외한 프로세스의 메모리 사용량
 4. 가상서버의 메모리 사용량을 고려한 MPM 튜닝 값
-   1. <mark style="color:red;">해당 값은 절대적인 값이 아니며, 충분한 테스트를 통해 적용되어야 합니다.</mark>&#x20;
+   1. <mark style="color:red;">**해당 값은 절대적인 값이 아니며, 충분한 테스트를 통해 적용되어야 합니다.**</mark>&#x20;
 
 <figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
