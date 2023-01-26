@@ -42,7 +42,7 @@ SFTP는 SSH 방식으로 동작하기 때문에 기본적으로 22번 포트를 
 
 방화벽 설정에 대한 자세한 내용은 [가상서버에 방화벽 연결과 설정은 어떻게 하나요? ](../../../security/security/config.md)을 참고해 주세요.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -84,7 +84,7 @@ FTP 서버 접속을 위한 정보를 입력합니다. 설정이 필요한 정�
 
 7. 키 파일 : **"찾아보기"** 버튼을 클릭하여 해당 서버에 대한 키파일을 등록합니다.
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
