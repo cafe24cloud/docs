@@ -115,13 +115,13 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 ⑥ **블록 스토리지 스냅샷 정보** : 해당 가상서버 스냅샷에 연결된 블록 스토리지 스냅샷을 확인합니다.
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 블록 스토리지 스냅샷의 "**보기**" 버튼을 클릭하여 함께 생성된 블록 스토리지 스냅샷을 확인할 수 있습니다.
 
 블록 스토리지 스냅샷명은 "snapshot for 대상가상서버-생성일시(MMDDhhmm)"로 생성됩니다.
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -131,7 +131,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 #### (1) 스냅샷 보관하기
 
-**콘솔 > 서버 > 스냅샷 스케줄러 > 생성된 스냅샷**
+<mark style="color:blue;">콘솔 > 서버 > 스냅샷 스케줄러 > 생성된 스냅샷</mark>
 
 스냅샷 스케줄러는 설정한 최대 저장 개수에 도달하면 가장 먼저 생성된 스냅샷을 삭제하고 새로운 스냅샷을 생성합니다.
 
@@ -141,18 +141,49 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 보관할 스냅샷을 선택한 후 하단의 "**선택 보관**" 버튼을 클릭합니다.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 
 
 보관할 스냅샷을 확인한 후, 보관 버튼을 클릭합니다.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+선택 보관한 스냅샷은 각각 **가상서버 스냅샷**과 **블록 스토리지 스냅샷** 메뉴로 이동합니다.
+
+각 메뉴에 영구 보관된 후에 서비스를 실제로 사용 가능합니다.
+
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+
+#### (2) 스냅샷 삭제하기
+
+<mark style="color:blue;">콘솔 > 서버 > 스냅샷 스케줄러 > 생성된 스냅샷</mark>
+
+사용하지 않는 가상서버 스냅샷을 선택하여 삭제할 수 있습니다.&#x20;
+
+삭제할 가상서버 스냅샷을 선택한 후 하단의 "**선택 삭제**" 버튼을 클릭합니다.
+
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+
+삭제할 스냅샷을 확인한 후, 비밀번호 인증을 하고 삭제 버튼을 클릭합니다.
+
+<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 
 
-1. 선택 보관한 스냅샷은 각각 **가상서버 스냅샷**과 **블록 스토리지 스냅샷** 메뉴로 이동합니다.
-2. 각 메뉴에 영구 보관된 후에 서비스를 실제로 사용 가능합니다.
 
 
+### 5. 스냅샷 스케줄러 삭제하기
+
+<mark style="color:blue;">콘솔 > 서버 > 스냅샷 스케줄러 > 상세정보</mark>
+
+삭제할 스냅샷 스케줄러를 클릭한 다음, "**상세정보**" 탭에서 "**삭제**" 버튼을 클릭합니다.
+
+스케줄러를 삭제하면 스케줄링 되어 있는 스냅샷은 전부 영구적으로 보관됩니다. 이때 보관하는 스냅샷은 기존 스냅샷 최대 생성 개수의 영향을 받지 않습니다.
+
+보관된 스냅샷은 종류에 따라 가상서버 스냅샷과 블록 스토리지 스냅샷 메뉴에서 확인 가능합니다.
+
+선택 보관된 스냅샷은 수동 삭제하지 않는 한 과금되기 때문에 필요에 따라 관리하는 것을 권장합니다.
+
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 

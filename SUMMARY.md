@@ -9,7 +9,7 @@
 ## 서버 <a href="#server" id="server"></a>
 
 * [가상서버](server/server/README.md)
-  * [가상서버 통합 매뉴얼](server/server/undefined.md)
+  * [가상서버 통합 매뉴얼](server/server/total.md)
   * [가상서버 생성 방법](server/server/create.md)
   * [가상서버 접속 방법](server/server/connect/README.md)
     * [SSH 키페어 접속 방법](server/server/connect/keypair.md)
@@ -34,7 +34,7 @@
 * [오토스케일](server/autoscale/README.md)
   * [오토스케일 사용 방법](server/autoscale/use.md)
 * [스냅샷 스케줄러](server/scheduler/README.md)
-  * [스냅샷 스케줄러 사용 방법](server/scheduler/use.md)
+  * [스냅샷 스케줄러 사용 방법](server/scheduler/snapshot-scheduler.md)
 
 ## 스토리지 <a href="#storage" id="storage"></a>
 
