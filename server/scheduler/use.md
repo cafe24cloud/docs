@@ -87,7 +87,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 스냅샷 스케줄러가 등록된 타켓 가상서버를 삭제하기 위해서는 스케줄러를 먼저 삭제해야 합니다.
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -121,7 +121,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 블록 스토리지 스냅샷명은 "snapshot for 대상가상서버-생성일시(MMDDhhmm)"로 생성됩니다.
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -141,13 +141,13 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 보관할 스냅샷을 선택한 후 하단의 "**선택 보관**" 버튼을 클릭합니다.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 
 
 보관할 스냅샷을 확인한 후, 보관 버튼을 클릭합니다.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 
 

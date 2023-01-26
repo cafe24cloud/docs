@@ -444,7 +444,7 @@ $ ntpq -p
 
 결과 예시는 다음과 같습니다.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### (6) 서버 시간 확인하기
 
