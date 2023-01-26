@@ -1,5 +1,5 @@
 ---
-description: '''스냅샷 스케줄러는 어떻게 이용하나요?'' 매뉴얼'
+description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주기로 가상서버 스냅샷을 자동 생성하는 방법을 설명합니다.
 ---
 
 # 스냅샷 스케줄러 사용 방법
@@ -71,7 +71,9 @@ description: '''스냅샷 스케줄러는 어떻게 이용하나요?'' 매뉴얼
 
 가상서버 스냅샷과 블록 스토리지 스냅샷의 개수가 과금에 영향을 주기 때문에, 필요한 만큼의 저장개수를 설정하는 것을 권장합니다.
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+
+
 
 
 
@@ -85,21 +87,19 @@ description: '''스냅샷 스케줄러는 어떻게 이용하나요?'' 매뉴얼
 
 스냅샷 스케줄러가 등록된 타켓 가상서버를 삭제하기 위해서는 스케줄러를 먼저 삭제해야 합니다.
 
-![](<../../.gitbook/assets/image (6).png>)
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
-(2) 생성된 스냅샷 조회하기
+#### (2) 생성된 스냅샷 조회하기
 
-**콘솔 > 서버 > 스냅샷 스케줄러 > 생성된 스냅샷**
+<mark style="color:blue;">콘솔 > 서버 > 스냅샷 스케줄러 > 생성된 스냅샷</mark>
 
 생성된 스냅샷 스케줄러를 클릭한 다음, "**생성된 스냅샷**" 탭에서 스냅샷 리스트를 확인할 수 있습니다.
 
 스냅샷 스케줄러는 설정한 최대 저장 개수에 도달하면 가장 먼저 생성된 스냅샷을 삭제하고 새로운 스냅샷을 생성합니다.
 
 삭제된 스냅샷은 복구되지 않습니다. 특정 가상서버 스냅샷을 영구 저장하기 위해서는 "**선택 보관**" 기능을 사용합니다.
-
-
 
 
 
@@ -117,17 +117,42 @@ description: '''스냅샷 스케줄러는 어떻게 이용하나요?'' 매뉴얼
 
 <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-
-
-1.
-
 블록 스토리지 스냅샷의 "**보기**" 버튼을 클릭하여 함께 생성된 블록 스토리지 스냅샷을 확인할 수 있습니다.
 
 블록 스토리지 스냅샷명은 "snapshot for 대상가상서버-생성일시(MMDDhhmm)"로 생성됩니다.
 
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 
 
+
+
+## 4. 스케줄러로 생성된 스냅샷 관리하기
+
+#### (1) 스냅샷 보관하기
+
+**콘솔 > 서버 > 스냅샷 스케줄러 > 생성된 스냅샷**
+
+스냅샷 스케줄러는 설정한 최대 저장 개수에 도달하면 가장 먼저 생성된 스냅샷을 삭제하고 새로운 스냅샷을 생성합니다.
+
+특정 스냅샷을 실질적으로 사용하거나 영구 보관하기 위해서는 별도로 보관하여야 합니다.
+
+스냅샷 스케줄러로 생성한 스냅샷이 보관될 때는 기존 스냅샷 쿼터의 영향을 받지 않습니다.
+
+보관할 스냅샷을 선택한 후 하단의 "**선택 보관**" 버튼을 클릭합니다.
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+
+
+보관할 스냅샷을 확인한 후, 보관 버튼을 클릭합니다.
+
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+
+
+1. 선택 보관한 스냅샷은 각각 **가상서버 스냅샷**과 **블록 스토리지 스냅샷** 메뉴로 이동합니다.
+2. 각 메뉴에 영구 보관된 후에 서비스를 실제로 사용 가능합니다.
 
 
 

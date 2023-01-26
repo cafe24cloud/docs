@@ -84,7 +84,7 @@ FTP 서버 접속을 위한 정보를 입력합니다. 설정이 필요한 정�
 
 7. 키 파일 : **"찾아보기"** 버튼을 클릭하여 해당 서버에 대한 키파일을 등록합니다.
 
-<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
