@@ -24,7 +24,7 @@
     * [SFTP 구성 방법](server/server/config/sftp.md)
     * [Docker 구성 방법](server/server/config/docker.md)
     * [NFS 구성 방법](server/server/config/nfs.md)
-    * [웹서버 성능 튜닝 방법](server/server/config/tuning.md)
+    * [Apache 웹서버 성능 튜닝 방법](server/server/config/tuning.md)
   * [가상서버 문제 해결 방법](server/server/solution/README.md)
     * [접속 오류 해결 방법](server/server/solution/disconnect.md)
   * [가상서버 지원 종료](server/server/eol.md)

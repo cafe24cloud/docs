@@ -23,7 +23,7 @@ NFS(Network File System)를 사용하면 원격 호스트에서 네트워크를 
 먼저 등록된 저장소 내 패키지 정보를 최신으로 업데이트한 후, nfs 패키지 설치를 진행합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rokcy" %}
+{% tab title="CentOS / Rocky" %}
 ```shell-session
 $ sudo yum update
 $ sudo yum install nfs-utils
@@ -41,7 +41,7 @@ $ sudo apt-get install nfs-kernel-server
 설치가 완료되었다면 nfs 서비스를 구동한 후, active 상태인지 확인합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rokcy" %}
+{% tab title="CentOS / Rocky" %}
 ```shell-session
 $ sudo systemctl start nfs-server
 $ sudo systemctl enable nfs-server
