@@ -121,7 +121,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 블록 스토리지 스냅샷명은 "snapshot for 대상가상서버-생성일시(MMDDhhmm)"로 생성됩니다.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (3).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -141,19 +141,19 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 보관할 스냅샷을 선택한 후 하단의 "**선택 보관**" 버튼을 클릭합니다.
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
 보관할 스냅샷을 확인한 후, 보관 버튼을 클릭합니다.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 선택 보관한 스냅샷은 각각 **가상서버 스냅샷**과 **블록 스토리지 스냅샷** 메뉴로 이동합니다.
 
 각 메뉴에 영구 보관된 후에 서비스를 실제로 사용 가능합니다.
 
-<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 #### (2) 스냅샷 삭제하기
 
