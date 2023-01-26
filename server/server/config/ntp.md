@@ -39,6 +39,8 @@ $ date
 Thu Feb 18 13:21:22 KST 2021
 ```
 
+
+
 #### (4) 원격지 NTP 서버와의 동기화
 
 해당 작업은 영구적으로 적용되지 않습니다.
@@ -66,14 +68,14 @@ ntp가 동작 중인 경우 이를 중지시킵니다.
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
-```
+```shell-session
 $ sudo systemctl stop ntpd
 $ sudo systemctl disable ntpd
 ```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-<pre><code><strong>$ sudo systemctl stop ntp
+<pre class="language-shell-session"><code class="lang-shell-session"><strong>$ sudo systemctl stop ntp
 </strong>$ sudo systemctl disable ntp
 </code></pre>
 {% endtab %}
@@ -89,13 +91,13 @@ OS별 설치 방법은 다음과 같습니다.
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
-```
+```shell-session
 $ sudo yum install chrony
 ```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-```
+```shell-session
 $ sudo apt install chrony
 ```
 {% endtab %}
@@ -109,13 +111,13 @@ chronyd 데몬을 동작 시킵니다.
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
-```
+```shell-session
 $ sudo systemctl start chronyd
 ```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-```
+```shell-session
 $ sudo systemctl start chrony
 ```
 {% endtab %}
@@ -125,13 +127,13 @@ $ sudo systemctl start chrony
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
-```
+```shell-session
 $ sudo systemctl enable chronyd
 ```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-```
+```shell-session
 $ sudo systemctl enable chronyd
 ```
 {% endtab %}
@@ -145,14 +147,14 @@ chrony.conf 파일을 vi로 열어봅니다.
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
-```
-// Some code
+```shell-session
+$ sudo vi /etc/chrony.conf
 ```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-```
-// Some code
+```shell-session
+$ sudo vi /etc/chrony/chrony.conf
 ```
 {% endtab %}
 {% endtabs %}
@@ -171,7 +173,7 @@ ntp package 설치와 동시에 기본 설정된 pool을 사용해도 기능상 
   * &#x20;0, 1, 2, 3의 숫자를 붙여 나열합니다.
   * 그러면 등록한 서버들에 랜덤으로 접속하여 시간 정보를 가져오게 됩니다.
 
-```
+```shell
 $ sudo vi /etc/chrony.conf
 
 # Use public servers from the pool.ntp.org project.
@@ -187,13 +189,13 @@ server 2.asia.pool.ntp.org iburst
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
-```
+```shell-session
 $ sudo systemctl restart chronyd
 ```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-```
+```shell-session
 $ sudo systemctl restart chrony
 ```
 {% endtab %}
@@ -205,7 +207,7 @@ chrony는 서버 시간에 의존성을 갖는 어플리케이션의 장애를 �
 
 로컬의 시간이 급격하게 변할 경우 기존 어플리케이션이 영향받을 수 있으니 유의해 주세요.
 
-```
+```shell-session
 $ sudo chronyc -a makestep
   200 OK
 ```
@@ -218,7 +220,7 @@ $ sudo chronyc -a makestep
 
 다음 명령어로 chrony.conf의 내용이 잘 반영되고 있는지 확인합니다.
 
-```
+```shell-session
 $ chronyc sources
 ```
 
@@ -245,7 +247,7 @@ MS 항목 : 가상머신과 해당 원격지 NTP 서버의 결합 상태를 보�
 
 다음 명령어로 로컬 서버와 원격지 타임 서버 간 오차에 대한 통계를 확인할 수 있습니다.
 
-```
+```shell-session
 $ chronyc -a tracking
 ```
 
@@ -278,7 +280,7 @@ $ chronyc -a tracking
 
 서버의 시간이 잘 변경되었는지 확인합니다.
 
-```
+```shell-session
 $ date
 Mon Feb 22 10:47:43 KST 2021
 ```
@@ -293,14 +295,14 @@ chronyd가 동작 중인 경우 이를 중지 시킵니다.
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
-```
+```shell-session
 $ sudo systemctl stop chronyd
 $ sudo systemctl disable chronyd
 ```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-```
+```shell-session
 $ sudo systemctl stop chrony
 $ sudo systemctl disable chrony
 ```
@@ -309,19 +311,21 @@ $ sudo systemctl disable chrony
 
 
 
-* #### 2. NTP 패키지 설치
-* &#x20; ntp를 이용하여 가상서버의 시간을 NTP 서버와 동기화 할 수 있습니다.
-* &#x20; OS별 설치 방법은 다음과 같습니다.
+#### (2) NTP 패키지 설치
+
+ntp를 이용하여 가상서버의 시간을 NTP 서버와 동기화 할 수 있습니다.
+
+OS별 설치 방법은 다음과 같습니다.
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
-```
+```shell-session
 $ sudo yum install ntp
 ```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-```
+```shell-session
 $ sudo apt install ntp
 ```
 {% endtab %}
@@ -335,13 +339,13 @@ ntpd 데몬을 동작 시킵니다.
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
-```
+```shell-session
 $ sudo systemctl start ntpd
 ```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-```
+```shell-session
 $ sudo systemctl start ntp
 ```
 {% endtab %}
@@ -351,13 +355,13 @@ $ sudo systemctl start ntp
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
-```
+```shell-session
 $ sudo systemctl enable ntpd
 ```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-```
+```shell-session
 $ sudo systemctl start ntp
 ```
 {% endtab %}
@@ -369,7 +373,7 @@ $ sudo systemctl start ntp
 
 vi로 ntp.conf 파일을 열어봅니다.
 
-```
+```shell-session
 $ sudo vi /etc/ntp.conf
 ```
 
@@ -388,7 +392,7 @@ ntp package 설치와 동시에 기본 설정된 pool을 사용해도 기능상 
   * 0, 1, 2, 3의 숫자를 붙여 나열합니다.
   * 등록한 서버들에 무작위로 접속하여 시간 정보를 가져오게 됩니다.
 
-```
+```shell
 $ sudo vi /etc/ntp.conf
 # Use public servers from the pool.ntp.org project.
 
@@ -403,17 +407,17 @@ server 2.asia.pool.ntp.org   iburst
 
 
 
-서비스 재시작
+서비스를 재시작합니다.&#x20;
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
-```
+```shell-session
 $ sudo systemctl restart ntpd
 ```
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-```
+```shell-session
 $ sudo systemctl restart ntp
 ```
 {% endtab %}
@@ -425,7 +429,7 @@ $ sudo systemctl restart ntp
 
 다음 명령어로 서버 동기화 상태를 확인 할 수 있습니다.
 
-```
+```shell-session
 $ ntpq -p
 ```
 
@@ -446,7 +450,7 @@ $ ntpq -p
 
 서버의 시간이 잘 변경되었는지 확인합니다.
 
-```
+```shell-session
 $ date
 Mon Feb 22 10:47:43 KST 2021
 ```
