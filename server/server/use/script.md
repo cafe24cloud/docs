@@ -84,9 +84,9 @@ Shell(운영체제의 명령해석기)에서 처리하는 스크립트 형식입
 
 자동 스크립트는 가상서버와 오토스케일 생성 단계에서 적용할 수 있습니다.
 
-가상서버 매뉴얼 : [가상서버는 어떻게 생성하나요?](https://console.cafe24.com/support/faq/view?idx=77)
+가상서버 매뉴얼 : [가상서버는 어떻게 생성하나요?](../create.md)
 
-오토스케일 매뉴얼 : [오토스케일은 어떻게 사용하나요?](https://console.cafe24.com/support/faq/view?idx=134)
+오토스케일 매뉴얼 : [오토스케일은 어떻게 사용하나요?](../../autoscale/use.md)
 
 
 
