@@ -4,7 +4,7 @@ description: 가상서버 및 오토스케일 생성 시에 자동 스크립트�
 
 # 자동 스크립트 적용 방법
 
-### 1. 자동 스크립트 개요
+## 1. 자동 스크립트 개요
 
 1-1.자동 스크립트 실행 기능이란?
 
@@ -38,11 +38,18 @@ Shell(운영체제의 명령해석기)에서 처리하는 스크립트 형식입
 
 &#x20;
 
-2\. 자동 스크립트 활용 시 주의점
+## 2. 자동 스크립트 활용 시 주의점
 
-* <mark style="color:red;">자동 스크립트가 올바르게 작성되지 않은 경우 가상서버가 정상 부팅 및 동작하지 않을 수 있습니다.</mark>
-* <mark style="color:red;">카페24 클라우드는 보안 강화의 목적으로 키페어 접속 방식을 추천하며, 초기 패스워드 설정을 권장하지 않습니다.</mark> 불가피하게 패스워드 설정을 할 경우 유추하기 어려운 강력한 패스워드를 설정해야 합니다.
-* 특히 root는 시스템의 관리자 계정이므로 보안에 각별한 주의가 필요합니다. &#x20;
+{% hint style="danger" %}
+<mark style="color:red;">**주의 사항**</mark>
+
+* 자동 스크립트가 올바르게 작성되지 않은 경우 가상서버가 정상 부팅 및 동작하지 않을 수 있습니다.
+
+
+
+* <mark style="color:red;">카페24 클라우드는 보안 강화의 목적으로 키페어 접속 방식을 추천하며, 초기 패스워드 설정을 권장하지 않습니다.</mark> &#x20;
+* 불가피하게 패스워드 설정을 할 경우 유추하기 어려운 강력한 패스워드를 설정해야 합니다. 특히 root는 시스템의 관리자 계정이므로 보안에 각별한 주의가 필요합니다. &#x20;
+{% endhint %}
 
 {% hint style="info" %}
 <mark style="color:blue;">**참고 사항**</mark>
@@ -91,233 +98,331 @@ Shell(운영체제의 명령해석기)에서 처리하는 스크립트 형식입
 
 
 
-### B. cloud-init 스크립트 예시
 
-B-1. 초기 패스워드 설정
 
-일반(초기) 계정 패스워드 설정
+## 4.  cloud-init 스크립트 예시
 
-1. 가상서버의 일반계정(ex. centos, ubuntu..)의 패스워드를 다음 스크립트로 초기화 할 수 있습니다.
-2. ssh\_pwauth를 True로 입력하여 패스워드 방식으로 SSH 접속을 하도록 설정합니다.
-3. password 필드에 원하는 패스워드를 기재합니다.
-4. \#cloud-config\
-   password: cafe@$P@sswd\
-   chpasswd: { expire: False }\
-   ssh\_pwauth: True
-5. &#x20;
-6. 2\. 특정 계정의 패스워드 설정
-   1. 다음과 같이 특정 계정에 대한 패스워드를 설정할 수 있습니다.
-   2. 계정명으로 root 혹은 OS 별 초기 계정을 입력합니다.
-   3. password 필드에는 원하는 패스워드를 기재합니다.
-   4. \#cloud-config\
-      ssh\_pwauth: True\
-      chpasswd:\
-      &#x20;   list: |\
-      &#x20;       centos:cafe@$P@sswd\
-      &#x20;   expire: False
-7. &#x20;
-8. &#x20;
-9. #### B-2. 패키지 업데이트, 업그레이드
-   1. 다음 스크립트로 표준 cloud 배포판 이미지의 패키지 및 레퍼지토리를 update, upgrade 할 수 있습니다.
-   2. \#cloud-config\
-      package\_update: true\
-      package\_upgrade: true\
-      repo-upgrade: true\
-      repo-upgrade: all
-10. &#x20;
-11. &#x20;
-12. #### B-3. 스크립트 로깅 설정
-    1. **output** 속성을 사용하여 스크립트의 실행 로그를 지정한 파일에 저장할 수 있습니다.
-    2. cloud-init 패키지에서 기본으로 사용하는 /var/log/cloud-init.log 와 겹치지 않는 경로를 사용해야 합니다.
-    3. \#cloud-config\
-       package\_update: true\
-       package\_upgrade: true\
-       repo-upgrade: true\
-       repo-upgrade: all\
-       output: {all: '| tee -a /var/log/cloud-init-output.log'}
-    4. &#x20;
-    5. 가상서버에 SSH 접속한 뒤 cloud-init 스크립트의 진행 상태를 다음 명령어로 실시간 확인할 수 있습니다.
-    6. cloud-init 스크립트에서 지정한 로그 파일의 마지막 10줄을 출력합니다.
-    7. $ tail -f /var/log/cloud-init-output.log
-13. &#x20;
-14. &#x20;
-15. #### B-4. OS command 사용하여 selinux 비활성화
-    1. runcmd 모듈을 사용해서 최초 부팅된 가상서버의 OS에서 명령어를 실행할 수 있습니다.
-    2. 다음 두 가지 방법으로 작성 가능합니다.
-    3. \#cloud-config\
-       runcmd:\
-       &#x20; \# 방법1) 배열 형식의 입력 ','로 구분하여 작성.\
-       &#x20; \- \[ ls, -al, /root ]\
-       &#x20; \# 방법2) 실제 OS에서의 명령어 입력 방식과 동일하게 작성.\
-       &#x20; \- ls -al /root
-    4. &#x20;
-    5. 이를 활용하여 redhat 계열 OS 이미지에서 기본 동작 하는 selinux 설정을 disable 할 수 있습니다.&#x20;
-    6. 설정 파일을 수정한 후 서버를 재부팅 하도록 설정합니다.
-    7. \#cloud-config\
-       runcmd:\
-       &#x20; \- sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/sysconfig/selinux\
-       &#x20; \- sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config\
-       &#x20; \- reboot
-16. &#x20;
-17. &#x20;
-18. #### B-5. Text 형식의 파일 생성
-    1. **write\_files**을 사용하여 가상서버에 파일을 자동 생성 할 수 있습니다.
-    2. path에 대한 값으로 파일을 생성할 경로를 지정합니다.
-    3. contents의 값으로 해당 파일에 저장할 내용을 입력합니다.
-    4. 이때 파이프(|)를 사용하면 해당 value 값의 줄 바꿈을 인식하여 파일에 저장합니다.
-    5. \#cloud-config\
-       write\_files:\
-       &#x20; \- path: 파일 경로\
-       &#x20;   content: |\
-       &#x20;       Hello World!\
-       &#x20;       Hello Cloud-init!
-    6. &#x20;
-    7. 이를 응용하여 nginx 설치에 필요한 레퍼지토리 설정 파일을 생성하고 nginx를 설치할 수 있습니다.
-    8. 아래 예시는 CentOS 7 기준으로, 다른 OS의 경우 [nginx 공식문서](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)를 참고하여 작성해야 합니다.
-    9. \#cloud-config\
-       write\_files:\
-       &#x20; \- path: /etc/yum.repos.d/nginx.repo\
-       &#x20;   content: |\
-       &#x20;       \[nginx]\
-       &#x20;       name=nginx repo\
-       &#x20;       baseurl=http://nginx.org/packages/centos/7/$basearch/\
-       &#x20;       gpgcheck=0\
-       &#x20;       enabled=1\
-       packages:\
-       &#x20; \- nginx\
-       output: {all: '| tee -a /var/log/cloud-init-output.log'}
-19. &#x20;
-20. &#x20;
-21. #### B-6. 애플리케이션 패키지 설치
-22. cloud-init으로 가상서버에 패키지를 자동 설치할 수 있습니다.
-23. 패키지에 따라 설치 시간이 소요되는 경우가 있어 가상서버 접속 후 바로 확인이 불가능 할 수 있습니다.
-24. 이 경우 **output**으로 스크립트에 대한 로그를 남겨 진행 상황을 확인합니다.
-25. 가상서버의 OS 이미지에서 지원하는 패키지를 설치하여야 합니다.
-26. &#x20;
-27.
-    1. 1\. 패키지 설치
-       1. packages를 사용해 패키지를 자동 설치합니다.
-       2. 예시와 같이 패키지명 또는 패키지의 특정 버전을 명시할 수 있습니다.
-       3. \#cloud-config\
-          packages:\
-          &#x20; \- 패키지명\
-          &#x20; \- \[패키지명, 버전]
-    2. &#x20;
-    3. 2\. APM 설치
-       1. 이를 응용하여 다음과 같이 APM(Apache+PHP+MariaDB)패키지를 한 번에 설치할 수 있습니다.
-       2. CentOS의 경우 httpd, Ubuntu의 경우 apache2 패키지를 설치합니다.
-       3. 필요에 따라 **runcmd**를 사용하여 데몬 enable 및 start를 하고
-       4. **output**으로 cloud-init 스크립트에 대한 로그 파일을 남길 수 있습니다.
-       5. \#cloud-config\
-          packages:\
-          &#x20; \- httpd\
-          &#x20; \- php\
-          &#x20; \- mariadb-server\
-          runcmd:\
-          &#x20; \- systemctl enable httpd\
-          &#x20; \- systemctl enable mariadb\
-          &#x20; \- systemctl start mariadb\
-          &#x20; \- systemctl start httpd\
-          output: {all: '| tee -a /var/log/cloud-init-output.log'}
-       6. &#x20;
-28. &#x20;
-29. #### B-7. timezone 변경
-    1. 다음과 같이 부팅 단계에서 가상서버의 타임존을 KST로 변경할 수 있습니다.
-    2. 카페24 클라우드의 가상서버는 기본적으로 UTC 시간대로 생성됩니다.
-    3. \#cloud-config\
-       timezone: Asia/Seoul
-    4. &#x20;
-30. &#x20;
-31. #### B-8. 응용 예시
-    1. **B. cloud-init 스크립트 예시**에서 알아본 모듈들을 혼합하여 다음과 같이 사용할 수 있습니다.
-    2. \#cloud-config\
-       package\_update: true\
-       package\_upgrade: true\
-       repo-upgrade: true\
-       repo-upgrade: all\
-       write\_files:\
-       &#x20; \- path: /etc/yum.repos.d/nginx.repo\
-       &#x20;   content: |\
-       &#x20;       \[nginx]\
-       &#x20;       name=nginx repo\
-       &#x20;       baseurl=http://nginx.org/packages/centos/7/$basearch/\
-       &#x20;       gpgcheck=0\
-       &#x20;       enabled=1\
-       packages:\
-       &#x20; \- httpd\
-       &#x20; \- php\
-       &#x20; \- mariadb-server\
-       ssh\_pwauth: True\
-       chpasswd:\
-       &#x20;   list: |\
-       &#x20;       centos:cafe@$P@sswd\
-       &#x20;   expire: False\
-       runcmd:\
-       &#x20; \- systemctl enable httpd\
-       &#x20; \- systemctl enable mariadb\
-       &#x20; \- systemctl start mariadb\
-       &#x20; \- systemctl start httpd\
-       &#x20; \- sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/sysconfig/selinux\
-       &#x20; \- sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config\
-       &#x20; \- reboot\
-       timezone: Asia/Seoul\
-       output: {all: '| tee -a /var/log/cloud-init-output.log'}
-    3. &#x20;
-32. &#x20;
-33. &#x20;
+### (1) 초기 패스워드 설정
 
-### C. Shell 스크립트 예시
+**일반(초기) 계정 패스워드 설정**
 
-1. 본 예시는 CentOS 기준으로 작성되었으며, OS 별로 적절한 명령어를 작성해야 합니다.
-2. &#x20;
-3. #### C-1. 초기 패스워드 설정
-   1. 가상서버의 일반계정(ex. centos, ubuntu..)의 패스워드를 다음 스크립트로 초기화 할 수 있습니다.
-   2. \#!/bin/bash\
-      sed -i $'s/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd\_config\
-      systemctl restart sshd\
-      echo 'centos:cafe@$P@sswd' | sudo chpasswd
+가상서버의 일반계정(ex. centos, ubuntu..)의 패스워드를 다음 스크립트로 초기화 할 수 있습니다.
+
+ssh\_pwauth를 True로 입력하여 패스워드 방식으로 SSH 접속을 하도록 설정합니다.
+
+password 필드에 원하는 패스워드를 기재합니다.
+
+```yaml
+#cloud-config
+password: cafe@$P@sswd
+chpasswd: { expire: False }
+ssh_pwauth: True
+```
+
+
+
+#### 특정 계정의 패스워드 설정
+
+다음과 같이 특정 계정에 대한 패스워드를 설정할 수 있습니다.
+
+계정명으로 root 혹은 OS 별 초기 계정을 입력합니다.
+
+password 필드에는 원하는 패스워드를 기재합니다.
+
+```yaml
+#cloud-config
+ssh_pwauth: True
+chpasswd:
+    list: |
+        centos:cafe@$P@sswd
+    expire: False
+```
+
+
+
+### (2) 패키지 업데이트, 업그레이드
+
+다음 스크립트로 표준 cloud 배포판 이미지의 패키지 및 레퍼지토리를 update, upgrade 할 수 있습니다.
+
+```yaml
+#cloud-config
+package_update: true
+package_upgrade: true
+repo-upgrade: true
+repo-upgrade: all
+```
 
 &#x20;
 
-1. #### C-2. 애플리케이션 패키지 설치
-   1. shell에서 동작하는 명령어와 동일하게 구성하여 스크립트화 할 수 있습니다.
-   2. 패키지 설치의 경우 -y 옵션을 필수적으로 설정하여 스크립트가 중지 없이 동작하도록 해야 합니다.
-   3. \#!/bin/bash\
-      yum install -y httpd php mariadb-server
-   4. &#x20;
-   5. &#x20;
-2. #### C-3. timezone 변경
-   1. 다음과 같이 부팅 단계에서 가상서버의 타임존을 KST로 변경할 수 있습니다.
-   2. 카페24 클라우드의 가상서버는 기본적으로 UTC 시간대로 생성됩니다.
-   3. \#!/bin/bash\
-      timedatectl set-timezone Asia/Seoul
-   4. &#x20;
-   5. &#x20;
-3. #### C-4. 응용 예시
-   1. **C. Shell 스크립트 예시**에서 알아본 예제들을 혼합하여 다음과 같이 사용할 수 있습니다.
-   2. \#!/bin/bash\
-      \#패스워드 접속 설정\
-      sed -i $'s/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd\_config\
-      systemctl restart sshd\
-      echo 'centos:cafe@$P@sswd' | sudo chpasswd\
-      \#타임존 설정\
-      timedatectl set-timezone Asia/Seoul\
-      \# 패키지 업데이트\
-      yum update\
-      \# APM 설치\
-      yum install -y httpd php mariadb-server\
-      \# 데몬 enable 및 start\
-      systemctl enable httpd\
-      systemctl enable mariadb\
-      systemctl start httpd\
-      systemctl start mariadb
-   3. &#x20;
+### (3) 스크립트 로깅 설정
+
+**output** 속성을 사용하여 스크립트의 실행 로그를 지정한 파일에 저장할 수 있습니다.
+
+cloud-init 패키지에서 기본으로 사용하는 /var/log/cloud-init.log 와 겹치지 않는 경로를 사용해야 합니다.
+
+```yaml
+#cloud-config
+package_update: true
+package_upgrade: true
+repo-upgrade: true
+repo-upgrade: all
+output: {all: '| tee -a /var/log/cloud-init-output.log'} 
+```
+
+가상서버에 SSH 접속한 뒤 cloud-init 스크립트의 진행 상태를 다음 명령어로 실시간 확인할 수 있습니다.
+
+cloud-init 스크립트에서 지정한 로그 파일의 마지막 10줄을 출력합니다.
+
+```shell-session
+$ tail -f /var/log/cloud-init-output.log
+```
+
+&#x20;&#x20;
+
+### (4) OS command 사용하여 selinux 비활성화
+
+runcmd 모듈을 사용해서 최초 부팅된 가상서버의 OS에서 명령어를 실행할 수 있습니다.
+
+다음 두 가지 방법으로 작성 가능합니다.
+
+```yaml
+#cloud-config
+runcmd:
+  # 방법1) 배열 형식의 입력 ','로 구분하여 작성.
+  - [ ls, -al, /root ]
+  # 방법2) 실제 OS에서의 명령어 입력 방식과 동일하게 작성.
+  - ls -al /root 
+```
+
+이를 활용하여 redhat 계열 OS 이미지에서 기본 동작 하는 selinux 설정을 disable 할 수 있습니다.&#x20;
+
+설정 파일을 수정한 후 서버를 재부팅 하도록 설정합니다.
+
+```yaml
+#cloud-config
+runcmd:
+  - sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/sysconfig/selinux
+  - sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config
+  - reboot
+```
+
+&#x20;
+
+### (5) Text 형식의 파일 생성
+
+**write\_files**을 사용하여 가상서버에 파일을 자동 생성 할 수 있습니다.
+
+path에 대한 값으로 파일을 생성할 경로를 지정합니다.
+
+contents의 값으로 해당 파일에 저장할 내용을 입력합니다.
+
+이때 파이프(|)를 사용하면 해당 value 값의 줄 바꿈을 인식하여 파일에 저장합니다.
+
+```yaml
+#cloud-config
+write_files:
+  - path: 파일 경로
+    content: |
+        Hello World!
+        Hello Cloud-init! 
+```
+
+이를 응용하여 nginx 설치에 필요한 레퍼지토리 설정 파일을 생성하고 nginx를 설치할 수 있습니다.
+
+아래 예시는 CentOS 7 기준으로, 다른 OS의 경우 [nginx 공식문서](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)를 참고하여 작성해야 합니다.
+
+```yaml
+#cloud-config
+write_files:
+  - path: /etc/yum.repos.d/nginx.repo
+    content: |
+        [nginx]
+        name=nginx repo
+        baseurl=http://nginx.org/packages/centos/7/$basearch/
+        gpgcheck=0
+        enabled=1
+packages:
+  - nginx
+output: {all: '| tee -a /var/log/cloud-init-output.log'}
+```
 
 
 
+### (6) 애플리케이션 패키지 설치
+
+cloud-init으로 가상서버에 패키지를 자동 설치할 수 있습니다.
+
+패키지에 따라 설치 시간이 소요되는 경우가 있어 가상서버 접속 후 바로 확인이 불가능 할 수 있습니다.
+
+이 경우 **output**으로 스크립트에 대한 로그를 남겨 진행 상황을 확인합니다.
+
+가상서버의 OS 이미지에서 지원하는 패키지를 설치하여야 합니다.
+
+&#x20;
+
+#### 패키지 설치
+
+packages를 사용해 패키지를 자동 설치합니다.
+
+예시와 같이 패키지명 또는 패키지의 특정 버전을 명시할 수 있습니다.
+
+```yaml
+#cloud-config
+packages:
+  - 패키지명
+  - [패키지명, 버전]
+```
+
+&#x20;
+
+#### APM 설치
+
+이를 응용하여 다음과 같이 APM(Apache+PHP+MariaDB)패키지를 한 번에 설치할 수 있습니다.
+
+CentOS의 경우 httpd, Ubuntu의 경우 apache2 패키지를 설치합니다.
+
+필요에 따라 **runcmd**를 사용하여 데몬 enable 및 start를 하고
+
+**output**으로 cloud-init 스크립트에 대한 로그 파일을 남길 수 있습니다.
+
+```yaml
+#cloud-config
+packages:
+  - httpd
+  - php
+  - mariadb-server
+runcmd:
+  - systemctl enable httpd
+  - systemctl enable mariadb
+  - systemctl start mariadb
+  - systemctl start httpd
+output: {all: '| tee -a /var/log/cloud-init-output.log'}
+```
+
+&#x20;
+
+### (7) timezone 변경
+
+다음과 같이 부팅 단계에서 가상서버의 타임존을 KST로 변경할 수 있습니다.
+
+카페24 클라우드의 가상서버는 기본적으로 UTC 시간대로 생성됩니다.
+
+```yaml
+#cloud-config
+timezone: Asia/Seoul
+```
+
+&#x20;
+
+### (8) 응용 예시
+
+****[**4. cloud-init 스크립트 예시**](script.md#4.-cloud-init)에서 알아본 모듈들을 혼합하여 다음과 같이 사용할 수 있습니다.
+
+```yaml
+#cloud-config
+package_update: true
+package_upgrade: true
+repo-upgrade: true
+repo-upgrade: all
+write_files:
+  - path: /etc/yum.repos.d/nginx.repo
+    content: |
+        [nginx]
+        name=nginx repo
+        baseurl=http://nginx.org/packages/centos/7/$basearch/
+        gpgcheck=0
+        enabled=1
+packages:
+  - httpd
+  - php
+  - mariadb-server
+ssh_pwauth: True
+chpasswd:
+    list: |
+        centos:cafe@$P@sswd
+    expire: False
+runcmd:
+  - systemctl enable httpd
+  - systemctl enable mariadb
+  - systemctl start mariadb
+  - systemctl start httpd
+  - sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/sysconfig/selinux
+  - sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config
+  - reboot
+timezone: Asia/Seoul
+output: {all: '| tee -a /var/log/cloud-init-output.log'}
+```
+
+&#x20;
+
+## 5. Shell 스크립트 예시
+
+본 예시는 CentOS 기준으로 작성되었으며, OS 별로 적절한 명령어를 작성해야 합니다.
+
+&#x20;
+
+### (1) 초기 패스워드 설정
+
+가상서버의 일반계정(ex. centos, ubuntu..)의 패스워드를 다음 스크립트로 초기화 할 수 있습니다.
+
+```shell
+#!/bin/bash
+sed -i $'s/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+systemctl restart sshd
+echo 'centos:cafe@$P@sswd' | sudo chpasswd
+```
+
+&#x20;
+
+### (2) 애플리케이션 패키지 설치
+
+shell에서 동작하는 명령어와 동일하게 구성하여 스크립트화 할 수 있습니다.
+
+패키지 설치의 경우 -y 옵션을 필수적으로 설정하여 스크립트가 중지 없이 동작하도록 해야 합니다.
+
+```shell
+#!/bin/bash
+yum install -y httpd php mariadb-server
+```
+
+&#x20;
+
+### (3) timezone 변경
+
+다음과 같이 부팅 단계에서 가상서버의 타임존을 KST로 변경할 수 있습니다.
+
+카페24 클라우드의 가상서버는 기본적으로 UTC 시간대로 생성됩니다.
+
+```shell
+#!/bin/bash
+timedatectl set-timezone Asia/Seoul
+```
+
+&#x20;
+
+### (4) 응용 예시
+
+****[**5. Shell 스크립트 예시**](script.md#5.-shell)에서 알아본 예제들을 혼합하여 다음과 같이 사용할 수 있습니다.
+
+```shell
+#!/bin/bash
+## 패스워드 접속 설정
+sed -i $'s/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+systemctl restart sshd
+echo 'centos:cafe@$P@sswd' | sudo chpasswd
+## 타임존 설정
+timedatectl set-timezone Asia/Seoul
+## 패키지 업데이트
+yum update
+## APM 설치
+yum install -y httpd php mariadb-server
+## 데몬 enable 및 start
+systemctl enable httpd
+systemctl enable mariadb
+systemctl start httpd
+systemctl start mariadb
+```
 
 
 
-
-
-
+&#x20;
