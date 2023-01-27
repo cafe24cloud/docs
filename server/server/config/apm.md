@@ -12,12 +12,17 @@ APM의 동작 원리는 아래와 같습니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/04/507a5ed1dc64dcca681a6e10153c113d_1664846004.png" alt=""><figcaption></figcaption></figure>
 
-* 클라이언트가 서버에 웹 페이지의 정보를 요청
-* Apache는 해당되는 정보를 주기 위해 PHP에게 스크립트 실행을 요청
-* PHP는 MySQL/MariaDB에 쿼리 질의를 요청
-* MySQL/MariaDB은 질의에 대한 결과 데이터를 PHP에게 응답
-* PHP는 받은 결과 데이터와 스크립트 실행 결과를 HTML 코드로 Apahce에게 응답
-* Aapche는 받은 HTML 코드를 클라이언트의 웹 브라우저에 응답
+① 클라이언트가 서버에 웹 페이지의 정보를 요청
+
+② Apache는 해당되는 정보를 주기 위해 PHP에게 스크립트 실행을 요청
+
+③ PHP는 MySQL/MariaDB에 쿼리 질의를 요청
+
+④ MySQL/MariaDB은 질의에 대한 결과 데이터를 PHP에게 응답
+
+⑤ PHP는 받은 결과 데이터와 스크립트 실행 결과를 HTML 코드로 Apahce에게 응답
+
+⑥ Aapche는 받은 HTML 코드를 클라이언트의 웹 브라우저에 응답
 
 이러한 과정을 거쳐 서버는 클라이언트에 정보를 주게 됩니다.
 
