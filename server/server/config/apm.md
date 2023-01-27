@@ -525,7 +525,7 @@ $ sudo mysql -u root
 
 ### (3) MariaDB 기본 보안 설정하기
 
-mysql\_secure\_installation을 통해 root 비밀번호 설정정과 기본 보안 설정을 합니다.
+mysql\_secure\_installation을 통해 root 비밀번호 설정과 기본 보안 설정을 합니다.
 
 ```shell-session
 $ sudo mysql_secure_installation
