@@ -32,7 +32,7 @@ description: 본 매뉴얼은 가상서버 SSH 키페어 접속 시, 발생 가�
 
 
 
-### (3) 가상서버 상태 확인
+### (3) 가상서버 상태
 
 가상서버가 "운영중"인지 확인합니다. "중지" 혹은 "재부팅" 중인 서버에는 접속이 불가능합니다.
 
@@ -54,11 +54,11 @@ description: 본 매뉴얼은 가상서버 SSH 키페어 접속 시, 발생 가�
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/28/0a0c40306aa00d3673915d244c78b7ea_1609145339.jpg" alt=""><figcaption></figcaption></figure>
 
-해당 오류가 발생하는 이유는 아래와 같습니다.
+해당 에러러가 발생하는 이유는 아래와 같습니다.
 
 #### ① 가상서버 접 시 잘못된 계정명을 사용할 경우
 
-해당 내용에 대해서는 [**\[**<mark style="color:blue;">**가상서버 OS별 계정 정보\]**</mark>](disconnect.md#1-os)를 참고해 주세요.
+해당 내용에 대해서는 [<mark style="color:blue;">**\[가상서버 OS별 계정 정보\]**</mark>](disconnect.md#1-os)를 참고해 주세요.
 
 #### ② 사용자 계정의 .ssh 디렉터리가 누락되었거나 권한 문제가 있는 경우
 
@@ -66,7 +66,7 @@ description: 본 매뉴얼은 가상서버 SSH 키페어 접속 시, 발생 가�
 
 본 매뉴얼에서는 centos 계정을 예로 들어 설명합니다. "centos"에 해당하는 부분은 접속하고자 하는 계정명으로 바꿔주세요.
 
-SSH 키페어 접속이 불가능할 경우, \[SSH 키페어 분실 시 해결 방법]을 참고하여 패스워드 설정 후, 콘솔 접속을 해주세요.
+SSH 키페어 접속이 불가능할 경우, [<mark style="color:blue;">**\[SSH 키페어 분실 시 해결 방법\]**</mark>](../../../security/keypair/lost.md)을 참고하여 패스워드 설정 후, 콘솔 접속을 해주세요.
 
 
 
