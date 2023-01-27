@@ -58,14 +58,14 @@ description: S3 Compatible API를 사용하여 오브젝트 스토리지를 사�
 
 버킷에 접근하는 방법은 두 가지가 있습니다.
 
-① URI에서 버킷을 최상위 디렉터리로 식별
+* URI에서 버킷을 최상위 디렉터리로 식별
 
 ```shell
 GET /bucketname HTTP/1.1 
 Host: kr.cafe24obs.com
 ```
 
-② 가상 버킷 호스트 이름을 통해 버킷을 식별
+* 가상 버킷 호스트 이름을 통해 버킷을 식별
 
 ```shell
  GET / HTTP/1.1
@@ -149,24 +149,20 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 **HMAC을 생성하는 방법**은 다음과 같습니다.
 
-① 헤더 문자열의 값을 가져옵니다.
-
-* 요청 헤더 문자열을 표준 형식으로 정규화합니다.
-* SHA-1 해싱 알고리즘을 사용하여 HMAC를 생성합니다. 자세한 내용은 RFC 2104 및 HMAC를 참조하십시오.
-* HMAC 결과를 base-64로 인코딩합니다.
-
-② 헤더를 canonical form으로 정규화합니다.
-
-* x-amz-로 시작하는 모든 필드를 가져옵니다.
-* 필드가 모두 소문자인지 확인합니다.&#x20;
-* 필드를 사전 순으로 정렬합니다.
-* 동일한 필드 이름의 여러 인스턴스를 단일 필드로 결합하고 필드 값을 쉼표로 구분합니다.
-* 필드 값의 공백과 줄 바꿈을 단일 공백으로 바꿉니다.
-* 콜론 전후의 공백을 제거합니다.
-* 각 필드 뒤에 새 줄을 추가합니다.
-* 필드를 헤더에 다시 병합합니다.
-
-③ base-64로 인코딩된 HMAC 문자열로 바꿉니다.
+* 헤더 문자열의 값을 가져옵니다.
+  * 요청 헤더 문자열을 표준 형식으로 정규화합니다.
+  * SHA-1 해싱 알고리즘을 사용하여 HMAC를 생성합니다. 자세한 내용은 RFC 2104 및 HMAC를 참조하십시오.
+  * HMAC 결과를 base-64로 인코딩합니다.
+* 헤더를 canonical form으로 정규화합니다.
+  * x-amz-로 시작하는 모든 필드를 가져옵니다.
+  * 필드가 모두 소문자인지 확인합니다.&#x20;
+  * 필드를 사전 순으로 정렬합니다.
+  * 동일한 필드 이름의 여러 인스턴스를 단일 필드로 결합하고 필드 값을 쉼표로 구분합니다.
+  * 필드 값의 공백과 줄 바꿈을 단일 공백으로 바꿉니다.
+  * 콜론 전후의 공백을 제거합니다.
+  * 각 필드 뒤에 새 줄을 추가합니다.
+  * 필드를 헤더에 다시 병합합니다.
+* base-64로 인코딩된 HMAC 문자열로 바꿉니다.
 
 
 
@@ -663,7 +659,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-### (8) Initiate Multipart Upload
+### (8) Initiate Multi-part Upload
 
 멀티파트 업로드 프로세스를 시작합니다.
 
@@ -696,7 +692,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-### (9) Multipart Upload
+### (9) Multipart Upload Part
 
 멀티파트 업로드를 사용하여 객체를 업로드합니다.
 
@@ -717,7 +713,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-### (10) List Multipart Upload
+### (10) List Multipart Upload Parts
 
 특정 멀티파트 업로드를 위해 업로드된 파트를 나열합니다.
 

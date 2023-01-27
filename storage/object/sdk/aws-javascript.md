@@ -199,7 +199,7 @@ Success [
 
 파일을 특정 버킷에 업로드합니다.
 
-① **새로운 파일 업로드**: 코드상에서 파일명, 파일 내용(Body)을 선언하여 버킷에 업로드하는 방법입니다.
+* **새로운 파일 업로드**: 코드상에서 파일명, 파일 내용(Body)을 선언하여 버킷에 업로드하는 방법입니다.
 
 ```shell
 import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
@@ -229,7 +229,7 @@ run();
 Success : Successfully uploaded newly created file: test-bucket/test-file.txt
 ```
 
-② **로컬에 있는 파일 업로드**: 기존의 로컬에 있는 파일을 버킷에 업로드하는 방법입니다. &#x20;
+* **로컬에 있는 파일 업로드**: 기존의 로컬에 있는 파일을 버킷에 업로드하는 방법입니다. &#x20;
 
 ```shell
 import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
@@ -395,7 +395,7 @@ Success :
 
 버킷에서 파일을 삭제합니다.
 
-① **하나의 오브젝트 삭제**: 특정 버킷에 있는 오브젝트를 삭제합니다.&#x20;
+* **하나의 오브젝트 삭제**: 특정 버킷에 있는 오브젝트를 삭제합니다.&#x20;
 
 ```shell
 import {DeleteObjectCommand, S3Client} from "@aws-sdk/client-s3";
@@ -431,7 +431,7 @@ Response :  {
 }
 ```
 
-② **모든 오브젝트 삭제**: 특정 버킷에 있는 모든 오브젝트를 삭제합니다. &#x20;
+* **모든 오브젝트 삭제**: 특정 버킷에 있는 모든 오브젝트를 삭제합니다. &#x20;
 
 ```shell
 import {ListObjectsCommand, DeleteObjectCommand, S3Client} from "@aws-sdk/client-s3";
