@@ -42,7 +42,7 @@ Docker의 장점 및 특징은 다음과 같습니다.
 
 가상서버에 설정된 MTU는 1450(eth0)이고, Docker 서비스가 사용하는 MTU는 1500(docker0)입니다.
 
-```
+```shell-session
 $ ip a | grep 'eth0|docker0'
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc pfifo_fast state UP group default qlen 1000
     inet 192.168.1.42/24 brd 192.168.1.255 scope global dynamic eth0
@@ -52,7 +52,7 @@ $ ip a | grep 'eth0|docker0'
 
 따라서 Docker에서 가상서버로 넘어오는 Packet에 Packet loss가 발생하여 통신 오류가 생기게 됩니다.
 
-해당 문제는2가지 방법으로 해결할 수 있으며, 리눅스 사용이 익숙하지 않은 사용자의 경우 좀 더 간단하게 해결할 수 있는 (1)번 방법을 권장합니다.
+해당 문제는 2가지 방법으로 해결할 수 있으며, 리눅스 사용이 익숙하지 않은 사용자의 경우 좀 더 간단하게 해결할 수 있는 (1)번 방법을 권장합니다.
 
 ### (1) Host Network 사용 설정하기
 
