@@ -14,11 +14,3 @@
 
 카페24클라우드에서 제공하는 다양한 서비스 및 솔루션을 쉽고 편리하게 이용할 수 있도록 사용자 가이드를 제공합니다.
 
-
-
-#### 가상서버 통합 매뉴얼
-
-{% content-ref url="security/certificate/" %}
-[certificate](security/certificate/)
-{% endcontent-ref %}
-

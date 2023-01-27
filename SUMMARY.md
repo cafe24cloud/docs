@@ -9,7 +9,6 @@
 ## 서버 <a href="#server" id="server"></a>
 
 * [가상서버](server/server/README.md)
-  * [가상서버 통합 매뉴얼](server/server/total.md)
   * [가상서버 생성 방법](server/server/create.md)
   * [가상서버 접속 방법](server/server/connect/README.md)
     * [SSH 키페어 접속 방법](server/server/connect/keypair.md)
@@ -28,6 +27,7 @@
     * [Apache 웹서버 성능 튜닝 방법](server/server/config/tuning.md)
   * [가상서버 문제 해결 방법](server/server/solution/README.md)
     * [접속 오류 해결 방법](server/server/solution/disconnect.md)
+  * [가상서버 통합 매뉴얼](server/server/total.md)
   * [가상서버 지원 종료](server/server/eol.md)
 * [가상서버 스냅샷](server/snapshot/README.md)
   * [가상서버 스냅샷 사용 방법](server/snapshot/use.md)
