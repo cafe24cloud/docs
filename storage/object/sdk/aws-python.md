@@ -48,7 +48,7 @@ $ pip install boto3==1.6.19
 해당 내용은 AWS Python SDK를 사용하여 카페24 클라우드의 오브젝트 스토리지를 이용하는 예제 코드로, 필요에 따라 응용할 수 있습니다.
 {% endhint %}
 
-### (1) 버킷 생성
+#### (1) 버킷 생성
 
 버킷을 생성합니다.
 
@@ -87,7 +87,7 @@ Bucket [test-bucket] has been created.
 
 
 
-### (2) 버킷 삭제&#x20;
+#### (2) 버킷 삭제&#x20;
 
 오브젝트가 모두 삭제된 빈 버킷에 대해서만 삭제가 가능합니다.
 
@@ -127,7 +127,7 @@ Bucket [test-bucket] has been deleted.
 
 
 
-### (3) 버킷 리스트 조회&#x20;
+#### (3) 버킷 리스트 조회&#x20;
 
 존재하는 모든 버킷을 조회합니다.&#x20;
 
@@ -165,7 +165,7 @@ test-bucket2
 
 
 
-### (4) 오브젝트 업로드&#x20;
+#### (4) 오브젝트 업로드&#x20;
 
 로컬에 있는 파일을 특정 버킷에 업로드합니다.
 
@@ -212,7 +212,7 @@ File [file/demofile.txt] is uploaded to bucket [test-bucket] as object [objectfi
 
 
 
-### (5) 오브젝트 다운로드&#x20;
+#### (5) 오브젝트 다운로드&#x20;
 
 버킷에 있는 파일을 로컬의 특정 경로로 다운로드합니다.&#x20;
 
@@ -256,7 +256,7 @@ from bucket [test-bucket] to local path [file/downloaded_file.txt]
 
 
 
-### (6) 오브젝트 리스트 조회&#x20;
+#### (6) 오브젝트 리스트 조회&#x20;
 
 버킷에 있는 모든 파일과 폴더를 조회합니다.&#x20;
 
@@ -332,7 +332,7 @@ Total Object Count : 6
 
 
 
-### (7) 오브젝트 삭제&#x20;
+#### (7) 오브젝트 삭제&#x20;
 
 특정 버킷에 있는 파일을 삭제합니다.
 
@@ -373,7 +373,7 @@ Deleted a file [demofile.txt] from bucket [test-bucket]
 
 
 
-### (8) 버킷 정책 등록
+#### (8) 버킷 정책 등록
 
 버킷에 정책을 등록합니다.&#x20;
 
@@ -452,7 +452,7 @@ Bucket policy is set
 
 
 
-### (9) 버킷 정책 리스트조회
+#### (9) 버킷 정책 리스트조회
 
 버킷에 등록된 정책을 조회합니다.
 
@@ -494,7 +494,7 @@ Retrive bucket policy of bucket [test-bucket]
 
 
 
-### (10) 버킷 정책 삭제
+#### (10) 버킷 정책 삭제
 
 버킷에 등록된 정책을 삭제합니다.
 

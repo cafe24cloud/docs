@@ -663,7 +663,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-### (8) Initiate Multi-part Upload
+### (8) Initiate Multipart Upload
 
 멀티파트 업로드 프로세스를 시작합니다.
 
@@ -696,7 +696,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-### (9) Multipart Upload Part
+### (9) Multipart Upload
 
 멀티파트 업로드를 사용하여 객체를 업로드합니다.
 
@@ -717,7 +717,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-### (10) List Multipart Upload Parts
+### (10) List Multipart Upload
 
 특정 멀티파트 업로드를 위해 업로드된 파트를 나열합니다.
 
