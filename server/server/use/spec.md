@@ -49,7 +49,7 @@ description: 가상서버의 하드웨어 사양 변경 방법은 아래와 같�
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/15/5228a8a8aa6f4537f769963740d2d439_1618453567.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
-<mark style="color:red;">주의사항</mark>
+<mark style="color:red;">**주의사항**</mark>
 
 하드웨어 사양 변경 전에 데이터 백업을 권장드립니다.
 {% endhint %}
@@ -62,7 +62,7 @@ description: 가상서버의 하드웨어 사양 변경 방법은 아래와 같�
 
 ### (3) 하드웨어 사양 낮추기
 
-(2)번과동일한 과정으로 가상서버의 하드웨어 사양을 낮출 수 있습니다.
+(2)번과 동일한 과정으로 가상서버의 하드웨어 사양을 낮출 수 있습니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/15/e9003df3e2fe6790d852488eef0d09b0_1618460036.png" alt=""><figcaption></figcaption></figure>
 

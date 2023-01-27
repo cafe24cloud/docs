@@ -1,6 +1,122 @@
 ---
-description: '''가상서버 스냅샷을 이용하여 OS 영역 복구하기'' 매뉴얼'
+description: 가상서버 스냅샷을 사용하여 가상서버의 OS 영역을 복구하는 방법은 아래와 같습니다.
 ---
 
 # 가상서버 스냅샷 사용 방법
+
+## 1. 가상서버의 OS 영역 문제 상황
+
+본 매뉴얼은 다음과 같은 문제 상황에서 가상서버의 OS 영역을 복구하는 방법을 설명합니다.
+
+### (1) 커널 패닉으로 인한 SSH 접근 실패
+
+커널은 Linux OS의 구성 요소로, 명령어를 해석하여 하드웨어를 조작하는 역할을 합니다.
+
+커널 구성 파일이 손상되었거나 올바르게 설치되지 않은 경우, 커널 패닉이 발생합니다.
+
+이 경우 커널이 정상적으로 로드되지 않아 가상서버가 부팅되지 않게 됩니다.
+
+커널 패닉은 가상서버의 콘솔 화면에서 다음과 같이 확인할 수 있습니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/14/57f44550c7d071d6700ef8a86650c539_1618381721.jpg" alt=""><figcaption></figcaption></figure>
+
+
+
+### (2) 원격 접속 및 Console 접속 시 키보드 입력 불가
+
+가상서버의 콘솔 화면에서 키보드 입력에 대한 반응이 없는 경우, 가상서버 조작이 불가능합니다.
+
+System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이터를 본 매뉴얼을 통해 복구할 수 있습니다.
+
+
+
+### (3) 그 외, 서버로의 접근/운영이 불가한 상황
+
+가상서버의 내부적인 문제로 접속할 수 없는 경우, 운영 중인 서비스를 빠르게 정상화하기 위해 본 매뉴얼을 통해 기존 데이터를 복구할 수 있습니다.
+
+
+
+
+
+## 2. 가상서버의 OS 영역 복구하기
+
+### (1) 신규 가상서버 생성하기
+
+서버 > 가상서버에서 \[새로운 가상서버 생성] 버튼을 클릭하여 복구할 OS 영역의 볼륨을 연결할 새로운 가상서버를 생성합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/14/7154147043d2407feca070ae30f095d0_1618388859.jpg" alt=""><figcaption></figcaption></figure>
+
+
+
+### (2) 장애 가상서버의 스냅샷 생성하기
+
+서버 > 가상서버 > 복구하려는 가상서버에서 \[재시작] 버튼을 클릭합니다.
+
+가상서버를 재시작하면 RAM에서 작업하던 데이터를 Disk로 write하게 되어 데이터 유실을 방지할 수 있습니다.
+
+따라서 기존 데이터의 보존을 위해 복구하려는 가상서버를 재시작한 후, 스냅샷을 생성합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/14/05e55e903f2158b98ef6e91e253c4c3d_1618388878.jpg" alt=""><figcaption></figcaption></figure>
+
+서버 > 가상서버 스냅샷 > \[새로운 가상서버 스냅샷 생성] 버튼을 클릭합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/297a549be379f77b7f1f5198640cefdd_1618208882.jpg" alt=""><figcaption></figcaption></figure>
+
+복구가 필요한 가상서버를 선택하여 스냅샷을 생성합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/7792b78b4f80979e0346b27c0ed4f5eb_1618209255.jpg" alt=""><figcaption></figcaption></figure>
+
+
+
+### (3) 스냅샷으로 OS 볼륨 생성하기
+
+서버 > 가상서버 스냅샷 > 생성한 스냅샷의 상세정보 탭에서 스냅샷으로 블록 스토리지 생성의 \[생성] 버튼을 클릭합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/57525a5e98f2b6bb2a6cb9ccd33ae5ec_1618209753.jpg" alt=""><figcaption></figcaption></figure>
+
+생성할 블록 스토리지의 이름을 입력한 후, \[생성] 버튼을 클릭합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/63ea74923c6c0760a90da2617a3360f3_1618209970.jpg" alt=""><figcaption></figcaption></figure>
+
+
+
+### (4) 신규 가상서버에 OS 볼륨 연결하기
+
+스토리지 > 블록 스토리지 > 생성한 블록 스토리지의 \[연결] 버튼을 클릭합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/6f17128d01396bf9afd14b91da9ec08a_1618212565.jpg" alt=""><figcaption></figcaption></figure>
+
+블록 스토리지 연결 창에서 신규 가상서버를 선택하여 연결합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/8ac638ea60efa192e160d11eeae46666_1618212677.jpg" alt=""><figcaption></figcaption></figure>
+
+신규 가상서버에 연결된 OS 볼의 경로를 확인합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/1b48ea37c39f20f29e7b733a1f8d4ea2_1618215275.jpg" alt=""><figcaption></figcaption></figure>
+
+
+
+### (5) 신규 가상서버에 접속하기
+
+연결한 OS 볼륨을 마운트하여 데이터를 확인하기 위해 신규 가상서버에 접속합니다.
+
+1. 가상서버에 접속하는 방법은 [**SSH 키페어를 이용해서 가상서버에 어떻게 접속하나요?**](https://console.cafe24.com/support/faq/view?idx=71)를 참고해 주세요.
+
+
+
+
+
+### (6) OS 볼륨의 정보 확인하기
+
+
+
+### (7) OS 볼륨의 UUID 중복 확인하기
+
+
+
+### (8) OS 볼륨 마운트하기
+
+
+
+### (9) 데이터 확인하기
 
