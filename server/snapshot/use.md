@@ -134,11 +134,11 @@ $ sudo blkid
 /dev/vdb1: UUID="3ef2b806-efd7-4eef-aaa2-2584909365ff" TYPE="xfs"
 ```
 
-#### ② OS 볼륨의 파일 시스템 복구하기
+#### ② OS 볼륨의 XFS 파일 시스템 복구하기
 
 다음 명령어를 사용하여 연결한 OS 볼륨을 복구합니다.
 
-이때 대상이 되는 파일 시스템은 마운트 되지 않은 상태여야 합니다.
+이때 대상이 되는 파일시스템은 마운트 되지 않은 상태여야 합니다.
 
 ```shell-session
 $ sudo xfs_repair -L /dev/vdb1
@@ -169,6 +169,6 @@ $ sudo mount /dev/vdb1 /mnt
 
 ### (9) 데이터 확인하기
 
-mount를 수행한 경로로 이동하여 복구한 OS 영역의 데이터를 확인합니다.
+mount를 수행한 경로로 이동하여 복구하고자 한 데이터를 확인합니다.&#x20;
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/14/3afc0c47894f7aee5edcb312ed6536e6_1618362946.png" alt=""><figcaption></figcaption></figure>
