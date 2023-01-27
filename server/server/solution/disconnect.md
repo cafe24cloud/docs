@@ -54,9 +54,9 @@ description: 본 매뉴얼은 가상서버 SSH 키페어 접속 시, 발생 가�
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/28/0a0c40306aa00d3673915d244c78b7ea_1609145339.jpg" alt=""><figcaption></figcaption></figure>
 
-해당 에러러가 발생하는 이유는 아래와 같습니다.
+해당 에러가 발생하는 이유는 아래와 같습니다.
 
-#### ① 가상서버 접 시 잘못된 계정명을 사용할 경우
+#### ① 가상서버 접속 시 잘못된 계정명을 사용할 경우
 
 해당 내용에 대해서는 [<mark style="color:blue;">**\[가상서버 OS별 계정 정보\]**</mark>](disconnect.md#1-os)를 참고해 주세요.
 
