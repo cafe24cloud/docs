@@ -90,7 +90,7 @@ System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이�
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/8ac638ea60efa192e160d11eeae46666_1618212677.jpg" alt=""><figcaption></figcaption></figure>
 
-신규 가상서버에 연결된 OS 볼의 경로를 확인합니다.
+신규 가상서버에 연결된 OS 볼륨의 경로를 확인합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/1b48ea37c39f20f29e7b733a1f8d4ea2_1618215275.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -100,23 +100,75 @@ System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이�
 
 연결한 OS 볼륨을 마운트하여 데이터를 확인하기 위해 신규 가상서버에 접속합니다.
 
-1. 가상서버에 접속하는 방법은 [**SSH 키페어를 이용해서 가상서버에 어떻게 접속하나요?**](https://console.cafe24.com/support/faq/view?idx=71)를 참고해 주세요.
-
-
+가상서버에 접속하는 방법은 [<mark style="color:blue;">**\[SSH 키페어 접속 방법\]**</mark>](../server/connect/keypair.md)을 참고해 주세요.
 
 
 
 ### (6) OS 볼륨의 정보 확인하기
 
+다음 명령어로 가상서버에 연결된 OS 볼륨의 정보를 확인합니다.&#x20;
+
+이 때 조회되는 경로는 (4)번에서 확인한 가상서버 연결 경로와 동일합니다.
+
+```shell
+$ sudo fdisk -l
+```
+
+본 예제에서 복구할 OS 볼륨은 /dev/vdb1으로 연결되어 있습니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/3f980474af71a8a7d6e6fa972a80d978_1618214766.jpg" alt=""><figcaption></figcaption></figure>
+
 
 
 ### (7) OS 볼륨의 UUID 중복 확인하기
+
+#### &#x20;① OS 볼륨의 UUID 확인하기
+
+기본 볼륨과 UUID가 같을 경우, 정상적인 mount 및 부팅이 불가능합니다.
+
+UUID가 동일한 경우 추가된 OS 볼륨의 UUID를 변경하는 작업이 필요하며, 다를 경우 생략 가능합니다.
+
+```shell-session
+$ sudo blkid
+/dev/vda1: UUID="3ef2b806-efd7-4eef-aaa2-2584909365ff" TYPE="xfs"
+/dev/vdb1: UUID="3ef2b806-efd7-4eef-aaa2-2584909365ff" TYPE="xfs"
+```
+
+#### ② OS 볼륨의 XFS 파일 시스템 복구하기
+
+다음 명령어를 사용하여 연결한 OS 볼륨을 복구합니다.
+
+이때 대상이 되는 파일시스템은 마운트 되지 않은 상태여야 합니다.
+
+```shell-session
+$ sudo xfs_repair -L /dev/vdb1
+```
+
+#### ③ OS 볼륨에 새로운 UUID 부여하기
+
+다음 명령어를 사용하여 OS 볼륨에 새로운 UUID를 부여합니다.
+
+```shell-session
+$ sudo xfs_admin -U `uuidgen` /dev/vdb1
+Clearing log and setting UUID
+writing all SBs
+new UUID = b0f349ec-d903-4c6d-8cfd-f2a26e3e5e6e
+```
 
 
 
 ### (8) OS 볼륨 마운트하기
 
+본 예제의 /mnt와 같이 mount할 경로를 지정하여 OS 볼륨을 연결합니다.
+
+```shell-session
+$ sudo mount /dev/vdb1 /mnt
+```
+
 
 
 ### (9) 데이터 확인하기
 
+mount를 수행한 경로로 이동하여 복구하고자 한 데이터를 확인합니다.&#x20;
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/14/3afc0c47894f7aee5edcb312ed6536e6_1618362946.png" alt=""><figcaption></figcaption></figure>
