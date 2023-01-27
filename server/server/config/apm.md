@@ -31,7 +31,7 @@ APM의 동작 원리는 아래와 같습니다.
 
 ## 2. Apache 설치하기
 
-#### (1) 패키지 업데이트하기
+### (1) 패키지 업데이트하기
 
 등록된 저장소 내 패키지 정보를 최신으로 업데이트합니다.
 
@@ -51,7 +51,7 @@ $ sudo apt-get update
 
 
 
-#### (2) Apache 설치하기
+### (2) Apache 설치하기
 
 설치할 Apache 버전을 확인한 후, 설치를 진행합니다.
 
@@ -73,7 +73,7 @@ $ sudo apt-get install apache2
 
 
 
-#### (3) Apache 설치 확인하기
+### (3) Apache 설치 확인하기
 
 설치가 완료되었다면 Apahce 서비스를 구동한 후, active 상태인지 확인합니다.
 
@@ -113,7 +113,7 @@ $ systemctl status apache2
 
 ## 3. PHP 설치하기
 
-#### (1) PHP 설치하기
+### (1) PHP 설치하기
 
 설치할 PHP 버전을 확인한 후, 설치를 진행합니다.
 
@@ -135,7 +135,7 @@ $ sudo apt-get install php
 
 
 
-#### (2) PHP 설치 확인하기
+### (2) PHP 설치 확인하기
 
 설치가 완료되었다면 /var/www/html 디렉터리에 index.php 파일을 생성하여 phpinfo 페이지를 출력할 수 있도록 합니다.
 
@@ -177,7 +177,7 @@ $ sudo systemctl restart apache2
 
 
 
-#### (3) PHP 모듈 추가하기
+### (3) PHP 모듈 추가하기
 
 설치 가능한 PHP 모듈을 검색한 후, 추가로 필요한 모듈을 설치할 수 있습니다.&#x20;
 
@@ -205,7 +205,7 @@ $ sudo apt-get install php-mysqlnd
 
 ## 4. MySQL 설치하기
 
-#### (1) MySQL 설치하기
+### (1) MySQL 설치하기
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
@@ -253,7 +253,7 @@ Select default authentication plugin: Use Strong Password Encryption (RECOMMENDE
 
 
 
-#### (2) MySQL 설치 확인하기
+### (2) MySQL 설치 확인하기
 
 설치가 완료되었다면 MySQL 서비스를 구동한 후, active 상태인지 확인합니다.
 
@@ -299,7 +299,7 @@ $ mysql -u root -p
 
 
 
-#### (3) MySQL 기본 보안 설정하기
+### (3) MySQL 기본 보안 설정하기
 
 mysql\_secure\_installation을 통해 root 비밀번호 변경과 기본 보안 설정을 합니다.
 
@@ -362,7 +362,7 @@ Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
 
 
 
-#### (4) PHP와 연동 확인하기
+### (4) PHP와 연동 확인하기
 
 새로 설정한 비밀번호로 MySQL에 접속한 후, test 데이터베이스와 test 사용자를 생성합니다.
 
@@ -443,7 +443,7 @@ $ sudo systemctl restart httpd
 
 ## 5. MariaDB 설치하기
 
-#### (1) MariaDB 설치하기
+### (1) MariaDB 설치하기
 
 <mark style="color:blue;"></mark>[<mark style="color:blue;">Download MariaDB Server</mark>](https://mariadb.org/download/?t=repo-config)에 접속하여 설치할 OS 버전과 원하는 MariaDB 버전을 선택한 후, 리포지토리 또는 명령어를 복사합니다.
 
@@ -486,7 +486,7 @@ $ sudo apt-get install mariadb-server
 
 
 
-#### (2) MariaDB 설치 확인하기
+### (2) MariaDB 설치 확인하기
 
 설치가 완료되었다면 MySQL 서비스를 구동한 후, active 상태인지 확인합니다.
 
@@ -518,7 +518,7 @@ $ sudo mysql -u root
 
 
 
-#### (3) MariaDB 기본 보안 설정하기
+### (3) MariaDB 기본 보안 설정하기
 
 mysql\_secure\_installation을 통해 root 비밀번호 설정정과 기본 보안 설정을 합니다.
 
@@ -548,7 +548,7 @@ Reload privilege tables now? [Y/n] y
 
 
 
-#### (4) PHP와 연동 확인하기
+### (4) PHP와 연동 확인하기
 
 새로 설정한 비밀번호로 MariaDB에 접속한 후, test 데이터베이스와 test 사용자를 생성합니다.
 
