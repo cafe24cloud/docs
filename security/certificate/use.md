@@ -141,7 +141,7 @@ $ openssl rsa -in encrypted.pem -out decrypted.pem
 
 ④ **등록일시** : 카페24 클라우드에 해당 인증서를 등록한 일자입니다.
 
-그 외에도 상세정보 탭에서 해당인증서의 핑거 프린트, 일련번호, 발급기관, 서명 알고리즘을 확인할 수 있습니다.&#x20;
+그 외에도 상세정보 탭에서 해당 인증서의 핑거 프린트, 일련번호, 발급기관, 서명 알고리즘을 확인할 수 있습니다.&#x20;
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/15/e35be2939fa46ed9976ac579d064dea3_1647328127.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -202,7 +202,7 @@ $ openssl rsa -in encrypted.pem -out decrypted.pem
 
 ## 4. 인증서 연결하기
 
-로드밸런서의 TERMINATED\_HTTPS  프로토콜을 사용하면 웹 서버에서 클라이언트 IP를 수집할 수 있습니다.&#x20;
+카페24 클라우드에서 제공하는 로드밸런서의 TERMINATED\_HTTPS  프로토콜을 사용하면 웹 서버에서 클라이언트 IP를 수집할 수 있습니다.&#x20;
 
 이를 위해서는 로드밸런서에 정상적으로 동작하는 인증서를 등록해야 하며, 자세한 방법은 [<mark style="color:blue;">**\[로드밸런서 사용 방법\]**</mark>](../../network/loadbalancer/use.md)을 참고해 주세요.
 
