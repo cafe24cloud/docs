@@ -144,24 +144,20 @@ $ chmod 600 cafe24.pem
 
 ### (3) Remote host identification has changed
 
-해당 IP로 접속한 적이 있는 서버와 RSA 공개키를 교환한 상태에서 같은 IP에 대한 가상서버가 변경되었을 때 발생하는 에러입니다.
+해당 IP로 접속한 적이 있는 가상서버와 RSA 공개키를 교환한 상태에서, 같은 IP에 대한 가상서버가 변경되었을 때 발생하는 에러입니다.
 
-하나의 공인 IP를 여러 서버에 번갈아 연결하여 접속 시도할 때 발생합니다.
+하나의 공인 IP를 여러 가상서버에 번갈아 연결하여 접속 시도할 때 발생합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/17/2e4324cf531521144fe657eab49b341b_1608183765.jpg" alt=""><figcaption></figcaption></figure>
 
-에러 문구에서 **/home/user\_name/.ssh/known\_hosts** 부분을 복사하여 vi로 열어줍니다.
+에러 문구에서 **/home/user\_name/.ssh/known\_hosts** 부분을 복사하여 파일을 연 다음, 가상서버의 공인 IP를 검색하고, 해당 문자열을 삭제합니다.
 
-<pre class="language-shell-session"><code class="lang-shell-session"><strong>$ vi /home/user_name/.ssh/known_hosts
+그리고 파일을 저장한 후, 다시 접속을 시도합니다.
+
+<pre class="language-shell-session"><code class="lang-shell-session"><strong>$ vi /home/centos/.ssh/known_hosts
 </strong></code></pre>
 
-**/home/centos/.ssh/known\_hosts** 파일을 열어 가상서버의 공인 IP를 검색하고, 해당 문자열을 삭제한 후, 파일을 저장하고 다시 접속을 시도합니다.
-
-```shell-session
-$ vi /home/centos/.ssh/known_hosts
-```
-
-
+****
 
 ### (4) Network error: Connection timed out
 
