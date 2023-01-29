@@ -120,7 +120,7 @@ $ vi /home/centos/.ssh/authorized_keys
 
 #### ⑤ 개인키의 파일 변환 과정에서 오류가 있는 경우
 
-개인키(.pem) 파일이 알맞은 방법으로 .ppk 파일로 변환되었는지 확인합니다.
+개인키 파일(.pem)이 알맞은 방법으로 .ppk 파일로 변환되었는지 확인합니다.
 
 해당 과정은 [<mark style="color:blue;">**\[SSH 키페어 접속 방법\]**</mark>](../connect/keypair.md)을 참고해 주세요.
 
