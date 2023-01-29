@@ -24,7 +24,7 @@ description: 본 매뉴얼은 가상서버 SSH 키페어 접속 시, 발생 가�
 
 ### (2) 방화벽 설정
 
-가상서버 SSH 키페어 접속을 하기 위해서는 가상서버에 아래와 같이 22번 INBOUND 보안 정책이 추가되어 있어야 합니다.
+가상서버 SSH 키페어 접속을 하기 위해서는 가상서버에 아래와 같이 22번(SSH) INBOUND 보안 정책이 추가되어 있어야 합니다.
 
 자세한 방법은 [<mark style="color:blue;">**\[방화벽 설정 방법\]**</mark>](../../../security/security/config.md)을 참고해 주세요.
 
@@ -116,25 +116,63 @@ $ vi /home/centos/.ssh/authorized_keys
 
 접속하려는 계정 정보가 가상서버에 없는 경우 에러가 발생할 수 있습니다.
 
-계정을 추가하기 위해서는 \[사용&#x20;
+계정을 추가하기 위해서는 [<mark style="color:blue;">**\[사용자 계정 추가 방법\]**</mark>](../../../security/keypair/useradd.md)을 참고해 주세요.
 
-사용자를 추가하기 위해서는
+#### ⑤ 개인키의 파일 변환 과정에서 오류가 있는 경우
 
-[**SSH 액세스 권한이 있는 새 사용자 계정을 가상서버에 추가하려면 어떻게 해야 합니까?**](https://console.cafe24.com/support/faq/view?idx=89) 를 참고해 주세요.
+개인키(.pem) 파일이 알맞은 방법으로 .ppk 파일로 변환되었는지 확인합니다.
 
-#### ⑤ 개인(.pem)파일의 .ppk 파일 변환 과정에서 오류가 있는 경우
-
-private key (.pem) 파일이 알맞은 방법으로 .ppk 파일로 변환 되었는지 확인합니다. 해당 과정은 [**SSH 키페어를 이용해서 가상서버에 어떻게 접속하나요?**](https://console.cafe24.com/support/faq/view?idx=71)를 참고해 주세요.
+해당 과정은 [<mark style="color:blue;">**\[SSH 키페어 접속 방법\]**</mark>](../connect/keypair.md)을 참고해 주세요.
 
 
 
 ### (2) Unprotected private key file
 
+개인키 파일의 권한이 너무 열려있어 안전하지 않을 때 발생하는 오류입니다.
+
+보안을 위해 개인키 파일에는 다른 사용자의 읽기, 쓰기 작업을 제한해야 합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/17/bbcb2aee3d097d4b2c21668e7c569eb4_1608181998.jpg" alt=""><figcaption></figcaption></figure>
+
+해당 개인키 파일의 권한을 다음과 같이 변경해 주세요.
+
+```shell-session
+$ chmod 600 cafe24.pem
+```
+
 
 
 ### (3) Remote host identification has changed
+
+해당 IP로 접속한 적이 있는 서버와 RSA 공개키를 교환한 상태에서 같은 IP에 대한 가상서버가 변경되었을 때 발생하는 에러입니다.
+
+하나의 공인 IP를 여러 서버에 번갈아 연결하여 접속 시도할 때 발생합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/17/2e4324cf531521144fe657eab49b341b_1608183765.jpg" alt=""><figcaption></figcaption></figure>
+
+에러 문구에서 **/home/user\_name/.ssh/known\_hosts** 부분을 복사하여 vi로 열어줍니다.
+
+<pre class="language-shell-session"><code class="lang-shell-session"><strong>$ vi /home/user_name/.ssh/known_hosts
+</strong></code></pre>
+
+**/home/centos/.ssh/known\_hosts** 파일을 열어 가상서버의 공인 IP를 검색하고, 해당 문자열을 삭제한 후, 파일을 저장하고 다시 접속을 시도합니다.
+
+```shell-session
+$ vi /home/centos/.ssh/known_hosts
+```
 
 
 
 ### (4) Network error: Connection timed out
 
+* **Putty 접속 시 에러 메시지** : Network error: Connection timed out
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/28/23d3920fe57610a7d40ad5e1a1ee6136_1609145638.jpg" alt=""><figcaption></figcaption></figure>
+
+* **리눅스 터미널 접속 시 에러 메시지** : port 22: Connection timed out
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/28/d1fcb9a0c61c0e99d542d46a4504f7aa_1609145783.jpg" alt=""><figcaption></figcaption></figure>
+
+위의 에러는 해당 가상서버에 연결된 방화벽에 22번(SSH) INBOUND 보안 정책이 추가되어 있지 않아서 발생한 에러입니다.
+
+따라서 [<mark style="color:blue;">**\[방화벽 설정 방법\]**</mark>](../../../security/security/config.md)을 참고하여 방화벽 설정을 해주세요.
