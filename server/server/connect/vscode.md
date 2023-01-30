@@ -46,7 +46,7 @@ VSCode를 연 다음, 다음 과정을 통해 가상서버 SSH 접속에 필요�
 
 ③ Install 클릭하여 확장 프로그램을 설치합니다.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 
 

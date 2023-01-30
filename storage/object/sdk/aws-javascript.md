@@ -112,7 +112,7 @@ Response : {
 
 
 
-#### (2) 버킷 삭제&#x20;
+### (2) 버킷 삭제&#x20;
 
 오브젝트가 모두 삭제된 빈 버킷에 대해서만 삭제가 가능합니다.
 
@@ -153,7 +153,7 @@ Response :  {
 
 
 
-#### (3) 버킷 리스트 조회&#x20;
+### (3) 버킷 리스트 조회&#x20;
 
 존재하는 모든 버킷을 조회합니다.&#x20;
 
@@ -195,11 +195,11 @@ Success [
 
 
 
-#### (4) 오브젝트 업로드&#x20;
+### (4) 오브젝트 업로드&#x20;
 
 파일을 특정 버킷에 업로드합니다.
 
-* **새로운 파일 업로드**: 코드상에서 파일명, 파일 내용(Body)을 선언하여 버킷에 업로드하는 방법입니다.
+① **새로운 파일 업로드**: 코드상에서 파일명, 파일 내용(Body)을 선언하여 버킷에 업로드하는 방법입니다.
 
 ```shell
 import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
@@ -229,7 +229,7 @@ run();
 Success : Successfully uploaded newly created file: test-bucket/test-file.txt
 ```
 
-* **로컬에 있는 파일 업로드**: 기존의 로컬에 있는 파일을 버킷에 업로드하는 방법입니다. &#x20;
+② **로컬에 있는 파일 업로드**: 기존의 로컬에 있는 파일을 버킷에 업로드하는 방법입니다. &#x20;
 
 ```shell
 import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
@@ -266,7 +266,7 @@ Success : Successfully uploaded exsisting file test-bucket/test-file-local.pdf
 
 
 
-#### (5) 오브젝트 다운로드&#x20;
+### (5) 오브젝트 다운로드&#x20;
 
 버킷에 있는 파일을 로컬의 특정 경로로 다운로드합니다.&#x20;
 
@@ -312,7 +312,7 @@ test-file.txt is now downloaded to [clients\client-s3\src\commands\cafe24-demo\f
 
 
 
-#### (6) 오브젝트 리스트 조회&#x20;
+### (6) 오브젝트 리스트 조회&#x20;
 
 버킷에 있는 모든 파일과 폴더를 조회합니다.&#x20;
 
@@ -391,11 +391,11 @@ Success :
 
 
 
-#### (7) 오브젝트 삭제&#x20;
+### (7) 오브젝트 삭제&#x20;
 
 버킷에서 파일을 삭제합니다.
 
-* **하나의 오브젝트 삭제**: 특정 버킷에 있는 오브젝트를 삭제합니다.&#x20;
+① **하나의 오브젝트 삭제**: 특정 버킷에 있는 오브젝트를 삭제합니다.&#x20;
 
 ```shell
 import {DeleteObjectCommand, S3Client} from "@aws-sdk/client-s3";
@@ -431,7 +431,7 @@ Response :  {
 }
 ```
 
-* **모든 오브젝트 삭제**: 특정 버킷에 있는 모든 오브젝트를 삭제합니다. &#x20;
+② **모든 오브젝트 삭제**: 특정 버킷에 있는 모든 오브젝트를 삭제합니다. &#x20;
 
 ```shell
 import {ListObjectsCommand, DeleteObjectCommand, S3Client} from "@aws-sdk/client-s3";
@@ -516,7 +516,7 @@ Success. All objects in bucket [test-bucket] are deleted. :
 
 
 
-#### (8) 오브젝트 복사&#x20;
+### (8) 오브젝트 복사&#x20;
 
 파일을 다른 버킷으로 복사합니다.
 

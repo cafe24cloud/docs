@@ -6,7 +6,7 @@ description: S3 Compatible API를 사용하여 오브젝트 스토리지를 사�
 
 ## 1. S3 Compatible API 사용하기
 
-#### (1) 지원되는 기능
+### (1) 지원되는 기능
 
 카페24 클라우드에서 제공하는 오브젝트 스토리지는 [<mark style="color:blue;">Amazon S3 API</mark>](https://docs.aws.amazon.com/ko\_kr/AmazonS3/latest/API/Welcome.html)의 기본 데이터 액세스 모델과 호환되는 RESTful API를 지원합니다.
 
@@ -41,7 +41,7 @@ description: S3 Compatible API를 사용하여 오브젝트 스토리지를 사�
 
 
 
-#### (2) 지원되지 않는 헤더
+### (2) 지원되지 않는 헤더
 
 지원되지 않는 헤더 필드는 다음과 같습니다.
 
@@ -54,18 +54,18 @@ description: S3 Compatible API를 사용하여 오브젝트 스토리지를 사�
 
 
 
-#### (3) 접근 방법
+### (3) 접근 방법
 
 버킷에 접근하는 방법은 두 가지가 있습니다.
 
-* URI에서 버킷을 최상위 디렉터리로 식별
+① URI에서 버킷을 최상위 디렉터리로 식별
 
 ```shell
 GET /bucketname HTTP/1.1 
 Host: kr.cafe24obs.com
 ```
 
-* 가상 버킷 호스트 이름을 통해 버킷을 식별
+② 가상 버킷 호스트 이름을 통해 버킷을 식별
 
 ```shell
  GET / HTTP/1.1
@@ -80,7 +80,7 @@ Host: kr.cafe24obs.com
 
 
 
-#### (4) Common Request Headers
+### (4) Common Request Headers
 
 |  Request Header  |     Description     |
 | :--------------: | :-----------------: |
@@ -91,7 +91,7 @@ Host: kr.cafe24obs.com
 
 
 
-#### (5) Common Response Status
+### (5) Common Response Status
 
 | HTTP Status |          Response Code          |
 | :---------: | :-----------------------------: |
@@ -130,7 +130,7 @@ Host: kr.cafe24obs.com
 
 
 
-#### (6) 인증 방법
+### (6) 인증 방법
 
 오브젝트 스토리지에 대한 요청은 인증되거나 인증되지 않을 수 있으며, 인증되지 않은 요청은 익명의 사용자에 의해 전송된다고 가정합니다.&#x20;
 
@@ -149,20 +149,24 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 **HMAC을 생성하는 방법**은 다음과 같습니다.
 
-* 헤더 문자열의 값을 가져옵니다.
-  * 요청 헤더 문자열을 표준 형식으로 정규화합니다.
-  * SHA-1 해싱 알고리즘을 사용하여 HMAC를 생성합니다. 자세한 내용은 RFC 2104 및 HMAC를 참조하십시오.
-  * HMAC 결과를 base-64로 인코딩합니다.
-* 헤더를 canonical form으로 정규화합니다.
-  * x-amz-로 시작하는 모든 필드를 가져옵니다.
-  * 필드가 모두 소문자인지 확인합니다.&#x20;
-  * 필드를 사전 순으로 정렬합니다.
-  * 동일한 필드 이름의 여러 인스턴스를 단일 필드로 결합하고 필드 값을 쉼표로 구분합니다.
-  * 필드 값의 공백과 줄 바꿈을 단일 공백으로 바꿉니다.
-  * 콜론 전후의 공백을 제거합니다.
-  * 각 필드 뒤에 새 줄을 추가합니다.
-  * 필드를 헤더에 다시 병합합니다.
-* base-64로 인코딩된 HMAC 문자열로 바꿉니다.
+① 헤더 문자열의 값을 가져옵니다.
+
+* 요청 헤더 문자열을 표준 형식으로 정규화합니다.
+* SHA-1 해싱 알고리즘을 사용하여 HMAC를 생성합니다. 자세한 내용은 RFC 2104 및 HMAC를 참조하십시오.
+* HMAC 결과를 base-64로 인코딩합니다.
+
+② 헤더를 canonical form으로 정규화합니다.
+
+* x-amz-로 시작하는 모든 필드를 가져옵니다.
+* 필드가 모두 소문자인지 확인합니다.&#x20;
+* 필드를 사전 순으로 정렬합니다.
+* 동일한 필드 이름의 여러 인스턴스를 단일 필드로 결합하고 필드 값을 쉼표로 구분합니다.
+* 필드 값의 공백과 줄 바꿈을 단일 공백으로 바꿉니다.
+* 콜론 전후의 공백을 제거합니다.
+* 각 필드 뒤에 새 줄을 추가합니다.
+* 필드를 헤더에 다시 병합합니다.
+
+③ base-64로 인코딩된 HMAC 문자열로 바꿉니다.
 
 
 
@@ -190,7 +194,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 ## 3. Bucket Operation
 
-#### (1) List Buckets
+### (1) List Buckets
 
 생성한 버킷 목록을 반환합니다.
 
@@ -220,7 +224,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (2) PUT Bucket
+### (2) PUT Bucket
 
 새 버킷을 생성합니다.
 
@@ -266,7 +270,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (3) DELETE Bucket
+### (3) DELETE Bucket
 
 버킷을 삭제합니다.
 
@@ -289,7 +293,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (4) GET Bucket
+### (4) GET Bucket
 
 버킷 개체 목록을 반환합니다.
 
@@ -347,7 +351,7 @@ ListBucketResult에는 객체가 포함되어 있으며, 각 객체는 Contents 
 
 
 
-#### (5) Get Bucket ACL
+### (5) Get Bucket ACL
 
 버킷의 액세스 제어 목록을 검색합니다.&#x20;
 
@@ -377,7 +381,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (6) PUT Bucket ACL
+### (6) PUT Bucket ACL
 
 기존 버킷에 대한 액세스 제어 목록을 설정합니다.&#x20;
 
@@ -407,7 +411,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (7) List Bucket Multipart Uploads
+### (7) List Bucket Multipart Uploads
 
 GET /?uploads는 현재 진행 중인 멀티파트 업로드 목록을 반환합니다.
 
@@ -467,7 +471,7 @@ GET /{bucket}?uploads에 대한 매개변수를 지정할 수 있지만 필수�
 
 ## 4. Object Operation
 
-#### (1) Put Object
+### (1) Put Object
 
 버킷에 객체를 추가합니다.
 
@@ -493,7 +497,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (2) Copy Object
+### (2) Copy Object
 
 객체를 복사하기 위해 PUT을 사용하고, 대상 버킷과 객체 이름을 지정합니다.
 
@@ -528,7 +532,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (3) Remove Object
+### (3) Remove Object
 
 개체를 제거합니다.
 
@@ -545,7 +549,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (4) Get Object
+### (4) Get Object
 
 버킷에서 객체를 검색합니다.
 
@@ -576,7 +580,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (5) Get Object Info
+### (5) Get Object Info
 
 객체에 대한 정보를 반환합니다.&#x20;
 
@@ -603,7 +607,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (6) Get Object ACL
+### (6) Get Object ACL
 
 객체에 대한 ACL 검색합니다.
 
@@ -631,7 +635,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (7) Set Object ACL
+### (7) Set Object ACL
 
 기존 객체에 대한 ACL을 설정합니다.
 
@@ -659,7 +663,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (8) Initiate Multi-part Upload
+### (8) Initiate Multipart Upload
 
 멀티파트 업로드 프로세스를 시작합니다.
 
@@ -692,7 +696,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (9) Multipart Upload Part
+### (9) Multipart Upload
 
 멀티파트 업로드를 사용하여 객체를 업로드합니다.
 
@@ -713,7 +717,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (10) List Multipart Upload Parts
+### (10) List Multipart Upload
 
 특정 멀티파트 업로드를 위해 업로드된 파트를 나열합니다.
 
@@ -750,7 +754,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (11) Complete Multipart Upload
+### (11) Complete Multipart Upload
 
 업로드된 부분을 조합하고, 새 개체를 생성하여 멀티파트 업로드를 완료합니다.
 
@@ -784,7 +788,7 @@ Authorization: AWS {access-key}:{hash-of-header-and-secret}
 
 
 
-#### (12) Abort Multipart Upload
+### (12) Abort Multipart Upload
 
 멀티파트 업로드를 중단합니다.
 

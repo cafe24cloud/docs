@@ -122,7 +122,7 @@ Swap 영역을 설정하여 메모리가 모두 찼을 경우 디스크의 Swap 
 
 해당 지표는 정확한 수치 확인을 위해 Host 서버에서 측정하는 것으로, 가상서버의 free, top 명령어 결과와 차이가 있을 수 있습니다.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 
 
