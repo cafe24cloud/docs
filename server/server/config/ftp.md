@@ -12,7 +12,7 @@ FTP(File Transfer Protocol)는 인터넷으로 연결된 클라이언트와 서�
 
 따라서 카페24클라우드는 보안이 강화된 <mark style="color:blue;">**SFTP(Secure File Transfer Protocol)**</mark>의 사용을 권장합니다.
 
-SFTP 사용 방법은 [SFTP 접속은 어떻게 할 수 있나요?](sftp.md) 를 참고해 주세요.
+SFTP 사용 방법은  [<mark style="color:blue;">\[SFTP 구성 방법\]</mark>](sftp.md)을 참고해 주세요.
 
 본 매뉴얼에서는 FTP Passive mode 설정하는 방법을 설명합니다.
 
@@ -22,8 +22,8 @@ FTP에는 FTP 서버와 FTP 클라이언트가 통신하는 방법에 따라 Pas
 
 FTP 서버와 클라이언트는 각각 두 개의 포트를 사용하여 통신 합니다.
 
-* Command port: 두 서버 간의 연결을 제어
-* Data port : 두 서버 간의 데이터 전송
+* **Command port**: 두 서버 간의 연결을 제어
+* **Data port** : 두 서버 간의 데이터 전송
 
 &#x20;
 
@@ -35,8 +35,6 @@ FTP 서버와 클라이언트는 각각 두 개의 포트를 사용하여 통신
 
 Passive mode의 통신 방법은 다음과 같습니다.
 
-
-
 ① 클라이언트에서 서버의 21번 포트로 접속
 
 ② 서버에서 클라이언트의 요청에 응답(ack) 하며 클라이언트가 접속할 자신의 Data port 전달
@@ -46,6 +44,8 @@ Passive mode의 통신 방법은 다음과 같습니다.
 ④ 서버가 클라이언트의 요청에 응답(ack)
 
 <figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+
 
 
 
@@ -75,13 +75,17 @@ Active mode의 통신 방법은 다음과 같습니다.
 
 
 
+
+
+
+
 ## 2. FTP Passive mode 설정 및 접속
 
 ### (1) FTP 서버의 방화벽 설정
 
 서버의 Data 포트로 사용할 포트 대역을 허용합니다.
 
-방화벽 설정에 대한 자세한 내용은  [가상서버에 방화벽 연결과 설정은 어떻게 하나요?](../../../security/security/config.md) 를 참고해 주세요
+방화벽 설정에 대한 자세한 내용은 [\[방화벽 설정 방법\]](../../../security/security/config.md) 참고해 주세요
 
 ① 클라이언트가 서버에 초기 접속을 요청할 Command 포트 21번을 허용합니다.
 
@@ -93,17 +97,25 @@ Active mode의 통신 방법은 다음과 같습니다.
 
 
 
+
+
 ### (2) vsftp 패키지 설치 및 실행
 
 FTP 서버로 사용할 가상서버에 vsftpd 패키지를 설치합니다.
 
+{% tabs %}
+{% tab title="CentOS / Rocky" %}
 ```shell-session
-# CentOS
 $ sudo yum install vsftpd
+```
+{% endtab %}
 
-# Ubuntu
+{% tab title="Ubuntu" %}
+```shell-session
 $ sudo apt-get install vsftpd
 ```
+{% endtab %}
+{% endtabs %}
 
 vsftpd 데몬을 실행시킵니다.
 
@@ -111,6 +123,8 @@ vsftpd 데몬을 실행시킵니다.
 $ sudo systemctl start vsftpd
 $ sudo systemctl enable vsftpd
 ```
+
+
 
 
 
@@ -140,14 +154,16 @@ $ sudo chmod 755 /home/ftpuser
 
 &#x20;&#x20;
 
+
+
 ### (4) FTP 서버의 vsftp 설정
 
 서버에서 Passive mode로 vsftpd 설정을 합니다.
 
 OS별 vsftpd.conf 파일의 경로는 다음과 같습니다.
 
-1. **CentOS** : /etc/vsftpd/vsftpd.conf
-2. **Ubuntu** : /etc/vsftpd.conf
+* **CentOS** : /etc/vsftpd/vsftpd.conf
+* **Ubuntu** : /etc/vsftpd.conf
 
 개발 환경에 따라 알맞은 설정이 필요하며, 설정 예시는 다음과 같습니다.
 
@@ -192,11 +208,13 @@ vsftp.conf 설정의 주요 옵션에 대한 상세 내용은 다음과 같습�
   &#x20;   YES로 지정할 경우 독립모드(standalone)으로 동작하게 되며,  NO로 설정할 경우 inetd 모드로 동작하게 됩니다.  listen=YES로 설정하면 listen\_port에 설정된 포트를 listening 하게 됩니다.
 * listen\_port : 독립모드로 동작할 시에, listen\_port로 지정한 포트로 ftp connection 요청을 받습니다. 기본값은 21번 포트입니다.
 * pam\_service\_name : vsftpd에서 사용할 PAM 설정파일명을 지정합니다.
-* pasv\_enable :  ftp를 Passive 모드로 사용하도록 설정합니다.
-* pasv\_max\_port, pasv\_min\_port :  Passive 모드로 통신 시 사용할 최대 및 최소 포트를 지정합니다.
-* pasv\_address : Passive 모드로 vsftp를 이용할 가상서버의 공인 IP를 입력합니다.
+* <mark style="color:blue;">pasv\_enable</mark> :  ftp를 Passive 모드로 사용하도록 설정합니다.
+* <mark style="color:blue;">pasv\_max\_port, pasv\_min\_port</mark> :  Passive 모드로 통신 시 사용할 최대 및 최소 포트를 지정합니다.
+* <mark style="color:blue;">pasv\_address</mark> : Passive 모드로 vsftp를 이용할 가상서버의 공인 IP를 입력합니다.
 
 &#x20;
+
+
 
 ### (5) 데몬 재시작
 
@@ -205,6 +223,8 @@ vsftp.conf 파일을 수정한 후, 데몬을 재시작합니다.
 ```shell-session
 $ sudo systemctl restart vsftpd
 ```
+
+
 
 
 
