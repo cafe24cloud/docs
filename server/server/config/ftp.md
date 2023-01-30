@@ -52,7 +52,7 @@ FTP 클라이언트가 동작하는 PC/서버에 방화벽 설정이나 공유�
 
 클라이언트가 외부 접속을 허용하지 않을 경우 FTP 로그인은 되지만 데이터 전송 및 파일 리스트를 받지 못하는 문제가 발생합니다.
 
-따라서 Active mode의 이러한 단점을 보완하는 Passive mode의 사용을 권장합니다.
+<mark style="color:blue;">따라서 Active mode의 이러한 단점을 보완하는 Passive mode의 사용을 권장합니다.</mark>
 
 Active mode의 통신 방법은 다음과 같습니다.
 
@@ -63,7 +63,7 @@ Active mode의 통신 방법은 다음과 같습니다.
 3. 서버가 클라이언트의 Data port로 접속 요청
 4. 클라이언트가 서버의 요청에 응답(acks)
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -81,7 +81,7 @@ Active mode의 통신 방법은 다음과 같습니다.
 
 &#x20;   해당 포트는 49152\~65535 사이의 특정 범주를 택해 개방할 수 있습니다.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 
 

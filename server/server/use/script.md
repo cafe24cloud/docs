@@ -94,7 +94,7 @@ Shell(운영체제의 명령해석기)에서 처리하는 스크립트 형식입
 
 <mark style="color:red;">본 매뉴얼에서는 패스워드는 동일하게 "cafe@$P@sswd"로 설정하였으며, 적용 과정에서 변경해야 합니다.</mark>
 
-<figure><img src="../../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
