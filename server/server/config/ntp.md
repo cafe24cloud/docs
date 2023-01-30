@@ -159,8 +159,6 @@ $ sudo vi /etc/chrony/chrony.conf
 {% endtab %}
 {% endtabs %}
 
-
-
 원하는 ntp 서버를 등록합니다.
 
 ntp package 설치와 동시에 기본 설정된 pool을 사용해도 기능상 문제없으나, 지리적으로 가까운 ntp pool을 등록하기 위해 다음을 수행합니다.
@@ -182,8 +180,6 @@ server 0.kr.pool.ntp.org iburst
 server 1.asia.pool.ntp.org iburst
 server 2.asia.pool.ntp.org iburst
 ```
-
-
 
 서비스를 재시작하여 변경 사항을 적용합니다.
 
@@ -333,7 +329,7 @@ $ sudo apt install ntp
 
 
 
-#### 3. ntpd 데몬 동작 시키기
+#### (3) ntpd 데몬 동작 시키기
 
 ntpd 데몬을 동작 시킵니다.
 
@@ -377,8 +373,6 @@ vi로 ntp.conf 파일을 열어봅니다.
 $ sudo vi /etc/ntp.conf
 ```
 
-
-
 원하는 ntp 서버를 등록합니다.
 
 ntp package 설치와 동시에 기본 설정된 pool을 사용해도 기능상 문제없으나, 지리적으로 가까운 NTP pool을 등록하기 위해 다음을 수행합니다.
@@ -404,8 +398,6 @@ server 1.asia.pool.ntp.org   iburst
 
 server 2.asia.pool.ntp.org   iburst
 ```
-
-
 
 서비스를 재시작합니다.&#x20;
 
