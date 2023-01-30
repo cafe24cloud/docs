@@ -62,7 +62,11 @@ Thu Feb 18 13:21:22 KST 2021
 * [**chrony로 설정하기**](ntp.md#2-1.-chrony)
 * [**ntp로 설정하기**](https://console.cafe24.com/support/faq/view?idx=191#B-2)
 
-##
+
+
+
+
+
 
 ## 2. 원격지 ntp 서버와 시간 동기화
 
