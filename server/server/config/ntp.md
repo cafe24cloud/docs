@@ -20,13 +20,17 @@ $ timedatectl list-timezones
 
 
 
+
+
 ### (2) timezone 변경
 
 동기화가 필요한 타임존으로 변경합니다. 다음 명령어로 한국 표준시로 설정합니다.
 
-```
+```shell-session
 $ sudo timedatectl set-timezone Asia/Seoul
 ```
+
+
 
 
 
@@ -34,10 +38,12 @@ $ sudo timedatectl set-timezone Asia/Seoul
 
 다음 명령어로 local time이 정상적으로 바뀌었는지 확인합니다.
 
-```
+```shell-session
 $ date
 Thu Feb 18 13:21:22 KST 2021
 ```
+
+
 
 
 
@@ -45,7 +51,7 @@ Thu Feb 18 13:21:22 KST 2021
 
 해당 작업은 영구적으로 적용되지 않습니다.
 
-&#x20;시간 동기화를 영구적으로 지속하기 위해서는 NTP 서버와 동기화시키는 작업이 필요합니다.
+시간 동기화를 영구적으로 지속하기 위해서는 NTP 서버와 동기화시키는 작업이 필요합니다.
 
 이를 위해 chrony 또는 ntpd를 이용할 수 있습니다. 다음 중 원하는 방법을 선택하여 수행해 주세요.
 
@@ -60,9 +66,9 @@ Thu Feb 18 13:21:22 KST 2021
 
 ## 2. 원격지 ntp 서버와 시간 동기화
 
-### 2-1. chrony로 설정하기
+### (1) chrony로 설정하기
 
-### (1) ntpd 중지
+#### a. ntpd 중지
 
 ntp가 동작 중인 경우 이를 중지시킵니다.
 
@@ -83,7 +89,7 @@ $ sudo systemctl disable ntpd
 
 
 
-#### (2) chrony 패키지 설치
+#### b. chrony 패키지 설치
 
 &#x20;chrony를 이용하여 가상서버의 시간을 NTP 서버와 동기화 할 수 있습니다.
 
@@ -105,7 +111,7 @@ $ sudo apt install chrony
 
 
 
-#### (3) chrony 데몬 동작 시키기&#x20;
+#### c. chrony 데몬 동작 시키기&#x20;
 
 chronyd 데몬을 동작 시킵니다.
 
@@ -141,7 +147,7 @@ $ sudo systemctl enable chronyd
 
 
 
-#### (4) chrony.conf 파일 수정 (생략 가능)
+#### d. chrony.conf 파일 수정 (생략 가능)
 
 chrony.conf 파일을 vi로 열어봅니다.
 
@@ -163,11 +169,11 @@ $ sudo vi /etc/chrony/chrony.conf
 
 ntp package 설치와 동시에 기본 설정된 pool을 사용해도 기능상 문제없으나, 지리적으로 가까운 ntp pool을 등록하기 위해 다음을 수행합니다.
 
-* NTP pool 확인&#x20;
-  * [**NTP Pool Project**](https://www.ntppool.org/ko/)에서 확인 가능합니다. (한국 시각에 맞는 NTP pool은 [**kr.pool.ntp.org**](https://www.ntppool.org/zone/kr)에서 확인 할 수 있습니다.)
-* iburst 옵션
+* **NTP pool 확인**&#x20;
+  * [NTP Pool Project](https://www.ntppool.org/ko/)에서 확인 가능합니다. (한국 시각에 맞는 NTP pool은 [kr.pool.ntp.org](https://www.ntppool.org/zone/kr)에서 확인 할 수 있습니다.)
+* **iburst 옵션**
   * 해당 ntp 서버와 동기화하는 시간을 최소화합니다.
-* 다수의 서버를 등록
+* **다수의 서버를 등록**
   * &#x20;0, 1, 2, 3의 숫자를 붙여 나열합니다.
   * 그러면 등록한 서버들에 랜덤으로 접속하여 시간 정보를 가져오게 됩니다.
 
@@ -210,9 +216,9 @@ $ sudo chronyc -a makestep
 
 
 
-## 5. 동기화 확인
+#### e. 동기화 확인
 
-#### (1) chronyc sources
+(1) chronyc sources
 
 다음 명령어로 chrony.conf의 내용이 잘 반영되고 있는지 확인합니다.
 
@@ -224,14 +230,12 @@ $ chronyc sources
 
 MS 항목 : 가상머신과 해당 원격지 NTP 서버의 결합 상태를 보여줍니다.
 
-* \* : 정상적으로 동기화 중
-* \+ : 필요할 때 동기화 가능한 상태인 secondary 서버
-* \- : 가상서버와 결합하지 않은 서버
-* ? : 연결이 끊어졌거나 패킷 통신을 실패
-* x : 해당 서버의 시간이 다른 NTP 서버들과 일치하지 않는 경우
-* \~ : 시간 변동성이 큰 소스
-
-
+* **\*** : 정상적으로 동기화 중
+* **+** : 필요할 때 동기화 가능한 상태인 secondary 서버
+* **-** : 가상서버와 결합하지 않은 서버
+* **?** : 연결이 끊어졌거나 패킷 통신을 실패
+* **x** : 해당 서버의 시간이 다른 NTP 서버들과 일치하지 않는 경우
+* **\~** : 시간 변동성이 큰 소스
 
 출력 결과 예시는 다음과 같습니다. 이처럼 \* 표시를 띄는 서버 정보가 있으면 동기화된 것입니다.
 
@@ -239,7 +243,7 @@ MS 항목 : 가상머신과 해당 원격지 NTP 서버의 결합 상태를 보�
 
 
 
-#### (2) chronyc tracking
+(2) chronyc tracking
 
 다음 명령어로 로컬 서버와 원격지 타임 서버 간 오차에 대한 통계를 확인할 수 있습니다.
 
@@ -251,20 +255,20 @@ $ chronyc -a tracking
 
 상태 지표는 다음과 같습니다.
 
-* Reference ID : 동기화 중인 원격지 서버의 IP 혹은 도메인. 값이 127.127.1.1인 경우 원격 서버와 연결되지 않고 로컬 모드로 동작 중임을 의미.&#x20;
-* Stratum : 로컬 서버가 동기화된 타임 서버로부터 몇 hop에 걸쳐 있는지를 의미.
-* Ref time : 가장 마지막에 동기화가 실시된 UTC 시간
-* System time : 원격 서버와의 시간이 틀어졌을 경우 chronyd는 어플리케이션의 장애를 최소화하기 위해 시스템 시간을 천천히 조정하여 동기화를 수행한다.\
+* **Reference ID** : 동기화 중인 원격지 서버의 IP 혹은 도메인. 값이 127.127.1.1인 경우 원격 서버와 연결되지 않고 로컬 모드로 동작 중임을 의미.&#x20;
+* **Stratum** : 로컬 서버가 동기화된 타임 서버로부터 몇 hop에 걸쳐 있는지를 의미.
+* **Ref time** : 가장 마지막에 동기화가 실시된 UTC 시간
+* **System time** : 원격 서버와의 시간이 틀어졌을 경우 chronyd는 어플리케이션의 장애를 최소화하기 위해 시스템 시간을 천천히 조정하여 동기화를 수행한다.\
   &#x20;     해당 옵션은 이 작업으로 인한 원격지 시간과 시스템 시간의 차이를 의미.
-* Last offset : 마지막 업데이트에서 측정된 오프셋
-* RMS offset : 장시간 측정된 오프셋의 평균값
-* Frequency : chronyd가 시간을 동기화 하지 않을 경우 시스템 시간이 틀어질 확률
-* Residual freq : 동기화 중인 타임 서버의 frequency와 로컬 서버의 frequency의 오차
-* Skew : frequency에 대한 예상 오차 범위
-* Root delay : 동기화되는 타임 서버에 대한 네트워크 경로 지연 수치&#x20;
-* Root dispersion : 로컬 서버와 원격지 타임 서버 사이에서 발생한 최대 시간 차이
-* Update interval : 가장 최근에 수행된 두 동기화 사이의 시간차
-* Leap status : Normal일 경우 정상 동기화된 것이며, 동기화 실패한 경우 Not synchronized 표시
+* **Last offset** : 마지막 업데이트에서 측정된 오프셋
+* **RMS offset** : 장시간 측정된 오프셋의 평균값
+* **Frequency** : chronyd가 시간을 동기화 하지 않을 경우 시스템 시간이 틀어질 확률
+* **Residual freq** : 동기화 중인 타임 서버의 frequency와 로컬 서버의 frequency의 오차
+* **Skew** : frequency에 대한 예상 오차 범위
+* **Root delay** : 동기화되는 타임 서버에 대한 네트워크 경로 지연 수치&#x20;
+* **Root dispersion** : 로컬 서버와 원격지 타임 서버 사이에서 발생한 최대 시간 차이
+* **Update interval** : 가장 최근에 수행된 두 동기화 사이의 시간차
+* **Leap status** : Normal일 경우 정상 동기화된 것이며, 동기화 실패한 경우 Not synchronized 표시
 
 출력 결과 예시는 다음과 같습니다.&#x20;
 
@@ -272,7 +276,7 @@ $ chronyc -a tracking
 
 
 
-### 6. 서버 시간 확인하기
+#### f. 서버 시간 확인하기
 
 서버의 시간이 잘 변경되었는지 확인합니다.
 
@@ -283,9 +287,11 @@ Mon Feb 22 10:47:43 KST 2021
 
 
 
-### 2-2. ntpd로 설정하기
 
-#### (1) chronyd 중지
+
+### (2) ntpd로 설정하기
+
+#### a. chronyd 중지
 
 chronyd가 동작 중인 경우 이를 중지 시킵니다.
 
@@ -307,7 +313,7 @@ $ sudo systemctl disable chrony
 
 
 
-#### (2) NTP 패키지 설치
+#### b. NTP 패키지 설치
 
 ntp를 이용하여 가상서버의 시간을 NTP 서버와 동기화 할 수 있습니다.
 
@@ -329,7 +335,7 @@ $ sudo apt install ntp
 
 
 
-#### (3) ntpd 데몬 동작 시키기
+#### c. ntpd 데몬 동작 시키기
 
 ntpd 데몬을 동작 시킵니다.
 
@@ -365,7 +371,7 @@ $ sudo systemctl start ntp
 
 
 
-#### (4) ntp.conf 수정 (생략 가능)
+#### d. ntp.conf 수정 (생략 가능)
 
 vi로 ntp.conf 파일을 열어봅니다.
 
@@ -377,12 +383,12 @@ $ sudo vi /etc/ntp.conf
 
 ntp package 설치와 동시에 기본 설정된 pool을 사용해도 기능상 문제없으나, 지리적으로 가까운 NTP pool을 등록하기 위해 다음을 수행합니다.
 
-* ntp 서버 확인&#x20;
-  * [**NTP Pool Project**](https://www.ntppool.org/ko/)에서 확인 가능합니다.
-  * 한국 시각에 맞는 NTP pool은 [**kr.pool.ntp.org**](https://www.ntppool.org/zone/kr)에서 확인 할 수 있습니다.
-* iburst 옵션
+* **ntp 서버 확인**&#x20;
+  * [NTP Pool Project](https://www.ntppool.org/ko/)에서 확인 가능합니다.
+  * 한국 시각에 맞는 NTP pool은 [kr.pool.ntp.org](https://www.ntppool.org/zone/kr)에서 확인 할 수 있습니다.
+* **iburst 옵션**
   * 해당 ntp 서버와 동기화되는 시간을 최소화합니다.
-* 다수의 서버를 등록
+* **다수의 서버를 등록**
   * 0, 1, 2, 3의 숫자를 붙여 나열합니다.
   * 등록한 서버들에 무작위로 접속하여 시간 정보를 가져오게 됩니다.
 
@@ -417,7 +423,7 @@ $ sudo systemctl restart ntp
 
 
 
-#### (5) 동기화 확인
+#### e. 동기화 확인
 
 다음 명령어로 서버 동기화 상태를 확인 할 수 있습니다.
 
@@ -427,10 +433,10 @@ $ ntpq -p
 
 상태 지표는 다음과 같습니다.
 
-* remote 항목 : 가상서버가 동기화 중인 원격지 NTP 서버로, 결합 상태는 좌측의 기호로 확인할 수 있습니다.
-* \* : 정상적으로 동기화 중
-* \+ : 필요할 때 동기화 가능한 상태인 secondary 서버
-* \- : 가상서버와 결합하지 않은 서버 &#x20;
+* **remote 항목** : 가상서버가 동기화 중인 원격지 NTP 서버로, 결합 상태는 좌측의 기호로 확인할 수 있습니다.
+* **\*** : 정상적으로 동기화 중
+* **+** : 필요할 때 동기화 가능한 상태인 secondary 서버
+* **-** : 가상서버와 결합하지 않은 서버 &#x20;
 
 따라서 다음 결과와 같이 \* 표시를 띄는 서버 정보가 있으면 동기화된 것입니다.
 
@@ -438,7 +444,9 @@ $ ntpq -p
 
 <figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
-#### (6) 서버 시간 확인하기
+
+
+#### f. 서버 시간 확인하기
 
 서버의 시간이 잘 변경되었는지 확인합니다.
 
