@@ -14,7 +14,7 @@ FTP 사용을 원하실 경우 [FTP는 어떻게 사용하나요?](ftp.md)를 �
 
 
 
-&#x20;따라서 카페24클라우드는 보안이 강화된 **SFTP(Secure File Transfer Protocol)** 사용을 권장합니다.
+&#x20;따라서 카페24클라우드는 보안이 강화된 <mark style="color:blue;">**SFTP(Secure File Transfer Protocol)**</mark>** ** 사용을 권장합니다.
 
 SFTP는 SSH방식을 사용하여 서버 간에 암호화된 데이터를 주고 받습니다.
 
@@ -50,13 +50,13 @@ SFTP는 SSH 방식으로 동작하기 때문에 기본적으로 22번 포트를 
 
 FileZilla Client에 접근할 ftp 호스트를 등록하는 과정은 다음과 같습니다.
 
-#### (1) 사이트 관리자 열기
+### (1) 사이트 관리자 열기
 
 FileZilla를 실행한 뒤, 왼쪽 상단의 사이트 관리자 아이콘을 클릭해 주세요.
 
 <figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
-#### (2) New Site 추가
+### (2) New Site 추가
 
 사이트 관리자에서 New Site 버튼을 클릭하여 호스트를 추가해 주세요.
 
@@ -64,7 +64,7 @@ FileZilla를 실행한 뒤, 왼쪽 상단의 사이트 관리자 아이콘을 �
 
 
 
-#### (3) FTP 서버 정보 입력
+### (3) FTP 서버 정보 입력
 
 FTP 서버 접속을 위한 정보를 입력합니다. 설정이 필요한 정보는 다음과 같습니다.&#x20;
 
