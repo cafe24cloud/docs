@@ -6,7 +6,7 @@ description: 가상서버 및 오토스케일 생성 시에 자동 스크립트�
 
 ## 1. 자동 스크립트 개요
 
-1-1.자동 스크립트 실행 기능이란?
+### (1) 자동 스크립트 실행 기능이란?
 
 가상서버를 생성할 때 자동 스크립트 기능을 이용하여 일반적인 구성 작업을 자동으로 수행할 수 있습니다.
 
@@ -16,7 +16,7 @@ description: 가상서버 및 오토스케일 생성 시에 자동 스크립트�
 
 &#x20;
 
-**cloud-init**
+#### **a. cloud-init**
 
 cloud-init은 가상서버의 초기 설정을 자동화하는 도구입니다.&#x20;
 
@@ -28,7 +28,7 @@ cloud-init은 가상서버의 초기 설정을 자동화하는 도구입니다.&
 
 &#x20;
 
-**shell script**
+#### **b. shell script**
 
 Shell(운영체제의 명령해석기)에서 처리하는 스크립트 형식입니다.
 
@@ -38,15 +38,14 @@ Shell(운영체제의 명령해석기)에서 처리하는 스크립트 형식입
 
 &#x20;
 
+
+
 ## 2. 자동 스크립트 활용 시 주의점
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의 사항**</mark>
 
-* 자동 스크립트가 올바르게 작성되지 않은 경우 가상서버가 정상 부팅 및 동작하지 않을 수 있습니다.
-
-
-
+* <mark style="color:red;">자동 스크립트가 올바르게 작성되지 않은 경우 가상서버가 정상 부팅 및 동작하지 않을 수 있습니다.</mark>
 * <mark style="color:red;">카페24 클라우드는 보안 강화의 목적으로 키페어 접속 방식을 추천하며, 초기 패스워드 설정을 권장하지 않습니다.</mark> &#x20;
 * 불가피하게 패스워드 설정을 할 경우 유추하기 어려운 강력한 패스워드를 설정해야 합니다. 특히 root는 시스템의 관리자 계정이므로 보안에 각별한 주의가 필요합니다. &#x20;
 {% endhint %}
@@ -80,15 +79,14 @@ Shell(운영체제의 명령해석기)에서 처리하는 스크립트 형식입
 
 
 
+
+
 ## 3. 자동 스크립트 적용 방법
 
 자동 스크립트는 가상서버와 오토스케일 생성 단계에서 적용할 수 있습니다.
 
-가상서버 매뉴얼 : [가상서버는 어떻게 생성하나요?](../create.md)
-
-오토스케일 매뉴얼 : [오토스케일은 어떻게 사용하나요?](../../autoscale/use.md)
-
-
+* **가상서버 매뉴얼** : [\[가상서버 생성 방법\]](../create.md)
+* **오토스케일 매뉴얼** : [\[오토스케일 사용 방법\]](../../autoscale/use.md)
 
 가상서버 및 오토스케일을 생성하는 팝업에서 다음 부분에 스크립트를 작성합니다.
 
@@ -100,11 +98,13 @@ Shell(운영체제의 명령해석기)에서 처리하는 스크립트 형식입
 
 
 
+
+
 ## 4.  cloud-init 스크립트 예시
 
 ### (1) 초기 패스워드 설정
 
-**일반(초기) 계정 패스워드 설정**
+**a. 일반(초기) 계정 패스워드 설정**
 
 가상서버의 일반계정(ex. centos, ubuntu..)의 패스워드를 다음 스크립트로 초기화 할 수 있습니다.
 
@@ -121,7 +121,7 @@ ssh_pwauth: True
 
 
 
-#### 특정 계정의 패스워드 설정
+#### b. 특정 계정의 패스워드 설정
 
 다음과 같이 특정 계정에 대한 패스워드를 설정할 수 있습니다.
 
@@ -140,6 +140,8 @@ chpasswd:
 
 
 
+
+
 ### (2) 패키지 업데이트, 업그레이드
 
 다음 스크립트로 표준 cloud 배포판 이미지의 패키지 및 레퍼지토리를 update, upgrade 할 수 있습니다.
@@ -151,6 +153,8 @@ package_upgrade: true
 repo-upgrade: true
 repo-upgrade: all
 ```
+
+
 
 &#x20;
 
@@ -176,6 +180,8 @@ cloud-init 스크립트에서 지정한 로그 파일의 마지막 10줄을 출�
 ```shell-session
 $ tail -f /var/log/cloud-init-output.log
 ```
+
+
 
 &#x20;&#x20;
 
@@ -205,6 +211,8 @@ runcmd:
   - sed -i "s/SELINUX=enforcing/SELINUX=disabled/" /etc/selinux/config
   - reboot
 ```
+
+
 
 &#x20;
 
@@ -248,6 +256,8 @@ output: {all: '| tee -a /var/log/cloud-init-output.log'}
 
 
 
+
+
 ### (6) 애플리케이션 패키지 설치
 
 cloud-init으로 가상서버에 패키지를 자동 설치할 수 있습니다.
@@ -256,11 +266,11 @@ cloud-init으로 가상서버에 패키지를 자동 설치할 수 있습니다.
 
 이 경우 **output**으로 스크립트에 대한 로그를 남겨 진행 상황을 확인합니다.
 
-가상서버의 OS 이미지에서 지원하는 패키지를 설치하여야 합니다.
+<mark style="color:red;">가상서버의 OS 이미지에서 지원하는 패키지를 설치하여야 합니다.</mark>
 
 &#x20;
 
-#### 패키지 설치
+#### a. 패키지 설치
 
 packages를 사용해 패키지를 자동 설치합니다.
 
@@ -275,7 +285,7 @@ packages:
 
 &#x20;
 
-#### APM 설치
+#### b. APM 설치
 
 이를 응용하여 다음과 같이 APM(Apache+PHP+MariaDB)패키지를 한 번에 설치할 수 있습니다.
 
@@ -301,6 +311,8 @@ output: {all: '| tee -a /var/log/cloud-init-output.log'}
 
 &#x20;
 
+
+
 ### (7) timezone 변경
 
 다음과 같이 부팅 단계에서 가상서버의 타임존을 KST로 변경할 수 있습니다.
@@ -312,11 +324,13 @@ output: {all: '| tee -a /var/log/cloud-init-output.log'}
 timezone: Asia/Seoul
 ```
 
+
+
 &#x20;
 
 ### (8) 응용 예시
 
-****[**4. cloud-init 스크립트 예시**](script.md#4.-cloud-init)에서 알아본 모듈들을 혼합하여 다음과 같이 사용할 수 있습니다.
+[4. cloud-init 스크립트 예시](script.md#4.-cloud-init)에서 알아본 모듈들을 혼합하여 다음과 같이 사용할 수 있습니다.
 
 ```yaml
 #cloud-config
@@ -355,11 +369,13 @@ output: {all: '| tee -a /var/log/cloud-init-output.log'}
 
 &#x20;
 
+
+
+
+
 ## 5. Shell 스크립트 예시
 
-본 예시는 CentOS 기준으로 작성되었으며, OS 별로 적절한 명령어를 작성해야 합니다.
-
-&#x20;
+본 예시는 CentOS 기준으로 작성되었으며, OS 별로 적절한 명령어를 작성해야 합니다.&#x20;
 
 ### (1) 초기 패스워드 설정
 
@@ -374,6 +390,8 @@ echo 'centos:cafe@$P@sswd' | sudo chpasswd
 
 &#x20;
 
+
+
 ### (2) 애플리케이션 패키지 설치
 
 shell에서 동작하는 명령어와 동일하게 구성하여 스크립트화 할 수 있습니다.
@@ -384,6 +402,8 @@ shell에서 동작하는 명령어와 동일하게 구성하여 스크립트화 
 #!/bin/bash
 yum install -y httpd php mariadb-server
 ```
+
+
 
 &#x20;
 
@@ -398,11 +418,13 @@ yum install -y httpd php mariadb-server
 timedatectl set-timezone Asia/Seoul
 ```
 
+
+
 &#x20;
 
 ### (4) 응용 예시
 
-****[**5. Shell 스크립트 예시**](script.md#5.-shell)에서 알아본 예제들을 혼합하여 다음과 같이 사용할 수 있습니다.
+[5. Shell 스크립트 예시](script.md#5.-shell)에서 알아본 예제들을 혼합하여 다음과 같이 사용할 수 있습니다.
 
 ```shell
 #!/bin/bash
