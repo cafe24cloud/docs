@@ -10,7 +10,9 @@ description: 가상서버에 NFS를 구성하는 방법은 아래와 같습니�
 
 NFS(Network File System)를 사용하면 원격 호스트에서 네트워크를 통해 파일 시스템을 마운트하고, 로컬로 마운트된 파일 시스템과 상호 작용할 수 있습니다.
 
-따라서 시스템 관리자는 리소스를 네트워크의 중앙 집중식 서버에 통합할 수 있는 장점이 있지만, **네트워크 통신을 하기 때문에 속도 저하의 이슈가 발생할 수 있어 NFS 사용을 권장드리지 않습니다.**
+따라서 시스템 관리자는 리소스를 네트워크의 중앙 집중식 서버에 통합할 수 있는 장점이 있지만, <mark style="color:red;">네트워크 통신을 하기 때문에 속도 저하의 이슈가 발생할 수 있어 NFS 사용을 권장드리지 않습니다.</mark>
+
+
 
 
 
@@ -59,11 +61,13 @@ $ systemctl status nfs-kernel-server
 
 ****
 
+****
+
 ### (2) 블록 스토리지 마운트하기
 
 가상서버에 연결된 블록 스토리지를 확인합니다.
 
-블록 스토리지 연결 방법은 [**\[블록 스토리지 연결 방법\]**](../../../storage/block/connect.md)을 참고해 주시길 바랍니다.
+블록 스토리지 연결 방법은 [\[블록 스토리지 연결 방법\]](../../../storage/block/connect.md)을 참고해 주세요.
 
 ```shell-session
 $ sudo fdisk -l
@@ -89,7 +93,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 
 확인한 경로로 파티션을 생성합니다.
 
-**고객님의 환경에 따라 디스크 경로가 다를 수 있습니다.**
+<mark style="color:blue;">고객님의 환경에 따라 디스크 경로가 다를 수 있습니다.</mark>
 
 * &#x20; Command (m for help): n   **=> 새로운 파티션 추가**
 * &#x20; Select (default p): p   **=> 파티션 타입을 primary로 설정**
@@ -163,6 +167,8 @@ tmpfs            81M     0   81M   0% /run/user/1000
 
 
 
+
+
 ### (3) NFS 설정하기
 
 NFS Server는 /etc/exports 구성 파일을 참조하여 NFS Client에서 파일 시스템에 액세스할 수 있는지 여부를 확인합니다.
@@ -197,6 +203,8 @@ $ sudo touch /nfs/test.txt
 ```
 
 &#x20;
+
+
 
 ### (4) NFS 자동 마운트 설정하기
 
@@ -264,6 +272,8 @@ NFS Server 경우, 마운트를 해제하지 않고 재부팅하면 장애가 �
 
 &#x20;
 
+
+
 ## 3. NFS Client 구성하기
 
 ### (1) 패키지 설치하기
@@ -287,6 +297,8 @@ $ sudo apt-get install nfs-common
 {% endtabs %}
 
 &#x20;
+
+
 
 ### (2) NFS 마운트하기
 
@@ -324,6 +336,8 @@ test.txt
 ```
 
 &#x20;
+
+
 
 ### (3) NFS 자동 마운트 설정하기
 
