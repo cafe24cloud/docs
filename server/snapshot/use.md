@@ -22,11 +22,15 @@ description: 가상서버 스냅샷을 사용하여 가상서버의 OS 영역을
 
 
 
+
+
 ### (2) 원격 접속 및 Console 접속 시 키보드 입력 불가
 
 가상서버의 콘솔 화면에서 키보드 입력에 대한 반응이 없는 경우, 가상서버 조작이 불가능합니다.
 
 System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이터를 본 매뉴얼을 통해 복구할 수 있습니다.
+
+
 
 
 
@@ -38,19 +42,25 @@ System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이�
 
 
 
+
+
 ## 2. 가상서버의 OS 영역 복구하기
 
 ### (1) 신규 가상서버 생성하기
 
-서버 > 가상서버에서 \[새로운 가상서버 생성] 버튼을 클릭하여 복구할 OS 영역의 볼륨을 연결할 새로운 가상서버를 생성합니다.
+<mark style="background-color:blue;">콘솔 > 서버 > 가상서버</mark>
+
+\[새로운 가상서버 생성] 버튼을 클릭하여 복구할 OS 영역의 볼륨을 연결할 새로운 가상서버를 생성합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/14/7154147043d2407feca070ae30f095d0_1618388859.jpg" alt=""><figcaption></figcaption></figure>
 
 
 
+
+
 ### (2) 장애 가상서버의 스냅샷 생성하기
 
-서버 > 가상서버 > 복구하려는 가상서버에서 \[재시작] 버튼을 클릭합니다.
+복구하려는 가상서버를 선택하여 \[재시작] 버튼을 클릭합니다.
 
 가상서버를 재시작하면 RAM에서 작업하던 데이터를 Disk로 write하게 되어 데이터 유실을 방지할 수 있습니다.
 
@@ -58,7 +68,9 @@ System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이�
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/14/05e55e903f2158b98ef6e91e253c4c3d_1618388878.jpg" alt=""><figcaption></figcaption></figure>
 
-서버 > 가상서버 스냅샷 > \[새로운 가상서버 스냅샷 생성] 버튼을 클릭합니다.
+<mark style="background-color:blue;">콘솔 > 서버 > 가상서버 스냅샷</mark>
+
+\[새로운 가상서버 스냅샷 생성] 버튼을 클릭합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/297a549be379f77b7f1f5198640cefdd_1618208882.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -68,9 +80,11 @@ System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이�
 
 
 
+
+
 ### (3) 스냅샷으로 OS 볼륨 생성하기
 
-서버 > 가상서버 스냅샷 > 생성한 스냅샷의 상세정보 탭에서 스냅샷으로 블록 스토리지 생성의 \[생성] 버튼을 클릭합니다.
+생성한 스냅샷의 상세정보 탭에서 스냅샷으로 블록 스토리지 생성의 \[생성] 버튼을 클릭합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/57525a5e98f2b6bb2a6cb9ccd33ae5ec_1618209753.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -80,9 +94,13 @@ System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이�
 
 
 
+
+
 ### (4) 신규 가상서버에 OS 볼륨 연결하기
 
-스토리지 > 블록 스토리지 > 생성한 블록 스토리지의 \[연결] 버튼을 클릭합니다.
+<mark style="background-color:blue;">콘솔 > 스토리지 > 블록 스토리지</mark>
+
+생성된된 블록 스토리지의 \[연결] 버튼을 클릭합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/6f17128d01396bf9afd14b91da9ec08a_1618212565.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -96,11 +114,15 @@ System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이�
 
 
 
+
+
 ### (5) 신규 가상서버에 접속하기
 
 연결한 OS 볼륨을 마운트하여 데이터를 확인하기 위해 신규 가상서버에 접속합니다.
 
-가상서버에 접속하는 방법은 [<mark style="color:blue;">**\[SSH 키페어 접속 방법\]**</mark>](../server/connect/keypair.md)을 참고해 주세요.
+가상서버에 접속하는 방법은 [<mark style="color:blue;">\[SSH 키페어 접속 방법\]</mark>](../server/connect/keypair.md)을 참고해 주세요.
+
+
 
 
 
@@ -120,9 +142,11 @@ $ sudo fdisk -l
 
 
 
+
+
 ### (7) OS 볼륨의 UUID 중복 확인하기
 
-#### &#x20;① OS 볼륨의 UUID 확인하기
+#### &#x20;a. OS 볼륨의 UUID 확인하기
 
 기본 볼륨과 UUID가 같을 경우, 정상적인 mount 및 부팅이 불가능합니다.
 
@@ -134,17 +158,21 @@ $ sudo blkid
 /dev/vdb1: UUID="3ef2b806-efd7-4eef-aaa2-2584909365ff" TYPE="xfs"
 ```
 
-#### ② OS 볼륨의 파일 시스템 복구하기
+
+
+#### b. OS 볼륨의 파일 시스템 복구하기
 
 다음 명령어를 사용하여 연결한 OS 볼륨을 복구합니다.
 
-이때 대상이 되는 파일 시스템은 마운트 되지 않은 상태여야 합니다.
+이때 대상이 되는 파일 시스템은 마운트되지 않은 상태여야 합니다.
 
 ```shell-session
 $ sudo xfs_repair -L /dev/vdb1
 ```
 
-#### ③ OS 볼륨에 새로운 UUID 부여하기
+
+
+#### c. OS 볼륨에 새로운 UUID 부여하기
 
 다음 명령어를 사용하여 OS 볼륨에 새로운 UUID를 부여합니다.
 
@@ -157,6 +185,8 @@ new UUID = b0f349ec-d903-4c6d-8cfd-f2a26e3e5e6e
 
 
 
+
+
 ### (8) OS 볼륨 마운트하기
 
 본 예제의 /mnt와 같이 mount할 경로를 지정하여 OS 볼륨을 연결합니다.
@@ -164,6 +194,8 @@ new UUID = b0f349ec-d903-4c6d-8cfd-f2a26e3e5e6e
 ```shell-session
 $ sudo mount /dev/vdb1 /mnt
 ```
+
+
 
 
 
