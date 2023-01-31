@@ -6,7 +6,7 @@ description: 가상서버에 APM를 구성하는 방법은 아래와 같습니�
 
 ## 1. APM이란?
 
-**APM**은 Apache + PHP + MySQL/MariaDB의 조합으로, 이 3가지가 연동되어 운영되도록 만든 환경을 APM이라고 합니다.
+APM은 Apache + PHP + MySQL/MariaDB의 조합으로, 이 3가지가 연동되어 운영되도록 만든 환경을 APM이라고 합니다.
 
 APM의 동작 원리는 아래와 같습니다.
 
@@ -34,6 +34,8 @@ APM의 동작 원리는 아래와 같습니다.
 
 
 
+
+
 ## 2. Apache 설치하기
 
 ### (1) 패키지 업데이트하기
@@ -56,6 +58,8 @@ $ sudo apt-get update
 
 
 
+
+
 ### (2) Apache 설치하기
 
 설치할 Apache 버전을 확인한 후, 설치를 진행합니다.
@@ -75,6 +79,8 @@ $ sudo apt-get install apache2
 ```
 {% endtab %}
 {% endtabs %}
+
+
 
 
 
@@ -116,6 +122,8 @@ $ systemctl status apache2
 
 
 
+
+
 ## 3. PHP 설치하기
 
 ### (1) PHP 설치하기
@@ -137,6 +145,8 @@ $ sudo apt-get install php
 ```
 {% endtab %}
 {% endtabs %}
+
+
 
 
 
@@ -182,11 +192,13 @@ $ sudo systemctl restart apache2
 
 
 
+
+
 ### (3) PHP 모듈 추가하기
 
 설치 가능한 PHP 모듈을 검색한 후, 추가로 필요한 모듈을 설치할 수 있습니다.&#x20;
 
-여기서는 MySQL/MariaDB와 연동하기 위해 필요한 php-mysqlnd 모듈을 설치해보겠습니다.
+여기서는 MySQL/MariaDB와 연동하기 위해 필요한 php-mysqlnd 모듈을 설치했습니다.
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
@@ -203,6 +215,8 @@ $ sudo apt-get install php-mysqlnd
 ```
 {% endtab %}
 {% endtabs %}
+
+
 
 
 
@@ -258,6 +272,8 @@ Select default authentication plugin: Use Strong Password Encryption (RECOMMENDE
 
 
 
+
+
 ### (2) MySQL 설치 확인하기
 
 설치가 완료되었다면 MySQL 서비스를 구동한 후, active 상태인지 확인합니다.
@@ -301,6 +317,8 @@ $ mysql -u root -p
 ```
 {% endtab %}
 {% endtabs %}
+
+
 
 
 
@@ -367,6 +385,8 @@ Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
 
 
 
+
+
 ### (4) PHP와 연동 확인하기
 
 새로 설정한 비밀번호로 MySQL에 접속한 후, test 데이터베이스와 test 사용자를 생성합니다.
@@ -429,7 +449,7 @@ centos 7의 경우 php를 설치하면 5.x 버전으로 설치됩니다.
 
 따라서 위와 같은 에러가 발생하였을 경우, 기존에 설치된 php 5.4를 삭제하고 다시 설치하면 됩니다.
 
-여기서는 php 7.4로 설치해보겠습니다.
+여기서는 php 7.4로 재설치했습니다.
 {% endhint %}
 
 ```shell-session
@@ -443,6 +463,8 @@ $ sudo systemctl restart httpd
 ```
 
 <mark style="color:blue;">****</mark>
+
+
 
 
 
@@ -491,6 +513,8 @@ $ sudo apt-get install mariadb-server
 
 
 
+
+
 ### (2) MariaDB 설치 확인하기
 
 설치가 완료되었다면 MySQL 서비스를 구동한 후, active 상태인지 확인합니다.
@@ -523,6 +547,8 @@ $ sudo mysql -u root
 
 
 
+
+
 ### (3) MariaDB 기본 보안 설정하기
 
 mysql\_secure\_installation을 통해 root 비밀번호 설정과 기본 보안 설정을 합니다.
@@ -550,6 +576,8 @@ Remove test database and access to it? [Y/n] y
 === 현재 설정한 값들의 적용 여부 ===
 Reload privilege tables now? [Y/n] y
 ```
+
+
 
 
 
