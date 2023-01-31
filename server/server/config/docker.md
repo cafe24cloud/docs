@@ -23,12 +23,16 @@ Docker의 장점 및 특징은 다음과 같습니다.
 
 
 
+
+
 ## 2. Docker 설치하기
 
 운영체제에 따른 Docker Engine 설치 방법은 다음과 같습니다.
 
 * **CentOS** : [<mark style="color:blue;">**Install Docker Engine on CentOS**</mark>](https://docs.docker.com/engine/install/centos/#install-using-the-repository)<mark style="color:blue;">****</mark>
 * **Ubuntu**  : [<mark style="color:blue;">**Install Docker Engine on Ubuntu**</mark>](https://docs.docker.com/engine/install/ubuntu/)<mark style="color:blue;">****</mark>
+
+
 
 
 
@@ -52,7 +56,7 @@ $ ip a | grep 'eth0|docker0'
 
 따라서 Docker에서 가상서버로 넘어오는 Packet에 Packet loss가 발생하여 통신 오류가 생기게 됩니다.
 
-해당 문제는 2가지 방법으로 해결할 수 있으며, 리눅스 사용이 익숙하지 않은 사용자의 경우 좀 더 간단하게 해결할 수 있는 (1)번 방법을 권장합니다.
+아래의 2가지 방법으로 해당 문제를 해결할 수 있으며, 리눅스 사용이 익숙하지 않은 사용자의 경우 좀 더 간단하게 해결할 수 있는 (1)번 방법을 권장합니다.
 
 ### (1) Host Network 사용 설정하기
 
@@ -66,9 +70,11 @@ $ sudo docker run --rm -d --network host --name my_nginx nginx
 
 
 
+
+
 ### (2) Docker MTU 설정 변경하기
 
-#### ① Docker의 MTU를 1450으로 변경하기
+#### a. Docker MTU를 1450으로 변경하기
 
 ```shell-session
 $ cat << EOF | sudo tee /etc/docker/daemon.json
@@ -78,20 +84,26 @@ $ cat << EOF | sudo tee /etc/docker/daemon.json
 EOF
 ```
 
-#### ② Docker 데몬 재시작하기
+
+
+#### b. Docker 데몬 재시작하기
 
 ```shell-session
 $ sudo systemctl restart docker
 ```
 
-#### ③ 변경된 MTU 확인하기
+
+
+#### c. 변경된 MTU 확인하기
 
 ```shell-session
 $ sudo docker network inspect bridge | grep mtu
             "com.docker.network.driver.mtu": "1450"
 ```
 
-#### ④ Docker  Container의 정상 동작 확인하기
+
+
+#### d. Docker  Container의 정상 동작 확인하기
 
 테스트 용으로 nginx 컨테이너 하나를 생성합니다.
 
