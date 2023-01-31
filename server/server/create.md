@@ -6,9 +6,13 @@ description: 가상서버를 생성하는 방법은 아래와 같습니다.
 
 ## 1. 가상서버 생성하기
 
-서버 > 가상서버 > 가상서버 생성하기 순으로 클릭합니다.
+<mark style="background-color:blue;">콘솔 > 서버 > 가상서버</mark>
+
+\[가상서버 생성하기] 버튼을 클릭합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/19721a16c543b5901674cf57fe87fbc8_1582521749.png" alt=""><figcaption></figcaption></figure>
+
+
 
 
 
@@ -18,9 +22,11 @@ description: 가상서버를 생성하는 방법은 아래와 같습니다.
 
 OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 원할 시에는 가상서버를 삭제하고 다시 만들어야 합니다.
 
-새로 설치를 클릭한 후, 원하는 OS 이미지를 선택합니다.
+\[새로 설치]를 클릭한 후, 원하는 OS 이미지를 선택합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/15bf717eeb660432396a287f9147e368_1582525122.png" alt=""><figcaption></figcaption></figure>
+
+
 
 
 
@@ -38,6 +44,8 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 
 
+
+
 ## 4. 가상서버 이름 설정하기
 
 가상서버 이름은 20자까지 지원이 가능하며, 영어, 숫자 및 특수문자 '-'만 사용 가능합니다.
@@ -45,6 +53,8 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 가상서버 이름은 생성 후에도 변경할 수 있습니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/ee785d7baec674f5aae85dd2deb0a306_1582525303.png" alt=""><figcaption></figcaption></figure>
+
+
 
 
 
@@ -66,6 +76,8 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 
 
+
+
 ### (2) 사용중인 공개키를 등록
 
 사용 중인 키페어의 공개키를 등록하여 기존에 쓰던 개인키 파일로 가상서버에 접속할 수 있습니다.
@@ -74,13 +86,17 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/02e30fdcdcdb7409c72ffe4b158f4cd9_1621834199.jpg" alt=""><figcaption></figcaption></figure>
 
-보안 서비스 > SSH 키페어 > 등록할 키페어의 공개키를 복사합니다.
+<mark style="background-color:blue;">콘솔 > 보안 서비스 > SSH 키페어</mark>
+
+등록할 키페어의 공개키를 복사합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/fc0a122c58ef5c0bb33c8e0427029cf8_1621834588.png" alt=""><figcaption></figcaption></figure>
 
-복사한 내용을 앞서 열어둔 기존 SSH 키페어 등록 창에 붙여넣기 하여 등록합니다.
+복사한 내용을 앞서 열어둔 기존 SSH 키페어 등록 창에 붙여 넣기하여 등록합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/12b8c0d104fd54977cb906d0634a59a2_1621834733.jpg" alt=""><figcaption></figcaption></figure>
+
+
 
 
 
@@ -90,7 +106,7 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/fb4c10053a071a85348757dcd8a60f39_1582525539.png" alt=""><figcaption></figcaption></figure>
 
-키페어의 이름을 입력합니다.
+키페어의 이름을 입력하여 새로 생성합니다.
 
 이름은 20자까지 지원이 가능하며, 영어와 숫자만 지원합니다.
 
@@ -98,15 +114,19 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 개인키가 다운로드 받아지는 것을 확인합니다.
 
-키페어를 사용한 로그인 방법은 [**\[SSH 키페어 접속 방법\]**](connect/keypair.md)을 참조해 주시기 바랍니다.&#x20;
+키페어를 사용한 로그인 방법은 [\[SSH 키페어 접속 방법\]](connect/keypair.md)을 참고해 주세요.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/233dd4df8b8227ca0bbbd5425c29ceea_1582527961.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의사항**</mark>
 
-SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다. 잃어버리지 않도록 보관에 유의해 주시기 바랍니다.
+SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.&#x20;
+
+잃어버리지 않도록 보관에 유의해 주시기 바랍니다.
 {% endhint %}
+
+
 
 
 
@@ -128,6 +148,8 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다. 잃어
 
 
 
+
+
 ### (2) 새로운 공인IP 신청하고 자동으로 할당
 
 기존에 생성한 공인IP가 없을 경우 선택합니다.
@@ -136,11 +158,15 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다. 잃어
 
 
 
+
+
 ### (3) 가상서버 생성 후 공인IP를 직접 할당
 
 사설망만을 이용해 가상서버를 이용하실 경우 선택합니다.
 
-추후 공인IP 연동이 필요하면 네트워킹 > 공인IP 메뉴에서 연결할 수 있습니다.
+추후 공인IP 할당이 필요하면 <mark style="background-color:blue;">콘솔 > 네트워킹 > 공인IP</mark> 메뉴에서 연결할 수 있습니다.
+
+
 
 
 
@@ -152,9 +178,11 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다. 잃어
 
 **가상서버에 방화벽을 설정하지 않으면 모든 접근에 대해 닫혀 있습니다**.
 
-해당 설정 사항은 선택 사항이며, 가상서버 생성 후에 방화벽을 설정하는 방법은 [**\[방화벽 설정 방법\]**](../../security/security/config.md)을  참조해 주시기 바랍니다.&#x20;
+해당 설정 사항은 선택 사항이며, 가상서버 생성 후에 방화벽을 설정하는 방법은 [\[방화벽 설정 방법\]](../../security/security/config.md)을  참고해 주세요.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/cb6ccb8a018c9acc891f0da3d20a48b2_1582528000.png" alt=""><figcaption></figcaption></figure>
+
+
 
 
 
@@ -166,11 +194,9 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다. 잃어
 
 해당 설정은 선택 사항이며, 가상서버 생성과 함께 블록 스토리지가 연결됩니다.
 
-블록 스토리지를 사용하기 위해서는 shell에서 연결 작업이 필요합니다.
+블록 스토리지를 사용하기 위해서는 shell에서 연결 작업이 필요하며, [\[블록 스토리지 연결 방법\]](../../storage/block/connect.md)을 참고해 주세요.
 
-해당 작업은 [**\[블록 스토리지 연결 방법\]**](../../storage/block/connect.md)을 참조해 주시기 바랍니다.&#x20;
-
-따라서 새로운 블록 스토리지를 만들기 위해 \[생성하기] 버튼을 누릅니다.
+새로운 블록 스토리지를 만들기 위해 \[생성하기] 버튼을 누릅니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/9454d1ec912a655c37d7451a169204bf_1582528597.png" alt=""><figcaption></figcaption></figure>
 
@@ -186,15 +212,17 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다. 잃어
 
 
 
+
+
 ## 9. 가상서버 확인하기
 
 설정한 가상서버 및 블록 스토리지의 사양에 따라 시간당 과금액이 결정됩니다.
 
-\[가상서버 생성] 버튼을 누릅니다.
+\[가상서버 생성] 버튼을 클릭합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/a5337e19fcf5309c8235ce58c152828b_1582528992.png" alt=""><figcaption></figcaption></figure>
 
-생성할 내역들을 확인한 후 \[확인] 버튼을 누릅니다.
+생성할 내역들을 확인한 후 \[확인] 버튼을 클릭합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/614e1fe5da56bd04cd9508e50e7be38b_1582529009.png" alt=""><figcaption></figcaption></figure>
 
