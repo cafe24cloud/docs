@@ -100,7 +100,7 @@ System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이�
 
 <mark style="background-color:blue;">콘솔 > 스토리지 > 블록 스토리지</mark>
 
-생성된된 블록 스토리지의 \[연결] 버튼을 클릭합니다.
+생성된 블록 스토리지의 \[연결] 버튼을 클릭합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/6f17128d01396bf9afd14b91da9ec08a_1618212565.jpg" alt=""><figcaption></figcaption></figure>
 
