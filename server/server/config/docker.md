@@ -29,8 +29,8 @@ Docker의 장점 및 특징은 다음과 같습니다.
 
 운영체제에 따른 Docker Engine 설치 방법은 다음과 같습니다.
 
-* **CentOS** : [<mark style="color:blue;">**Install Docker Engine on CentOS**</mark>](https://docs.docker.com/engine/install/centos/#install-using-the-repository)<mark style="color:blue;">****</mark>
-* **Ubuntu**  : [<mark style="color:blue;">**Install Docker Engine on Ubuntu**</mark>](https://docs.docker.com/engine/install/ubuntu/)<mark style="color:blue;">****</mark>
+* **CentOS** : [<mark style="color:blue;">Install Docker Engine on CentOS</mark>](https://docs.docker.com/engine/install/centos/#install-using-the-repository)<mark style="color:blue;"></mark>
+* **Ubuntu**  : [<mark style="color:blue;">Install Docker Engine on Ubuntu</mark>](https://docs.docker.com/engine/install/ubuntu/)<mark style="color:blue;"></mark>
 
 
 
