@@ -56,7 +56,7 @@
 ## 네트워킹 <a href="#network" id="network"></a>
 
 * [로드밸런서](network/loadbalancer/README.md)
-  * [로드밸런서 사용 방법](network/loadbalancer/use.md)
+  * [로드밸런서 생성 방법](network/loadbalancer/create.md)
 * [DNS](network/dns/README.md)
   * [DNS 사용 방법](network/dns/use.md)
 * [공인IP](network/floatingip.md)

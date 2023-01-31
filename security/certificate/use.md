@@ -186,9 +186,9 @@ $ openssl rsa -in encrypted.pem -out decrypted.pem
 
 <mark style="background-color:blue;">콘솔 오른쪽 상단의 계정명 > 알람관리</mark>
 
-관리자는\[관리자 추가] 버튼을 클릭한 후, 관리자 정보를 입력합니다.
+관리자는 \[관리자 추가] 버튼을 클릭한 후, 관리자 정보를 입력합니다.
 
-그리고 **서비스 관련 알림**에 체크를 하면, 아래의 내용을 알림 받을 수 있습니다.
+그리고 **서비스 관련 알림**에 체크를 하면, 인증서에 대한 알림을 받을 수 있습니다.
 
 * 만료 예정 인증서 : 만료 30일 전부터 5일 단위로 만료 알림 발송
 * 폐기 인증서 : 폐기된 인증서를 매일 체크하여 알람 발송
@@ -229,7 +229,7 @@ $ openssl rsa -in encrypted.pem -out decrypted.pem
 
 카페24 클라우드에서 제공하는 로드밸런서의 TERMINATED\_HTTPS  프로토콜을 사용하면 웹 서버에서 클라이언트 IP를 수집할 수 있습니다.&#x20;
 
-이를 위해서는 로드밸런서에 정상적으로 동작하는 인증서를 등록해야 하며, 자세한 방법은 [<mark style="color:blue;">\[로드밸런서 사용 방법\]</mark>](../../network/loadbalancer/use.md)을 참고해 주세요.
+이를 위해서는 로드밸런서에 정상적으로 동작하는 인증서를 등록해야 하며, 자세한 방법은 [<mark style="color:blue;">\[로드밸런서 사용 방법\]</mark>](../../network/loadbalancer/create.md)을 참고해 주세요.
 
 
 

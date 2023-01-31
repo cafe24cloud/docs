@@ -1,5 +1,5 @@
 ---
-description: AWS Javascript SDK를 사용하여 오브젝트 스토리지를 사용하는 방법은 다음과 같습니다.
+description: AWS Javascript SDK를 사용하여 오브젝트 스토리지를 사용하는 방법은 아래와 같습니다.
 ---
 
 # AWS Javascript SDK 사용 방법
@@ -13,6 +13,8 @@ AWS Javascript v3 S3 SDK는 AWS에서 Javascript 코드를 통해 S3를 이용�
 |                                                매뉴얼 테스트 버전                                                |                                                                                                                                          Javascript v3 S3 SDK 참고 링크                                                                                                                                         |
 | :------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | <p>AWS Javascript SDK version : 3.231.0 </p><p>Node.js version : 14.17.1</p><p>Npm version : 6.14.13</p> | <p>문서 : <a href="https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html">Developer guide - AWS SDK for Javascript 3.x</a></p><p>예제 : <a href="https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/javascript_s3_code_examples.html">Javascript v3 S3 examples</a></p> |
+
+
 
 
 
@@ -32,11 +34,15 @@ $ npm install @aws-sdk/client-s3
 
 
 
+
+
 ## 3. 오브젝트 스토리지 API Key 확인하기
 
-****[**\[오브젝트 스토리지 사용 방법\]**](../use.md)을 참고하여 신청한 오브젝트 스토리지의 Access Key와 Secret Key를 확인합니다.
+[\[오브젝트 스토리지 사용 방법\]](../use.md)을 참고하여 신청한 오브젝트 스토리지의 Access Key와 Secret Key를 확인합니다.
 
 &#x20;
+
+
 
 
 
@@ -55,6 +61,8 @@ aws_access_key_id = [access_key]
 aws_secret_access_key = [secret_key]
 EOF
 ```
+
+
 
 
 
@@ -112,6 +120,8 @@ Response : {
 
 
 
+
+
 ### (2) 버킷 삭제&#x20;
 
 오브젝트가 모두 삭제된 빈 버킷에 대해서만 삭제가 가능합니다.
@@ -150,6 +160,8 @@ Response :  {
     }
 }
 ```
+
+
 
 
 
@@ -195,11 +207,15 @@ Success [
 
 
 
+
+
 ### (4) 오브젝트 업로드&#x20;
 
 파일을 특정 버킷에 업로드합니다.
 
-① **새로운 파일 업로드**: 코드상에서 파일명, 파일 내용(Body)을 선언하여 버킷에 업로드하는 방법입니다.
+#### a. **새로운 파일 업로드**
+
+코드상에서 파일명, 파일 내용(Body)을 선언하여 버킷에 업로드하는 방법입니다.
 
 ```shell
 import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
@@ -225,11 +241,17 @@ export const run = async () => {
 run();
 ```
 
+output 예시는 다음과 같습니다.
+
 ```shell
 Success : Successfully uploaded newly created file: test-bucket/test-file.txt
 ```
 
-② **로컬에 있는 파일 업로드**: 기존의 로컬에 있는 파일을 버킷에 업로드하는 방법입니다. &#x20;
+
+
+#### b. **로컬에 있는 파일 업로드**
+
+기존의 로컬에 있는 파일을 버킷에 업로드하는 방법입니다. &#x20;
 
 ```shell
 import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
@@ -260,9 +282,13 @@ export const run = async () => {
 run()
 ```
 
+output 예시는 다음과 같습니다.
+
 ```shell
 Success : Successfully uploaded exsisting file test-bucket/test-file-local.pdf
 ```
+
+
 
 
 
@@ -309,6 +335,8 @@ output 예시는 다음과 같습니다.
 Downloading test-file.txt from test-bucket ...
 test-file.txt is now downloaded to [clients\client-s3\src\commands\cafe24-demo\files\downloaded-file.txt]
 ```
+
+
 
 
 
@@ -391,11 +419,15 @@ Success :
 
 
 
+
+
 ### (7) 오브젝트 삭제&#x20;
 
 버킷에서 파일을 삭제합니다.
 
-① **하나의 오브젝트 삭제**: 특정 버킷에 있는 오브젝트를 삭제합니다.&#x20;
+#### a. **하나의 오브젝트 삭제**
+
+특정 버킷에 있는 오브젝트를 삭제합니다.&#x20;
 
 ```shell
 import {DeleteObjectCommand, S3Client} from "@aws-sdk/client-s3";
@@ -420,6 +452,8 @@ export const run = async () => {
 run();
 ```
 
+output 예시는 다음과 같습니다.
+
 ```shell
 Success : Object [test-file.txt] has been deleted.
 Response :  {
@@ -431,7 +465,11 @@ Response :  {
 }
 ```
 
-② **모든 오브젝트 삭제**: 특정 버킷에 있는 모든 오브젝트를 삭제합니다. &#x20;
+
+
+#### b. **모든 오브젝트 삭제**
+
+특정 버킷에 있는 모든 오브젝트를 삭제합니다. &#x20;
 
 ```shell
 import {ListObjectsCommand, DeleteObjectCommand, S3Client} from "@aws-sdk/client-s3";
@@ -460,6 +498,8 @@ export const run = async () => {
 
 run();
 ```
+
+output 예시는 다음과 같습니다.
 
 ```shell
 Deleting all objects in the bucket.
@@ -513,6 +553,8 @@ Success. All objects in bucket [test-bucket] are deleted. :
     "Prefix": ""
 }
 ```
+
+
 
 
 
