@@ -22,6 +22,8 @@ description: 카페24 클라우드의 기술지원을 신청하는 방법은 아
 
 
 
+
+
 ## 2. 기술지원 진행 상태값
 
 접수된 기술지원은 처리 상태에 따라 상태값이 변경되며, 각 상태값에 대한 설명은 아래와 같습니다.&#x20;
@@ -32,9 +34,13 @@ description: 카페24 클라우드의 기술지원을 신청하는 방법은 아
 
 
 
+
+
 ## 3. 기술지원 신청하기
 
-매니지드 서비스 > 기술지원에서 \[기술지원 신청] 버튼을 클릭합니다.&#x20;
+<mark style="background-color:blue;">콘솔 > 매니지먼트 서비스 > 기술지원</mark>
+
+\[기술지원 신청] 버튼을 클릭합니다.&#x20;
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/4fccdd148f0ffb5cca9567c5c27c42f1_1673403845.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -59,15 +65,17 @@ description: 카페24 클라우드의 기술지원을 신청하는 방법은 아
 
 
 
+
+
 ## 4. 기술지원 사전 작업 진행하기&#x20;
 
-&#x20;매니지드 서비스 > 기술지원 > 기술지원 서비스 신청 내역에서 접수된 기술지원을 확인할 수 있습니다.
+&#x20;기술지원 서비스 신청 내역에서 접수된 기술지원을 확인할 수 있습니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/5a7a2afead270a8bbf521c2d2b12458c_1673405348.jpg" alt=""><figcaption></figcaption></figure>
 
 기술지원을 위해서는 담당 엔지니어가 대상 가상서버에 SSH 접속할 수 있어야 합니다.
 
-따라서 [<mark style="color:blue;">**\[기술지원 Key File 등록 방법\]**</mark>](keyfile.md)을 참고하여 키페어 등록을 진행해 주세요.&#x20;
+따라서 [<mark style="color:blue;">\[기술지원 Key File 등록 방법\]</mark>](keyfile.md)을 참고하여 키페어 등록을 진행해 주세요.&#x20;
 
 그리고 \[방화벽 접근 허용] 버튼을 클릭하여 엔지니어의 접근을 위한 방화벽을 허용합니다.&#x20;
 
@@ -76,6 +84,8 @@ description: 카페24 클라우드의 기술지원을 신청하는 방법은 아
 방화벽이 활성화된 경우, 아래와 같이 보여집니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/c242f59fdeebb3f743958779e414c490_1673410620.jpg" alt=""><figcaption></figcaption></figure>
+
+
 
 
 
@@ -108,6 +118,8 @@ description: 카페24 클라우드의 기술지원을 신청하는 방법은 아
 
 <img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/8aca2f3beb76a1e157323dd18579b489_1673410899.jpg" alt="" data-size="original">
 {% endhint %}
+
+
 
 
 
