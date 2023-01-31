@@ -194,12 +194,13 @@ CPU와 RAM의 경우, 증가 기준과 감소 기준을 정하여 오토스케�
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/30/839288e08e4109ef64b7aebb86a006f9_1601447181.jpg" alt=""><figcaption></figcaption></figure>
 
-예를 들어, 사용된 demoServer1 가상서버의 공인 ip가 211.183.1.15일 경우, ssh 접속 방법은 다음과 같습니다.
+예를 들어, 스냅샷 생성 대상 가상서버의 공인IP가 211.183.1.15일 경우, SSH 접속 방법은 다음과 같습니다.
 
-해당 서버 정보에 맞게 입력해 주세요.
+해당 가상서버의 정보에 맞게 입력해 주세요.
 
 ```shell
-$ ssh -i keypair.pem centos@211.183.1.15
+[root@localhost ~]$ ssh -i keypair.pem centos@211.183.1.15
+[centos@demoserver1 ~]$
 ```
 
 
@@ -208,11 +209,49 @@ $ ssh -i keypair.pem centos@211.183.1.15
 
 ### (2) 오토스케일로 생성된 가상서버 접속하기
 
+접속할 가상서버의 사설IP로 SSH 접속을 합니다.&#x20;
+
+본 예시에서는 사설IP가 192.168.1.16인 가상서버에 접속하도록 하겠습니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/30/ed10e9ff27045ac0a9a574449946a0f0_1601448798.jpg" alt=""><figcaption></figcaption></figure>
+
+이 때, 키페어는 스냅샷 생성 대상 가상서버와 동일한 키페어를 사용합니다.
+
+해당 가상서버의 정보에 맞게 입력해 주세요.
+
+```shell-session
+[centos@demoserver1 ~]$ sudo ssh -i keypair.pem centos@192.168.1.16
+[centos@st-scale-group-urnogvegzusf-ximaozegtrgb-2vmuqonrpsqr ~]$ 
+```
 
 
 
 
 
 
-## 5. 오토스케일 테스트하기 (선택)
 
+## 5. 오토스케일 테스트하기(선택)
+
+로드밸런서에 부하를 부여하여 오토스케일링을 테스트할 수 있습니다.
+
+스냅샷 생성 대상 가상서버로 SSH 접속을 하여 오토스케일에 연결된 로드밸런서의 사설IP로 트래픽을 보내 부하를 증가시킵니다.&#x20;
+
+본 예시에서는 Apache HTTP에서 제공하는 스트레스 테스트 툴 ab(ApacheBench)를 사용하였습니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/e541c27a54ef5882cd6bd1a2516078ae_1600932955.jpg" alt=""><figcaption></figcaption></figure>
+
+{% hint style="danger" %}
+<mark style="color:red;">**주의사항**</mark>
+
+해당 예제는 오토스케일 환경에서 scale-out 현상을 보이기 위한 것입니다.
+
+실제 서비스 운영을 위한 성능 테스트는 공증된 성능 측정 도구(ex. ngrinder, jmeter 등)를 사용하는 것을 권장드립니다.
+{% endhint %}
+
+가상서버 모니터링 창에서 부하를 실시간으로 확인할 수 있습니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/d5c3420acd778ece6122bb6784a8286a_1600932977.jpg" alt=""><figcaption></figcaption></figure>
+
+부하에 따라 서버가 자동으로 증가한 것을 확인할 수 있으며, 부하가 줄어들어 오토스케일의 감소 기준에 이르면 서버는 자동으로 반환됩니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/511db6f00864f1ef879f7d3036c2c8e8_1600933034.jpg" alt=""><figcaption></figcaption></figure>
