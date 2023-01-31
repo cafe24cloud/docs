@@ -164,7 +164,7 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.&#x20;
 
 사설망만을 이용해 가상서버를 이용하실 경우 선택합니다.
 
-추후 공인IP 할당이 필요하면 <mark style="background-color:blue;">콘솔 > 네트워킹 > 공인IP</mark> 메뉴에서 연결할 수 있습니다.
+추후 공인IP 할당이 필요하면 <mark style="background-color:blue;">콘솔 > 네트워킹 > 공인IP</mark>에서 연결할 수 있습니다.
 
 
 
