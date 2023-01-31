@@ -1,5 +1,5 @@
 ---
-description: AWS Python SDK를 사용하여 오브젝트 스토리지를 사용하는 방법은 아래와 같습니다.
+description: AWS Python SDK를 사용하여 오브젝트 스토리지를 사용하는 방법은 다음과 같습니다.
 ---
 
 # AWS Python SDK 사용 방법
@@ -18,8 +18,6 @@ AWS Python S3 SDK는 AWS에서 Python 코드를 통해 S3를 이용할 수 있�
 
 
 
-
-
 ## 2. AWS Python S3 SDK 설치하기
 
 python 및 pip 패키지 매니저가 설치된 환경에서 boto3를 설치합니다.
@@ -32,15 +30,11 @@ $ pip install boto3==1.6.19
 
 
 
-
-
 ## 3. 오브젝트 스토리지 API Key 확인하기
 
-[\[오브젝트 스토리지 사용 방법\]](../use.md)을 참고하여 신청한 오브젝트 스토리지의 Access Key와 Secret Key를 확인합니다.
+****[**\[오브젝트 스토리지 사용 방법\]**](../use.md)을 참고하여 신청한 오브젝트 스토리지의 Access Key와 Secret Key를 확인합니다.
 
 &#x20;
-
-
 
 
 
@@ -93,8 +87,6 @@ Bucket [test-bucket] has been created.
 
 
 
-
-
 ### (2) 버킷 삭제&#x20;
 
 오브젝트가 모두 삭제된 빈 버킷에 대해서만 삭제가 가능합니다.
@@ -135,8 +127,6 @@ Bucket [test-bucket] has been deleted.
 
 
 
-
-
 ### (3) 버킷 리스트 조회&#x20;
 
 존재하는 모든 버킷을 조회합니다.&#x20;
@@ -172,8 +162,6 @@ test-bucket
 test-bucket1
 test-bucket2
 ```
-
-
 
 
 
@@ -224,8 +212,6 @@ File [file/demofile.txt] is uploaded to bucket [test-bucket] as object [objectfi
 
 
 
-
-
 ### (5) 오브젝트 다운로드&#x20;
 
 버킷에 있는 파일을 로컬의 특정 경로로 다운로드합니다.&#x20;
@@ -267,8 +253,6 @@ output 예시는 다음과 같습니다.
 File [objectfile.txt] is downloaded
 from bucket [test-bucket] to local path [file/downloaded_file.txt]
 ```
-
-
 
 
 
@@ -348,8 +332,6 @@ Total Object Count : 6
 
 
 
-
-
 ### (7) 오브젝트 삭제&#x20;
 
 특정 버킷에 있는 파일을 삭제합니다.
@@ -388,8 +370,6 @@ output 예시는 다음과 같습니다.
 ```shell
 Deleted a file [demofile.txt] from bucket [test-bucket]
 ```
-
-
 
 
 
@@ -472,8 +452,6 @@ Bucket policy is set
 
 
 
-
-
 ### (9) 버킷 정책 리스트 조회
 
 버킷에 등록된 정책을 조회합니다.
@@ -513,8 +491,6 @@ output 예시는 다음과 같습니다.
 Retrive bucket policy of bucket [test-bucket]
 {"Version": "2008-10-17", "Id": "preventHotLinking", "Statement": [{"Sid": "1", "Effect": "Allow", "Principal": {"AWS": "*"}, "Action": "s3:GetObject", "Resource": "arn:aws:s3:::test-bucket/*", "Condition": {"StringLike": {"aws:Referer": ["https://my-webpage.com/*"]}}}]}
 ```
-
-
 
 
 

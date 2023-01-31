@@ -1,5 +1,5 @@
 ---
-description: AWS Java SDK를 사용하여 오브젝트 스토리지를 사용하는 방법은 아래와 같습니다.
+description: AWS Java SDK를 사용하여 오브젝트 스토리지를 사용하는 방법은 다음과 같습니다.
 ---
 
 # AWS Java SDK 사용 방법
@@ -13,8 +13,6 @@ AWS Java v2 S3 SDK는 AWS에서 Java 코드를 통해 S3를 이용할 수 있도
 |                              매뉴얼 테스트 버전                              |                                                                                                                                             Java v2 S3 SDK 참고 링크                                                                                                                                            |
 | :------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | <p> AWS Java SDK version : 2.17.230</p><p>Java version : 11.0.11</p> | <p>문서 : <a href="https://docs.aws.amazon.com/ko_kr/sdk-for-java/latest/developer-guide/home.html">Developer guide - AWS SDK for Java 2.x</a></p><p>예제 : <a href="https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/s3/src/main/java/com/example/s3">Java v2 S3 examples</a></p> |
-
-
 
 
 
@@ -38,15 +36,11 @@ Maven 프로젝트의 pom.xml에 dependency를 추가합니다.
 
 
 
-
-
 ## 3. 오브젝트 스토리지 API Key 확인하기
 
-[\[오브젝트 스토리지 사용 방법\]](../use.md)을 참고하여 신청한 오브젝트 스토리지의 Access Key와 Secret Key를 확인합니다.
+****[**\[오브젝트 스토리지 사용 방법\]**](../use.md)을 참고하여 신청한 오브젝트 스토리지의 Access Key와 Secret Key를 확인합니다.
 
 &#x20;
-
-
 
 
 
@@ -65,8 +59,6 @@ aws_access_key_id = [access_key]
 aws_secret_access_key = [secret_key]
 EOF
 ```
-
-
 
 
 
@@ -147,8 +139,6 @@ Bucket [test-bucket] has been created.
 
 
 
-
-
 ### (2) 버킷 삭제&#x20;
 
 오브젝트가 모두 삭제된 빈 버킷에 대해서만 삭제가 가능합니다.
@@ -222,8 +212,6 @@ Bucket [test-bucket] has been deleted.
 
 
 
-
-
 ### (3) 버킷 리스트 조회&#x20;
 
 존재하는 모든 버킷을 조회합니다.&#x20;
@@ -268,8 +256,6 @@ Name : test-bucket CreationDate : 2022-12-30T01:44:29.104Z
 Name : test-bucket1 CreationDate : 2022-12-29T06:04:09.457Z
 Name : test-bucket2 CreationDate : 2022-12-29T06:04:16.613Z
 ```
-
-
 
 
 
@@ -365,8 +351,6 @@ Object [test-file.txt] has been uploaded to the bucket [test-bucket].
 
 
 
-
-
 ### (5) 오브젝트 다운로드&#x20;
 
 버킷에 있는 파일을 로컬의 특정 경로로 다운로드합니다.&#x20;
@@ -424,8 +408,6 @@ output 예시는 다음과 같습니다.
 Object has been downloaded to local. 
  Downloaded Path : [demo\src\main\java\cafe24\demo\files\downloaded-file.txt]
 ```
-
-
 
 
 
@@ -508,8 +490,6 @@ Get list of all objects in the bucket.
 
 
 
-
-
 ### (7) 오브젝트 삭제&#x20;
 
 특정 버킷에 있는 파일을 삭제합니다.
@@ -554,8 +534,6 @@ output 예시는 다음과 같습니다.
 ```shell
 Object [test-file.txt] has been deleted from the bucket.
 ```
-
-
 
 
 
