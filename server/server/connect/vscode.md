@@ -179,7 +179,7 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 처음 접속하는 경우 fingerprint를 등록합니다.
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -235,7 +235,7 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 테스트 파일을 생성한 뒤, 실행하면 터미널을 통해 실행 결과를 확인할 수 있습니다.
 
-<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

@@ -73,7 +73,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 가상서버 스냅샷과 블록 스토리지 스냅샷의 개수가 과금에 영향을 주기 때문에, 필요한 만큼의 저장개수를 설정하는 것을 권장합니다.
 
-<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -153,7 +153,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 보관할 스냅샷을 확인한 후, 보관 버튼을 클릭합니다.
 
-<figure><img src="../../.gitbook/assets/image (8) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 선택 보관한 스냅샷은 각각 **가상서버 스냅샷**과 **블록 스토리지 스냅샷** 메뉴로 이동합니다.
 
@@ -169,7 +169,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 삭제할 가상서버 스냅샷을 선택한 후 하단의 "**선택 삭제**" 버튼을 클릭합니다.
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
 
 삭제할 스냅샷을 확인한 후, 비밀번호 인증을 하고 삭제 버튼을 클릭합니다.
 
