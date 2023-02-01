@@ -16,7 +16,7 @@ S3cmd는 CLI(Command-line interface) 환경에서 AWS의 S3를 제어할 수 있
 
 **s3cmd 사용법 공식 문서** : [S3cmd Usage](https://s3tools.org/usage)
 
-**오브젝트 스토리지 사용 방법** : [오브젝트 스토리지는 어떻게 사용하나요?](https://console.cafe24.com/support/faq/view?idx=437)
+**오브젝트 스토리지 사용 방법** : [\[오브젝트 스토리지 사용 방법\] ](use.md)
 
 **오브젝트 스토리지 API 사용 시 용량 정책**
 
