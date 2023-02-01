@@ -97,7 +97,7 @@ Host : 생성한 SSH 커넥션의 이름
 
 ④ 생성된 SSH Target 의 원격 접속 버튼을 클릭합니다.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (4).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -235,7 +235,7 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 테스트 파일을 생성한 뒤, 실행하면 터미널을 통해 실행 결과를 확인할 수 있습니다.
 
-<figure><img src="../../../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 
 

@@ -138,7 +138,7 @@ Swap 영역을 설정하여 메모리가 모두 찼을 경우 디스크의 Swap 
 해당 지표는 정확한 수치 확인을 위해 Host 서버에서 측정하는 것으로, 가상서버의 free, top 명령어 결과와 차이가 있을 수 있습니다.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -148,7 +148,7 @@ Swap 영역을 설정하여 메모리가 모두 찼을 경우 디스크의 Swap 
 
 확인하고자 하는 가상서버의 "모니터링" 버튼을 클릭합니다.
 
-<figure><img src="../../../.gitbook/assets/image (8) (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8) (3).png" alt=""><figcaption></figcaption></figure>
 
 시간별로 측정되는 리소스 사용률을 확인할 수 있습니다.
 
