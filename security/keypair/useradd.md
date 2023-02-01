@@ -102,9 +102,17 @@ SSH 키페어의 이름은 공백을 제외한 영어, 숫자만 사용하여 20
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/09/29/3325561a813674f2396a17cd60f5c21f_1664433588.png" alt=""><figcaption></figcaption></figure>
 
-확인한 공개키를 복사하여 shell에 **authorized\_keys** 파일에 저장해주시기 바랍니다.
+확인한 공개키를 복사하여 가상서버 내의 **authorized\_keys** 파일에 저장해주시기 바랍니다.
 
+```shell-session
+# sudo su - cafe24
+# pwd
+# mkdir .ssh
+# chmod 700 .ssh
+# touch .ssh/authorized_keys
+# chmod 600 .ssh/authorized_keys
+# vi .ssh/authorized_keyse
+```
 
-
-
+<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
