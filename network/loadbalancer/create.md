@@ -12,7 +12,7 @@ description: 로드밸런서 생성 방법은 다음과 같습니다. 본 매뉴
 
 로드밸런서의 포트로 들어간 트래픽을 가상서버 포트로 포트포워딩 하여 서버에 전달하게 됩니다.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -66,7 +66,7 @@ XFF(X-Forwarded-For) header를 사용하여 HTTPS 요청을 한 실제 클라이
 
 TERMINATED\_HTTPS를 사용하면 아래 예시와 같이 통신하게 됩니다.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (4).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -142,13 +142,13 @@ HTTPS 프로토콜의 경우 모니터링 대상 경로는 디폴트로 "/"를 �
 가상서버에 index.html과 같은 파일을 생성하여 "/index.html"과 같은 static한 경로로 설정하는 것을 권장합니다.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
 
 Terminated\_https 프로토콜을 선택한 경우, 적용할 인증서를 선택합니다.
 
 인증서를 등록하는 방법은  [\[인증서 사용 방법\]](../../security/certificate/use.md)를 참고해 주세요.
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -160,7 +160,7 @@ Terminated\_https 프로토콜을 선택한 경우, 적용할 인증서를 선�
 
 로드밸런서 메뉴에서 해당 로드밸런서를 선택 한 후, 상세정보 탭에서 가상서버 연결 메뉴를 클릭합니다.
 
-<figure><img src="../../.gitbook/assets/image (3) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 로드밸런서에 연결할 가상서버를 선택해 주세요.
 
@@ -169,7 +169,7 @@ Terminated\_https 프로토콜을 선택한 경우, 적용할 인증서를 선�
 이때, 연결하는 가상서버에 등록된 방화벽에는 "**내부 네트워크 접속 허용**"이 되어 있어야 합니다.\
 
 
-<figure><img src="../../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -281,7 +281,7 @@ enable은 서버를 재부팅 할 경우 해당 서비스를 자동으로 활성
 
 브라우저를 새로고침 할 때마다 지정한 알고리즘에 따라 트래픽이 분산 되는 것을 확인 할 수 있습니다.
 
-<figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 

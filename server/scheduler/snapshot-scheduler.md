@@ -73,7 +73,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 가상서버 스냅샷과 블록 스토리지 스냅샷의 개수가 과금에 영향을 주기 때문에, 필요한 만큼의 저장개수를 설정하는 것을 권장합니다.
 
-<figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -91,7 +91,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 스냅샷 스케줄러가 등록된 타켓 가상서버를 삭제하기 위해서는 스케줄러를 먼저 삭제해야 합니다.
 
-<figure><img src="../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -119,7 +119,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 ⑥ **블록 스토리지 스냅샷 정보** : 해당 가상서버 스냅샷에 연결된 블록 스토리지 스냅샷을 확인합니다.
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 블록 스토리지 스냅샷의 "**보기**" 버튼을 클릭하여 함께 생성된 블록 스토리지 스냅샷을 확인할 수 있습니다.
 

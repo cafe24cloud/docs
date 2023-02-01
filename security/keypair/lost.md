@@ -12,7 +12,7 @@ description: >-
 
 콘솔 우측 상단의 "Send CtrlAltDel" 클릭합니다.
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 부팅 프로세스가 시작되자마자 "**Esc 키**'"를 눌러 GRUB 부트 프롬프트를 표시 합니다.&#x20;
 
@@ -67,6 +67,8 @@ ESC 키를 누른 후, "**wq!**" 로 변경 사항을 저장합니다.&#x20;
 "**reboot**" 명령어로 서버를 재시작합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/03/11/fb9731842367abdf55bfee5bb0d24b12_1583916150.png" alt=""><figcaption></figcaption></figure>
+
+
 
 
 

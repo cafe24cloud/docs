@@ -68,7 +68,7 @@
 * [SSH 키페어](security/keypair/README.md)
   * [CentOS - 키페어 분실 시 해결 방법](security/keypair/lost.md)
   * [Ubuntu - 키페어 분실 시 해결 방법](security/keypair/ubuntu.md)
-  * [사용자 계정 추가 방법](security/keypair/useradd.md)
+  * [SSH 사용자 계정 추가 방법](security/keypair/useradd.md)
 * [인증서 관리](security/certificate/README.md)
   * [인증서 사용 방법](security/certificate/use.md)
 
