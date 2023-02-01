@@ -66,7 +66,7 @@ XFF(X-Forwarded-For) header를 사용하여 HTTPS 요청을 한 실제 클라이
 
 TERMINATED\_HTTPS를 사용하면 아래 예시와 같이 통신하게 됩니다.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -142,13 +142,13 @@ HTTPS 프로토콜의 경우 모니터링 대상 경로는 디폴트로 "/"를 �
 가상서버에 index.html과 같은 파일을 생성하여 "/index.html"과 같은 static한 경로로 설정하는 것을 권장합니다.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 Terminated\_https 프로토콜을 선택한 경우, 적용할 인증서를 선택합니다.
 
 인증서를 등록하는 방법은  [\[인증서 사용 방법\]](../../security/certificate/use.md)를 참고해 주세요.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -164,7 +164,7 @@ Terminated\_https 프로토콜을 선택한 경우, 적용할 인증서를 선�
 
 로드밸런서에 연결할 가상서버를 선택해 주세요.
 
-<figure><img src="../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 이때, 연결하는 가상서버에 등록된 방화벽에는 "**내부 네트워크 접속 허용**"이 되어 있어야 합니다.\
 
@@ -183,7 +183,7 @@ Terminated\_https 프로토콜을 선택한 경우, 적용할 인증서를 선�
 
 따로 설정하지 않으면 모든 IP의 접근을 허용하므로 필요에 따라 지정해 주세요.
 
-<figure><img src="../../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -221,7 +221,7 @@ Terminated\_https 프로토콜을 선택한 경우, 로드밸런서에 적용된
 
 연결 상태가 '부분 이상', '오류' 인 경우 가상서버에서 해당 포트를 listening 상태로 만들어 주세요.
 
-<figure><img src="../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -283,7 +283,7 @@ enable은 서버를 재부팅 할 경우 해당 서비스를 자동으로 활성
 
 <figure><img src="../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

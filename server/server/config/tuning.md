@@ -298,6 +298,8 @@ worker 튜닝 옵션에 대한 상세 설명은 다음과 같습니다.
 $ curl -sLf https://cloud-tech.cafe24.com/mpm | bash - 
 ```
 
+
+
 ① 웹서버가 가상서버에서 동작 중인지를 나타냅니다. 웹서버가 Active 상태가 아니면 권장 튜닝 값을 확인할 수 없습니다.&#x20;
 
 ② 웹서버에 설정된 MPM method를 나타냅니다.&#x20;
@@ -314,7 +316,7 @@ $ curl -sLf https://cloud-tech.cafe24.com/mpm | bash -
 
 <mark style="color:red;">**해당 값은 절대적인 값이 아니며, 충분한 테스트를 통해 적용되어야 합니다.**</mark>&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

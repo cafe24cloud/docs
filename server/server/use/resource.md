@@ -44,7 +44,7 @@ description: 가상서버의 리소스는 다음과 같이 확인 할 수 있습
 
 ⑤ Mounted on : 해당 파일 시스템이 마운트되어 쓰이고 있는 경로
 
-<figure><img src="../../../.gitbook/assets/image (13) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
