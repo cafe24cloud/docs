@@ -50,7 +50,7 @@ VSCode를 연 다음, 다음 과정을 통해 가상서버 SSH 접속에 필요�
 
 ③ Install 클릭하여 확장 프로그램을 설치합니다.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -161,7 +161,7 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 ④ 생성된 SSH Target 의 원격 접속 버튼을 클릭합니다.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -175,7 +175,7 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 새로운 VSCode window가 열리면 접속할 가상서버의 OS로 **Linux**를 선택합니다.
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 처음 접속하는 경우 fingerprint를 등록합니다.
 
@@ -205,7 +205,7 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 ② 명령창이 열리면 조회할 경로를 입력합니다.
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

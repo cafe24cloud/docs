@@ -159,7 +159,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 각 메뉴에 영구 보관된 후에 서비스를 실제로 사용 가능합니다.
 
-<figure><img src="../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### (2) 스냅샷 삭제하기
 
@@ -193,5 +193,5 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 선택 보관된 스냅샷은 수동 삭제하지 않는 한 과금되기 때문에 필요에 따라 관리하는 것을 권장합니다.
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 

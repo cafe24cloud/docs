@@ -255,8 +255,6 @@ MS 항목 : 가상머신과 해당 원격지 NTP 서버의 결합 상태를 보�
 $ chronyc -a tracking
 ```
 
-
-
 상태 지표는 다음과 같습니다.
 
 * **Reference ID** : 동기화 중인 원격지 서버의 IP 혹은 도메인. 값이 127.127.1.1인 경우 원격 서버와 연결되지 않고 로컬 모드로 동작 중임을 의미.&#x20;
@@ -276,7 +274,7 @@ $ chronyc -a tracking
 
 출력 결과 예시는 다음과 같습니다.&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -446,7 +444,7 @@ $ ntpq -p
 
 결과 예시는 다음과 같습니다.
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

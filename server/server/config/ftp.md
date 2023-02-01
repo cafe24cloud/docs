@@ -43,7 +43,7 @@ Passive mode의 통신 방법은 다음과 같습니다.
 
 ④ 서버가 클라이언트의 요청에 응답(ack)
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -71,7 +71,7 @@ Active mode의 통신 방법은 다음과 같습니다.
 
 ④ 클라이언트가 서버의 요청에 응답(acks)
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (3).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -242,5 +242,5 @@ FTP 클라이언트 프로그램 FileZilla를 사용하여 FTP 접속을 확인�
 
 ④ 연결이 완료된 후 FTP 서버에 해당하는 리모트 사이트의 파일 정보를 확인합니다.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
