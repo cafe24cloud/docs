@@ -43,7 +43,7 @@ Passive mode의 통신 방법은 다음과 같습니다.
 
 ④ 서버가 클라이언트의 요청에 응답(ack)
 
-<figure><img src="../../../.gitbook/assets/image (2) (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

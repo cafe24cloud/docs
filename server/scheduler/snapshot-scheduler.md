@@ -91,7 +91,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 스냅샷 스케줄러가 등록된 타켓 가상서버를 삭제하기 위해서는 스케줄러를 먼저 삭제해야 합니다.
 
-<figure><img src="../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
