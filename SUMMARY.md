@@ -68,8 +68,8 @@
 * [방화벽](security/security/README.md)
   * [방화벽 설정 방법](security/security/config.md)
 * [SSH 키페어](security/keypair/README.md)
-  * [분실 시 해결 방법 - CentOS](security/keypair/lost-centos.md)
-  * [분실 시 해결 방법 - Ubuntu](security/keypair/lost-ubuntu.md)
+  * [분실 시 해결 방법 - CentOS](security/keypair/lost.md)
+  * [분실 시 해결 방법 - Ubuntu](security/keypair/ubuntu.md)
   * [SSH 사용자 계정 추가 방법](security/keypair/useradd.md)
 * [인증서 관리](security/certificate/README.md)
   * [인증서 사용 방법](security/certificate/use.md)
@@ -77,5 +77,5 @@
 ## 매니지먼트 서비스 <a href="#managed" id="managed"></a>
 
 * [기술지원](managed/technical/README.md)
-  * [기술지원 신청 방법](managed/technical/apply.md)
+  * [기술지원 신청 방법](managed/technical/create.md)
   * [기술지원 Key File 등록 방법](managed/technical/keyfile.md)
