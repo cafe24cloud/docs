@@ -229,7 +229,7 @@ $ openssl rsa -in encrypted.pem -out decrypted.pem
 
 카페24 클라우드에서 제공하는 로드밸런서의 TERMINATED\_HTTPS  프로토콜을 사용하면 웹 서버에서 클라이언트 IP를 수집할 수 있습니다.&#x20;
 
-이를 위해서는 로드밸런서에 정상적으로 동작하는 인증서를 등록해야 하며, 자세한 방법은 [<mark style="color:blue;">\[로드밸런서 사용 방법\]</mark>](../../network/loadbalancer/create.md)을 참고해 주세요.
+이를 위해서는 로드밸런서에 정상적으로 동작하는 인증서를 등록해야 하며, 자세한 방법은 [<mark style="color:blue;">\[로드밸런서 사용 방법\]</mark>](../../network/loadbalancer/use.md)을 참고해 주세요.
 
 
 

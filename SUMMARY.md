@@ -2,11 +2,10 @@
 
 * [Home](README.md)
 
-## 콘솔 <a href="#console" id="console"></a>
+## 결제 <a href="#payment" id="payment"></a>
 
-* [결제 관리](console/payment.md)
-* [알림 관리](console/alarm.md)
-* [트래픽 계산 방법](console/traffic.md)
+* [결제 관리 방법](payment/payment.md)
+* [트래픽 계산 방법](payment/traffic.md)
 
 ## 서버 <a href="#server" id="server"></a>
 
@@ -19,6 +18,7 @@
     * [리소스 확인 및 증설 방법](server/server/use/resource.md)
     * [자동 스크립트 적용 방법](server/server/use/script.md)
     * [하드웨어 사양 변경 방법](server/server/use/spec.md)
+    * [사용량 알림 설정 방법](server/server/use/alarm.md)
   * [가상서버 구성 방법](server/server/config/README.md)
     * [FTP 구성 방법](server/server/config/ftp.md)
     * [SFTP 구성 방법](server/server/config/sftp.md)
@@ -36,7 +36,7 @@
 * [오토스케일](server/autoscale/README.md)
   * [오토스케일 사용 방법](server/autoscale/use.md)
 * [스냅샷 스케줄러](server/scheduler/README.md)
-  * [스냅샷 스케줄러 사용 방법](server/scheduler/snapshot-scheduler.md)
+  * [스냅샷 스케줄러 사용 방법](server/scheduler/use.md)
 
 ## 스토리지 <a href="#storage" id="storage"></a>
 
@@ -58,7 +58,7 @@
 ## 네트워킹 <a href="#network" id="network"></a>
 
 * [로드밸런서](network/loadbalancer/README.md)
-  * [로드밸런서 사용 방법](network/loadbalancer/create.md)
+  * [로드밸런서 사용 방법](network/loadbalancer/use.md)
 * [DNS](network/dns/README.md)
   * [DNS 사용 방법](network/dns/use.md)
 * [공인IP](network/floatingip.md)

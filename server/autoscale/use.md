@@ -36,7 +36,7 @@ description: 오토스케일 사용 방법은 아래와 같습니다.
 
 오토스케일에 사용할 연결된 가상서버가 없는 로드밸런서를 생성합니다.
 
-[<mark style="color:blue;">\[로드밸런서 생성 방법\]</mark>](../../network/loadbalancer/create.md)을 참고해 주세요.
+[<mark style="color:blue;">\[로드밸런서 생성 방법\]</mark>](../../network/loadbalancer/use.md)을 참고해 주세요.
 
 오토스케일로 생성된 가상서버들은 해당 로드밸런서의 멤버가 됩니다.
 
