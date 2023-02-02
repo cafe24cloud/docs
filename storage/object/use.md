@@ -130,13 +130,13 @@ Secret Key를 확인하려면 \[보기] 버튼을 클릭한 후, 클라우드 �
 
 파일 매니저의 <mark style="color:blue;">파일 업로드 정책</mark>은 다음과 같습니다.
 
-#### a. 제한 용량
+① **제한 용량**
 
 * 업로드 가능한 개별 파일의 용량은 최대 20MB이며, 총 용량은 최대 400MB입니다.
 * 한 번에 최대 20개의 파일을 업로드할 수 있습니다.
 * 베타 서비스 기간 동안 무료로제공하는 최대 저장 공간은 30GB입니다.
 
-b. 전송 오류
+② **전송 오류**
 
 * 10분의 타임아웃 시간이 있습니다. 따라서 10분이 지날 경우, "파일 전송 시간 제한을 초과하였습니다." 오류가 발생합니다.
 
@@ -170,7 +170,7 @@ b. 전송 오류
 
 ### (5) 메타데이터 편집하기
 
-메타데이터를편집할 파일을 선택한 후, 메타데이터 정보의 \[편집] 버튼을 클릭합니다.
+메타데이터를 편집할 파일을 선택한 후, 메타데이터 정보의 \[편집] 버튼을 클릭합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/47420234b3efc75a9d06abdb0cb63dc8_1668659119.png" alt=""><figcaption></figcaption></figure>
 
@@ -223,3 +223,5 @@ AccessDenied Error가 발생하며, 정상적인 페이지를 볼 수 없습니�
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/18/4080393e5517537b82a715f7616c8ef6_1668757590.png" alt=""><figcaption></figcaption></figure>
 
 마찬가지로 트래픽 모니터링의 \[보기] 버튼을 클릭하면, 오브젝트 스토리지에서 발생한 트래픽을 5분 단위로 기간을 조정하여 확인할 수 있습니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/18/5db18b45b55b6077ef16cd58a01da22a_1668757606.png" alt=""><figcaption></figcaption></figure>
