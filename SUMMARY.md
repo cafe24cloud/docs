@@ -4,7 +4,7 @@
 
 ## 결제 <a href="#payment" id="payment"></a>
 
-* [결제 관리 방법](payment/payment.md)
+* [결제 관리 방법](console/display.md)
 * [트래픽 계산 방법](payment/traffic.md)
 
 ## 서버 <a href="#server" id="server"></a>
@@ -36,7 +36,7 @@
 * [오토스케일](server/autoscale/README.md)
   * [오토스케일 사용 방법](server/autoscale/use.md)
 * [스냅샷 스케줄러](server/scheduler/README.md)
-  * [스냅샷 스케줄러 사용 방법](server/scheduler/use.md)
+  * [스냅샷 스케줄러 사용 방법](server/scheduler/snapshot-scheduler.md)
 
 ## 스토리지 <a href="#storage" id="storage"></a>
 
@@ -58,7 +58,7 @@
 ## 네트워킹 <a href="#network" id="network"></a>
 
 * [로드밸런서](network/loadbalancer/README.md)
-  * [로드밸런서 사용 방법](network/loadbalancer/use.md)
+  * [로드밸런서 사용 방법](network/loadbalancer/create.md)
 * [DNS](network/dns/README.md)
   * [DNS 사용 방법](network/dns/use.md)
 * [공인IP](network/floatingip.md)
@@ -68,8 +68,8 @@
 * [방화벽](security/security/README.md)
   * [방화벽 설정 방법](security/security/config.md)
 * [SSH 키페어](security/keypair/README.md)
-  * [CentOS - 키페어 분실 시 해결 방법](security/keypair/lost.md)
-  * [Ubuntu - 키페어 분실 시 해결 방법](security/keypair/ubuntu.md)
+  * [분실 시 해결 방법 - CentOS](security/keypair/lost-centos.md)
+  * [분실 시 해결 방법 - Ubuntu](security/keypair/lost-ubuntu.md)
   * [SSH 사용자 계정 추가 방법](security/keypair/useradd.md)
 * [인증서 관리](security/certificate/README.md)
   * [인증서 사용 방법](security/certificate/use.md)
@@ -77,5 +77,5 @@
 ## 매니지먼트 서비스 <a href="#managed" id="managed"></a>
 
 * [기술지원](managed/technical/README.md)
-  * [기술지원 신청 방법](managed/technical/create.md)
+  * [기술지원 신청 방법](managed/technical/apply.md)
   * [기술지원 Key File 등록 방법](managed/technical/keyfile.md)
