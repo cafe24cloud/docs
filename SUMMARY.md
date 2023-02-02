@@ -4,7 +4,9 @@
 
 ## 콘솔 <a href="#console" id="console"></a>
 
-* [콘솔 화면](console/display.md)
+* [결제 관리](console/payment.md)
+* [알림 관리](console/alarm.md)
+* [트래픽 계산 방법](console/traffic.md)
 
 ## 서버 <a href="#server" id="server"></a>
 
