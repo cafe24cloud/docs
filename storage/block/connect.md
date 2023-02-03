@@ -49,13 +49,15 @@ description: >-
 
 
 
-### (1) 블록 스토리지 메뉴에서 연결하기
+### (방법 1) 블록 스토리지 메뉴에서 연결하기
 
 <mark style="background-color:blue;">스토리지 > 블록 스토리지</mark>
 
 사용할 블록 스토리지를 선택합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/25/e89113233aecba29ee5436576aaca613_1582610550.png" alt=""><figcaption></figcaption></figure>
+
+
 
 연결할 가상서버를 선택 후 연결 버튼을 클릭합니다.   &#x20;
 
@@ -65,7 +67,7 @@ description: >-
 
 
 
-### (2) 가상서버 메뉴에서 연결하기
+### (방법 2) 가상서버 메뉴에서 연결하기
 
 <mark style="background-color:blue;">서버 > 가상서버</mark>
 
@@ -81,9 +83,7 @@ description: >-
 
 &#x20;
 
-
-
-## 3. 연결된 블록 스토리지 정보 확인
+(연결 후) 가상서버에 연결된 블록 스토리지 정보를 확인합니다.
 
 <mark style="background-color:blue;">서버 > 가상서버</mark>&#x20;
 
@@ -93,17 +93,13 @@ description: >-
 
 #### &#x20;
 
-
-
-
-
 ## 4. 블록 스토리지 파티셔닝
 
 가상서버에서 블록스토리지를 파티셔닝 합니다.
 
 ### (1) 디스크 정보 확인
 
-"**fdisk -l**" 명령어로 디스크 정보를 확인합니다.
+"fdisk -l" 명령어로 디스크 정보를 확인합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/25/e4b0c787449220fe43719c686ac97bf4_1582616476.png" alt=""><figcaption></figcaption></figure>
 
@@ -115,53 +111,42 @@ description: >-
 
 a. **fdisk /dev/vdc** 명령어로 파티션 작업을 진행 합니다.
 
-b. Command (m for help): **n** 새로운 파티션을 생성합니다. **** [※ 참고사항](connect.md#undefined-2)
+b. Command (m for help): **n** 새로운 파티션을 생성합니다. **※ 참고사항**
 
 c. Select (default p): **p**
 
 "p" 입력후 나오는 값들에 **default** 입력하시거나 엔터를 쳐서 결과값을 넘어갑니다.
 
-d. Command (m for help): **w** 저장합니다
+d. Command (m for help): **w** 저장합니다\
+
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/25/2cbb06a4c1911c3f05b1be4d6f61d940_1582615835.png" alt=""><figcaption></figcaption></figure>
 
+#### 5. 파일시스템 생성 하기
 
+(1) **mkfs.xfs /dev/vdc1** 으로 파일시스템을 생성합니다.
 
-
-
-
-
-## 5. 파일시스템 생성 하기
-
-### (1) 파일 시스템 생성하기
-
-&#x20;**mkfs.xfs /dev/vdc1** 으로 파일시스템을 생성합니다.
-
-ext4, ext3, ext2 등 다양한 [파일시스템](https://ko.wikipedia.org/wiki/%ED%8C%8C%EC%9D%BC\_%EC%8B%9C%EC%8A%A4%ED%85%9C)이 지원됩니다.
+파일시스템 종류: ext4, ext3, ext2 등 다양한 [파일시스템](https://ko.wikipedia.org/wiki/%ED%8C%8C%EC%9D%BC\_%EC%8B%9C%EC%8A%A4%ED%85%9C)이 제공됩니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/25/a10ca426909aa13566046d2abdd062cf_1582615876.png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
+(2) **fdisk -l** 명령어로 파일시스템 설정을 확인 합니다.\
 
-
-### (2) 파일 시스템 설정 확인
-
-**fdisk -l** 명령어로 파일시스템 설정을 확인 합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/25/6cd40129232bf892f13a2a29272e7b79_1582615890.png" alt=""><figcaption></figcaption></figure>
 
-## 6. 디스크 마운트하기
+#### 6. 디스크를 mount 합니다.
 
-### (1) 디스크 마운트
-
-마운트할 디렉토리를 생성 후 디스크 연결작업 진행 합니다.&#x20;
+(1) mount할 디렉토리를 생성 후 디스크 연결작업 진행 합니다.&#x20;
 
 a. **mkdir /data** 로 디렉토리를 만듭니다.
 
 b. **mount /dev/vdc1 /data/** 마운트 합니다.&#x20;
 
-c. **df -h** 명령어로 /data 폴더와의 연결을 확인합니다.&#x20;
+c. **df -h** 명령어로 /data 폴더와의 연결을 확인합니다. \
+
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/26/16b8627f2dbcae14a160d1a5098de915_1582705375.png" alt=""><figcaption></figcaption></figure>
 
@@ -169,23 +154,23 @@ c. **df -h** 명령어로 /data 폴더와의 연결을 확인합니다.&#x20;
 
 
 
-### (2) fatab 등록
+(2) 가상서버 재부팅 이후에도 지속적으로 마운트 진행 하려면 아래와같은 방법을 적용합니다.
 
-가상서버 재부팅 이후에도 지속적으로 마운트 진행 하려면 아래와같은 방법을 적용합니다.
+a. **blkid** 명령어로 디스크에 UUID 값을 확인합니다.
 
-**blkid** 명령어로 디스크에 UUID 값을 확인합니다.
-
-블록 스토리지 연결/해제 시 디바이스명이 바뀔 수 있기 때문에 자동 마운트 시에는 UUID를 입력합니다.
+\- 블록 스토리지 연결/해제 시 디바이스명이 바뀔 수 있기 때문에 자동 마운트 시에는 UUID를 입력합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/25/2dde6068fc54381d4df02102a825a52c_1582616280.png" alt=""><figcaption></figcaption></figure>
 
-"**vi /etc/fstab**" 명령어로 /etc/fstab 파일을 열어 수정합니다.&#x20;
+
+
+b. vi 명령어로 /etc/fstab 파일을 열어 수정합니다. "vi /etc/fstab"
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/25/ff319ddb1635041b836ad6e424dfc464_1582616012.png" alt=""><figcaption></figcaption></figure>
 
 ****
 
-#### **※ 참고사항**
+**※ 참고사항**
 
 **fdisk 명령어 옵션 주요 정보입니다.**
 
