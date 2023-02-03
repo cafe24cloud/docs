@@ -240,7 +240,7 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/04/a59a46807d59670bb2269d4314261084_1607068767.png" alt=""><figcaption></figcaption></figure>
 
-⑦ ⑤번에서 저장한 cafe24.ppk를 선택합니다.
+⑦  ⑤번에서 저장한 cafe24.ppk를 선택합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/04/022ec530dd5c22339e2001a68f962868_1607068800.png" alt=""><figcaption></figcaption></figure>
 
@@ -274,3 +274,41 @@ $ ssh -i cafe24.pem [일반계정]@[가상서버공인IP]
 ```
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/07/30/4f0bbaf45d5dae00d470e2181c73a241_1627625875.png" alt=""><figcaption></figcaption></figure>
+
+
+
+#### B-2. SSH 키페어 분실 시 대처 방법
+
+{% hint style="danger" %}
+<mark style="color:red;">**주의 사항**</mark>
+
+카페24 클라우드는 기본으로 키페어 접속 방법을 권장하며, 가상서버에 대한 패스워드는 제공하지 않습니다.&#x20;
+
+하지만 불가피하게 패스워드를 통한 콘솔 접속을 원하실 경우 아래의 매뉴얼로 패스워드 생성이 가능합니다.
+
+
+
+<mark style="color:red;">**비밀번호 노출로 인한 정보 유출 등의 보안상 이유로 패스워드 설정을 권장하지 않습니다.**</mark>
+{% endhint %}
+
+&#x20;****&#x20;
+
+사용하시는 가상서버의 OS에 해당하는 매뉴얼을 참고하여 주세요.
+
+* [**SSH키페어를 분실했습니다. 어떻게 해야 하나요 ? - Centos**](https://console.cafe24.com/support/faq/view?idx=92)
+* [**SSH키페어를 분실했습니다. 어떻게 해야 하나요 ? - ubuntu**](https://console.cafe24.com/support/faq/view?idx=107)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
