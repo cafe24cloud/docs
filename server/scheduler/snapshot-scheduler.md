@@ -169,7 +169,7 @@ description: 본 매뉴얼은 스냅샷 스케줄러를 이용하여 일정 주�
 
 삭제할 가상서버 스냅샷을 선택한 후 하단의 "**선택 삭제**" 버튼을 클릭합니다.
 
-<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 삭제할 스냅샷을 확인한 후, 비밀번호 인증을 하고 삭제 버튼을 클릭합니다.
 
