@@ -232,3 +232,93 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.&#x20;
 가상서버 대시보드에서 가상서버가 생성 완료되었는지 확인합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/571f13d1ebbaaf2698680389c3c4e157_1582529445.png" alt=""><figcaption></figcaption></figure>
+
+
+
+
+# 가상서버 접속 방법
+
+## 2. 가상서버 접속하기
+
+<mark style="color:red;">카페24 클라우드는 고객의 데이터 보호와 보안 강화를 위해 ID/PW를 직접 고객님께 제공하지 않고,</mark>
+
+<mark style="color:red;">다음과 같은 방법으로 SSH 키페어를 사용한 접속 방식을 사용합니다.</mark>
+
+### (1) Windows 시스템에서 접속하기
+
+가상서버 생성 시 만든 cafe24 키페어 사용을 위해서 **puttygen** 프로그램을 이용해서 키 값을 변환합니다.&#x20;
+
+키페어 변경 후, **putty** 프로그램을 이용해서 가상서버에 접속합니다.&#x20;
+
+① [<mark style="color:blue;">Download PuTTY</mark>](https://www.chiark.greenend.org.uk/\~sgtatham/putty/latest.html)에서 puttygen.exe, putty.exe 파일을 다운로드 합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/06/17/45c66d948d8dddbae87be60be6120f07_1655455874.jpg" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/06/17/96afd66b852df89687e680ad034e410a_1655455886.jpg" alt=""><figcaption></figcaption></figure>
+
+{% hint style="danger" %}
+<mark style="color:red;">**주의사항**</mark>
+
+정상적인 동작을 위해서 최신 버전을 사용하는 것을 권장합니다.
+
+낮은 버전 사용 시, 특정 OS와 OpenSSH 버전 문제로 원격 접속이 불가할 수 있습니다.
+{% endhint %}
+
+② puttygen.exe를 실행하여 \[Load] 버튼을 클릭합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/04/a236b19d56cac8dc13233c7cac79fc3f_1607068573.png" alt=""><figcaption></figcaption></figure>
+
+③ 발급 받은 cafe24 키페어의 개인키 파일인 cafe24.pem을 선택합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/04/3d78217fccfd38b632f55a17ada81cb9_1607068629.png" alt=""><figcaption></figcaption></figure>
+
+④ \[Save private key] 버튼을 클릭합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/04/0ba531f4b03f3aac470780f640fb1e37_1607068666.png" alt=""><figcaption></figcaption></figure>
+
+⑤ 발급 받은 키페어 이름과 동일한 이름으로 저장해 주세요. 생성 후 해당 파일 이름이 가상서버를 생성하며, 사용한 키페어 이름과 일치하는지 확인합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/03/29/cd22ed2035c0f97b411572d4a69b9338_1616977384.png" alt=""><figcaption></figcaption></figure>
+
+⑥ putty.exe를 실행하여 <mark style="background-color:blue;">Category > Connection > SSH > Auth</mark>에서 \[Browse]를 클릭합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/04/a59a46807d59670bb2269d4314261084_1607068767.png" alt=""><figcaption></figcaption></figure>
+
+⑦ ⑤번에서 저장한 cafe24.ppk를 선택합니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/04/022ec530dd5c22339e2001a68f962868_1607068800.png" alt=""><figcaption></figcaption></figure>
+
+⑧ <mark style="background-color:blue;">Category > Session</mark>에서 Host Name (or IP address)에 접속하려는 가상서버의 공인IP를 입력한 후, \[Open] 버튼을 클릭합니다.
+
+가상서버의 22번 포트로 접속하도록 하며, **이때 해당 가상서버의 22번 포트로 방화벽이 열려 있지 않다면 접속이 불가합니다.** 접속이 안될 경우, 방화벽 설정을 확인해 주시기 바랍니다.
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/07/30/26974cad5c741f06794cd0e4113ba377_1627625855.png" alt=""><figcaption></figcaption></figure>
+
+⑨ 카페24 클라우드에서 제공하는 OS는 보안상 일반 계정으로만 접속이 가능합니다. 아래의 계정 정보를 참고하여 접속한 후, root 권한으로 변경합니다.
+
+|   OS   |   계정   |      접속 방법      |
+| :----: | :----: | :-------------: |
+|  Rocky |  rocky |  rocky@가상서버공인IP |
+| CentOS | centos | centos@가상서버공인IP |
+| Ubuntu | ubuntu | ubuntu@가상서버공인IP |
+
+```shell-session
+$ sudo -i
+```
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/21/c1430ed520c82eb27629c225aea9174c_1582268758.png" alt=""><figcaption></figcaption></figure>
+
+
+
+
+
+### (2) Mac 또는 SSH 클라이언트 시스템에서 접속하기
+
+cafe24 키페어의 개인키 권한을 600으로 변경한 후, 접속합니다.
+
+```shell-session
+$ chmod 600 cafe24.pem
+$ ssh -i cafe24.pem [일반계정]@[가상서버공인IP]
+```
+
+<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/07/30/4f0bbaf45d5dae00d470e2181c73a241_1627625875.png" alt=""><figcaption></figcaption></figure>
