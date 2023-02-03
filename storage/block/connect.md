@@ -8,7 +8,7 @@ description: >-
 
 ## 1. 블록 스토리지 생성
 
-<mark style="background-color:blue;">스토리지 → 블록스토리지</mark>
+<mark style="background-color:blue;">스토리지 > 블록스토리지</mark>
 
 콘솔에서 "블록 스토리지 생성" 하기 버튼을 클릭합니다.&#x20;
 
@@ -18,12 +18,12 @@ description: >-
 
 ### (1) 기본정보 입력
 
-* 이름&#x20;
+* **이름**&#x20;
   * 블록 스토리지 이름을 입력합니다.&#x20;
   * 이름은 20자까지 지원이 가능하며, 영어, 숫자 및 특수문자 '-'만 사용이 가능합니다.
-* 설명
+* **설명**
   * 설명을 입력 합니다. (필수사항 X)
-* 용량
+* **용량**
   * 블록 스토리지 용량을 입력 합니다.
   * 블록 스토리지 용량은 10GB부터 1000GB까지 설정 가능하며, 10GB 단위로 입력해야 합니다.
   * 블록 스토리지는 생성 후에 확장할 수 있습니다.
@@ -31,6 +31,12 @@ description: >-
 기본 정보를 입력한 후, 버튼을 눌러 블록 스토리지를 생성합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/25/9d87136fb5f2b06931a5be93a95a9514_1582609015.png" alt=""><figcaption></figcaption></figure>
+
+
+
+
+
+
 
 ## 2. 블록 스토리지 연결
 
@@ -45,14 +51,13 @@ description: >-
 
 ### (방법 1) 블록 스토리지 메뉴에서 연결하기
 
-스토리지 → 블록 스토리지
+<mark style="background-color:blue;">스토리지 > 블록 스토리지</mark>
 
-사용할 블록 스토리지를 선택합니다.\
-
+사용할 블록 스토리지를 선택합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/25/e89113233aecba29ee5436576aaca613_1582610550.png" alt=""><figcaption></figcaption></figure>
 
-&#x20; &#x20;
+
 
 연결할 가상서버를 선택 후 연결 버튼을 클릭합니다.   &#x20;
 
@@ -60,17 +65,17 @@ description: >-
 
 &#x20;
 
+
+
 ### (방법 2) 가상서버 메뉴에서 연결하기
 
-서버 → 가상서버
+<mark style="background-color:blue;">서버 > 가상서버</mark>
 
-&#x20;가상서버에 연결할 블록 스토리지를 다중 선택할 수 있습니다.
+가상서버에 연결할 블록 스토리지를 다중 선택할 수 있습니다.
 
-&#x20;가상서버를 선택 한 후, 기능별 설정에서 "블록 스토리지 연결"을 클릭합니다.
+가상서버를 선택 한 후, 기능별 설정에서 "블록 스토리지 연결"을 클릭합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/04/06/b5cc91ff5efcb6d572b567d0be1899f3_1649204634.png" alt=""><figcaption></figcaption></figure>
-
-&#x20; &#x20;
 
 해당 가상서버에 연결할 블록 스토리지를 선택합니다.
 
@@ -80,7 +85,7 @@ description: >-
 
 (연결 후) 가상서버에 연결된 블록 스토리지 정보를 확인합니다.
 
-서버 → 가상서버&#x20;
+<mark style="background-color:blue;">서버 > 가상서버</mark>&#x20;
 
 가상서버를 선택한 후, 기능별 설정에서 가상서버에 연결된 블록 스토리지 정보를 확인합니다.&#x20;
 
@@ -88,17 +93,21 @@ description: >-
 
 #### &#x20;
 
-#### 4. 가상서버에서 블록스토리지를 파티셔닝 합니다.
+## 4. 블록 스토리지 파티셔닝
 
-(1) "Linux 명령어: fdisk -l 사용하여 디스크 정보를 확인합니다.
+가상서버에서 블록스토리지를 파티셔닝 합니다.
 
-&#x20;
+### (1) 디스크 정보 확인
+
+"fdisk -l" 명령어로 디스크 정보를 확인합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/25/e4b0c787449220fe43719c686ac97bf4_1582616476.png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
-(2) 파티션 구성 합니다.
+
+
+### (2) 파티션 구성 하기
 
 a. **fdisk /dev/vdc** 명령어로 파티션 작업을 진행 합니다.
 
