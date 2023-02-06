@@ -34,7 +34,7 @@
   * [가상서버 통합 매뉴얼](server/server/total.md)
   * [가상서버 지원 종료](server/server/eol/README.md)
     * [CentOS 7 EOL](server/server/eol/centos7.md)
-    * [Ubuntu 18.04](server/server/eol/ubuntu18.md)
+    * [Ubuntu 18.04 LTS EOL](server/server/eol/ubuntu18.md)
 * [가상서버 스냅샷](server/snapshot/README.md)
 * [오토스케일](server/autoscale/README.md)
   * [오토스케일 사용 방법](server/autoscale/use.md)
