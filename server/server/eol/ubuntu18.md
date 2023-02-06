@@ -8,7 +8,7 @@ description: Ubuntu 18.04 LTS 지원 종료를 안내해 드립니다.
 
 Ubuntu에서 **2023년 4월 30일** [<mark style="color:blue;">Ubuntu 18.04 LTS 지원 종료</mark>](https://endoflife.software/operating-systems/linux/ubuntu)를 발표했습니다.
 
-이에 따라, 카페24 클라우드에서 제공하는 가상서버의 **Ubuntu 18.04 LST 이미지 지원 종료**가 예정되어 안내해 드립니다.
+이에 따라, 카페24 클라우드에서 제공하는 가상서버의 **Ubuntu 18.04 LTS 이미지 지원 종료**가 예정되어 안내해 드립니다.
 
 
 
