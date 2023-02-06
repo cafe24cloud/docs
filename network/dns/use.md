@@ -16,9 +16,9 @@ DNS(Domain Name System)은 도메인 이름에 대한 IP 주소를 찾는 시스
 
 DNS는 "console.cafe24.com"이라는 도메인에 해당하는 IP 주소를 찾아 반환합니다.
 
-이로써사용자의 PC는 원하는 웹 페이지에 접속하게 됩니다.
+이로써 사용자의 PC는 원하는 웹 페이지에 접속하게 됩니다.
 
-DNS 서비스를 이용하여 이러한 작업을 쉽고 빠르게 수행할 수 있습니다.
+DNS 서비스를 이용하 이러한 작업을 쉽고 빠르게 수행할 수 있습니다.
 
 
 
@@ -38,8 +38,8 @@ DNS 서비스를 이용하여 이러한 작업을 쉽고 빠르게 수행할 수
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/0b5dcdd76c45b1ec0aec8e6bcfe1ee96_1603433282.jpg" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
-<mark style="color:blue;">**참고사항**</mark>
+{% hint style="danger" %}
+<mark style="color:red;">**주의사항**</mark>
 
 카페24 클라우드에서 레코드 관리를 하기 위해서는 도메인을 구매한 업체에 4개의 네임 서버를 등록하는 작업이 선행되어야 합니다.
 {% endhint %}
@@ -70,11 +70,15 @@ DNS 서비스를 이용하여 이러한 작업을 쉽고 빠르게 수행할 수
 
 레코드 관리를 통해 도메인에 대한 레코드를 추가, 수정 및 삭제할 수 있습니다.
 
+카페24 클라우드에서 제공하는 레코드는 다음과 같습니다.
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/47ca031f9555adc34dfcb4936473d0b9_1603442523.jpg" alt=""><figcaption></figcaption></figure>
 
-<mark style="color:blue;">레코드의 타입에 상관없이, 호스트명에</mark> <mark style="color:blue;"></mark><mark style="color:blue;">****</mark> <mark style="color:blue;"></mark><mark style="color:blue;">"</mark><mark style="color:blue;">**@**</mark><mark style="color:blue;">"를 입력하면 1차 도메인 자신을 가리키게 됩니다.</mark>
+{% hint style="info" %}
+<mark style="color:blue;">**참고사항**</mark>
 
-카페24 클라우드에서 제공하는 레코드는 다음과 같습니다.
+레코드의 타입에 상관없이, 호스트명에 **** "**@**"를 입력하면 1차 도메인 자신을 가리키게 됩니다.
+{% endhint %}
 
 ### (1) A 레코드
 
