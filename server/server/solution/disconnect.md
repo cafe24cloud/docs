@@ -74,7 +74,10 @@ description: 본 매뉴얼은 가상서버 접속 시, 발생 가능한 문제�
 
 본 매뉴얼에서는 centos 계정을 예로 들어 설명합니다. "centos"에 해당하는 부분은 접속하고자 하는 계정명으로 바꿔주세요.
 
-SSH 키페어 접속이 불가능할 경우, [<mark style="color:blue;">\[SSH 키페어 분실 시 해결 방법\]</mark>](../../../security/keypair/lost.md)을 참고하여 패스워드를 설정하여 콘솔 접속을 해주세요.
+SSH 키페어 접속이 불가능할 경우, 다음 매뉴얼을 참고하여 패스워드를 설정하여 콘솔 접속을 해주세요.
+
+* &#x20;[<mark style="color:blue;">\[SSH 키페어 분실 시 해결 방법 - CentOS\]</mark>](../../../security/keypair/lost.md)
+* &#x20;[<mark style="color:blue;">\[SSH 키페어 분실 시 해결 방법 - Ubuntu\]</mark>](../../../security/keypair/ubuntu.md)
 
 ① **리눅스 홈 디렉터리**의 권한이 **"drwx r-x r-x**"인지 확인합니다. 권한이 일치하지 않을 경우, 다음 명령어로 권한을 변경합니다.
 
