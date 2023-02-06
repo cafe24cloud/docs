@@ -30,7 +30,7 @@ Ubuntu에서 **2023년 4월 30일** [<mark style="color:blue;">Ubuntu 18.04 LTS 
 
 ## 3. 권장 사항
 
-<mark style="color:blue;">따라서 카페24 클라우드에서 제공하는 Ubuntu 호환 운영 체제 또는 다른 운영 체제 사용을 권장드립니다.</mark>
+<mark style="color:blue;">따라서 카페24 클라우드에서 제공하는 Ubuntu 호환 운영 체제 또는 다른 운영 체제 사용을 권장 드립니다.</mark>
 
 |  Ubuntu 호환 운영체제  |  다른 운영 체제 |
 | :--------------: | :-------: |
