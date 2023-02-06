@@ -6,7 +6,9 @@ description: CentOS 7 지원 종료를 안내해 드립니다.
 
 ## 1. CentOS 7 EOL 안내
 
-Red Hat에서 **2024년 6월 30일** [<mark style="color:blue;">CentOS 7 지원 종료</mark>](https://endoflife.software/operating-systems/linux/centos)를 발표했습니다.
+2020년 12월에 Red Hat에서 [<mark style="color:blue;">CentOS 7 지원 종료</mark>](https://endoflife.software/operating-systems/linux/centos)를 발표했습니다.
+
+CentOS 7의 지원 종료 날짜는 **2024년 6월 30일**입니다.
 
 이에 따라, 카페24 클라우드에서 제공하는 가상서버의 **CentOS 7.9 이미지 지원 종료**가 예정되어 안내해 드립니다.
 
@@ -30,7 +32,7 @@ Red Hat에서 **2024년 6월 30일** [<mark style="color:blue;">CentOS 7 지원 
 
 ## 3. 권장 사항
 
-<mark style="color:blue;">따라서 카페24 클라우드에서 제공하는 CentOS 호환 운영체제 또는 다른 운영 체제 사용을 권장드립니다.</mark>
+<mark style="color:blue;">따라서 카페24 클라우드에서 제공하는 CentOS 호환 운영체제 또는 다른 운영 체제 사용을 권장 드립니다.</mark>
 
 | CentOS 호환 운영체제 |     다른 운영 체제     |
 | :------------: | :--------------: |
