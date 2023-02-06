@@ -22,7 +22,7 @@ VSCode를 이용해서 접속할 가상서버를 생성합니다.
 
 가상서버 생성 방법은 &#x20;
 
-[\[가상서버 생성 방법](../create.md)을 참고해 주세요.
+[\[가상서버 생성 방법\]](../create.md)을 참고해 주세요.
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의 사항**</mark>
@@ -85,8 +85,7 @@ F1 키를 눌러 명령어 입력창을 연 다음, **Remote-SSH: Open SSH Confi
 
 ① 접속할 가상머신의 정보를 입력하고, 파일을 저장합니다.
 
-Host : 생성한 SSH 커넥션의 이름
-
+* Host : 생성한 SSH 커넥션의 이름
 * HostName : 가상머신의 공인 IP
 * User : 초기 사용자 계정 혹은 별도로 생성한 계정  [\[ 초기 사용자 계정 정보 \]](vscode.md#undefined)
 * IdentityFile : 가상서버의 .pem 파일의 절대 경로

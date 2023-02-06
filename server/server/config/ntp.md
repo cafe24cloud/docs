@@ -59,8 +59,8 @@ Thu Feb 18 13:21:22 KST 2021
 
 <mark style="color:red;">가상서버에서는 Hardware clock에 직접적으로 접근하지 않아 hwclock 등의 명령어로 시간 설정을 할 수 없습니다.</mark>
 
-* [**chrony로 설정하기**](ntp.md#2-1.-chrony)
-* [**ntp로 설정하기**](https://console.cafe24.com/support/faq/view?idx=191#B-2)
+* [**chrony로 설정하기**](ntp.md#1-chrony)
+* [**ntp로 설정하기**](ntp.md#2-ntpd)
 
 
 
