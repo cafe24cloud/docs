@@ -148,7 +148,7 @@ Terminated\_https 프로토콜을 선택한 경우, 적용할 인증서를 선�
 
 인증서를 등록하는 방법은  [\[인증서 사용 방법\]](../../security/certificate/use.md)를 참고해 주세요.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -221,7 +221,7 @@ Terminated\_https 프로토콜을 선택한 경우, 로드밸런서에 적용된
 
 연결 상태가 '부분 이상', '오류' 인 경우 가상서버에서 해당 포트를 listening 상태로 만들어 주세요.
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 
 

@@ -4,7 +4,7 @@ description: 본 매뉴얼은 가상서버 생성, 접속 및 DNS와 SFTP 사용
 
 # 가상서버 통합 매뉴얼
 
-## 1. 가상서버 생성
+## 1. 가상서버 생성하기
 
 ### (1) 가상서버 생성하기
 
@@ -14,6 +14,10 @@ description: 본 매뉴얼은 가상서버 생성, 접속 및 DNS와 SFTP 사용
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/19721a16c543b5901674cf57fe87fbc8_1582521749.png" alt=""><figcaption></figcaption></figure>
 
+
+
+
+
 ### (2) OS 이미지 선택하기
 
 OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 원할 시에는 가상서버를 삭제하고 다시 만들어야 합니다.
@@ -21,6 +25,10 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 \[새로 설치]를 클릭한 후, 원하는 OS 이미지를 선택합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/15bf717eeb660432396a287f9147e368_1582525122.png" alt=""><figcaption></figcaption></figure>
+
+
+
+
 
 ### (3) 하드웨어 상품 선택하기
 
@@ -30,6 +38,10 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/7140e12d2557da7e02474d0fa93306d5_1582525242.png" alt=""><figcaption></figcaption></figure>
 
+
+
+
+
 ### (4) 가상서버 이름 설정하기
 
 가상서버 이름은 20자까지 지원이 가능하며, 영어, 숫자 및 특수문자 '-'만 사용 가능합니다.
@@ -37,6 +49,10 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 가상서버 이름은 생성 후에도 변경할 수 있습니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/ee785d7baec674f5aae85dd2deb0a306_1582525303.png" alt=""><figcaption></figcaption></figure>
+
+
+
+
 
 ### (5) SSH 키페어 설정
 
@@ -46,15 +62,15 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 가상서버에 SSH 키페어를 설정하는 방법은 다음과 같습니다.
 
-****
-
-**a. 기존에 등록되어 있는 키페어를 사용**
+#### **a. 기존에 등록되어 있는 키페어를 사용**
 
 이전에 카페24 클라우드 콘솔에서 생성한 키페어를 적용할 수 있습니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/7c4ba23274531abf51cc31b05242ffd9_1621834120.png" alt=""><figcaption></figcaption></figure>
 
-**b. 사용중인 공개키를 등록**
+
+
+#### **b. 사용중인 공개키를 등록**
 
 사용 중인 키페어의 공개키를 등록하여 기존에 쓰던 개인키 파일로 가상서버에 접속할 수 있습니다.
 
@@ -72,7 +88,9 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/12b8c0d104fd54977cb906d0634a59a2_1621834733.jpg" alt=""><figcaption></figcaption></figure>
 
-**c. 새로운 공개키 생성**
+
+
+#### **c. 새로운 공개키 생성**
 
 \[새로만들기] 버튼을 클릭합니다.
 
@@ -98,6 +116,10 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 잃어버리지 않도록 보관에 유의해 주시기 바랍니다.
 {% endhint %}
 
+
+
+
+
 ### (6) 공인IP 할당하기
 
 공인 IP 할당은 선택 사항이지만, 외부에서 가상서버로 접속하기 위해서는 필요합니다.
@@ -108,21 +130,27 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/11/13/bbaa88e39fd7cad174bddc7d6963a8ea_1605251451.jpg" alt=""><figcaption></figcaption></figure>
 
-**a. 기존에 신청되어 있는 공인IP를 할당**
+#### **a. 기존에 신청되어 있는 공인IP를 할당**
 
 기존에 생성한 공인IP가 있는 경우 선택합니다.
 
-**b. 새로운 공인IP 신청하고 자동으로 할당**
+
+
+#### **b. 새로운 공인IP 신청하고 자동으로 할당**
 
 기존에 생성한 공인IP가 없을 경우 선택합니다.
 
 가상서버 생성과 동시에 새로운 공인 IP가 할당됩니다.
 
-**c. 가상서버 생성 후 공인IP를 직접 할당**
+
+
+#### **c. 가상서버 생성 후 공인IP를 직접 할당**
 
 사설망만을 이용해 가상서버를 이용하실 경우 선택합니다.
 
 추후 공인IP 할당이 필요하면 <mark style="background-color:blue;">콘솔 > 네트워킹 > 공인IP</mark>에서 연결할 수 있습니다.
+
+
 
 
 
@@ -135,6 +163,10 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 해당 설정 사항은 선택 사항이며, 가상서버 생성 후에 방화벽을 설정하는 방법은 [\[방화벽 설정 방법\]](../../security/security/config.md)을 참고해 주세요.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/cb6ccb8a018c9acc891f0da3d20a48b2_1582528000.png" alt=""><figcaption></figcaption></figure>
+
+
+
+
 
 ### (8) 블록 스토리지 생성하기
 
@@ -155,6 +187,10 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 설정된 용량은 생성 후 확장 기능을 사용하여 용량 확장을 할 수 있습니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/93770250fa2c8ed6933b671bafcae27c_1582528609.png" alt=""><figcaption></figcaption></figure>
+
+
+
+
 
 ### (9) 가상서버 확인하기
 
@@ -178,37 +214,31 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 
 
 
-## 2. 가상서버 접속
+## 2. 가상서버 접속하기
 
 가상서버 접속 방법은 다음과 같습니다.
 
-* [가상서버에 접속할 수 있는 ID/PW가 없는데 어떻게 접속하나요?](total.md#1-id-pw)****
-* [SSH 키페어 분실 시 대처 방법](total.md#2-ssh)
+* <mark style="color:blue;"></mark>[<mark style="color:blue;">SSH 키페어 접속 방법</mark>](total.md#1-ssh)<mark style="color:blue;"></mark>
+* <mark style="color:blue;"></mark>[<mark style="color:blue;">SSH 키페어 분실 시 접속 방법</mark>](total.md#2-ssh)<mark style="color:blue;"></mark>
 
+### (1) SSH 키페어 접속 방법
 
-
-### (1) 가상서버에 접속할 수 있는 ID/PW가 없는데 어떻게 접속하나요?
+{% hint style="info" %}
+<mark style="color:blue;">**참고사항**</mark>
 
 카페24 클라우드는 고객의 데이터 보호와 보안 강화를 위해 ID/PW를 직접 고객님께 제공하지 않고, SSH 키페어를 사용한 접속 방식을 사용합니다.
 
-우선, SSH 키페어 접속하기 위한 방화벽 설정을 합니다.
+또한, 카페24 클라우드는 보안상 모든 포트가 막혀있는 상태로 가상서버가 생성되기 때문에 방화벽 연결을 하지 않으면 가상서버에 접속할 수 없습니다.
 
-{% hint style="danger" %}
-<mark style="color:red;">**참고 사항**</mark>
-
-카페24 클라우드는 보안상 모든 포트가 막혀있는 상태로 가상서버가 생성됩니다. 방화벽 연결을 하지 않으면 가상서버에 접속할 수 없습니다.
+따라서 [<mark style="color:blue;">\[방화벽 설정 방법\]</mark>](../../security/security/config.md)을 참고하여 22번 포트를 열어 주시기 바랍니다.
 {% endhint %}
 
-이를 방지하기 위해 다음 방화벽 설정을 이용하여 22번 포트를 열어 주시기 바랍니다. [\[방화벽 설정 방법\]](../../security/security/config.md)
+가상서버의 OS에 따라 다음 방법으로 SSH 접속을 할 수 있습니다.
 
-가상서버의 OS에 따라 다음 방법으로 ssh 접속을 할 수 있습니다.
+* <mark style="color:blue;"></mark>[<mark style="color:blue;">Windows 시스템에서 접속하기</mark>](total.md#a.-windows)<mark style="color:blue;"></mark>
+* <mark style="color:blue;"></mark>[<mark style="color:blue;">Mac 또는 SSH 클라이언트 시스템에서 접속하기</mark>](total.md#b.-mac-ssh)<mark style="color:blue;"></mark>
 
-* [윈도우 시스템에서의 가상서버 접근](total.md#a.)
-* [Mac 또는 SSH 클라이언트 시스템에서 접속하기](total.md#b.-mac-ssh)
-
-
-
-#### **a. 윈도우 시스템에서의 가상서버 접근**
+#### **a. Windows 시스템에서 접속하기**
 
 가상서버 생성 시 만든 cafe24 키페어 사용을 위해서 **puttygen** 프로그램을 이용해서 키 값을 변환합니다.
 
@@ -274,7 +304,7 @@ $ sudo -i
 
 
 
-#### **b.  Mac 또는 SSH 클라이언트 시스템에서 접속하기**
+#### **b.**  Mac 또는 SSH 클라이언트 시스템에서 접속하기
 
 cafe24 키페어의 개인키 권한을 600으로 변경한 후, 접속합니다.
 
@@ -289,30 +319,30 @@ $ ssh -i cafe24.pem [일반계정]@[가상서버공인IP]
 
 
 
-### **(2) SSH 키페어 분실 시 대처 방법**
+### **(2) SSH 키페어 분실 시 접속 방법**
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의 사항**</mark>
 
 카페24 클라우드는 기본으로 키페어 접속 방법을 권장하며, 가상서버에 대한 패스워드는 제공하지 않습니다.
 
-하지만 불가피하게 패스워드를 통한 콘솔 접속을 원하실 경우 아래의 매뉴얼로 패스워드 생성이 가능합니다.
+하지만 불가피하게 패스워드를 통한 콘솔 접속을 원하실 경우, 아래의 매뉴얼대로 패스워드 생성이 가능합니다.
 
-<mark style="color:red;">**비밀번호 노출로 인한 정보 유출 등의 보안상 이유로 패스워드 설정을 권장하지 않습니다.**</mark>
+<mark style="color:red;">**비밀번호 노출로 인한 정보 유출 등의 보안 상 이유로 패스워드 설정을 권장하지 않습니다.**</mark>
 {% endhint %}
 
-사용하시는 가상서버의 OS에 해당하는 매뉴얼을 참고하여 주세요.
+사용하시는 가상서버의 OS에 해당하는 매뉴얼을 참고해 주세요.
 
-* [**SSH키페어를 분실했습니다. 어떻게 해야 하나요 ? - Centos**](https://console.cafe24.com/support/faq/view?idx=92)
-* [**SSH키페어를 분실했습니다. 어떻게 해야 하나요 ? - ubuntu**](https://console.cafe24.com/support/faq/view?idx=107)
-
-
+* <mark style="color:blue;"></mark>[<mark style="color:blue;">분실 시 해결 방법 - CentOS</mark>](../../security/keypair/lost.md)<mark style="color:blue;"></mark>
+* <mark style="color:blue;"></mark>[<mark style="color:blue;">분실 시 해결 방법 - Ubuntu</mark>](../../security/keypair/ubuntu.md)<mark style="color:blue;"></mark>
 
 
 
 
 
-## 3. DNS 설정
+
+
+## 3. DNS 설정하기
 
 ### (1) DNS란?
 
@@ -324,11 +354,11 @@ DNS(Domain Name System)은 도메인 이름에 대한 IP 주소를 찾는 시스
 
 예를 들어, "https://console.cafe24.com"이라는 URL을 웹 브라우저에 입력하면,
 
-DNS는 "console.cafe24.com"이라는 도메인에 해당하는 IP 주소를 찾아 반환하여
+DNS는 "console.cafe24.com"이라는 도메인에 해당하는 IP 주소를 찾아 반환합니다.
 
-사용자의 PC는 원하는 웹 페이지에 접속하게 됩니다.
+이로써 사용자의 PC는 원하는 웹 페이지에 접속하게 됩니다.
 
-DNS 서비스를 이용하여 이러한 작업을 쉽고 빠르게 수행할 수 있습니다.
+DNS 서비스를 이용하면 이러한 작업을 쉽고 빠르게 수행할 수 있습니다.
 
 
 
@@ -340,17 +370,21 @@ DNS 서비스를 이용하여 이러한 작업을 쉽고 빠르게 수행할 수
 
 도메인 네임 서버는 도메인 이름과 IP의 상호 변환을 가능하게 하는 서버로, 카페24 클라우드에서는 계정 별로 4개의 네임 서버를 제공합니다.
 
-\[네임서버 확인] 버튼을 클릭하여 제공된네임 서버를 확인합니다.
+\[네임서버 확인] 버튼을 클릭하여 제공된 네임 서버를 확인할 수 있습니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/6d683164075deec25b842b0a32d45ec4_1603421403.jpg" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/0b5dcdd76c45b1ec0aec8e6bcfe1ee96_1603433282.jpg" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
-<mark style="color:blue;">**참고사항**</mark>
+{% hint style="danger" %}
+<mark style="color:red;">**주의사항**</mark>
 
 카페24 클라우드에서 레코드 관리를 하기 위해서는 도메인을 구매한 업체에 4개의 네임 서버를 등록하는 작업이 선행되어야 합니다.
 {% endhint %}
+
+
+
+
 
 ### (3) 도메인 등록하기
 
@@ -362,21 +396,111 @@ DNS 서비스를 이용하여 이러한 작업을 쉽고 빠르게 수행할 수
 
 
 
+
+
 ### (4) 레코드 관리하기
 
 레코드는 도메인에 관한 설정을 하는 데이터입니다.
 
 레코드 관리를 통해 도메인에 대한 레코드를 추가, 수정 및 삭제할 수 있습니다.
 
-레코드의 타입에 상관없이, 호스트명에 \*\*\*\* "**@**"를 입력하면 1차 도메인 자신을 가리키게 됩니다.
+카페24 클라우드에서 제공하는 레코드는 다음과 같습니다.
 
-#### (1) A 레코드
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-#### (2) CNAME 레코드
+{% hint style="info" %}
+<mark style="color:blue;">**참고사항**</mark>
 
-#### (3) MX 레코드
+레코드의 타입에 상관없이, 호스트명에 **** "**@**"를 입력하면 1차 도메인 자신을 가리키게 됩니다.
+{% endhint %}
 
-#### (4) TXT 레코드
+#### a. A 레코드
+
+A 레코드는 호스트명과 가상서버의 IP 주소를 매핑하기 위해 주로 사용합니다.
+
+* #### **1차 도메인 등록하기**
+
+호스트명에 "**@**"를 입력하여 1차 도메인을 등록합니다.
+
+다음과 같이 입력할 경우, "cafe24clouds.com"에 대해 IP "183.222.255.133"이 등록됩니다.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+
+* #### 2차 도메인 등록하기
+
+호스트명에 등록할 2차 도메인을 입력하고, 해당 도메인으로 접속할 가상서버의 IP를 입력합니다.
+
+다음과 같이 입력할 경우, "demo-A.cafe24clouds.com"에 대해 IP "183.222.255.133"이 등록됩니다.&#x20;
+
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+
+
+#### b. CNAME 레코드
+
+CNAME 레코드는 기존의 도메인에 대한 별칭을 지정하는 레코드입니다.&#x20;
+
+호스트명에는 별칭으로 새롭게 지정할 2차 도메인명을 입력하고, 설정값에는 기존의 도메인을 입력합니다.
+
+CNAME 레코드는 IP 주소가 자주 바뀌는 환경에서 레코드 수정 횟수를 줄일 수 있어 편리합니다.
+
+<mark style="color:red;">하지만 실제 IP 주소를 얻을 때까지 DNS 정보를 여러 번 요청해야 하므로 성능 저하가 있을 수 있다는 점을 유의해야 합니다.</mark>
+
+다음과 같이 입력할 경우, "demo-cname.cafe24clouds.com"이 "demo-A.cafe24clouds.com"의 별칭 도메인이 됩니다.
+
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+
+
+#### c. MX 레코드
+
+MX(Mail Exchanger Record) 레코드는 사용자의 도메인에 대한 메일 서버를 지정하기 위해 사용합니다.
+
+본 매뉴얼에서는 Google Workspace Email에 대한 MX 레코드를 등록하였습니다.
+
+예를 들어 도메인이 "cafe24clouds.com"이고 Google 계정명이 "demo24"인 경우,
+
+"**demo24@cafe24clouds.com**"**을 메일 주소**로 이용할 수 있게 됩니다.
+
+Google Workspace 콘솔에서 제공하는 MX 레코드를 우선순위 오름차순으로 등록합니다.
+
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+
+최종 입력 화면은 다음과 같습니다.
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+MX 레코드를 등록한 도메인으로 메일 수신/발신이 가능한 것을 확인할 수 있습니다.
+
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+
+
+#### d. TXT 레코드
+
+TXT 레코드는 도메인에 대한 텍스트 정보를 설정하는 것으로, 주로 SPF 레코드와 같은 용도로 사용됩니다.
+
+본 매뉴얼에서는 TXT 레코드를 SPF 기능으로 사용하는 방법에 대해 설명합니다.
+
+TXT 레코드에 SPF 텍스트를 등록합니다.
+
+예를 들어 **** "**v=spf1 include:\_spf.google.com \~all**"는 Google 메일 서버를 인증한다는 의미입니다.
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+<mark style="color:blue;">**참고사항**</mark>
+
+**SPF(Sender Policy Framework)란?**
+
+SPF는 해당 메일이 승인된 메일 서버에서 정상적으로 발신된 것인지 확인하는 기능을 합니다.
+
+SPF를 사용하면 메일 스푸핑을 방지할 수 있다는 장점이 있습니다.
+
+메일 스푸핑은 발신지를 위조하여 승인된 조직에서 보내는 것처럼 보이게 하는 것으로, 악성 소프트웨어 배포 등의 악의적인 목적으로 쓰입니다.
+
+이에 SPF를 등록하여 수신 서버에서 이메일이 승인된 메일 서버에서 보낸 것인지 인증할 수 있도록 합니다.
+{% endhint %}
 
 
 
@@ -384,25 +508,29 @@ DNS 서비스를 이용하여 이러한 작업을 쉽고 빠르게 수행할 수
 
 
 
-## 4. SFTP 구성 방법
+## 4. SFTP 구성하기
 
-### (1) SFTP란 무엇인가요?
+### (1) SFTP란 **무엇인가요**?
 
 우선 FTP(File Transfer Protocol)은 인터넷으로 연결된 클라이언트와 서버 사이의 파일 전송을 위한 프로토콜입니다.
 
 하지만 데이터를 평문으로 전송하여 보안이 취약하다는 단점이 있습니다.
 
-FTP 사용을 원하실 경우 [\[FTP 구성 방법\]](ftp.md) 참고해 주세요.
+FTP 사용을 원하실 경우 [\[FTP 구성 방법\]](ftp.md)을 참고해 주세요.
 
-따라서 카페24클라우드는 보안이 강화된 <mark style="color:blue;">**SFTP(Secure File Transfer Protocol)**</mark>사용을 권장합니다.
+따라서 카페24 클라우드는 보안이 강화된 <mark style="color:blue;">**SFTP(Secure File Transfer Protocol)**</mark>사용을 권장합니다.
 
-SFTP는 SSH방식을 사용하여 서버 간에 암호화된 데이터를 주고 받습니다.
+SFTP는 SSH 방식을 사용하여 서버 간에 암호화된 데이터를 주고 받습니다.
 
-파일을 암호화 하여 전송하기 때문에, 해킹이나 보안을 방지 할 수 있습니다.
+파일을 암호화하여 전송하기 때문에 해킹이나 보안을 방지할 수 있습니다.
 
 FTP Client 소프트웨어를 사용하여 로컬에서 FTP 서버에 접속할 수 있습니다.
 
-본 메뉴얼에서는 FTP Client 프로그램으로 FileZilla를 사용합니다.
+본 매뉴얼에서는 FTP Client 프로그램으로 FileZilla를 사용합니다.
+
+
+
+
 
 ### (2) 방화벽 허용
 
@@ -416,6 +544,10 @@ SFTP는 SSH 방식으로 동작하기 때문에 기본적으로 22번 포트를 
 
 <figure><img src="../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
+
+
+
+
 ### (3) FileZilla Client를 사용한 ftp 서버 접속
 
 FileZilla Client에 접근할 ftp 호스트를 등록하는 과정은 다음과 같습니다.
@@ -426,11 +558,15 @@ FileZilla를 실행한 뒤, 왼쪽 상단의 사이트 관리자 아이콘을 �
 
 <figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
+
+
 #### b. New Site 추가
 
 사이트 관리자에서 New Site 버튼을 클릭하여 호스트를 추가해 주세요.
 
 <figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+
 
 #### c.  FTP 서버 정보 입력
 
@@ -448,15 +584,17 @@ FTP 서버 접속을 위한 정보를 입력합니다. 설정이 필요한 정�
 
 ⑥ **사용자** : 로그인할 사용자 계정을 입력합니다. 카페24클라우드 가상서버에서 초기 세팅된 사용자 정보는 다음과 같습니다.
 
-| OS        | 계정     | 접속 방법       |
-| --------- | ------ | ----------- |
-| **Rocky** | rocky  | rocky@공인IP  |
-| Centos    | centos | centos@공인IP |
-| Ubuntu    | ubuntu | ubuntu@공인IP |
+|     OS    |   계정   |    접속 방법    |
+| :-------: | :----: | :---------: |
+| **Rocky** |  rocky |  rocky@공인IP |
+|   Centos  | centos | centos@공인IP |
+|   Ubuntu  | ubuntu | ubuntu@공인IP |
 
 ⑦ **키 파일** : **"찾아보기"** 버튼을 클릭하여 해당 서버에 대한 키파일을 등록합니다.
 
-<figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+
 
 #### d. FTP 서버 접속 확인
 

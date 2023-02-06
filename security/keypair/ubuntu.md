@@ -24,7 +24,7 @@ GRUB 부팅 프롬프트가 표시되면 화살표키를 사용하여 "Advanced 
 
 "recovery mode"로 표시 되어있는 항목을 선택후 엔터키를 누릅니다.
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 우분투 복구 모드에서 키보드의 화살표키를 사용하여 "root Drop to root sheel prompt" 선택후 엔터키를 누릅니다.
 
@@ -44,12 +44,12 @@ GRUB 부팅 프롬프트가 표시되면 화살표키를 사용하여 "Advanced 
 * "**passwd ubuntu(계정명)**" 명령어로 ubuntu 계정의 패스워드를 설정
 * "**vi /etc/ssh/sshd\_config**" 명령어로 파일을 수정
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 키페어 접속 방식에서 "/etc/ssh/sshd\_config" 파일에서 PasswordAuthentication no 를 yes로파라미터를 업데이트합니다.\
 "**reboot now**" 명령어로 서버를 재부팅합니다.
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
