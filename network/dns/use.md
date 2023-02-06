@@ -14,7 +14,9 @@ DNS(Domain Name System)은 도메인 이름에 대한 IP 주소를 찾는 시스
 
 예를 들어, "https://console.cafe24.com"이라는 URL을 웹 브라우저에 입력하면,
 
-DNS는 "console.cafe24.com"이라는 도메인에 해당하는 IP 주소를 찾아 반환하여 사용자의 PC는 원하는 웹 페이지에 접속하게 됩니다.
+DNS는 "console.cafe24.com"이라는 도메인에 해당하는 IP 주소를 찾아 반환합니다.
+
+이로써사용자의 PC는 원하는 웹 페이지에 접속하게 됩니다.
 
 DNS 서비스를 이용하여 이러한 작업을 쉽고 빠르게 수행할 수 있습니다.
 
@@ -70,7 +72,7 @@ DNS 서비스를 이용하여 이러한 작업을 쉽고 빠르게 수행할 수
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/47ca031f9555adc34dfcb4936473d0b9_1603442523.jpg" alt=""><figcaption></figcaption></figure>
 
-레코드의 타입에 상관없이, 호스트명에 **** "**@**"를 입력하면 1차 도메인 자신을 가리키게 됩니다.
+<mark style="color:blue;">레코드의 타입에 상관없이, 호스트명에</mark> <mark style="color:blue;"></mark><mark style="color:blue;">****</mark> <mark style="color:blue;"></mark><mark style="color:blue;">"</mark><mark style="color:blue;">**@**</mark><mark style="color:blue;">"를 입력하면 1차 도메인 자신을 가리키게 됩니다.</mark>
 
 카페24 클라우드에서 제공하는 레코드는 다음과 같습니다.
 
@@ -108,7 +110,7 @@ CNAME 레코드는 기존의 도메인에 대한 별칭을 지정하는 레코�
 
 CNAME 레코드는 IP 주소가 자주 바뀌는 환경에서 레코드 수정 횟수를 줄일 수 있어 편리합니다.
 
-하지만 실제 IP 주소를 얻을 때까지 DNS 정보를 여러 번 요청해야 하므로 성능 저하가 있을 수 있다는 점을 유의해야 합니다.
+<mark style="color:red;">하지만 실제 IP 주소를 얻을 때까지 DNS 정보를 여러 번 요청해야 하므로 성능 저하가 있을 수 있다는 점을 유의해야 합니다.</mark>
 
 다음과 같이 입력할 경우, "demo-cname.cafe24clouds.com"이 "demo-A.cafe24clouds.com"의 별칭 도메인이 됩니다.
 
