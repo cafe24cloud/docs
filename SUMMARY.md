@@ -10,7 +10,6 @@
 ## 서버 <a href="#server" id="server"></a>
 
 * [가상서버](server/server/README.md)
-  * [test page](server/server/test-page.md)
   * [가상서버 생성 방법](server/server/create.md)
   * [가상서버 접속 방법](server/server/connect/README.md)
     * [SSH 키페어 접속 방법](server/server/connect/keypair.md)
