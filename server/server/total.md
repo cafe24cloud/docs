@@ -516,7 +516,7 @@ SPF를 사용하면 메일 스푸핑을 방지할 수 있다는 장점이 있습
 
 하지만 데이터를 평문으로 전송하여 보안이 취약하다는 단점이 있습니다.
 
-FTP 사용을 원하실 경우 [\[FTP 구성 방법\]](config/ftp.md)을 참고해 주세요.
+FTP 사용을 원하실 경우 [\[FTP 구성 방법\]](ftp.md)을 참고해 주세요.
 
 따라서 카페24 클라우드는 보안이 강화된 <mark style="color:blue;">**SFTP(Secure File Transfer Protocol)**</mark>사용을 권장합니다.
 

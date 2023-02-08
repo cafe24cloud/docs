@@ -32,14 +32,6 @@ description: 인증서를 사용 방법은 아래와 같습니다.
 
 인증서 등록 창에서 아래 항목을 확인하여 인증서를 등록합니다.
 
-{% hint style="info" %}
-<mark style="color:blue;">**참고사항**</mark>
-
-인증서 관리 서비스는 **공인 인증서**만 등록 가능하며, **x.509 encoded**된 **.pem 형식**의 인증서를 지원합니다.
-
-인증서를 등록이 실패할 경우 [자주 발생하는 오류](use.md#2)를 참고해 주세요.
-{% endhint %}
-
 ① **인증서 이름**
 
 등록할 SSL 인증서의 이름을 지정합니다.
@@ -89,9 +81,13 @@ RSA 개인 키의 예시는 다음과 같습니다.
 -----END CERTIFICATE-----
 ```
 
-
-
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/14/4775fddd82d4f714ae2665fb19dcaea9_1647186667.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+<mark style="color:blue;">**참고사항**</mark>
+
+인증서 관리 서비스는 **공인 인증서**만 등록 가능하며, **x.509 encoded**된 **.pem 형식**의 인증서를 지원합니다.
+{% endhint %}
 
 
 
@@ -137,9 +133,9 @@ x.509 encoded된 .pem 형식의 인증서가 잘린 부분 없이 복사/붙여 
 
 암호화된 개인 키는 다음과 같이 복호화 할 수 있습니다.
 
-<pre class="language-shell-session"><code class="lang-shell-session"><strong>## openssl rsa –in [암호화된 개인키] -out [복호화하여 저장할 키파일 이름]
-</strong><strong>$ openssl rsa -in encrypted.pem -out decrypted.pem
-</strong></code></pre>
+```shell-session
+$ openssl rsa -in encrypted.pem -out decrypted.pem
+```
 
 
 
@@ -217,7 +213,7 @@ x.509 encoded된 .pem 형식의 인증서가 잘린 부분 없이 복사/붙여 
 
 ② **사용중인 서비스**&#x20;
 
-\[보기] 버튼을 클릭하여 카페24 클라우드에서 해당 인증서와 연계 되어 사용 중인 서비스를 확인할 수 있습니다.
+\[보기] 버튼을 클릭하여 카페24 클라우드의 다른 서비스와 연계되어 사용 중인 서비스를 확인할 수 있습니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/14/e95102bfc5ccd75850cbbaaf17b581a5_1647188832.jpg" alt=""><figcaption></figcaption></figure>
 

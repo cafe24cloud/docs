@@ -47,7 +47,7 @@ description: 카페24 클라우드의 기술지원을 신청하는 방법은 아
 기술지원 신청 시에 기입해야 하는 항목은 아래와 같습니다.&#x20;
 
 * **기술지원 서버 선택** : 기술지원을 적용할 대상 서버를 선택합니다.&#x20;
-* **기술지원 서비스 선택** : 기술지원이 필요한 서비스를 선택합니다. 지원 서비스별로 <img src="https://wiki.simplexi.com/s/s0exjg/8506/5d4cfda2b837dbf77e088aa916d969d565373c86/_/images/icons/emoticons/help_16.svg" alt="(질문)" data-size="line"> 버튼을 클릭하여 상세 설명을 확인하실 수 있습니다. &#x20;
+* **기술지원 서비스 선택** : 기술지원이 필요한 서비스를 선택합니다. 지원 서비스별로 도움말을 클릭하여 상세 설명을 확인하실 수 있습니다. &#x20;
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/11/fdfeba3685454f4ab3170ce9b41d4bf5_1673404195.jpg" alt=""><figcaption></figcaption></figure>
 
