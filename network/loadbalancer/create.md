@@ -90,12 +90,6 @@ TERMINATED\_HTTPS를 사용하면 아래 예시와 같이 통신하게 됩니다
 
 **c. Source IP Hash**
 
-{% hint style="danger" %}
-<mark style="color:red;">**참고 사항**</mark>
-
-Source IP Hash 알고리즘은 모든 서버에 같은 비율로 부하분산 하지 않으므로 특정 서버에 접속이 몰릴 위험성이 있습니다.
-{% endhint %}
-
 Source IP 주소를 바탕으로 Hash 한 결과를 이용하여 요청을 분산하는 방법입니다.
 
 동일한 출발지 IP에서 오는 요청은 지속적으로 하나의 하위 서버에 할당 됩니다.
