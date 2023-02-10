@@ -147,30 +147,42 @@ Public URL of the object is: http://kr.cafe24obs.com/cross-origin/cors.html
 
 ## 4. CORS 설정하기
 
-### (1)
+### (1) CORS 구성 요소
+
+CORS Configuration은 버킷에 액세스할 수 있도록 허용할 origin과 각 origin에 대해 지원할 작업(HTTP Method) 및 기타 작업 별 정보를 식별하는 CORS Rule이 포함된 문서입니다.
+
+CORS Configuration에는 최대 100개의 CORS Rule을 추가할 수 있으며, CORS Rule elements는 다음과 같습니다.
+
+| CORS Rule elements |                                                                                              Description                                                                                              |
+| :----------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|    AllowedOrigin   |                                   http://www.example.com과 같은 cross-domain 요청을 허용할 origin을 지정합니다. origin 문자열에는 http://\*.example.com과 같은 \* 와일드카드 문자가 하나만 포함될 수 있습니다.                                  |
+|    AllowedMethod   |                                                               허용할 origin에 대해 지원할 HTTP Method(GET / PUT / POST / DELETE / HEAD)를 지정합니다.                                                                |
+|    AllowedHeader   |        Preflight 요청에서 허용되는 헤더를 지정합니다. [<mark style="color:blue;">Common Request Header</mark>](https://docs.aws.amazon.com/ko\_kr/AmazonS3/latest/API/RESTCommonRequestHeaders.html)를 참고해 주세요.        |
+|    ExposeHeader    | 고객이 해당 애플리케이션에 액세스할 수 있도록 하는 응답 헤더를 식별합니다. [<mark style="color:blue;">Common Response Header</mark>](https://docs.aws.amazon.com/ko\_kr/AmazonS3/latest/API/RESTCommonResponseHeaders.html)를 참고해 주세요. |
+|    MaxAgeSeconds   |                                                                              Preflight 요청에 대한 응답을 캐시할 수 있는 시간(초)을 지정합니다.                                                                              |
 
 
 
 
 
-### (2)
+### (2) CORS 설정하기
 
-
+origin 웹 사이트 버킷이 GET 요청 권한을 가질 수 있도록 CORS 설정 파일을 작성합니다.
 
 ```shell-session
-$ vi cors-rule.xml
+$ vi corsrules.xml
 <CORSConfiguration>
  <CORSRule>
-    <AllowedMethod>GET</AllowedMethod>
-    <AllowedOrigin>https://origin.kr-website.cafe24obs.com</AllowedOrigin>
-  </CORSRule>
+   <AllowedOrigin>https://origin.kr-website.cafe24obs.com</AllowedOrigin>
+   <AllowedMethod>GET</AllowedMethod>
+ </CORSRule>
 </CORSConfiguration>
 ```
 
-작성한 cors-rule.xml 파일을 사용하여 cross-origin 버킷의 CORS를 설정합니다.
+작성한 corsrules.xml 파일을 사용하여 cross-origin 버킷의 CORS를 설정합니다.
 
 ```shell-session
-$ s3cmd setcors cors-rule.xml s3://cross-origin
+$ s3cmd setcors corsrules.xml s3://cross-origin
 ```
 
 설정된 CORS는 다음과 같이 확인할 수 있습니다.
@@ -186,7 +198,7 @@ s3://cross-origin/ (bucket):
    ACL:       democloud: FULL_CONTROL
 ```
 
-
+origin 웹 사이트 버킷에 접속하면, cross-origin 웹 사이트 버킷의 cors 페이지 내용을 가져오는 것을 확인할 수 있습니다.
 
 <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
@@ -194,7 +206,7 @@ s3://cross-origin/ (bucket):
 
 
 
-### (3)
+### (3) CORS 삭제하기기
 
 설정한 CORS는 다음과 같이 삭제할 수 있습니다.
 
@@ -212,6 +224,6 @@ s3://cross-origin/ (bucket):
    ACL:       democloud: FULL_CONTROL
 ```
 
-
+cross-origin 웹 사이트 버킷에 대한 GET 요청 권한이 없기 때문에 cors 페이지 내용을 가져오지 못하는 것을 확인할 수 있습니다.
 
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
