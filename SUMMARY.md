@@ -56,6 +56,7 @@
     * [AWS Javascript SDK 사용 방법](storage/object/sdk/aws-javascript.md)
     * [AWS Java SDK 사용 방법](storage/object/sdk/aws-java.md)
     * [AWS Python SDK 사용 방법](storage/object/sdk/aws-python.md)
+  * [오브젝트 스토리지 CORS 설정 방법](storage/object/cors.md)
 
 ## 네트워킹 <a href="#network" id="network"></a>
 
