@@ -2,36 +2,36 @@
 description: 가상서버 및 블록 스토리지 스냅샷을 생성 및 삭제하는 방법은 다음과 같습니다.
 ---
 
-# 가상서버 스냅샷 사용 방법
+# 블록 스토리지 스냅샷 사용 방법
 
 ## 목차
 
-#### [1. 스냅샷에 대한 이해](use.md#1.-1)  &#x20;
+#### [1. 스냅샷에 대한 이해](undefined.md#1.-1)  &#x20;
 
 [(1) 스냅샷 이란?   \
-](use.md#1)[(2) 스냅샷의 작동 방식](use.md#2)
+](undefined.md#1)[(2) 스냅샷의 작동 방식](undefined.md#2)
 
-#### [2. 가상서버 및 블록 스토리지 스냅샷 생성](use.md#2.-1)  &#x20;
+#### [2. 가상서버 및 블록 스토리지 스냅샷 생성](undefined.md#2.-1)  &#x20;
 
 [(1) 가상서버 준비   \
-](use.md#1-1)[(2) 전체(가상서버 + 블록 스토리지) 스냅샷 생성   \
-](use.md#2-+)[(3) 블록 스토리지 스냅샷 생성](use.md#3)
+](undefined.md#1-1)[(2) 전체(가상서버 + 블록 스토리지) 스냅샷 생성   \
+](undefined.md#2-+)[(3) 블록 스토리지 스냅샷 생성](undefined.md#3)
 
-#### <mark style="color:blue;">3</mark>[<mark style="color:blue;">.</mark> ](broken-reference)<mark style="color:blue;"></mark>[<mark style="color:blue;">스냅샷을 이용한 오토스케일 구성</mark>](use.md#3.-1)    <mark style="color:blue;"></mark>   &#x20;
+#### <mark style="color:blue;">3</mark>[<mark style="color:blue;">.</mark> ](broken-reference)<mark style="color:blue;"></mark>[<mark style="color:blue;">스냅샷을 이용한 오토스케일 구성</mark>](undefined.md#3.-1)    <mark style="color:blue;"></mark>   &#x20;
 
-<mark style="color:blue;"></mark>[<mark style="color:blue;">(1) 오토스케일 구성</mark>](use.md#1-2)<mark style="color:blue;"></mark>
+<mark style="color:blue;"></mark>[<mark style="color:blue;">(1) 오토스케일 구성</mark>](undefined.md#1-2)<mark style="color:blue;"></mark>
 
-#### [4. 가상서버 및 블록 스토리지 스냅샷 삭제](use.md#4.-1)  &#x20;
+#### [4. 가상서버 및 블록 스토리지 스냅샷 삭제](undefined.md#4.-1)  &#x20;
 
 [(1) 가상서버 스냅샷과 연결된 블록 스토리지 스냅샷 모두 삭제   \
-](use.md#1-3)[(2) 단독 블록 스토리지 스냅샷 삭제](use.md#2-1)
+](undefined.md#1-3)[(2) 단독 블록 스토리지 스냅샷 삭제](undefined.md#2-1)
 
-#### [5. 리소스 삭제 불가 케이스별 해결 방안](use.md#5.-1)  &#x20;
+#### [5. 리소스 삭제 불가 케이스별 해결 방안](undefined.md#5.-1)  &#x20;
 
 [(1) 블록 스토리지를 삭제하기 위해서는 먼저 연결된 블록 스토리지 스냅샷을 삭제해야 합니다.   \
-](use.md#1-.)[(2) 블록 스토리지 스냅샷이 가상서버 스냅샷과 연결되어 있습니다.   \
-](use.md#2-.)[(3) 현재 가상서버 스냅샷이 오토스케일에서 사용되고 있습니다.   \
-](use.md#3-.)[(4) 블록 스토리지 삭제 시 오토스케일에 구성되어 있어 삭제하지 못하는 경우](use.md#4)
+](undefined.md#1-.)[(2) 블록 스토리지 스냅샷이 가상서버 스냅샷과 연결되어 있습니다.   \
+](undefined.md#2-.)[(3) 현재 가상서버 스냅샷이 오토스케일에서 사용되고 있습니다.   \
+](undefined.md#3-.)[(4) 블록 스토리지 삭제 시 오토스케일에 구성되어 있어 삭제하지 못하는 경우](undefined.md#4)
 
 
 
@@ -137,7 +137,7 @@ description: 가상서버 및 블록 스토리지 스냅샷을 생성 및 삭제
 
 &#x20; 스냅샷을 이용한 오토스케일 구성 방법은 아래의 매뉴얼을 참조하시기 바랍니다.
 
-* **오토스케일 매뉴얼** : <mark style="color:blue;">\[</mark>[<mark style="color:blue;">오토스케일 사용 방법</mark>](../autoscale/use.md)<mark style="color:blue;">]</mark>
+* **오토스케일 매뉴얼** : <mark style="color:blue;">\[</mark>[<mark style="color:blue;">오토스케일 사용 방법</mark>](../../server/autoscale/use.md)<mark style="color:blue;">]</mark>
 
 
 
