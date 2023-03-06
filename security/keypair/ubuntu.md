@@ -44,7 +44,7 @@ GRUB 부팅 프롬프트가 표시되면 화살표키를 사용하여 "Advanced 
 * "**passwd ubuntu(계정명)**" 명령어로 ubuntu 계정의 패스워드를 설정
 * "**vi /etc/ssh/sshd\_config**" 명령어로 파일을 수정
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 키페어 접속 방식에서 "/etc/ssh/sshd\_config" 파일에서 PasswordAuthentication no 를 yes로파라미터를 업데이트합니다.\
 "**reboot now**" 명령어로 서버를 재부팅합니다.

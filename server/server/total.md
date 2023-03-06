@@ -406,7 +406,7 @@ DNS 서비스를 이용하면 이러한 작업을 쉽고 빠르게 수행할 수
 
 카페24 클라우드에서 제공하는 레코드는 다음과 같습니다.
 
-<figure><img src="../../.gitbook/assets/image (2) (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 <mark style="color:blue;">**참고사항**</mark>
@@ -556,7 +556,7 @@ FileZilla Client에 접근할 ftp 호스트를 등록하는 과정은 다음과 
 
 FileZilla를 실행한 뒤, 왼쪽 상단의 사이트 관리자 아이콘을 클릭해 주세요.
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

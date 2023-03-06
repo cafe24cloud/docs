@@ -60,7 +60,7 @@ FileZilla Client에 접근할 ftp 호스트를 등록하는 과정은 다음과 
 
 FileZilla를 실행한 뒤, 왼쪽 상단의 사이트 관리자 아이콘을 클릭해 주세요.
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 

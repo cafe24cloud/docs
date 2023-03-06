@@ -58,7 +58,7 @@ VSCode를 연 다음, 다음 과정을 통해 가상서버 SSH 접속에 필요�
 
 F1 키를 눌러 명령어 입력창을 연 다음, **Remote-SSH: Open SSH Configuration File을** 입력합니다.
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 업데이트할 SSH 설정 파일로 User 디렉터리 하위의 config 파일을 선택합니다.
 
