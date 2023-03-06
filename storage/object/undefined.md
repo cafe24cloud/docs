@@ -37,7 +37,7 @@ s4cmd 또는  S3Browser를 이용해서 암호화 되어 업로드된 파일은 
 본 매뉴얼에서는 s4cmd와 s3browser 에서 SSE-C 암호화 적용하는 방법을 제공합니다.&#x20;
 
 * [s4cmd로 데이터 암호화](undefined.md#2.-s4cmd)
-* [s3browser로 데이터 암호화](undefined.md#3.-s3-browser)
+* [s3browser로 데이터 암호화](undefined.md#3.-s3browser)
 
 
 
