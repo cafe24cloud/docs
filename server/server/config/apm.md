@@ -627,7 +627,7 @@ MySQL/MariaDB 접속 시, 접속한 IP에 대한 DNS 질의를 하여 호스트 
 my.cnf 설정 파일에 skip-name-resolve 옵션을 추가합니다.
 
 ```sh
-$ vi /etc/my.cnf
+$ sudo vi /etc/my.cnf
 [mysqld]
 skip-name-resolve
 ```
@@ -651,7 +651,7 @@ mysql> SHOW VARIABLES LIKE 'skip_name_resolve';
 my.cnf 설정 파일에 skip-name-resolve 옵션을 추가합니다.
 
 ```sh
-$ vi /etc/mysql/my.cnf
+$ sudo vi /etc/mysql/my.cnf
 [mysqld]
 skip-name-resolve
 ```
