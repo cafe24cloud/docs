@@ -464,7 +464,7 @@ $ sudo systemctl restart httpd
 
 <mark style="color:blue;">****</mark>
 
-
+<mark style="color:blue;">****</mark>
 
 
 
@@ -517,7 +517,7 @@ $ sudo apt-get install mariadb-server
 
 ### (2) MariaDB 설치 확인하기
 
-설치가 완료되었다면 MySQL 서비스를 구동한 후, active 상태인지 확인합니다.
+설치가 완료되었다면 MariaDB 서비스를 구동한 후, active 상태인지 확인합니다.
 
 ```shell-session
 $ sudo systemctl start mariadb
@@ -525,7 +525,7 @@ $ sudo systemctl enable mariadb
 $ systemctl status mariadb
 ```
 
-그리고 MySQL에 접속해봅니다.
+그리고 MariaDB에 접속해봅니다.
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
@@ -611,3 +611,63 @@ $ sudo systemctl restart httpd
 **http://가상서버의 공인 IP/test.php**로 접속하여 PHP와 MariaDB가 잘 연동되는지 확인합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/12/c673ec4af5d558cb7aa70e23bb7f2cb2_1665535597.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+<mark style="color:blue;">**참고사항**</mark>
+
+MySQL/MariaDB 접속 시, 접속한 IP에 대한 DNS 질의를 하여 호스트 이름을 확인하는 과정을 거칩니다.
+
+하지만 DNS 응답이 느리거나 장애가 발생할 경우, MySQL/MariaDB 접속이 지연되는 현상이 발생할 수 있기 때문에
+
+아래와 같이 **skip-name-resolve** 옵션 사용하여, DNS 질의를 하지 않고 향상된 속도로 접속할 수 있습니다.
+{% endhint %}
+
+{% tabs %}
+{% tab title="CentOS / Rocky" %}
+my.cnf 설정 파일에 skip-name-resolve 옵션을 추가합니다.
+
+```sh
+$ vi /etc/my.cnf
+[mysqld]
+skip-name-resolve
+```
+
+
+
+MySQL 또는 MariaDB 서비스를 재시작한 후, 설정을 확인합니다.
+
+```sh
+mysql> SHOW VARIABLES LIKE 'skip_name_resolve';
++-------------------+-------+
+| Variable_name     | Value |
++-------------------+-------+
+| skip_name_resolve | ON    |
++-------------------+-------+
+1 row in set (0.001 sec)
+```
+{% endtab %}
+
+{% tab title="Ubuntu" %}
+my.cnf 설정 파일에 skip-name-resolve 옵션을 추가합니다.
+
+```sh
+$ vi /etc/mysql/my.cnf
+[mysqld]
+skip-name-resolve
+```
+
+
+
+MySQL 또는 MariaDB 서비스를 재시작한 후, 설정을 확인합니다.
+
+```sh
+mysql> SHOW VARIABLES LIKE 'skip_name_resolve';
++-------------------+-------+
+| Variable_name     | Value |
++-------------------+-------+
+| skip_name_resolve | ON    |
++-------------------+-------+
+1 row in set (0.001 sec)
+```
+{% endtab %}
+{% endtabs %}
