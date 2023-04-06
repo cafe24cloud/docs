@@ -76,7 +76,7 @@ ntp가 동작 중인 경우 이를 중지시킵니다.\
 (Almalinux8부터는 ntp를 지원하지 않아 해당 작업 생략)
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo systemctl stop ntpd
 $ sudo systemctl disable ntpd
@@ -299,7 +299,7 @@ CentOS8, AlmaLinux8부터는 ntp를 지원하지 않습니다.
 chronyd가 동작 중인 경우 이를 중지 시킵니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo systemctl stop chronyd
 $ sudo systemctl disable chronyd
@@ -323,7 +323,7 @@ ntp를 이용하여 가상서버의 시간을 NTP 서버와 동기화 할 수 �
 OS별 설치 방법은 다음과 같습니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo yum install ntp
 ```
@@ -343,7 +343,7 @@ $ sudo apt install ntp
 ntpd 데몬을 동작 시킵니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo systemctl start ntpd
 ```
@@ -359,7 +359,7 @@ $ sudo systemctl start ntp
 서버 재 부팅 시에도 ntpd 데몬이 자동 시작되도록 설정합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo systemctl enable ntpd
 ```
@@ -411,7 +411,7 @@ server 2.asia.pool.ntp.org   iburst
 서비스를 재시작합니다.&#x20;
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo systemctl restart ntpd
 ```
