@@ -290,11 +290,12 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 
 ⑨ 카페24 클라우드에서 제공하는 OS는 보안상 일반 계정으로만 접속이 가능합니다. 아래의 계정 정보를 참고하여 접속한 후, root 권한으로 변경합니다.
 
-|   OS   |   계정   |      접속 방법      |
-| :----: | :----: | :-------------: |
-|  Rocky |  rocky |  rocky@가상서버공인IP |
-| CentOS | centos | centos@가상서버공인IP |
-| Ubuntu | ubuntu | ubuntu@가상서버공인IP |
+|     OS    |     계정    |        접속 방법       |
+| :-------: | :-------: | :----------------: |
+|   Rocky   |   rocky   |   rocky@가상서버공인IP   |
+|   CentOS  |   centos  |   centos@가상서버공인IP  |
+|   Ubuntu  |   ubuntu  |   ubuntu@가상서버공인IP  |
+| Almalinux | almalinux | almalinux@가상서버공인IP |
 
 ```shell-session
 $ sudo -i
