@@ -115,7 +115,7 @@ description: >-
 
 a. **fdisk /dev/vdc** 명령어로 파티션 작업을 진행 합니다.
 
-b. Command (m for help): **n** 새로운 파티션을 생성합니다. **** [※ 참고사항](connect.md#undefined-2)
+b. Command (m for help): **n** 새로운 파티션을 생성합니다. [※ 참고사항](connect.md#undefined-2)
 
 c. Select (default p): **p**
 
@@ -189,7 +189,7 @@ c. **df -h** 명령어로 /data 폴더와의 연결을 확인합니다.&#x20;
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/25/ff319ddb1635041b836ad6e424dfc464_1582616012.png" alt=""><figcaption></figcaption></figure>
 
-****
+
 
 #### **※ 참고사항**
 

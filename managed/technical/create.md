@@ -30,7 +30,7 @@ description: 카페24 클라우드의 기술지원을 신청하는 방법은 아
 
 <table><thead><tr><th align="center">상태</th><th align="center">설명</th><th data-hidden></th></tr></thead><tbody><tr><td align="center">접수 완료</td><td align="center"> 기술지원이 성공적으로 접수된 상태입니다. </td><td></td></tr><tr><td align="center">처리 중</td><td align="center">담당 엔지니어가 확인을 시작한 상태입니다. </td><td></td></tr><tr><td align="center">지연 처리</td><td align="center">문의된 내용에 추가 확인이 필요한 사항이 있어 답변이 지연되고 있는 상태입니다. </td><td></td></tr><tr><td align="center">수정 요청 중</td><td align="center">담당 엔지니어가 기술지원 신청서의 수정을 요청한 상태입니다.</td><td></td></tr><tr><td align="center">승인 요청</td><td align="center">담당 엔지니어가 작업 시작을 위해 작업 승인 요청을 한 상태입니다. </td><td></td></tr><tr><td align="center">작업 중</td><td align="center">담당 엔지니어가 작업 중인 상태입니다. </td><td></td></tr><tr><td align="center">종료</td><td align="center">담당 엔지니어가 작업을 완료하여 기술지원이 종료된 상태입니다. </td><td></td></tr><tr><td align="center">취소</td><td align="center">기술지원 신청자 혹은 담당 엔지니어가 취소 처리를 한 상태입니다.</td><td></td></tr><tr><td align="center">업무 시간 안내</td><td align="center">업무 시간 외에 접수된 문의에 대해 처리 가능한 시간을 안내합니다. </td><td></td></tr></tbody></table>
 
-****
+
 
 
 

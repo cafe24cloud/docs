@@ -47,6 +47,8 @@ Thu Feb 18 13:21:22 KST 2021
 
 
 
+
+
 ### (4) 원격지 NTP 서버와의 동기화
 
 해당 작업은 영구적으로 적용되지 않습니다.
@@ -55,16 +57,12 @@ Thu Feb 18 13:21:22 KST 2021
 
 이를 위해 chrony 또는 ntpd를 이용할 수 있습니다. 다음 중 원하는 방법을 선택하여 수행해 주세요.
 
-단, CentOS8부터는 ntp를 지원하지 않으니 chrony 사용을 권장합니다.
+단, CentOS8, AlmaLinux8부터는 ntp를 지원하지 않으니 chrony 사용을 권장합니다.
 
 <mark style="color:red;">가상서버에서는 Hardware clock에 직접적으로 접근하지 않아 hwclock 등의 명령어로 시간 설정을 할 수 없습니다.</mark>
 
 * [**chrony로 설정하기**](ntp.md#1-chrony)
 * [**ntp로 설정하기**](ntp.md#2-ntpd)
-
-
-
-
 
 
 
@@ -74,7 +72,8 @@ Thu Feb 18 13:21:22 KST 2021
 
 #### a. ntpd 중지
 
-ntp가 동작 중인 경우 이를 중지시킵니다.
+ntp가 동작 중인 경우 이를 중지시킵니다.\
+(Almalinux8부터는 ntp를 지원하지 않아 해당 작업 생략)
 
 {% tabs %}
 {% tab title="CentOS / Rocky" %}
@@ -100,7 +99,7 @@ $ sudo systemctl disable ntpd
 OS별 설치 방법은 다음과 같습니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo yum install chrony
 ```
@@ -120,7 +119,7 @@ $ sudo apt install chrony
 chronyd 데몬을 동작 시킵니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo systemctl start chronyd
 ```
@@ -136,7 +135,7 @@ $ sudo systemctl start chrony
 서버 재 부팅 시에도 chronyd 데몬이 자동 시작되도록 설정합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo systemctl enable chronyd
 ```
@@ -156,7 +155,7 @@ $ sudo systemctl enable chronyd
 chrony.conf 파일을 vi로 열어봅니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo vi /etc/chrony.conf
 ```
@@ -194,7 +193,7 @@ server 2.asia.pool.ntp.org iburst
 서비스를 재시작하여 변경 사항을 적용합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo systemctl restart chronyd
 ```
@@ -292,6 +291,8 @@ Mon Feb 22 10:47:43 KST 2021
 
 
 ### (2) ntpd로 설정하기
+
+CentOS8, AlmaLinux8부터는 ntp를 지원하지 않습니다.
 
 #### a. chronyd 중지
 

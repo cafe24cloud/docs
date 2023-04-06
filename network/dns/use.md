@@ -77,7 +77,7 @@ DNS 서비스를 이용하면 이러한 작업을 쉽고 빠르게 수행할 수
 {% hint style="info" %}
 <mark style="color:blue;">**참고사항**</mark>
 
-레코드의 타입에 상관없이, 호스트명에 **** "**@**"를 입력하면 1차 도메인 자신을 가리키게 됩니다.
+레코드의 타입에 상관없이, 호스트명에 "**@**"를 입력하면 1차 도메인 자신을 가리키게 됩니다.
 {% endhint %}
 
 ### (1) A 레코드
@@ -158,7 +158,7 @@ TXT 레코드는 도메인에 대한 텍스트 정보를 설정하는 것으로,
 
 TXT 레코드에 SPF 텍스트를 등록합니다.
 
-예를 들어 **** "**v=spf1 include:\_spf.google.com \~all**"는 Google 메일 서버를 인증한다는 의미입니다.
+예를 들어 "**v=spf1 include:\_spf.google.com \~all**"는 Google 메일 서버를 인증한다는 의미입니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/11/06/6c55a6789855ec5e7496c36848a84206_1604650564.jpg" alt=""><figcaption></figcaption></figure>
 

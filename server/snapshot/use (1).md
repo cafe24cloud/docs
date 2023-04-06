@@ -17,9 +17,9 @@ description: 가상서버 및 블록 스토리지 스냅샷을 생성 및 삭제
 ](<use (1).md#1-1>)[(2) 전체(가상서버 + 블록 스토리지) 스냅샷 생성   \
 ](<use (1).md#2-+>)[(3) 블록 스토리지 스냅샷 생성](<use (1).md#3>)
 
-#### <mark style="color:blue;">3</mark>[<mark style="color:blue;">.</mark> ](broken-reference)<mark style="color:blue;"></mark>[<mark style="color:blue;">스냅샷을 이용한 오토스케일 구성</mark>](<use (1).md#3.-1>)    <mark style="color:blue;"></mark>   &#x20;
+#### <mark style="color:blue;">3</mark>[<mark style="color:blue;">.</mark> ](broken-reference)[<mark style="color:blue;">스냅샷을 이용한 오토스케일 구성</mark>](<use (1).md#3.-1>)   &#x20;
 
-<mark style="color:blue;"></mark>[<mark style="color:blue;">(1) 오토스케일 구성</mark>](<use (1).md#1-2>)<mark style="color:blue;"></mark>
+[<mark style="color:blue;">(1) 오토스케일 구성</mark>](<use (1).md#1-2>)
 
 #### [4. 가상서버 및 블록 스토리지 스냅샷 삭제](<use (1).md#4.-1>)  &#x20;
 
@@ -102,7 +102,7 @@ description: 가상서버 및 블록 스토리지 스냅샷을 생성 및 삭제
 
 <mark style="background-color:blue;">**콘솔  > 스토리지  > 블록 스토리지 스냅샷**</mark> \
 아래의 화면과 같이가상서버 스냅샷과 함께 블록 스토리지 스냅샷이 같이 생성된 것을 확인할 수 있습니다.\
-전체 스냅샷(가상서버, 블록 스토리지)으로 생성한 블록 스토리지의 기본 스냅샷 명은 <mark style="color:blue;">**snapshot for \[가상서버 snapshot명]**</mark>** ** 입니다.
+전체 스냅샷(가상서버, 블록 스토리지)으로 생성한 블록 스토리지의 기본 스냅샷 명은 <mark style="color:blue;">**snapshot for \[가상서버 snapshot명]**</mark> 입니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/31/a8a13911a38a0ef0cb1208a4ac0aae19_1675150508.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -225,7 +225,7 @@ description: 가상서버 및 블록 스토리지 스냅샷을 생성 및 삭제
 
 ### (2) 블록 스토리지 스냅샷이 가상서버 스냅샷과 연결되어 있습니다.
 
-<mark style="background-color:blue;">**콘솔  > 서버  > 가상서버 스냅샷  > 해당 가상서버 스냅샷 삭제**</mark>** ** \
+<mark style="background-color:blue;">**콘솔  > 서버  > 가상서버 스냅샷  > 해당 가상서버 스냅샷 삭제**</mark> \
 삭제하려는 블록 스토리지의 스냅샷이 가상서버 스냅샷과 연결되어 있는경우 블록 스토리지만 단독으로 삭제가 불가능합니다.\
 <mark style="color:red;">가상서버 스냅샷 삭제 시 연결되어 있는 블록 스토리지 스냅샷도 같이 삭제 됩니다.</mark>
 
