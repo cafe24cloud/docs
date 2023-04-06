@@ -218,8 +218,8 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 
 가상서버 접속 방법은 다음과 같습니다.
 
-* <mark style="color:blue;"></mark>[<mark style="color:blue;">SSH 키페어 접속 방법</mark>](total.md#1-ssh)<mark style="color:blue;"></mark>
-* <mark style="color:blue;"></mark>[<mark style="color:blue;">SSH 키페어 분실 시 접속 방법</mark>](total.md#2-ssh)<mark style="color:blue;"></mark>
+* [<mark style="color:blue;">SSH 키페어 접속 방법</mark>](total.md#1-ssh)
+* [<mark style="color:blue;">SSH 키페어 분실 시 접속 방법</mark>](total.md#2-ssh)
 
 ### (1) SSH 키페어 접속 방법
 
@@ -235,8 +235,8 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 
 가상서버의 OS에 따라 다음 방법으로 SSH 접속을 할 수 있습니다.
 
-* <mark style="color:blue;"></mark>[<mark style="color:blue;">Windows 시스템에서 접속하기</mark>](total.md#a.-windows)<mark style="color:blue;"></mark>
-* <mark style="color:blue;"></mark>[<mark style="color:blue;">Mac 또는 SSH 클라이언트 시스템에서 접속하기</mark>](total.md#b.-mac-ssh)<mark style="color:blue;"></mark>
+* [<mark style="color:blue;">Windows 시스템에서 접속하기</mark>](total.md#a.-windows)
+* [<mark style="color:blue;">Mac 또는 SSH 클라이언트 시스템에서 접속하기</mark>](total.md#b.-mac-ssh)
 
 #### **a. Windows 시스템에서 접속하기**
 
@@ -333,8 +333,8 @@ $ ssh -i cafe24.pem [일반계정]@[가상서버공인IP]
 
 사용하시는 가상서버의 OS에 해당하는 매뉴얼을 참고해 주세요.
 
-* <mark style="color:blue;"></mark>[<mark style="color:blue;">분실 시 해결 방법 - CentOS</mark>](../../security/keypair/lost.md)<mark style="color:blue;"></mark>
-* <mark style="color:blue;"></mark>[<mark style="color:blue;">분실 시 해결 방법 - Ubuntu</mark>](../../security/keypair/ubuntu.md)<mark style="color:blue;"></mark>
+* [<mark style="color:blue;">분실 시 해결 방법 - CentOS</mark>](../../security/keypair/lost.md)
+* [<mark style="color:blue;">분실 시 해결 방법 - Ubuntu</mark>](../../security/keypair/ubuntu.md)
 
 
 
@@ -411,7 +411,7 @@ DNS 서비스를 이용하면 이러한 작업을 쉽고 빠르게 수행할 수
 {% hint style="info" %}
 <mark style="color:blue;">**참고사항**</mark>
 
-레코드의 타입에 상관없이, 호스트명에 **** "**@**"를 입력하면 1차 도메인 자신을 가리키게 됩니다.
+레코드의 타입에 상관없이, 호스트명에 "**@**"를 입력하면 1차 도메인 자신을 가리키게 됩니다.
 {% endhint %}
 
 #### a. A 레코드
@@ -484,7 +484,7 @@ TXT 레코드는 도메인에 대한 텍스트 정보를 설정하는 것으로,
 
 TXT 레코드에 SPF 텍스트를 등록합니다.
 
-예를 들어 **** "**v=spf1 include:\_spf.google.com \~all**"는 Google 메일 서버를 인증한다는 의미입니다.
+예를 들어 "**v=spf1 include:\_spf.google.com \~all**"는 Google 메일 서버를 인증한다는 의미입니다.
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
@@ -584,11 +584,12 @@ FTP 서버 접속을 위한 정보를 입력합니다. 설정이 필요한 정�
 
 ⑥ **사용자** : 로그인할 사용자 계정을 입력합니다. 카페24클라우드 가상서버에서 초기 세팅된 사용자 정보는 다음과 같습니다.
 
-|     OS    |   계정   |    접속 방법    |
-| :-------: | :----: | :---------: |
-| **Rocky** |  rocky |  rocky@공인IP |
-|   Centos  | centos | centos@공인IP |
-|   Ubuntu  | ubuntu | ubuntu@공인IP |
+|     OS    |     계정    |      접속 방법     |
+| :-------: | :-------: | :------------: |
+| **Rocky** |   rocky   |   rocky@공인IP   |
+|   Centos  |   centos  |   centos@공인IP  |
+|   Ubuntu  |   ubuntu  |   ubuntu@공인IP  |
+| Almalinux | almalinux | almalinux@공인IP |
 
 ⑦ **키 파일** : **"찾아보기"** 버튼을 클릭하여 해당 서버에 대한 키파일을 등록합니다.
 
