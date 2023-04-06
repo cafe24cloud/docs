@@ -14,11 +14,12 @@ description: 본 매뉴얼은 가상서버 접속 시, 발생 가능한 문제�
 
 카페24 클라우드에서 제공하는 OS별 가상서버 초기 계정은 다음과 같습니다.
 
-|   OS   |   계정   |      접속 방법      |
-| :----: | :----: | :-------------: |
-|  Rocky |  rocky |  rocky@가상서버공인IP |
-| CentOS | centos | centos@가상서버공인IP |
-| Ubuntu | ubuntu | ubuntu@가상서버공인IP |
+|     OS    |     계정    |        접속 방법       |
+| :-------: | :-------: | :----------------: |
+|   Rocky   |   rocky   |   rocky@가상서버공인IP   |
+|   CentOS  |   centos  |   centos@가상서버공인IP  |
+|   Ubuntu  |   ubuntu  |   ubuntu@가상서버공인IP  |
+| Almalinux | almalinux | almalinux@가상서버공인IP |
 
 
 
@@ -182,9 +183,9 @@ $ chmod 600 cafe24.pem
 <pre class="language-shell-session"><code class="lang-shell-session"><strong>$ vi /home/centos/.ssh/known_hosts
 </strong></code></pre>
 
-****
 
-****
+
+
 
 ### (4) Network error: Connection timed out
 

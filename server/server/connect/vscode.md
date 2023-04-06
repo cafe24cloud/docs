@@ -242,9 +242,10 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 카페24 클라우드에서 제공되는 OS들의 일반계정 정보는 다음과 같습니다.
 
-| **OS**     | **계정** | **접속 방법**   |
-| ---------- | ------ | ----------- |
-| **Rocky**  | rocky  | rocky@공인IP  |
-| **CentOS** | centos | centos@공인IP |
-| **Ubuntu** | ubuntu | ubuntu@공인IP |
+| **OS**        | **계정**    | **접속 방법**      |
+| ------------- | --------- | -------------- |
+| **Rocky**     | rocky     | rocky@공인IP     |
+| **CentOS**    | centos    | centos@공인IP    |
+| **Ubuntu**    | ubuntu    | ubuntu@공인IP    |
+| **Almalinux** | almalinux | almalinux@공인IP |
 

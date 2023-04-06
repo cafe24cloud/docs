@@ -25,7 +25,7 @@ NFS(Network File System)를 사용하면 원격 호스트에서 네트워크를 
 먼저 등록된 저장소 내 패키지 정보를 최신으로 업데이트한 후, nfs 패키지 설치를 진행합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo yum update
 $ sudo yum install nfs-utils
@@ -43,7 +43,7 @@ $ sudo apt-get install nfs-kernel-server
 설치가 완료되었다면 nfs 서비스를 구동한 후, active 상태인지 확인합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo systemctl start nfs-server
 $ sudo systemctl enable nfs-server
@@ -59,9 +59,9 @@ $ systemctl status nfs-kernel-server
 {% endtab %}
 {% endtabs %}
 
-****
 
-****
+
+
 
 ### (2) 블록 스토리지 마운트하기
 
@@ -100,7 +100,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 * &#x20; Partition number (1-4, default 1): \[enter]   **=> 파티션 번호를 1번(default 값)으로 설정**
 * &#x20; First sector (2048-20971519, default 2048): \[enter]   **=> 파티션 시작 영역을 2048(default 값)으로 설정**
 * &#x20; Last sector, +sectors or +size{K,M,G,T,P} (2048-20971519, default 20971519): \[enter]   **=> 파티션 마지막 영역을 20971519(default 값)으로 설정**
-* &#x20; ****  Command (m for help): p   **=> 파티션 테이블 출력**
+* &#x20; Command (m for help): p   **=> 파티션 테이블 출력**
 * &#x20; Command (m for help): w   **=> 파티션 설정 저장**
 
 ```shell-session
@@ -211,7 +211,7 @@ $ sudo touch /nfs/test.txt
 NFS Server 재부팅 시, 마운트가 해제되기 때문에 /etc/rc.local 파일에 마운트 명령어를 추가하여 자동으로 마운트될 수 있도록 합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo umount /dev/vdb1
 $ sudo vi /etc/rc.local
@@ -281,7 +281,7 @@ NFS Server 경우, 마운트를 해제하지 않고 재부팅하면 장애가 �
 마찬가지로 등록된 저장소 내 패키지 정보를 최신으로 업데이트한 후, nfs 패키지 설치를 진행합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo yum update
 $ sudo yum install nfs-utils
@@ -344,7 +344,7 @@ test.txt
 NFS Client 재부팅 시, 마운트가 해제되기 때문에 마찬가지로 /etc/rc.local 파일에 마운트 명령어를 추가하여 자동으로 마운트될 수 있도록 합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo vi /etc/rc.local
 mount -t nfs 192.168.1.17:/nfs /data

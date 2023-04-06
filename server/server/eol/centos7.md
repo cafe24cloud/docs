@@ -34,8 +34,8 @@ CentOS 7의 지원 종료 날짜는 **2024년 6월 30일**입니다.
 
 <mark style="color:blue;">따라서 카페24 클라우드에서 제공하는 CentOS 호환 운영체제 또는 다른 운영 체제 사용을 권장 드립니다.</mark>
 
-| CentOS 호환 운영체제 |     다른 운영 체제     |
-| :------------: | :--------------: |
-|    Rocky-8.6   | Ubuntu-20.04-LTS |
-|    Rocky-8.7   | Ubuntu-22.04-LTS |
+|      CentOS 호환 운영체제      |     다른 운영 체제     |
+| :----------------------: | :--------------: |
+| Rocky-8.7, Almalinux 8.7 | Ubuntu-20.04-LTS |
+| Rocky-9.1, Almalinux 9.1 | Ubuntu-22.04-LTS |
 

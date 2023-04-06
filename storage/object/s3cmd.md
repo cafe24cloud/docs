@@ -37,7 +37,7 @@ S3cmd는 CLI(Command-line interface) 환경에서 AWS의 S3를 제어할 수 있
 오브젝트 스토리지에 접근할 가상서버에 다음과 같이 s3cmd를 설치합니다.
 
 {% tabs %}
-{% tab title="CentOS/Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo yum install epel-release
 $ sudo yum install s3cmd

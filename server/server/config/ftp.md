@@ -104,7 +104,7 @@ Active mode의 통신 방법은 다음과 같습니다.
 FTP 서버로 사용할 가상서버에 vsftpd 패키지를 설치합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo yum install vsftpd
 ```
@@ -162,7 +162,7 @@ $ sudo chmod 755 /home/ftpuser
 
 OS별 vsftpd.conf 파일의 경로는 다음과 같습니다.
 
-* **CentOS** : /etc/vsftpd/vsftpd.conf
+* **CentOS, Rocky, Almalinux** : /etc/vsftpd/vsftpd.conf
 * **Ubuntu** : /etc/vsftpd.conf
 
 개발 환경에 따라 알맞은 설정이 필요하며, 설정 예시는 다음과 같습니다.

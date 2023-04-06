@@ -43,7 +43,7 @@ APM의 동작 원리는 아래와 같습니다.
 등록된 저장소 내 패키지 정보를 최신으로 업데이트합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo yum update
 ```
@@ -65,7 +65,7 @@ $ sudo apt-get update
 설치할 Apache 버전을 확인한 후, 설치를 진행합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ yum info httpd
 $ sudo yum install httpd
@@ -89,7 +89,7 @@ $ sudo apt-get install apache2
 설치가 완료되었다면 Apahce 서비스를 구동한 후, active 상태인지 확인합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo systemctl start httpd
 $ sudo systemctl enable httpd
@@ -109,7 +109,7 @@ $ systemctl status apache2
 그리고 **http://가상서버의 공인 IP**로 접속하여 잘 설치되었는지 확인합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/09/30/dcaf22340d2313b49c903293fb0cab9a_1664513933.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
@@ -131,7 +131,7 @@ $ systemctl status apache2
 설치할 PHP 버전을 확인한 후, 설치를 진행합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ yum info php
 $ sudo yum install php
@@ -155,7 +155,7 @@ $ sudo apt-get install php
 설치가 완료되었다면 /var/www/html 디렉터리에 index.php 파일을 생성하여 phpinfo 페이지를 출력할 수 있도록 합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo vi /var/www/html/index.php
 <?php phpinfo(); ?>
@@ -175,7 +175,7 @@ $ sudo systemctl restart apache2
 그리고 **http://가상서버의 공인 IP/index.php**로 접속하여 잘 설치되었는지 확인합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/09/30/5636b7902222afc3f16477b6baec5634_1664514569.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
@@ -201,7 +201,7 @@ $ sudo systemctl restart apache2
 여기서는 MySQL/MariaDB와 연동하기 위해 필요한 php-mysqlnd 모듈을 설치했습니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ yum info php-*
 $ sudo yum install php-mysqlnd
@@ -227,8 +227,8 @@ $ sudo apt-get install php-mysqlnd
 ### (1) MySQL 설치하기
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
-<mark style="color:blue;"></mark>[<mark style="color:blue;">MySQL Community Downloads</mark>](https://dev.mysql.com/downloads/repo/yum/)에 접속하여 설치할 OS 버전의 RPM Package를 선택한 후, MySQL Yum Repository 링크를 복사합니다.
+{% tab title="CentOS / Rocky / Almalinux" %}
+[<mark style="color:blue;">MySQL Community Downloads</mark>](https://dev.mysql.com/downloads/repo/yum/)에 접속하여 설치할 OS 버전의 RPM Package를 선택한 후, MySQL Yum Repository 링크를 복사합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/11/4454621a4f7b84261609d00944bf850d_1665471695.png" alt=""><figcaption></figcaption></figure>
 
@@ -236,7 +236,7 @@ $ sudo apt-get install php-mysqlnd
 {% endtab %}
 
 {% tab title="Ubuntu" %}
-<mark style="color:blue;"></mark>[<mark style="color:blue;">MySQL Community Downloads</mark>](https://dev.mysql.com/downloads/repo/apt/)에 접속하여 DEB Package를 선택한 후, MySQL APT Repository 링크를 복사합니다.
+[<mark style="color:blue;">MySQL Community Downloads</mark>](https://dev.mysql.com/downloads/repo/apt/)에 접속하여 DEB Package를 선택한 후, MySQL APT Repository 링크를 복사합니다.
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/11/d5255ccbec088266d4f622201af5b426_1665497068.png" alt=""><figcaption></figcaption></figure>
 
@@ -249,7 +249,7 @@ $ sudo apt-get install php-mysqlnd
 ubuntu의 경우, Package Configuration 화면을 통해 비밀번호를 설정합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo yum install https://dev.mysql.com/get/mysql80-community-release-el7-7.noarch.rpm
 $ sudo yum install mysql-server
@@ -279,7 +279,7 @@ Select default authentication plugin: Use Strong Password Encryption (RECOMMENDE
 설치가 완료되었다면 MySQL 서비스를 구동한 후, active 상태인지 확인합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo systemctl start mysqld
 $ sudo systemctl enable mysqld
@@ -299,7 +299,7 @@ $ systemctl status mysql
 그리고 MySQL에 접속해봅니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 root 계정의 임시 비밀번호를 확인한 후, MySQL에 접속합니다.
 
 ```shell-session
@@ -327,7 +327,7 @@ $ mysql -u root -p
 mysql\_secure\_installation을 통해 root 비밀번호 변경과 기본 보안 설정을 합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo mysql_secure_installation
 
@@ -401,7 +401,7 @@ mysql> grant all privileges on test.* to 'test'@'%';
 그리고 PHP가 test 데이터베이스에 잘 접속하는지 확인하는 test.php 파일을 /var/www/html 디렉터리에 생성합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo vi /var/www/html/test.php
 <?php
@@ -462,9 +462,9 @@ PHP 7.4.32 (cli) (built: Sep 28 2022 09:09:55) ( NTS )
 $ sudo systemctl restart httpd
 ```
 
-<mark style="color:blue;">****</mark>
 
-<mark style="color:blue;">****</mark>
+
+
 
 
 
@@ -472,10 +472,10 @@ $ sudo systemctl restart httpd
 
 ### (1) MariaDB 설치하기
 
-<mark style="color:blue;"></mark>[<mark style="color:blue;">Download MariaDB Server</mark>](https://mariadb.org/download/?t=repo-config)에 접속하여 설치할 OS 버전과 원하는 MariaDB 버전을 선택한 후, 리포지토리 또는 명령어를 복사합니다.
+[<mark style="color:blue;">Download MariaDB Server</mark>](https://mariadb.org/download/?t=repo-config)에 접속하여 설치할 OS 버전과 원하는 MariaDB 버전을 선택한 후, 리포지토리 또는 명령어를 복사합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/09/30/a4927b50a6f56d59dc54f36c65898a56_1664528250.png" alt=""><figcaption></figcaption></figure>
 {% endtab %}
 
@@ -487,7 +487,7 @@ $ sudo systemctl restart httpd
 복사한 리포지토리를 통해 Mariadb.repo를 생성하거나 복사한 명령어를 실행한 후, 설치를 진행합니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 ```shell-session
 $ sudo vi /etc/yum.repos.d/MariaDB.repo
 # MariaDB 10.3 CentOS repository list - created 2022-09-30 08:49 UTC
@@ -528,7 +528,7 @@ $ systemctl status mariadb
 그리고 MariaDB에 접속해봅니다.
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 초기에는 비밀번호가 없기 때문에 비밀번호 없이 MariaDB에 접속합니다.
 
 ```shell-session
@@ -623,7 +623,7 @@ MySQL/MariaDB 접속 시, 접속한 IP에 대한 DNS 질의를 하여 호스트 
 {% endhint %}
 
 {% tabs %}
-{% tab title="CentOS / Rocky" %}
+{% tab title="CentOS / Rocky / Almalinux" %}
 my.cnf 설정 파일에 skip-name-resolve 옵션을 추가합니다.
 
 ```sh
