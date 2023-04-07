@@ -407,6 +407,8 @@ $ s3cmd getlifecycle s3://버킷
 $ s3cmd setlifecycle 라이프사이클파일 s3://버킷
 ```
 
+#### 멀티파트 삭제
+
 멀티파트를 생성시간 기준으로 하루 후에 삭제하는 라이프사이클 설정 예시는 다음과 같습니다.
 
 <pre class="language-shell-session"><code class="lang-shell-session"><strong>## 라이프사이클 정책파일 생성
@@ -426,6 +428,30 @@ EOF
 ## 버킷에 정책 적용
 $ s3cmd setlifecycle lifecycle_abort_multipart s3://testbucket
 </code></pre>
+
+#### Noncurrent 오브젝트 삭제&#x20;
+
+최신 버전을 제외한 이전 오브젝트들을 주기적으로 자동 삭제할 수 있습니다.&#x20;
+
+버킷의 버전관리에 대해서는 오브젝트 버전 관리 기능 사용 방법을 참고해 주세요.&#x20;
+
+```shell-session
+$ sudo cat > lifecycle_delete_noncurrent_objects << EOF
+<LifecycleConfiguration>
+  <Rule>
+    <ID>delete_noncurrent_objects </ID>
+    <Status>Enabled</Status>
+    <Prefix/>
+    <NoncurrentVersionExpiration>
+      <NoncurrentDays>2</NoncurrentDays>
+    </NoncurrentVersionExpiration>
+  </Rule>
+</LifecycleConfiguration>
+EOF
+
+## 버킷에 정책 적용
+$ s3cmd setlifecycle lifecycle_delete_noncurrent_objects s3://test-bucket
+```
 
 
 
