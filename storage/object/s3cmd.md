@@ -431,9 +431,7 @@ $ s3cmd setlifecycle lifecycle_abort_multipart s3://testbucket
 
 #### Noncurrent 오브젝트 삭제&#x20;
 
-최신 버전을 제외한 이전 오브젝트들을 주기적으로 자동 삭제할 수 있습니다.&#x20;
-
-버킷의 버전관리에 대해서는 오브젝트 버전 관리 기능 사용 방법을 참고해 주세요.&#x20;
+버킷의 버전 관리 기능 활성화로 인해 남아 있는 오브젝트 중, 현재 버전을 제외한 것들을 주기적으로 삭제할 수 있습니다.&#x20;
 
 ```shell-session
 $ sudo cat > lifecycle_delete_noncurrent_objects << EOF
