@@ -85,7 +85,7 @@ EOF
 ```shell
 import {CreateBucketCommand, S3Client} from "@aws-sdk/client-s3";
 
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "kr1"});
 
 export const bucketParams = {
   Bucket: "test-bucket"
@@ -129,7 +129,7 @@ Response : {
 ```shell
 import { DeleteBucketCommand, S3Client } from "@aws-sdk/client-s3";
 
-const s3Client  = new S3Client({ endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud" });
+const s3Client  = new S3Client({ endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "kr1" });
 
 export const bucketParams = { Bucket: "test-bucket" };
 
@@ -172,7 +172,7 @@ Response :  {
 ```shell
 import { ListBucketsCommand, S3Client } from "@aws-sdk/client-s3";
 
-const s3Client  = new S3Client({ endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud" });
+const s3Client  = new S3Client({ endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "kr1" });
 
 export const run = async () => {
   try {
@@ -220,7 +220,7 @@ Success [
 ```shell
 import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
 
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "kr1"});
 
 export const bucketParams = {
   Bucket: "test-bucket",
@@ -258,7 +258,7 @@ import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
 import * as path from 'path';
 import * as fs from 'fs';
 
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "kr1"});
 # 로컬에 위치한 업로드할 파일의 경로
 const file = "clients\\client-s3\\src\\commands\\cafe24-demo\\files\\test-file-local.txt"
 const fileStream = fs.createReadStream(file);
@@ -300,7 +300,7 @@ Success : Successfully uploaded exsisting file test-bucket/test-file-local.pdf
 import {GetObjectCommand, S3Client} from "@aws-sdk/client-s3"
 import * as fs from 'fs';
 
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "kr1"});
 
 export const run = async () => {
   try {
@@ -347,7 +347,7 @@ test-file.txt is now downloaded to [clients\client-s3\src\commands\cafe24-demo\f
 ```shell
 import { ListObjectsCommand, S3Client } from "@aws-sdk/client-s3";
 
-const s3Client  = new S3Client({ endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud" });
+const s3Client  = new S3Client({ endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "kr1" });
 
 export const bucketParams = { Bucket: "test-bucket" };
 
@@ -432,7 +432,7 @@ Success :
 ```shell
 import {DeleteObjectCommand, S3Client} from "@aws-sdk/client-s3";
 
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "kr1"});
 
 export const bucketParams = {
   Bucket: "test-bucket",
@@ -474,7 +474,7 @@ Response :  {
 ```shell
 import {ListObjectsCommand, DeleteObjectCommand, S3Client} from "@aws-sdk/client-s3";
 
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "kr1"});
 
 export const bucketParams = {
   Bucket: "test-bucket"
@@ -565,7 +565,7 @@ Success. All objects in bucket [test-bucket] are deleted. :
 ```shell
 import {CopyObjectCommand, S3Client} from "@aws-sdk/client-s3";
 
-const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "zone-group-cafe24cloud"});
+const s3Client = new S3Client({endpoint: "https://kr.cafe24obs.com", forcePathStyle: true, region: "kr1"});
 
 # Bucket : 복사한 파일을 붙여넣기 할 버킷
 # Key : 붙여넣기 할 파일의 이름

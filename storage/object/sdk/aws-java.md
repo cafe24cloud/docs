@@ -103,7 +103,7 @@ import java.net.URI;
 public class bucket_create {
     public static void main(String[] args) {
         final String endpoint_url = "https://kr.cafe24obs.com";
-        final String region_name = "zone-group-cafe24cloud";
+        final String region_name = "kr1";
         String bucketName = "test-bucket";
         Region newRegion = Region.of(region_name);
         ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
@@ -170,7 +170,7 @@ import software.amazon.awssdk.services.s3.model.S3Object;
 public class bucket_delete {
     public static void main(String[] args) {
         final String endpoint_url = "https://kr.cafe24obs.com";
-        final String region_name = "zone-group-cafe24cloud";
+        final String region_name = "kr1";
         Region newRegion = Region.of(region_name);
         ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
         String bucketName = "test-bucket";
@@ -241,7 +241,7 @@ import software.amazon.awssdk.services.s3.model.ListBucketsResponse;
 public class bucket_list {
     public static void main(String[] args) {
         final String endpoint_url = "https://kr.cafe24obs.com";
-        final String region_name = "zone-group-cafe24cloud";
+        final String region_name = "kr1";
         Region newRegion = Region.of(region_name);
         ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
 
@@ -302,7 +302,7 @@ import software.amazon.awssdk.services.s3.model.S3Exception;
 public class object_upload {
     public static void main(String[] args) throws S3Exception, AwsServiceException, SdkClientException, IOException {
         final String endpoint_url = "https://kr.cafe24obs.com";
-        final String region_name = "zone-group-cafe24cloud";
+        final String region_name = "kr1";
         Region newRegion = Region.of(region_name);
         ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
         String bucketName = "test-bucket";
@@ -392,7 +392,7 @@ import software.amazon.awssdk.services.s3.model.S3Exception;
 public class object_download {
     public static void main(String[] args) throws S3Exception, AwsServiceException, SdkClientException, IOException {
         final String endpoint_url = "https://kr.cafe24obs.com";
-        final String region_name = "zone-group-cafe24cloud";
+        final String region_name = "kr1";
         Region newRegion = Region.of(region_name);
         ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
         String bucketName = "test-bucket";
@@ -449,7 +449,7 @@ import software.amazon.awssdk.services.s3.model.S3Object;
 public class object_get_list {
     public static void main(String[] args) {
         final String endpoint_url = "https://kr.cafe24obs.com";
-        final String region_name = "zone-group-cafe24cloud";
+        final String region_name = "kr1";
         String bucketName = "test-bucket";
         Region newRegion = Region.of(region_name);
         ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
@@ -526,7 +526,7 @@ import software.amazon.awssdk.services.s3.model.DeleteObjectRequest;
 public class object_delete {
     public static void main(String[] args) {
         final String endpoint_url = "https://kr.cafe24obs.com";
-        final String region_name = "zone-group-cafe24cloud";
+        final String region_name = "kr1";
         Region newRegion = Region.of(region_name);
         ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
         String bucketName = "test-bucket";
@@ -577,7 +577,7 @@ import software.amazon.awssdk.services.s3.model.S3Exception;
 public class object_copy {
     public static void main(String[] args) {
         final String endpoint_url = "https://kr.cafe24obs.com";
-        final String region_name = "zone-group-cafe24cloud";
+        final String region_name = "kr1";
         Region newRegion = Region.of(region_name);
         ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.create();
 
