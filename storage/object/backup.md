@@ -91,9 +91,9 @@ function _Main() {
    BACKUP_S_TIME=$(date)
    echo ${BACKUP_S_TIME} >> ${START_LOG}
 
-   _Data_Backup -> DB 백업만 원할 경우 해당 라인 주석
+   _Data_Backup           #### DB 백업만 원할 경우 해당 라인 주석
 
-   _MySQL_Dump  -> data 백업만 원할 경우 해당 라인 주석
+   _MySQL_Dump            #### data 백업만 원할 경우 해당 라인 주석
 
    _Upload_OBS  
 
