@@ -226,4 +226,4 @@ s3://cross-origin/ (bucket):
 
 cross-origin 웹 사이트 버킷에 대한 GET 요청 권한이 없기 때문에 cors 페이지 내용을 가져오지 못하는 것을 확인할 수 있습니다.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>

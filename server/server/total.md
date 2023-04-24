@@ -449,7 +449,7 @@ CNAME 레코드는 IP 주소가 자주 바뀌는 환경에서 레코드 수정 �
 
 다음과 같이 입력할 경우, "demo-cname.cafe24clouds.com"이 "demo-A.cafe24clouds.com"의 별칭 도메인이 됩니다.
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (4).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -469,7 +469,7 @@ Google Workspace 콘솔에서 제공하는 MX 레코드를 우선순위 오름�
 
 최종 입력 화면은 다음과 같습니다.
 
-<figure><img src="../../.gitbook/assets/image (5) (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 MX 레코드를 등록한 도메인으로 메일 수신/발신이 가능한 것을 확인할 수 있습니다.
 
@@ -487,7 +487,7 @@ TXT 레코드에 SPF 텍스트를 등록합니다.
 
 예를 들어 "**v=spf1 include:\_spf.google.com \~all**"는 Google 메일 서버를 인증한다는 의미입니다.
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 <mark style="color:blue;">**참고사항**</mark>

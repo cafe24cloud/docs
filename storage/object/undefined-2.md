@@ -31,7 +31,7 @@ description: 다음과 같은 방법으로 버킷의 버전 관리 기능을 사
 <mark style="color:blue;">오브젝트를 삭제하였을 경우에도 삭제 마커를 삽입하는 것이며 실제로 해당 데이터를 삭제하지 않습니다.</mark>&#x20;
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 <mark style="color:red;">**주의 사항**</mark>
@@ -467,7 +467,7 @@ PC에 revision no.1 에 해당하는 첫 번째 업로드 한 파일이 다운�
 
 PC에 해당 버전의 데이터를 가진 오브젝트가 다운되었음을 볼 수 있습니다.&#x20;
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 
 
