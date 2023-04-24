@@ -407,7 +407,7 @@ DNS 서비스를 이용하면 이러한 작업을 쉽고 빠르게 수행할 수
 
 카페24 클라우드에서 제공하는 레코드는 다음과 같습니다.
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 <mark style="color:blue;">**참고사항**</mark>

@@ -20,7 +20,7 @@ GRUB 부트 프롬프트에 도달하기 위해 시스템을 껐다가 다시 �
 
 GRUB 부팅 프롬프트가 표시되면 화살표키를 사용하여 "Advanced options for Ubuntu" 선택하여 "엔터" 를 누릅니다.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 "recovery mode"로 표시 되어있는 항목을 선택후 엔터키를 누릅니다.
 
@@ -63,4 +63,4 @@ GRUB 부팅 프롬프트가 표시되면 화살표키를 사용하여 "Advanced 
 
 계정으로 접속이 잘되는지 확인합니다.
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (3).png" alt=""><figcaption></figcaption></figure>

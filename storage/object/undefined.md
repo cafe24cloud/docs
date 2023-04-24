@@ -21,16 +21,16 @@ SSE-C 방식은 암호화 키를 사용자가 관리하는 것으로, <mark styl
 
 <mark style="color:red;">암호화 키를 분실하지 않도록 주의해 주시기 바랍니다.</mark>&#x20;
 
-<mark style="color:red;"></mark>
+
 
 <mark style="color:red;">**주의 사항 2**</mark>
 
 s4cmd 또는  S3Browser를 이용해서 암호화 되어 업로드된 파일은 콘솔의 파일 매니저에서 상세 정보를 확인할 수 없습니다.&#x20;
 {% endhint %}
 
-<mark style="color:red;"></mark>
 
-<mark style="color:red;"></mark>
+
+
 
 
 
@@ -310,7 +310,7 @@ Save Changes를 눌러 변경 사항을 저장합니다.&#x20;
 
 ② 버킷에 파일을 업로드합니다.&#x20;
 
-<figure><img src="../../.gitbook/assets/s3browser 파일 업로드 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/s3browser 파일 업로드 (2).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -330,7 +330,7 @@ Save Changes를 눌러 변경 사항을 저장합니다.&#x20;
 
 데이터가 정상적으로 복호화 되어 PC에 저장된 것을 확인할 수 있습니다.
 
-<figure><img src="../../.gitbook/assets/s3browser 다운로드한 파일 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/s3browser 다운로드한 파일 (2).png" alt=""><figcaption></figcaption></figure>
 
 S3 Browser의 암호화 규칙 설정에서 암호화 키가 삭제되거나 변경되었을 경우 파일을 다운로드 할 수 없습니다.
 
