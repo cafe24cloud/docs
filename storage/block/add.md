@@ -20,11 +20,19 @@ CentOS/Rocky 사용시에, shell 에서 확장된 블록스토리지를 반영�
 
 **"df -h" 명령어와 "mount | grep /dev/vdb1"** 명령어를 이용하여 확장할 블록 스토리지를 확인 합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/03/03/f8708843c54ecef516b4877440c669ff_1583192744.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 "**umount /data**" 명령어로 블록 스토리지를 해제 합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/03/03/08023e60afda47886f4adb981c76f99a_1583192773.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 CentOS, Rocky 이미지를 사용할 시에 **cloud-utils-growpart** 패키지를 설치 합니다.
 
@@ -32,7 +40,11 @@ CentOS, Rocky 이미지를 사용할 시에 **cloud-utils-growpart** 패키지�
 
 명령어 : "**yum install cloud-utils-growpart**"
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/03/03/c54d49369a0e1ea567a7099ea90f9ef1_1583192697.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -50,15 +62,27 @@ CentOS, Rocky 이미지를 사용할 시에 **cloud-utils-growpart** 패키지�
 
 <mark style="background-color:blue;">웹콘솔 → 스토리지 → 블록스토리지 용량 확장 →  확장</mark>&#x20;
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/03/03/20fd81770f4c2625c26a2cdd21c0d90b_1583192591.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 블록 스토리지 확장 대상에 용량을 입력 후 금액을 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/03/03/731fdcbae469964ac35024da447820f7_1583192609.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 확장된 블록 스토리지를 가상서버에 다시 연결합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/03/03/b74fd85894142daf7bd098a4309bdc9a_1583192618.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -80,4 +104,8 @@ CentOS, Rocky 이미지를 사용할 시에 **cloud-utils-growpart** 패키지�
 
 ⑦ "**df -h**" 명령어로 확장된 용량을 확인합니다.  &#x20;
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/07/31/5855ffed45a4efc2c4719237cd39e39a_1596179044.png" alt=""><figcaption></figcaption></figure>
+
+</div>

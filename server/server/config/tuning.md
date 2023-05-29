@@ -316,7 +316,11 @@ $ curl -sLf https://cloud-tech.cafe24.com/mpm | bash -
 
 <mark style="color:red;">**해당 값은 절대적인 값이 아니며, 충분한 테스트를 통해 적용되어야 합니다.**</mark>&#x20;
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 

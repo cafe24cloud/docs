@@ -6,7 +6,11 @@ description: 가상서버에 NFS를 구성하는 방법은 아래와 같습니�
 
 ## 1. NFS란?
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2023/01/04/66fe3949e43858162dd69fc6ba899a9e_1672789103.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 NFS(Network File System)를 사용하면 원격 호스트에서 네트워크를 통해 파일 시스템을 마운트하고, 로컬로 마운트된 파일 시스템과 상호 작용할 수 있습니다.
 

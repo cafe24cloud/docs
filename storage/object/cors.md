@@ -10,7 +10,11 @@ CORS(Cross-Origin Resource Sharing)는 한 도메인에 로드된 클라이언�
 
 CORS 기능을 사용하면, 웹 브라우저가 외부 웹 사이트나 서비스의 요청을 수행할 수 있는 도메인을 설정할 수 있도록 합니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/cors.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 예를 들어, 브라우저 스크립트가 다른 도메인의 리소스에 대해 GET 요청을 할 경우 다음과 같이 동작합니다.
 
@@ -153,13 +157,7 @@ CORS Configuration은 버킷에 액세스할 수 있도록 허용할 origin과 �
 
 CORS Configuration에는 최대 100개의 CORS Rule을 추가할 수 있으며, CORS Rule elements는 다음과 같습니다.
 
-| CORS Rule elements |                                                                                              Description                                                                                              |
-| :----------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|    AllowedOrigin   |                                   http://www.example.com과 같은 cross-domain 요청을 허용할 origin을 지정합니다. origin 문자열에는 http://\*.example.com과 같은 \* 와일드카드 문자가 하나만 포함될 수 있습니다.                                  |
-|    AllowedMethod   |                                                               허용할 origin에 대해 지원할 HTTP Method(GET / PUT / POST / DELETE / HEAD)를 지정합니다.                                                                |
-|    AllowedHeader   |        Preflight 요청에서 허용되는 헤더를 지정합니다. [<mark style="color:blue;">Common Request Header</mark>](https://docs.aws.amazon.com/ko\_kr/AmazonS3/latest/API/RESTCommonRequestHeaders.html)를 참고해 주세요.        |
-|    ExposeHeader    | 고객이 해당 애플리케이션에 액세스할 수 있도록 하는 응답 헤더를 식별합니다. [<mark style="color:blue;">Common Response Header</mark>](https://docs.aws.amazon.com/ko\_kr/AmazonS3/latest/API/RESTCommonResponseHeaders.html)를 참고해 주세요. |
-|    MaxAgeSeconds   |                                                                              Preflight 요청에 대한 응답을 캐시할 수 있는 시간(초)을 지정합니다.                                                                              |
+<table><thead><tr><th width="212" align="center">CORS Rule elements</th><th align="center">Description</th></tr></thead><tbody><tr><td align="center">AllowedOrigin</td><td align="center">http://www.example.com과 같은 cross-domain 요청을 허용할 origin을 지정합니다. origin 문자열에는 http://*.example.com과 같은 * 와일드카드 문자가 하나만 포함될 수 있습니다.</td></tr><tr><td align="center">AllowedMethod</td><td align="center">허용할 origin에 대해 지원할 HTTP Method(GET / PUT / POST / DELETE / HEAD)를 지정합니다. </td></tr><tr><td align="center">AllowedHeader</td><td align="center">Preflight 요청에서 허용되는 헤더를 지정합니다. <a href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/API/RESTCommonRequestHeaders.html"><mark style="color:blue;">Common Request Header</mark></a>를 참고해 주세요.</td></tr><tr><td align="center">ExposeHeader</td><td align="center">고객이 해당 애플리케이션에 액세스할 수 있도록 하는 응답 헤더를 식별합니다. <a href="https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/API/RESTCommonResponseHeaders.html"><mark style="color:blue;">Common Response Header</mark></a>를 참고해 주세요.</td></tr><tr><td align="center">MaxAgeSeconds</td><td align="center">Preflight 요청에 대한 응답을 캐시할 수 있는 시간(초)을 지정합니다.</td></tr></tbody></table>
 
 
 
@@ -200,7 +198,11 @@ s3://cross-origin/ (bucket):
 
 origin 웹 사이트 버킷에 접속하면, cross-origin 웹 사이트 버킷의 cors 페이지 내용을 가져오는 것을 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -226,4 +228,8 @@ s3://cross-origin/ (bucket):
 
 cross-origin 웹 사이트 버킷에 대한 GET 요청 권한이 없기 때문에 cors 페이지 내용을 가져오지 못하는 것을 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>

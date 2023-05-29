@@ -30,7 +30,11 @@ VSCode를 이용해서 접속할 가상서버를 생성합니다.
 VSCode에서 SSH 접속을 하기 위해서는 해당 가상서버에서 Inbound 22번 포트가 허용되어야 합니다.  [\[방화벽 설정 방법\]](../../../security/security/config.md)&#x20;
 {% endhint %}
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -50,7 +54,11 @@ VSCode를 연 다음, 다음 과정을 통해 가상서버 SSH 접속에 필요�
 
 ③ Install 클릭하여 확장 프로그램을 설치합니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -58,11 +66,19 @@ VSCode를 연 다음, 다음 과정을 통해 가상서버 SSH 접속에 필요�
 
 F1 키를 눌러 명령어 입력창을 연 다음, **Remote-SSH: Open SSH Configuration File을** 입력합니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (1) (1) (2) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 업데이트할 SSH 설정 파일로 User 디렉터리 하위의 config 파일을 선택합니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -96,7 +112,11 @@ F1 키를 눌러 명령어 입력창을 연 다음, **Remote-SSH: Open SSH Confi
 
 ④ 생성된 SSH Target 의 원격 접속 버튼을 클릭합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (6) (2).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -160,7 +180,11 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 ④ 생성된 SSH Target 의 원격 접속 버튼을 클릭합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -174,11 +198,19 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 새로운 VSCode window가 열리면 접속할 가상서버의 OS로 **Linux**를 선택합니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 처음 접속하는 경우 fingerprint를 등록합니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -190,7 +222,11 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 패스워드 방식으로 접속한 경우, 해당 계정에 설정한 패스워드를 입력해야 합니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -204,7 +240,11 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 ② 명령창이 열리면 조회할 경로를 입력합니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -224,7 +264,11 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 ③ **Install In SSH:HOST** 문구를 확인한 다음, 설치를 진행합니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (8) (2).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -234,7 +278,11 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 
 테스트 파일을 생성한 뒤, 실행하면 터미널을 통해 실행 결과를 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 

@@ -232,7 +232,11 @@ S3 Browser를 설치한 다음 <mark style="background-color:blue;">Accounts > A
 
 S3 Browser에 계정을 연동하기 위해 관련 정보를 기입합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/add new account.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 카페24 오브젝트 스토리지의 API 키를 확인하는 방법은[ \[오브젝트 스토리지 사용 방법\] ](use.md#2.)를 참고해 주세요.
 
@@ -250,11 +254,19 @@ S3 Browser에 계정을 연동하기 위해 관련 정보를 기입합니다.&#x
 
 ⑦ Advanced S3-compatible storage settings 를 클릭합니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser 연동1.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 Advanced S3-compatible storage settings 를 클릭한 다음, Signature 버전이 "Signature V4"인지 확인합니다. V2일 경우 SSE-C 기능을 사용할 수 없기 때문에 V4로 설정해 주시기 바랍니다. 확인 후 모든 설정을 저장합니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser 연동2.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -264,11 +276,19 @@ Advanced S3-compatible storage settings 를 클릭한 다음, Signature 버전�
 
 데이터 암호화를 위한 규칙을 생성하여 적용할 수 있습니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/sse-c 설정 1 (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 하단의 "Add" 버튼을 클릭합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/룰 추가.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -292,13 +312,21 @@ SSE-C 방식은 암호화 키를 사용자가 관리하는 것으로, <mark styl
 
 ⑥ Add new rule을 클릭하여 변경  사항을 저장합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/sse-c 설정 2.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 test-bucket에 대한 규칙이 생성된 것을 확인할 수 있습니다.&#x20;
 
 Save Changes를 눌러 변경 사항을 저장합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/sse-c 설정 3.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -310,13 +338,21 @@ Save Changes를 눌러 변경 사항을 저장합니다.&#x20;
 
 ② 버킷에 파일을 업로드합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser 파일 업로드 (2).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
 업로드한 파일을 클릭한 후, Headers 탭에서 암호화에 대한 메타데이터가 적용되었음을 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser 메타데이터.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -326,15 +362,27 @@ Save Changes를 눌러 변경 사항을 저장합니다.&#x20;
 
 암호화 규칙 설정에 암호화 키가 등록된 상태에서 해당 파일을 다운로드 합니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser 파일 다운로드.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 데이터가 정상적으로 복호화 되어 PC에 저장된 것을 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser 다운로드한 파일 (2).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 S3 Browser의 암호화 규칙 설정에서 암호화 키가 삭제되거나 변경되었을 경우 파일을 다운로드 할 수 없습니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser 패스워드 없을 때 .png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 

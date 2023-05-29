@@ -10,9 +10,7 @@ AWS Javascript v3 S3 SDK는 AWS에서 Javascript 코드를 통해 S3를 이용�
 
 카페24 클라우드의 오브젝트 스토리지는 S3 API와 호환이 되므로 해당 SDK 사용이 가능합니다.&#x20;
 
-|                                                매뉴얼 테스트 버전                                                |                                                                                                                                          Javascript v3 S3 SDK 참고 링크                                                                                                                                         |
-| :------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| <p>AWS Javascript SDK version : 3.231.0 </p><p>Node.js version : 14.17.1</p><p>Npm version : 6.14.13</p> | <p>문서 : <a href="https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html">Developer guide - AWS SDK for Javascript 3.x</a></p><p>예제 : <a href="https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/javascript_s3_code_examples.html">Javascript v3 S3 examples</a></p> |
+<table><thead><tr><th width="355" align="center">매뉴얼 테스트 버전</th><th align="center">Javascript v3 S3 SDK 참고 링크</th></tr></thead><tbody><tr><td align="center"><p>AWS Javascript SDK version : 3.231.0 </p><p>Node.js version : 14.17.1</p><p>Npm version : 6.14.13</p></td><td align="center"><p>문서 : <a href="https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html">Developer guide - AWS SDK for Javascript 3.x</a></p><p>예제 : <a href="https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/javascript_s3_code_examples.html">Javascript v3 S3 examples</a></p></td></tr></tbody></table>
 
 
 

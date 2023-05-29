@@ -70,7 +70,11 @@ HTTPS 프로토콜을 지원하여 암호화된 데이터를 저장 및 다운�
 
 API Endpoint(kr.cafe24obs.com)을 선택한 후, \[오브젝트 스토리지 신청] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/e59e9d7fb7495a29ff44a286ba3de708_1668653385.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 API를 통해 오브젝트 스토리지를 사용하기 위해서 API 키를 생성합니다.
 
@@ -78,13 +82,25 @@ S3 Browser 또는 S3cmd를 통해 API Endpoint 및 Access Key와 Secret Key을 �
 
 S3cmd를 활용하여 오브젝트 스토리지를 사용하는 방법은 [<mark style="color:blue;">\[오브젝트 스토리지 S3cmd 사용 방법\]</mark>](s3cmd.md)을 참고해 주세요.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/f9a84aeaee183e03c1f82bb712789f85_1668669722.png" alt=""><figcaption></figcaption></figure>
+
+</div>
+
+<div align="left">
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/60b683867f9e894e49754e0b0258299d_1668669739.png" alt=""><figcaption></figcaption></figure>
 
+</div>
+
 Secret Key를 확인하려면 \[보기] 버튼을 클릭한 후, 클라우드 계정 패스워드를 입력하시면 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/4b5187b53ff4466ffdf86a9a6bde87b0_1668666505.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -96,23 +112,39 @@ Secret Key를 확인하려면 \[보기] 버튼을 클릭한 후, 클라우드 �
 
 오브젝트 스토리지 기능에서 파일 매니저의 \[관리] 버튼을 클릭하여 파일 매니저를 사용할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/fea7af0728ba29e0926e44dfd3ff73e9_1668653401.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ### (1) 버킷 생성하기
 
 파일 매니저에서 \[버킷추가] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/e55130da370c5a8a1879d4ae80670023_1668669935.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 버킷 이름과 버킷 공개여부를 설정합니다. 버킷 공개 권한 설정은 언제든지 변경할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/32bed05dd36884976a681d2cd5a7748a_1668653434.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 생성된 버킷 이름의 오른쪽 상세 메뉴 클릭하면, 버킷 정보 확인 및 삭제와 권한 설정이 가능합니다.
 
 <mark style="color:red;">단, 삭제한 버킷은 복구가 불가능합니다.</mark>
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/f434aa4586006b31b67529a3d5e8176c_1668662911.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -122,11 +154,19 @@ Secret Key를 확인하려면 \[보기] 버튼을 클릭한 후, 클라우드 �
 
 파일을 업로드할 버킷을 선택한 후, \[업로드] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/filemanager.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 파일 업로드하기 창에서 업로드할 파일을 드래그하거나 해당 영역을 클릭하여 파일을 업로드합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/a8c4f89dd44052ecb169bc06c75b185d_1668653681.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 파일 매니저의 <mark style="color:blue;">파일 업로드 정책</mark>은 다음과 같습니다.
 
@@ -148,11 +188,19 @@ Secret Key를 확인하려면 \[보기] 버튼을 클릭한 후, 클라우드 �
 
 폴더를 생성할 버킷을 선택한 후, \[폴더추가] 버튼을 클릭합니다.
 
+<div align="center">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/da37fec3dc5963d06bcea58a6e249732_1668670220.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 폴더 추가 창에서 폴더 이름을 입력합니다. 폴더 생성 후에는 이름 변경이 불가합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/e7892bf8bed2b95c96f895a5905b6100_1668670323.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -162,7 +210,11 @@ Secret Key를 확인하려면 \[보기] 버튼을 클릭한 후, 클라우드 �
 
 변경할 파일의 오른쪽 상세 메뉴를 클릭한 후, \[이름바꾸기]를 선택하여 파일명을 변경할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/df83ddfb418e8d03129eccf7f8dc21ca_1668659101.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -172,11 +224,19 @@ Secret Key를 확인하려면 \[보기] 버튼을 클릭한 후, 클라우드 �
 
 메타데이터를 편집할 파일을 선택한 후, 메타데이터 정보의 \[편집] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/47420234b3efc75a9d06abdb0cb63dc8_1668659119.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 메타데이터 편집 창에서 키워드 및 값을 추가하거나 수정할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/7962f054443f27a4b12c8cd51bc7cd14_1668659261.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -188,11 +248,19 @@ Secret Key를 확인하려면 \[보기] 버튼을 클릭한 후, 클라우드 �
 
 해당 파일의 링크 주소를 복사하여 웹 브라우저에서 접속을 시도합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/20b0448e5a14d7cafc5a8d388a9dec4b_1668673331.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 AccessDenied Error가 발생하며, 정상적인 페이지를 볼 수 없습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/1e5e73bae51581c5eb18820e27814a01_1668673364.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -200,11 +268,19 @@ AccessDenied Error가 발생하며, 정상적인 페이지를 볼 수 없습니�
 
 해당 파일의 링크 주소를 복사하여 웹 브라우저에서 접속을 시도합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/ed67f6f1b52bf4c28f7e8fe83723e8c6_1668673424.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 정상적으로 파일을 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/17/35b55b7ecc3fbe4b9860bc709c6f517e_1668673464.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -216,12 +292,24 @@ AccessDenied Error가 발생하며, 정상적인 페이지를 볼 수 없습니�
 
 상세 정보에서 금월 누적 트래픽 사용량과 사용 용량을 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/18/9466a3f6a59ef4cb42a0384e8ab16a9f_1668757725.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 사용량 모니터링의 \[보기] 버튼을 클릭하면, 오브젝트 스토리지의 사용 용량을 5분 단위로 기간을 조정하여 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/18/4080393e5517537b82a715f7616c8ef6_1668757590.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 마찬가지로 트래픽 모니터링의 \[보기] 버튼을 클릭하면, 오브젝트 스토리지에서 발생한 트래픽을 5분 단위로 기간을 조정하여 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/11/18/5db18b45b55b6077ef16cd58a01da22a_1668757606.png" alt=""><figcaption></figcaption></figure>
+
+</div>

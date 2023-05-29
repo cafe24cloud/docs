@@ -31,7 +31,11 @@ description: 다음과 같은 방법으로 버킷의 버전 관리 기능을 사
 <mark style="color:blue;">오브젝트를 삭제하였을 경우에도 삭제 마커를 삽입하는 것이며 실제로 해당 데이터를 삭제하지 않습니다.</mark>&#x20;
 {% endhint %}
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (1) (4).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="warning" %}
 <mark style="color:red;">**주의 사항**</mark>
@@ -44,8 +48,8 @@ description: 다음과 같은 방법으로 버킷의 버전 관리 기능을 사
 
 특정 버전의 오브젝트를  삭제하는 방법은 다음을 참고해 주세요.&#x20;
 
-* [AWS s3api cli 로 삭제하기](undefined-2.md#6-versioning)
-* [S3 Browser에서 삭제하기](undefined-2.md#6-versioning-1)
+* [AWS s3api cli 로 삭제하기](version.md#6-versioning)
+* [S3 Browser에서 삭제하기](version.md#6-versioning-1)
 {% endhint %}
 
 
@@ -62,8 +66,8 @@ description: 다음과 같은 방법으로 버킷의 버전 관리 기능을 사
 
 아래와 같은 방법으로 버전 관리 기능을 변경하고, 특정 버전의  오브젝트를 다운로드 할 수 있습니다.&#x20;
 
-* [aws cli 사용하기](undefined-2.md#2.-aws-s3api-cli)
-* [S3 Browser 사용하기](undefined-2.md#3.-s3-browser)
+* [aws cli 사용하기](version.md#2.-aws-s3api-cli)
+* [S3 Browser 사용하기](version.md#3.-s3-browser)
 
 
 
@@ -262,7 +266,7 @@ $  aws s3api list-object-versions  --endpoint-url=https://kr.cafe24obs.com:443 -
 
 ### (5) 특정 버전의 오브젝트 다운 받기
 
-특정 버전의 오브젝트를 다운로드 받을 때는 "--version-id" 옵션의 인자값으로 다운받으려는 버전의 VersionID 값을 전달합니다. VersionID는 [버킷의 버전 히스토리 확인하기](undefined-2.md#4) 명령어로 확인할 수 있습니다.&#x20;
+특정 버전의 오브젝트를 다운로드 받을 때는 "--version-id" 옵션의 인자값으로 다운받으려는 버전의 VersionID 값을 전달합니다. VersionID는 [버킷의 버전 히스토리 확인하기](version.md#4) 명령어로 확인할 수 있습니다.&#x20;
 
 다음 명령어는 demo-file.txt 파일의  VersionId가 sXJ0gbWoPkNTvYZGGd0zsdQ3kstCago 인 버전을 demo-file-v1.txt 라는 이름으로 다운로드함을 의미합니다.&#x20;
 
@@ -309,7 +313,7 @@ Initial contents
 
 #### 특정 버전의 오브젝트 삭제하기
 
-다음 명령어는 demo-file.txt 파일의  VersionId가 sXJ0gbWoPkNTvYZGGd0zsdQ3kstCago 인 버전을 삭제한다는 것을 의미합니다. VersionID는 [버킷의 버전 히스토리 확인하기](undefined-2.md#4) 명령어로 확인할 수 있습니다.&#x20;
+다음 명령어는 demo-file.txt 파일의  VersionId가 sXJ0gbWoPkNTvYZGGd0zsdQ3kstCago 인 버전을 삭제한다는 것을 의미합니다. VersionID는 [버킷의 버전 히스토리 확인하기](version.md#4) 명령어로 확인할 수 있습니다.&#x20;
 
 ```
 $ aws s3api delete-object  --endpoint-url=https://kr.cafe24obs.com:443 --bucket test-bucket --key demo-file.txt --version-id sXJ0gbWoPkNTvYZGGd0zsdQ3kstCago
@@ -363,7 +367,11 @@ S3 Browser에서 다음과 같은 방법으로 버킷의 버전 관리 기능을
 
 ③ "Edit Versioning Settings" 매뉴를 클릭합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser-1.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -371,7 +379,11 @@ S3 Browser에서 다음과 같은 방법으로 버킷의 버전 관리 기능을
 
 ② OK 눌러 설정을 저장합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser-2.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -385,7 +397,11 @@ S3 Browser에서 다음과 같은 방법으로 버킷의 버전 관리 기능을
 
 ③ 업로드 한 오브젝트가 "revision #1"로 확인되며 Version ID도 조회할 수 있습니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser-3.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -397,7 +413,11 @@ PC 에서 demo-file.txt 를 수정하여 업로드 한 뒤, 버전 히스토리�
 
 ③ 가장 최근에 업로드한 오브젝트의 버전이 "revision #2" 로 추가되었습니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser-4.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -413,13 +433,21 @@ PC 에서 demo-file.txt 를 수정하여 업로드 한 뒤, 버전 히스토리�
 
 ④ 선택 후, 오른쪽 마우스를 누른 다음 "Download"를 클릭합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser-5.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
 PC에 revision no.1 에 해당하는 첫 번째 업로드 한 파일이 다운로드 된 것을 볼 수 있습니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser-6.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -427,7 +455,7 @@ PC에 revision no.1 에 해당하는 첫 번째 업로드 한 파일이 다운�
 
 ### (5) 삭제된 오브젝트 다운 받기
 
-[특정 버전의 오브젝트 다운 받기](undefined-2.md#4-1)와 동일한 원리로 이미 삭제된 오브젝트도 특정 버전을 지정하여 다운로드가 가능합니다.&#x20;
+[특정 버전의 오브젝트 다운 받기](version.md#4-1)와 동일한 원리로 이미 삭제된 오브젝트도 특정 버전을 지정하여 다운로드가 가능합니다.&#x20;
 
 {% hint style="info" %}
 <mark style="color:blue;">주의 사항</mark>
@@ -445,7 +473,11 @@ PC에 revision no.1 에 해당하는 첫 번째 업로드 한 파일이 다운�
 
 ③ 삭제할 오브젝트가 맞는지 확인 후, Yes를 클릭합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser-7.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -461,13 +493,21 @@ PC에 revision no.1 에 해당하는 첫 번째 업로드 한 파일이 다운�
 
 ④ 우측 마우스를 누른 다음, "Download"를 클릭합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser-8.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
 PC에 해당 버전의 데이터를 가진 오브젝트가 다운되었음을 볼 수 있습니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -493,13 +533,21 @@ AWS S3 라이프사이클 규칙은 내부적으로 오브젝트의 삭제 수�
 
 ③ "Lifecycle Configurations" 매뉴를 클릭합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser-9.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
 ① 좌측 하단의 "Add" 버튼을 클릭합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser-10.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -513,7 +561,11 @@ AWS S3 라이프사이클 규칙은 내부적으로 오브젝트의 삭제 수�
 
 ⑤ "Add new rule"을 클릭합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/s3browser-11.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 

@@ -12,7 +12,11 @@ description: 로드밸런서 생성 방법은 다음과 같습니다. 본 매뉴
 
 로드밸런서의 포트로 들어간 트래픽을 가상서버 포트로 포트포워딩 하여 서버에 전달하게 됩니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -28,7 +32,11 @@ description: 로드밸런서 생성 방법은 다음과 같습니다. 본 매뉴
 
 **"새로운 로드밸런서 생성"** 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ### **- 지원 프로토콜**
 
@@ -66,7 +74,11 @@ XFF(X-Forwarded-For) header를 사용하여 HTTPS 요청을 한 실제 클라이
 
 TERMINATED\_HTTPS를 사용하면 아래 예시와 같이 통신하게 됩니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (8) (4).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -136,13 +148,21 @@ HTTPS 프로토콜의 경우 모니터링 대상 경로는 디폴트로 "/"를 �
 가상서버에 index.html과 같은 파일을 생성하여 "/index.html"과 같은 static한 경로로 설정하는 것을 권장합니다.
 {% endhint %}
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 Terminated\_https 프로토콜을 선택한 경우, 적용할 인증서를 선택합니다.
 
 인증서를 등록하는 방법은  [\[인증서 사용 방법\]](../../security/certificate/use.md)를 참고해 주세요.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -154,16 +174,28 @@ Terminated\_https 프로토콜을 선택한 경우, 적용할 인증서를 선�
 
 로드밸런서 메뉴에서 해당 로드밸런서를 선택 한 후, 상세정보 탭에서 가상서버 연결 메뉴를 클릭합니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 로드밸런서에 연결할 가상서버를 선택해 주세요.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 이때, 연결하는 가상서버에 등록된 방화벽에는 "**내부 네트워크 접속 허용**"이 되어 있어야 합니다.\
 
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -177,7 +209,11 @@ Terminated\_https 프로토콜을 선택한 경우, 적용할 인증서를 선�
 
 따로 설정하지 않으면 모든 IP의 접근을 허용하므로 필요에 따라 지정해 주세요.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -189,7 +225,11 @@ Terminated\_https 프로토콜을 선택한 경우, 적용할 인증서를 선�
 
 생성된 로드밸런서에 대한 포워딩 룰을 추가 및 삭제할 수 있습니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 Terminated\_https 프로토콜을 선택한 경우, 로드밸런서에 적용된 인증서를 변경할 수 있습니다.
 
@@ -197,7 +237,11 @@ Terminated\_https 프로토콜을 선택한 경우, 로드밸런서에 적용된
 
 인증서를 등록하는 방법은 [\[인증서 사용 방법\]](../../security/certificate/use.md)를 참고해 주세요.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -239,7 +283,11 @@ Terminated\_https 프로토콜을 선택한 경우, 로드밸런서에 적용된
 
 연결 상태가 '**부분 이상**', '**오류**'인 경우 가상서버에서 해당 포트를 listening 상태로 만들어 주세요.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/로드밸런서 연결 모니터링_개선.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -271,11 +319,19 @@ b. **"touch index.html"** 명령어로 파일을 생성합니다
 
 파일의 이름과 확장자가 httpd.conf 파일의 DirectoryIndex와 같도록 합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/23/c49b7b439bbd09bfa881a094a1c3a006_1600834187.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 httpd.conf 파일에서 위의 설정을 확인합니다. httpd.conf 파일의 경로는 /etc/httpd/conf/httpd.conf 입니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/23/6eb5e385a5d2a8923d96e1926100744e_1600834598.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 #### c. Apache 데몬 실행
 
@@ -297,9 +353,17 @@ enable은 서버를 재부팅 할 경우 해당 서비스를 자동으로 활성
 
 브라우저를 새로고침 할 때마다 지정한 알고리즘에 따라 트래픽이 분산 되는 것을 확인 할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -330,7 +394,11 @@ enable은 서버를 재부팅 할 경우 해당 서비스를 자동으로 활성
 
 이때 포트는 443 뿐만 아니라 사용자 지정 가능합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/23/16896ed485d12de550e3f8ec8e083a0d_1600821827.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 **httpd.conf 수정**
 
@@ -358,7 +426,11 @@ NameVirtualHost *:443
 
 **"sudo systemctl  restart httpd"**와 **"sudo systemctl status httpd"** 명령어로 Apache 데몬을 재시작 하고, 상태를 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/23/fe8453c11dfc1fa295d0836ae9c55f27_1600822358.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -370,9 +442,17 @@ NameVirtualHost *:443
 
 새로고침을 하면 로드밸런서에 연결된 웹 서버에 지정한 알고리즘으로 트래픽이 분산되는 것을 확인 할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/16/fa71f3110aad03ecc3d10a996bd34cf3_1647392223.jpg" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/16/09d445bd36b8645a715174dbb8e9168d_1647392273.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 &#x20;
 
@@ -388,7 +468,11 @@ httpd.conf 파일에서 tcp로 허용할 포트를 입력합니다.
 
 본 예제에서는 8080으로 지정했습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/23/907a8f7c6c4339dba92a3ca0a9f8d0d4_1600836342.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 httpd.conf 파일의 맨 아래쪽에 위의 설정을 입력합니다.
 
@@ -409,7 +493,11 @@ a. **"sudo systemctl restart httpd"** 명령어로 httpd를 재시작합니다.
 
 b. **"sudo systemctl status httpd**" 명령어로 데몬의 상태를 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/23/b23d0b164c9c8296b254e42e41e6e76f_1600834704.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 &#x20;
 
@@ -421,9 +509,17 @@ b. **"sudo systemctl status httpd**" 명령어로 데몬의 상태를 확인합�
 
 브라우저를 새로고침 할 때마다 지정한 알고리즘에 따라 트래픽이 분산 되는 것을 확인 할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/05/13da31fefac64e4fff2e4c3987f0a677_1601882111.jpg" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/05/aab5540a235f95360e116ff0a36011c1_1601882126.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 &#x20;
 
@@ -447,7 +543,11 @@ b. **"sudo systemctl status httpd**" 명령어로 데몬의 상태를 확인합�
 
 도메인 등록 방법에 대해서는 [\[DNS 사용 방법\]](../dns/use.md)을 참고해 주세요.&#x20;
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/16/d5ff60021d2785e1248ba650b173fe83_1647359809.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 #### b. httpd.conf 파일 설정
 
@@ -472,7 +572,11 @@ httpd.conf 파일의 LogFormat에 XFF header를 추가하여 웹서버 access lo
 
 **"sudo systemctl  restart httpd"**와 **"sudo systemctl status httpd"** 명령어로 Apache 데몬을 재시작하고, 상태를 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/23/fe8453c11dfc1fa295d0836ae9c55f27_1600822358.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 &#x20;
 
@@ -484,9 +588,17 @@ httpd.conf 파일의 LogFormat에 XFF header를 추가하여 웹서버 access lo
 
 새로고침을 하면 로드밸런서에 연결된 웹 서버에 지정한 알고리즘으로 트래픽이 분산되는 것을 확인 할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/16/87c10691d709d3afd6d265f9609a8485_1647360689.jpg" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/16/b496a22bd9dcea2e1e0cd0567b31a39b_1647360701.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 &#x20;
 
@@ -494,5 +606,9 @@ httpd.conf 파일의 LogFormat에 XFF header를 추가하여 웹서버 access lo
 
 로드밸런서에 연결한 하위 웹서버의 access log에 실제 클라이언트의 IP가 수집되는 것을 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/16/d5efc85cdbef1a0928f9ef85dd1aabab_1647361421.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 

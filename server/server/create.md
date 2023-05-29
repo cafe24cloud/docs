@@ -24,7 +24,11 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 \[새로 설치]를 클릭한 후, 원하는 OS 이미지를 선택합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/15bf717eeb660432396a287f9147e368_1582525122.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -38,7 +42,11 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 선택된 하드웨어에 따라 시간 별로 청구될 요금이 상이하며, 하드웨어 상품은 가상서버 생성 후에도 변경이 가능합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/7140e12d2557da7e02474d0fa93306d5_1582525242.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -52,7 +60,11 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 가상서버 이름은 생성 후에도 변경할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/ee785d7baec674f5aae85dd2deb0a306_1582525303.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -72,7 +84,11 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 이전에 카페24 클라우드 콘솔에서 생성한 키페어를 적용할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/7c4ba23274531abf51cc31b05242ffd9_1621834120.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -84,17 +100,29 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 먼저 \[등록하기] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/02e30fdcdcdb7409c72ffe4b158f4cd9_1621834199.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 <mark style="background-color:blue;">콘솔 > 보안 서비스 > SSH 키페어</mark>
 
 등록할 키페어의 공개키를 복사합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/fc0a122c58ef5c0bb33c8e0427029cf8_1621834588.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 복사한 내용을 앞서 열어둔 기존 SSH 키페어 등록 창에 붙여 넣기하여 등록합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/12b8c0d104fd54977cb906d0634a59a2_1621834733.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -104,19 +132,31 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 \[새로만들기] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/fb4c10053a071a85348757dcd8a60f39_1582525539.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 키페어의 이름을 입력하여 새로 생성합니다.
 
 이름은 20자까지 지원이 가능하며, 영어와 숫자만 지원합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/22053d1bbf2f53f96a104c7a88d44cce_1582527935.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 개인키가 다운로드 받아지는 것을 확인합니다.
 
 키페어를 사용한 로그인 방법은 [\[SSH 키페어 접속 방법\]](connect/keypair.md)을 참고해 주세요.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/233dd4df8b8227ca0bbbd5425c29ceea_1582527961.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의사항**</mark>
@@ -140,7 +180,11 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.&#x20;
 
 공인 IP 할당 방법은 다음과 같습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/11/13/bbaa88e39fd7cad174bddc7d6963a8ea_1605251451.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ### (1) 기존에 신청되어 있는 공인IP를 할당
 
@@ -180,7 +224,11 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.&#x20;
 
 해당 설정 사항은 선택 사항이며, 가상서버 생성 후에 방화벽을 설정하는 방법은 [\[방화벽 설정 방법\]](../../security/security/config.md)을  참고해 주세요.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/cb6ccb8a018c9acc891f0da3d20a48b2_1582528000.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -198,7 +246,11 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.&#x20;
 
 새로운 블록 스토리지를 만들기 위해 \[생성하기] 버튼을 누릅니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/9454d1ec912a655c37d7451a169204bf_1582528597.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 이름과 용량을 입력합니다.
 
@@ -206,7 +258,11 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.&#x20;
 
 설정된 용량은 생성 후 확장 기능을 사용하여 용량 확장을 할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/93770250fa2c8ed6933b671bafcae27c_1582528609.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -220,12 +276,24 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.&#x20;
 
 \[가상서버 생성] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/a5337e19fcf5309c8235ce58c152828b_1582528992.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 생성할 내역들을 확인한 후 \[확인] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/614e1fe5da56bd04cd9508e50e7be38b_1582529009.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 가상서버 대시보드에서 가상서버가 생성 완료되었는지 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/571f13d1ebbaaf2698680389c3c4e157_1582529445.png" alt=""><figcaption></figcaption></figure>
+
+</div>

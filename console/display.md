@@ -12,11 +12,23 @@ description: 카페24 클라우드의 결제 관리 방법은 아래와 같습�
 
 다음 메뉴에서 신용카드 등록 및 관리를 할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/21fd521b9ec11f1c641967ef13fbf667_1600937058.png" alt=""><figcaption></figcaption></figure>
+
+</div>
+
+<div align="left">
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/12065ebc091e5a67941b3bfc5acfce73_1600937082.png" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/20635e85ccf3c9cf9774ed5c1818814a_1600937097.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -43,13 +55,25 @@ description: 카페24 클라우드의 결제 관리 방법은 아래와 같습�
 
 청구 예상 요금은 사용량에 따라 정기 결제일의 요금과 상이할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/33f2f597a91ac1aa2891ab88f6ae6433_1600937216.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 \[상세 내역 보기] 버튼을 클릭하여 클라우드 서비스의 이용 대금 명세서를 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/8a8c77fa3e9012fd7a05310d5cf54d3c_1600937233.png" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/4207b5254b41f3723be310dbf8ef9fe7_1600937247.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 

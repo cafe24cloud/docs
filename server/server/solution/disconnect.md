@@ -31,7 +31,11 @@ description: 본 매뉴얼은 가상서버 접속 시, 발생 가능한 문제�
 
 자세한 방법은 [<mark style="color:blue;">\[방화벽 설정 방법\]</mark>](../../../security/security/config.md)을 참고해 주세요.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/09/902590a1c1bbd8987f32004c56f8dfef_1607499585.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -55,11 +59,19 @@ description: 본 매뉴얼은 가상서버 접속 시, 발생 가능한 문제�
 
 * **Putty 접속 시 에러 메시지** : Server refused our key, No supported authentication methods available
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/28/eb155c7cb47be9757e301071d6581fa0_1609145677.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 * **리눅스 터미널 접속 시 에러 메시지** : Permission denied
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/28/0a0c40306aa00d3673915d244c78b7ea_1609145339.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 해당 에러가 발생하는 이유는 아래와 같습니다.
 
@@ -82,7 +94,11 @@ SSH 키페어 접속이 불가능할 경우, 다음 매뉴얼을 참고하여 �
 
 ① **리눅스 홈 디렉터리**의 권한이 **"drwx r-x r-x**"인지 확인합니다. 권한이 일치하지 않을 경우, 다음 명령어로 권한을 변경합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/17/8e91dbb8b3bff0a8a32c591d552511e1_1608174134.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ```shell-session
 $ sudo chmod 755 /home
@@ -90,7 +106,11 @@ $ sudo chmod 755 /home
 
 ② **사용자 홈 디렉터리**의 권한이 **"drwx --- ---**"인지 확인합니다. 권한이 일치하지 않을 경우, 다음 명령어로 권한을 변경합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/17/526a2a4f055c33a386a31be7b7c6b6a8_1608174122.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ```shell-session
 $ sudo chmod 700 /home/centos/
@@ -98,7 +118,11 @@ $ sudo chmod 700 /home/centos/
 
 ③ **.ssh 디렉터리**의 권한이 **"drwx --- ---**"인지 확인합니다. 권한이 일치하지 않을 경우, 다음 명령어로 권한을 변경합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/17/8ecd42ceea1938437eaaef81319f75b1_1608173800.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ```shell-session
 $ sudo chmod 700 /home/centos/.ssh/
@@ -106,7 +130,11 @@ $ sudo chmod 700 /home/centos/.ssh/
 
 ④ **authorized\_keys 파일**의 권한이 "**-rw- --- ---**"인지 확인합니다. 권한이 일치하지 않을 경우, 다음 명령어로 권한을 변경합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/04/19/ef6b27bc8461eaf06e9ffc66a62ba393_1650326872.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ```shell-session
 $ sudo chmod 600 /home/centos/.ssh/authorized_keys
@@ -128,7 +156,11 @@ authorized\_keys 파일의 내용에 해당 가상서버의 공개키가 등록�
 
 가상서버의 공개키는 <mark style="background-color:blue;">콘솔 > 보안 서비스 > SSH 키페어</mark>에서 확인 가능합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/17/8ceb8497d6d5576005c57fa91c87dc54_1608179629.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -156,7 +188,11 @@ authorized\_keys 파일의 내용에 해당 가상서버의 공개키가 등록�
 
 보안을 위해 개인키 파일에는 다른 사용자의 읽기, 쓰기 작업을 제한해야 합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/17/bbcb2aee3d097d4b2c21668e7c569eb4_1608181998.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 해당 개인키 파일의 권한을 다음과 같이 변경해 주세요.
 
@@ -174,7 +210,11 @@ $ chmod 600 cafe24.pem
 
 하나의 공인 IP를 여러 가상서버에 번갈아 연결하여 접속 시도할 때 발생합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/17/2e4324cf531521144fe657eab49b341b_1608183765.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 에러 문구에서 **/home/user\_name/.ssh/known\_hosts** 부분을 복사하여 파일을 연 다음, 가상서버의 공인 IP를 검색하고, 해당 문자열을 삭제합니다.
 
@@ -191,11 +231,19 @@ $ chmod 600 cafe24.pem
 
 * **Putty 접속 시 에러 메시지** : Network error: Connection timed out
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/28/23d3920fe57610a7d40ad5e1a1ee6136_1609145638.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 * **리눅스 터미널 접속 시 에러 메시지** : port 22: Connection timed out
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/28/d1fcb9a0c61c0e99d542d46a4504f7aa_1609145783.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 위의 에러는 해당 가상서버에 연결된 방화벽에 22번(SSH) INBOUND 보안 정책이 추가되어 있지 않아서 발생한 에러입니다.
 

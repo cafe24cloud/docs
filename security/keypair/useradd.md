@@ -15,7 +15,11 @@ shell 에서 "**useradd**" 명령어를 사용하여 새용자 계정을 추가�
 
 다음 예시는 새로 생성하고자 하는 ID가 cafe24 일 때입니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/03/10/29eab1495d2b7b841a1a5b35f0397ed7_1583809098.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 명령어: **sudo useradd -s /bin/bash -d /home/cafe24 -m cafe24**
 
@@ -32,7 +36,11 @@ shell 에서 "**useradd**" 명령어를 사용하여 새용자 계정을 추가�
 
 명령어: **sudo echo "cafe24 ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/cafe24**
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/03/10/16f3d3cc383903918ae7488d8ff38517_1583809103.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -55,7 +63,11 @@ shell 에서 "**useradd**" 명령어를 사용하여 새용자 계정을 추가�
 
 웹콘솔에서 공개키를 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/09/29/d12093fee6bc997b131db4be5c22ffc2_1664433573.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 shell에 접속하여 공개키를 등록합니다.
 
@@ -70,7 +82,11 @@ shell에 접속하여 공개키를 등록합니다.
 
 웹콘솔에서 확인한 공개키를 복사하여서 authorized\_keys 파일에 저장해주시기 바랍니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/03/10/b32cb3d320dabf2fa1be60755b298854_1583809134.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 &#x20;
 
@@ -96,11 +112,19 @@ SSH 키페어의 이름을 입력하고 "키페어 생성" 버튼을 클릭힙�
 SSH 키페어의 이름은 공백을 제외한 영어, 숫자만 사용하여 20자까지 입력할 수 있습니다
 {% endhint %}
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/03/10/750007ba0930b8c2bb246c2e2c24562d_1583807883.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 생성한 SSH 키페어를 클릭하여 공개키를 확인합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/09/29/3325561a813674f2396a17cd60f5c21f_1664433588.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 확인한 공개키를 복사하여 가상서버 내의 **authorized\_keys** 파일에 저장해주시기 바랍니다.
 
@@ -114,5 +138,9 @@ SSH 키페어의 이름은 공백을 제외한 영어, 숫자만 사용하여 20
 # vi .ssh/authorized_keyse
 ```
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 

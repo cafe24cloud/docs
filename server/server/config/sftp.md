@@ -44,7 +44,11 @@ SFTP는 SSH 방식으로 동작하기 때문에 기본적으로 22번 포트를 
 
 방화벽 설정에 대한 자세한 내용은 [\[방화벽 설정 방법\]](../../../security/security/config.md)을 참고해 주세요.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -60,7 +64,11 @@ FileZilla Client에 접근할 ftp 호스트를 등록하는 과정은 다음과 
 
 FileZilla를 실행한 뒤, 왼쪽 상단의 사이트 관리자 아이콘을 클릭해 주세요.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -70,7 +78,11 @@ FileZilla를 실행한 뒤, 왼쪽 상단의 사이트 관리자 아이콘을 �
 
 사이트 관리자에서 New Site 버튼을 클릭하여 호스트를 추가해 주세요.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -103,7 +115,11 @@ FTP 서버 접속을 위한 정보를 입력합니다. 설정이 필요한 정�
 
 ⑦ **키 파일** : **"찾아보기"** 버튼을 클릭하여 해당 서버에 대한 키파일을 등록합니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -115,7 +131,11 @@ FTP 호스트에 대한 입력을 완료한 후 다음과 같이 접속할 수 �
 
 로컬사이트는 FileZilla Client를 실행시키는 로컬 PC이며, 리모트 사이트는 호스트로 등록한 서버가 됩니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 

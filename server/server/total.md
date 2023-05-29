@@ -12,7 +12,11 @@ description: 본 매뉴얼은 가상서버 생성, 접속 및 DNS와 SFTP 사용
 
 \[가상서버 생성하기] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/19721a16c543b5901674cf57fe87fbc8_1582521749.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -24,7 +28,11 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 \[새로 설치]를 클릭한 후, 원하는 OS 이미지를 선택합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/15bf717eeb660432396a287f9147e368_1582525122.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -36,7 +44,11 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 선택된 하드웨어에 따라 시간 별로 청구될 요금이 상이하며, 하드웨어 상품은 가상서버 생성 후에도 변경이 가능합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/7140e12d2557da7e02474d0fa93306d5_1582525242.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -48,7 +60,11 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 가상서버 이름은 생성 후에도 변경할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/ee785d7baec674f5aae85dd2deb0a306_1582525303.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -66,7 +82,11 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 이전에 카페24 클라우드 콘솔에서 생성한 키페어를 적용할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/7c4ba23274531abf51cc31b05242ffd9_1621834120.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -76,17 +96,29 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 먼저 \[등록하기] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/02e30fdcdcdb7409c72ffe4b158f4cd9_1621834199.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 <mark style="background-color:blue;">콘솔 > 보안 서비스 > SSH 키페어</mark>
 
 등록할 키페어의 공개키를 복사합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/fc0a122c58ef5c0bb33c8e0427029cf8_1621834588.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 복사한 내용을 앞서 열어둔 기존 SSH 키페어 등록 창에 붙여 넣기하여 등록합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/05/24/12b8c0d104fd54977cb906d0634a59a2_1621834733.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -94,19 +126,31 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 \[새로만들기] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/fb4c10053a071a85348757dcd8a60f39_1582525539.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 키페어의 이름을 입력하여 새로 생성합니다.
 
 이름은 20자까지 지원이 가능하며, 영어와 숫자만 지원합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/22053d1bbf2f53f96a104c7a88d44cce_1582527935.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 개인키가 다운로드 받아지는 것을 확인합니다.
 
 키페어를 사용한 로그인 방법은 [\[SSH 키페어 접속 방법\]](connect/keypair.md)을 참고해 주세요.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/233dd4df8b8227ca0bbbd5425c29ceea_1582527961.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의사항**</mark>
@@ -128,7 +172,11 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 
 공인 IP 할당 방법은 다음과 같습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/11/13/bbaa88e39fd7cad174bddc7d6963a8ea_1605251451.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 #### **a. 기존에 신청되어 있는 공인IP를 할당**
 
@@ -162,7 +210,11 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 
 해당 설정 사항은 선택 사항이며, 가상서버 생성 후에 방화벽을 설정하는 방법은 [\[방화벽 설정 방법\]](../../security/security/config.md)을 참고해 주세요.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/cb6ccb8a018c9acc891f0da3d20a48b2_1582528000.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -178,7 +230,11 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 
 새로운 블록 스토리지를 만들기 위해 \[생성하기] 버튼을 누릅니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/9454d1ec912a655c37d7451a169204bf_1582528597.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 이름과 용량을 입력합니다.
 
@@ -186,7 +242,11 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 
 설정된 용량은 생성 후 확장 기능을 사용하여 용량 확장을 할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/93770250fa2c8ed6933b671bafcae27c_1582528609.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -198,15 +258,27 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 
 \[가상서버 생성] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/a5337e19fcf5309c8235ce58c152828b_1582528992.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 생성할 내역들을 확인한 후 \[확인] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/614e1fe5da56bd04cd9508e50e7be38b_1582529009.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 가상서버 대시보드에서 가상서버가 생성 완료되었는지 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/571f13d1ebbaaf2698680389c3c4e157_1582529445.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -246,9 +318,17 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 
 ① [<mark style="color:blue;">Download PuTTY</mark>](https://www.chiark.greenend.org.uk/\~sgtatham/putty/latest.html)에서 puttygen.exe, putty.exe 파일을 다운로드 합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/06/17/45c66d948d8dddbae87be60be6120f07_1655455874.jpg" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/06/17/96afd66b852df89687e680ad034e410a_1655455886.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의사항**</mark>
@@ -260,33 +340,61 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 
 ② puttygen.exe를 실행하여 \[Load] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/04/a236b19d56cac8dc13233c7cac79fc3f_1607068573.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ③ 발급 받은 cafe24 키페어의 개인키 파일인 cafe24.pem을 선택합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/04/3d78217fccfd38b632f55a17ada81cb9_1607068629.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ④ \[Save private key] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/04/0ba531f4b03f3aac470780f640fb1e37_1607068666.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ⑤ 발급 받은 키페어 이름과 동일한 이름으로 저장해 주세요. 생성 후 해당 파일 이름이 가상서버를 생성하며, 사용한 키페어 이름과 일치하는지 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/03/29/cd22ed2035c0f97b411572d4a69b9338_1616977384.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ⑥ putty.exe를 실행하여 <mark style="background-color:blue;">Category > Connection > SSH > Auth</mark>에서 \[Browse]를 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/04/a59a46807d59670bb2269d4314261084_1607068767.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ⑦  ⑤번에서 저장한 cafe24.ppk를 선택합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/12/04/022ec530dd5c22339e2001a68f962868_1607068800.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ⑧ <mark style="background-color:blue;">Category > Session</mark>에서 Host Name (or IP address)에 접속하려는 가상서버의 공인IP를 입력한 후, \[Open] 버튼을 클릭합니다.
 
 가상서버의 22번 포트로 접속하도록 하며, **이때 해당 가상서버의 22번 포트로 방화벽이 열려 있지 않다면 접속이 불가합니다.** 접속이 안될 경우, 방화벽 설정을 확인해 주시기 바랍니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/07/30/26974cad5c741f06794cd0e4113ba377_1627625855.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ⑨ 카페24 클라우드에서 제공하는 OS는 보안상 일반 계정으로만 접속이 가능합니다. 아래의 계정 정보를 참고하여 접속한 후, root 권한으로 변경합니다.
 
@@ -301,7 +409,11 @@ SSH 키페어의 개인키는 분실 시 재발급이 불가능합니다.
 $ sudo -i
 ```
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/21/c1430ed520c82eb27629c225aea9174c_1582268758.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -314,7 +426,11 @@ $ chmod 600 cafe24.pem
 $ ssh -i cafe24.pem [일반계정]@[가상서버공인IP]
 ```
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/07/30/4f0bbaf45d5dae00d470e2181c73a241_1627625875.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -373,9 +489,17 @@ DNS 서비스를 이용하면 이러한 작업을 쉽고 빠르게 수행할 수
 
 \[네임서버 확인] 버튼을 클릭하여 제공된 네임 서버를 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/6d683164075deec25b842b0a32d45ec4_1603421403.jpg" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/0b5dcdd76c45b1ec0aec8e6bcfe1ee96_1603433282.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의사항**</mark>
@@ -391,9 +515,17 @@ DNS 서비스를 이용하면 이러한 작업을 쉽고 빠르게 수행할 수
 
 \[새로운 도메인 등록하기] 버튼을 클릭한 후, 도메인명에 구매한 도메인을 입력합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/99f7f76308830dedead3bbfb38d8ae34_1603441523.jpg" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/cf314bf03fe94c59ec2aaf1674f23b65_1603441788.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -407,7 +539,11 @@ DNS 서비스를 이용하면 이러한 작업을 쉽고 빠르게 수행할 수
 
 카페24 클라우드에서 제공하는 레코드는 다음과 같습니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="info" %}
 <mark style="color:blue;">**참고사항**</mark>
@@ -425,7 +561,11 @@ A 레코드는 호스트명과 가상서버의 IP 주소를 매핑하기 위해 
 
 다음과 같이 입력할 경우, "cafe24clouds.com"에 대해 IP "183.222.255.133"이 등록됩니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 * #### 2차 도메인 등록하기
 
@@ -433,7 +573,11 @@ A 레코드는 호스트명과 가상서버의 IP 주소를 매핑하기 위해 
 
 다음과 같이 입력할 경우, "demo-A.cafe24clouds.com"에 대해 IP "183.222.255.133"이 등록됩니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -449,7 +593,11 @@ CNAME 레코드는 IP 주소가 자주 바뀌는 환경에서 레코드 수정 �
 
 다음과 같이 입력할 경우, "demo-cname.cafe24clouds.com"이 "demo-A.cafe24clouds.com"의 별칭 도메인이 됩니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (10) (4).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -465,15 +613,27 @@ MX(Mail Exchanger Record) 레코드는 사용자의 도메인에 대한 메일 �
 
 Google Workspace 콘솔에서 제공하는 MX 레코드를 우선순위 오름차순으로 등록합니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 최종 입력 화면은 다음과 같습니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 MX 레코드를 등록한 도메인으로 메일 수신/발신이 가능한 것을 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -487,7 +647,11 @@ TXT 레코드에 SPF 텍스트를 등록합니다.
 
 예를 들어 "**v=spf1 include:\_spf.google.com \~all**"는 Google 메일 서버를 인증한다는 의미입니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="info" %}
 <mark style="color:blue;">**참고사항**</mark>
@@ -543,7 +707,11 @@ SFTP는 SSH 방식으로 동작하기 때문에 기본적으로 22번 포트를 
 
 방화벽 설정에 대한 자세한 내용은 [\[방화벽 설정 방법\]](../../security/security/config.md)을 참고해 주세요.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -557,7 +725,11 @@ FileZilla Client에 접근할 ftp 호스트를 등록하는 과정은 다음과 
 
 FileZilla를 실행한 뒤, 왼쪽 상단의 사이트 관리자 아이콘을 클릭해 주세요.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -565,7 +737,11 @@ FileZilla를 실행한 뒤, 왼쪽 상단의 사이트 관리자 아이콘을 �
 
 사이트 관리자에서 New Site 버튼을 클릭하여 호스트를 추가해 주세요.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -594,7 +770,11 @@ FTP 서버 접속을 위한 정보를 입력합니다. 설정이 필요한 정�
 
 ⑦ **키 파일** : **"찾아보기"** 버튼을 클릭하여 해당 서버에 대한 키파일을 등록합니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -604,4 +784,8 @@ FTP 호스트에 대한 입력을 완료한 후 다음과 같이 접속할 수 �
 
 로컬사이트는 FileZilla Client를 실행시키는 로컬 PC이며, 리모트 사이트는 호스트로 등록한 서버가 됩니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/image (8) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>

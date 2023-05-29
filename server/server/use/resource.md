@@ -44,7 +44,11 @@ description: 가상서버의 리소스는 다음과 같이 확인 할 수 있습
 
 ⑤ Mounted on : 해당 파일 시스템이 마운트되어 쓰이고 있는 경로
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (13) (3).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -138,7 +142,11 @@ Swap 영역을 설정하여 메모리가 모두 찼을 경우 디스크의 Swap 
 해당 지표는 정확한 수치 확인을 위해 Host 서버에서 측정하는 것으로, 가상서버의 free, top 명령어 결과와 차이가 있을 수 있습니다.
 {% endhint %}
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (1) (1) (2).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -148,13 +156,21 @@ Swap 영역을 설정하여 메모리가 모두 찼을 경우 디스크의 Swap 
 
 확인하고자 하는 가상서버의 "모니터링" 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (8) (3).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 시간별로 측정되는 리소스 사용률을 확인할 수 있습니다.
 
 CPU와 Memory 외에도 트래픽, Disk I/O 등의 리소스 사용 현황을 제공합니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (4) (3).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 

@@ -10,9 +10,7 @@ AWS Python S3 SDK는 AWS에서 Python 코드를 통해 S3를 이용할 수 있�
 
 카페24 클라우드의 오브젝트 스토리지는 S3 API와 호환이 되므로 해당 SDK 사용이 가능합니다.&#x20;
 
-|                            매뉴얼 테스트 버전                            |                                                                                                                  Python S3 SDK 참고 링크                                                                                                                  |
-| :--------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| <p>Boto3 version : boto3 1.6.19</p><p>Python version : 3.8.5</p> | <p>문서 : <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html">Boto3 S3 Docs</a></p><p>예제 : <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-examples.html">Amazon S3 examples</a></p> |
+<table><thead><tr><th width="355" align="center">매뉴얼 테스트 버전</th><th align="center">Python S3 SDK 참고 링크</th></tr></thead><tbody><tr><td align="center"><p>Boto3 version : boto3 1.6.19</p><p>Python version : 3.8.5</p></td><td align="center"><p>문서 : <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html">Boto3 S3 Docs</a></p><p>예제 : <a href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-examples.html">Amazon S3 examples</a></p></td></tr></tbody></table>
 
 
 

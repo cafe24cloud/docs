@@ -24,7 +24,11 @@ description: 오토스케일 사용 방법은 아래와 같습니다.
 
 오토스케일에 의해 자동으로 생성될 가상서버들의 기본 이미지를 생성합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/28/b2c3b98db070325285f512b3fa98ac6a_1601273169.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -40,7 +44,11 @@ description: 오토스케일 사용 방법은 아래와 같습니다.
 
 오토스케일로 생성된 가상서버들은 해당 로드밸런서의 멤버가 됩니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/28/8b7ec3778245eca927a933802618da5e_1601273516.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -60,7 +68,11 @@ description: 오토스케일 사용 방법은 아래와 같습니다.
 
 이미지에 블록 스토리지 스냅샷이 연결되어 있다면 해당 블록 스토리지도 함께 생성됩니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/23/7b275878a6690e9b318f246534b576b2_1600841060.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -72,7 +84,11 @@ description: 오토스케일 사용 방법은 아래와 같습니다.
 
 로드밸런서에 연결된 가상서버의 동작을 모니터링하게 됩니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/f7739a4c77047a21cad8667c5d913dd3_1600932019.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -82,7 +98,11 @@ description: 오토스케일 사용 방법은 아래와 같습니다.
 
 오토스케일에 적용할 방화벽을 선택합니다. [<mark style="color:blue;">\[방화벽 설정 방법\]</mark>](../../security/security/config.md)을 참고해 주세요.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/06/15/1b380a15fb77fa157e4d3f9d5550c5ab_1655251930.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -120,7 +140,11 @@ CPU와 RAM의 경우, 증가 기준과 감소 기준을 정하여 오토스케�
 
 같은 원리로 CPU의 감소 기준을 40%로 설정하면, CPU의 부하가 40%에 도달했을 때 서버 scale-in을 하게 됩니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/23/f97038aed54d7e0f58431677aa878f3e_1600842204.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의사항**</mark>
@@ -140,7 +164,11 @@ CPU와 RAM의 경우, 증가 기준과 감소 기준을 정하여 오토스케�
 
 해당 부분은 선택사항이며, [<mark style="color:blue;">\[자동 스크립트 적용 방법\]</mark>](../server/use/script.md)을 참고해 주세요.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/08/31/30d9e07e5dba6a4cdf00a94ea41c09ae_1661904499.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -152,7 +180,11 @@ CPU와 RAM의 경우, 증가 기준과 감소 기준을 정하여 오토스케�
 
 생성된 오토스케일의 상세 정보를 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/17af20af7329dc10673f59d94494f433_1600932187.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -162,7 +194,11 @@ CPU와 RAM의 경우, 증가 기준과 감소 기준을 정하여 오토스케�
 
 오토스케일 생성 직후 서버는 1대가 생성되며, 이후 오토스케일의 설정 값에 따라 서버가 자동으로 증가 및 감소합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/561fe6ea854a6976145240490faaa26b_1600932251.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -170,7 +206,11 @@ CPU와 RAM의 경우, 증가 기준과 감소 기준을 정하여 오토스케�
 
 오토스케일의 설정  값에 따라 삭제된 가상서버의 내역을 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/07/8a38da42b7e7ee46304617128303abc2_1602028988.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -192,7 +232,11 @@ CPU와 RAM의 경우, 증가 기준과 감소 기준을 정하여 오토스케�
 
 해당 가상서버의 정보는 오토스케일 설정 보기에서 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/30/839288e08e4109ef64b7aebb86a006f9_1601447181.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 예를 들어, 스냅샷 생성 대상 가상서버의 공인IP가 211.183.1.15일 경우, SSH 접속 방법은 다음과 같습니다.
 
@@ -213,7 +257,11 @@ CPU와 RAM의 경우, 증가 기준과 감소 기준을 정하여 오토스케�
 
 본 예시에서는 사설IP가 192.168.1.16인 가상서버에 접속하도록 하겠습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/30/ed10e9ff27045ac0a9a574449946a0f0_1601448798.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 이 때, 키페어는 스냅샷 생성 대상 가상서버와 동일한 키페어를 사용합니다.
 
@@ -238,7 +286,11 @@ CPU와 RAM의 경우, 증가 기준과 감소 기준을 정하여 오토스케�
 
 본 예시에서는 Apache HTTP에서 제공하는 스트레스 테스트 툴 ab(ApacheBench)를 사용하였습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/e541c27a54ef5882cd6bd1a2516078ae_1600932955.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의사항**</mark>
@@ -250,8 +302,16 @@ CPU와 RAM의 경우, 증가 기준과 감소 기준을 정하여 오토스케�
 
 가상서버 모니터링 창에서 부하를 실시간으로 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/d5c3420acd778ece6122bb6784a8286a_1600932977.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 부하에 따라 서버가 자동으로 증가한 것을 확인할 수 있으며, 부하가 줄어들어 오토스케일의 감소 기준에 이르면 서버는 자동으로 반환됩니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/09/24/511db6f00864f1ef879f7d3036c2c8e8_1600933034.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>

@@ -10,7 +10,11 @@ APM은 Apache + PHP + MySQL/MariaDB의 조합으로, 이 3가지가 연동되어
 
 APM의 동작 원리는 아래와 같습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/04/507a5ed1dc64dcca681a6e10153c113d_1664846004.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 ① 클라이언트가 서버에 웹 페이지의 정보를 요청
 
@@ -110,11 +114,19 @@ $ systemctl status apache2
 
 {% tabs %}
 {% tab title="CentOS / Rocky / Almalinux" %}
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/09/30/dcaf22340d2313b49c903293fb0cab9a_1664513933.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 {% endtab %}
 
 {% tab title="Ubuntu" %}
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/09/30/d7739739fefbe704a2fb72e52c21047d_1664513943.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 {% endtab %}
 {% endtabs %}
 
@@ -176,11 +188,19 @@ $ sudo systemctl restart apache2
 
 {% tabs %}
 {% tab title="CentOS / Rocky / Almalinux" %}
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/09/30/5636b7902222afc3f16477b6baec5634_1664514569.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 {% endtab %}
 
 {% tab title="Ubuntu" %}
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/09/30/79998a14765894c271dec1b43d3a3ba3_1664514578.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 {% endtab %}
 {% endtabs %}
 
@@ -230,17 +250,33 @@ $ sudo apt-get install php-mysqlnd
 {% tab title="CentOS / Rocky / Almalinux" %}
 [<mark style="color:blue;">MySQL Community Downloads</mark>](https://dev.mysql.com/downloads/repo/yum/)에 접속하여 설치할 OS 버전의 RPM Package를 선택한 후, MySQL Yum Repository 링크를 복사합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/11/4454621a4f7b84261609d00944bf850d_1665471695.png" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/11/19b7b822b6a05fad2a0164477118425a_1665471705.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 {% endtab %}
 
 {% tab title="Ubuntu" %}
 [<mark style="color:blue;">MySQL Community Downloads</mark>](https://dev.mysql.com/downloads/repo/apt/)에 접속하여 DEB Package를 선택한 후, MySQL APT Repository 링크를 복사합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/11/d5255ccbec088266d4f622201af5b426_1665497068.png" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/11/d0c2198c80e920ae385446c6057bc35c_1665497085.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 {% endtab %}
 {% endtabs %}
 
@@ -436,7 +472,11 @@ $ sudo systemctl restart apache2
 
 **http://가상서버의 공인 IP/test.php**로 접속하여 PHP와 MySQL이 잘 연동되는지 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/12/c673ec4af5d558cb7aa70e23bb7f2cb2_1665535597.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의사항**</mark>
@@ -476,11 +516,19 @@ $ sudo systemctl restart httpd
 
 {% tabs %}
 {% tab title="CentOS / Rocky / Almalinux" %}
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/09/30/a4927b50a6f56d59dc54f36c65898a56_1664528250.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 {% endtab %}
 
 {% tab title="Ubuntu" %}
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/09/30/f79c13a1e2968529c609cfce83117488_1664531141.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 {% endtab %}
 {% endtabs %}
 
@@ -610,7 +658,11 @@ $ sudo systemctl restart httpd
 
 **http://가상서버의 공인 IP/test.php**로 접속하여 PHP와 MariaDB가 잘 연동되는지 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/10/12/c673ec4af5d558cb7aa70e23bb7f2cb2_1665535597.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="info" %}
 <mark style="color:blue;">**참고사항**</mark>

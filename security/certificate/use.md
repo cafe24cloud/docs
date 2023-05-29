@@ -28,7 +28,11 @@ description: 인증서를 사용 방법은 아래와 같습니다.
 
 \[새로운 인증서 생성] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/14/1d6ac987dc590c6d7485dce940276986_1647184249.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 인증서 등록 창에서 아래 항목을 확인하여 인증서를 등록합니다.
 
@@ -91,7 +95,11 @@ RSA 개인 키의 예시는 다음과 같습니다.
 
 
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/14/4775fddd82d4f714ae2665fb19dcaea9_1647186667.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -163,7 +171,11 @@ x.509 encoded된 .pem 형식의 인증서가 잘린 부분 없이 복사/붙여 
 
 그 외에도 상세정보 탭에서 해당 인증서의 핑거 프린트, 일련번호, 발급기관, 서명 알고리즘을 확인할 수 있습니다.&#x20;
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/15/e35be2939fa46ed9976ac579d064dea3_1647328127.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -173,15 +185,13 @@ x.509 encoded된 .pem 형식의 인증서가 잘린 부분 없이 복사/붙여 
 
 인증서를 등록하면 상태를 자동으로 체크하여 상태 값을 제공하며, 인증서의 상태 값은 다음과 같습니다.&#x20;
 
-| 상태 값 |                   설명                  |
-| :--: | :-----------------------------------: |
-|  정상  |      인증 만료일이 도래하지 않은 정상적인 상태의 인증서     |
-|  만료  |        인증 만료일 이후의 인증서 (expired)       |
-|  폐기  |           폐기된 인증서 (revoked)           |
-| 등록실패 | 정상적으로 등록되지 않은 인증서 (인증서의 정보가 부정확하여 발생) |
-| 확인불가 |      공급사로부터 인증서 상태를 확인할 수 없는 인증서      |
+<table><thead><tr><th width="178" align="center">상태 값</th><th align="center">설명</th></tr></thead><tbody><tr><td align="center">정상</td><td align="center">인증 만료일이 도래하지 않은 정상적인 상태의 인증서</td></tr><tr><td align="center">만료</td><td align="center">인증 만료일 이후의 인증서 (expired)</td></tr><tr><td align="center">폐기</td><td align="center">폐기된 인증서 (revoked)</td></tr><tr><td align="center">등록실패</td><td align="center">정상적으로 등록되지 않은 인증서 (인증서의 정보가 부정확하여 발생)</td></tr><tr><td align="center">확인불가</td><td align="center">공급사로부터 인증서 상태를 확인할 수 없는 인증서</td></tr></tbody></table>
+
+<div align="left">
 
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/14/9e0adc7ea835f6f5a04940f23804ede3_1647190432.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="info" %}
 <mark style="color:blue;">**참고사항**</mark>
@@ -210,18 +220,23 @@ x.509 encoded된 .pem 형식의 인증서가 잘린 부분 없이 복사/붙여 
 
 인증서의 사용 여부 값은 다음과 같습니다.
 
-| 사용 여부 값 |                   설명                  |
-| :-----: | :-----------------------------------: |
-|   사용중   | 인증서가 카페24 클라우드의 다른 서비스와 연계되어 사용 중인 경우 |
-|   미사용   | 인증서가 카페24 클라우드의 다른 서비스와 함께 사용되지 않는 경우 |
+<table><thead><tr><th width="178" align="center">사용 여부 값</th><th align="center">설명</th></tr></thead><tbody><tr><td align="center">사용중</td><td align="center">인증서가 카페24 클라우드의 다른 서비스와 연계되어 사용 중인 경우</td></tr><tr><td align="center">미사용</td><td align="center">인증서가 카페24 클라우드의 다른 서비스와 함께 사용되지 않는 경우</td></tr></tbody></table>
 
 ② **사용중인 서비스**&#x20;
 
 \[보기] 버튼을 클릭하여 카페24 클라우드에서 해당 인증서와 연계 되어 사용 중인 서비스를 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/14/e95102bfc5ccd75850cbbaaf17b581a5_1647188832.jpg" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/14/663c550a23feddbe9c81388eb617fda0_1647189254.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -247,4 +262,8 @@ x.509 encoded된 .pem 형식의 인증서가 잘린 부분 없이 복사/붙여 
 
 삭제한 인증서는 복구가 불가능하며, 다른 서비스에서 사용 중인 인증서는 해제 전에 삭제할 수 없습니다.&#x20;
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/03/16/ba1c86c4257bec4a58e76112d0847db4_1647367441.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>

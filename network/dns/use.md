@@ -34,9 +34,17 @@ DNS 서비스를 이용하면 이러한 작업을 쉽고 빠르게 수행할 수
 
 \[네임서버 확인] 버튼을 클릭하여 제공된 네임 서버를 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/6d683164075deec25b842b0a32d45ec4_1603421403.jpg" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/0b5dcdd76c45b1ec0aec8e6bcfe1ee96_1603433282.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의사항**</mark>
@@ -54,9 +62,17 @@ DNS 서비스를 이용하면 이러한 작업을 쉽고 빠르게 수행할 수
 
 \[새로운 도메인 등록하기] 버튼을 클릭한 후, 도메인명에 구매한 도메인을 입력합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/99f7f76308830dedead3bbfb38d8ae34_1603441523.jpg" alt=""><figcaption></figcaption></figure>
 
+</div>
+
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/cf314bf03fe94c59ec2aaf1674f23b65_1603441788.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -72,7 +88,11 @@ DNS 서비스를 이용하면 이러한 작업을 쉽고 빠르게 수행할 수
 
 카페24 클라우드에서 제공하는 레코드는 다음과 같습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/23/47ca031f9555adc34dfcb4936473d0b9_1603442523.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="info" %}
 <mark style="color:blue;">**참고사항**</mark>
@@ -90,7 +110,11 @@ A 레코드는 호스트명과 가상서버의 IP 주소를 매핑하기 위해 
 
 다음과 같이 입력할 경우, "cafe24clouds.com"에 대해 IP "183.222.255.133"이 등록됩니다.&#x20;
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/11/12/ec41f1c2ca4f4f21e93c6a8050d1aec0_1605157683.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -100,7 +124,11 @@ A 레코드는 호스트명과 가상서버의 IP 주소를 매핑하기 위해 
 
 다음과 같이 입력할 경우, "demo-A.cafe24clouds.com"에 대해 IP "183.222.255.133"이 등록됩니다.&#x20;
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/26/856560ea2644182ef6c4c928206dc6d5_1603647538.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -118,7 +146,11 @@ CNAME 레코드는 IP 주소가 자주 바뀌는 환경에서 레코드 수정 �
 
 다음과 같이 입력할 경우, "demo-cname.cafe24clouds.com"이 "demo-A.cafe24clouds.com"의 별칭 도메인이 됩니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/10/26/1f15373697f598c801957707f03820ec_1603646921.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -136,15 +168,27 @@ MX(Mail Exchanger Record) 레코드는 사용자의 도메인에 대한 메일 �
 
 Google Workspace 콘솔에서 제공하는 MX 레코드를 우선순위 오름차순으로 등록합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/11/06/f912c8adb946d36824753a47e62d49a9_1604650333.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 최종 입력 화면은 다음과 같습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/11/05/3defd927ac135901920eb00827952fa4_1604536117.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 MX 레코드를 등록한 도메인으로 메일 수신/발신이 가능한 것을 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/11/06/48b69ec94c8cf4891cf21b4039edf27b_1604649367.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -160,7 +204,11 @@ TXT 레코드에 SPF 텍스트를 등록합니다.
 
 예를 들어 "**v=spf1 include:\_spf.google.com \~all**"는 Google 메일 서버를 인증한다는 의미입니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/11/06/6c55a6789855ec5e7496c36848a84206_1604650564.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="info" %}
 <mark style="color:blue;">**참고사항**</mark>

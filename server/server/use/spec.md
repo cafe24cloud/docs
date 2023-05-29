@@ -24,7 +24,11 @@ description: 가상서버의 하드웨어 사양 변경 방법은 아래와 같�
 
 하드웨어 사양을 변경하기 전에 가상서버를 중지합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/15/a932871611bc2f5d17f7aba1815e3129_1618454696.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -34,7 +38,11 @@ description: 가상서버의 하드웨어 사양 변경 방법은 아래와 같�
 
 상세정보 탭에서 하드웨어 사양 변경의 \[변경] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/16/5c160c6bab06551c5b533335ef2a6210_1618547676.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 가상서버 상품 변경 창에서 변경할 하드웨어 사양을 선택합니다.
 
@@ -52,7 +60,11 @@ description: 가상서버의 하드웨어 사양 변경 방법은 아래와 같�
 
 확인 후, \[변경] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/15/5228a8a8aa6f4537f769963740d2d439_1618453567.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의사항**</mark>
@@ -62,7 +74,11 @@ description: 가상서버의 하드웨어 사양 변경 방법은 아래와 같�
 
 변경된 하드웨어 사양을 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/15/1b94c5e745305ab481707a9fcee42c3b_1618452339.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -72,8 +88,16 @@ description: 가상서버의 하드웨어 사양 변경 방법은 아래와 같�
 
 (2)번과 동일한 과정으로 가상서버의 하드웨어 사양을 낮출 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/15/e9003df3e2fe6790d852488eef0d09b0_1618460036.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 m2.large 사양에서 m2.small 사양으로 변경된 것을 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/15/27cf7ca6d00f04320d5ee346d7c97aa5_1618454988.png" alt=""><figcaption></figcaption></figure>
+
+</div>

@@ -22,13 +22,21 @@ Shell에서 블록 스토리지의 mount를 해제 합니다.
 
 명령어 : **fdisk -l** 나 **df -h**&#x20;
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/26/caa413608bdd52167f0ad45d1a734191_1582695776.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 블록 스토리지를 마운트 해제 합니다.
 
 명령어 : **umount**
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/26/b4f64f4ef88dff428f0d2f84cb5ea1e8_1582704933.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 부팅 시 mount 설정이 되어 있다면 "**/etc/fstab**" 에 등록된 마운트 포인트를 삭제해야 합니다.
 
@@ -38,7 +46,11 @@ Shell에서 블록 스토리지의 mount를 해제 합니다.
 **/etc/fstab** 내용을 삭제해야 향후 서버 재부팅이나 디스크 마운트 시 문제가 발생하지 않습니다.
 {% endhint %}
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/26/9098086149d67a1eff25bc51f6a99cdc_1582696026.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -61,11 +73,19 @@ Shell에서 블록 스토리지의 mount를 해제 합니다.
 
 가상서버 선택 후 기능별 설정에서 블록 스토리지 항목에서 해제 버튼을 누릅니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/26/72f62cdf1047ce89e16668e2351ad5ec_1582696083.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 &#x20;해제할 블록스토리지를 확인하고 **해제하기** 버튼을 클릭 합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/26/843f94ef9c890fd57557b5a9f2cdf277_1582696112.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -77,11 +97,19 @@ Shell에서 블록 스토리지의 mount를 해제 합니다.
 
 해제할 블록스토리지를 선택 후 상세정보의 **블록 스토리지 기능 > 해제** 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/26/67f5ba86b1239dee1cf73f8d8279b9f2_1582696202.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 &#x20;해제할 블록스토리지를 확인하고 **해제하기** 버튼을 클릭 합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/26/a0fcaccd69e73aa9d6f16c18b985a687_1582696213.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 

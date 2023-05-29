@@ -18,7 +18,11 @@ description: 가상서버 스냅샷을 사용하여 가상서버의 OS 영역을
 
 커널 패닉은 가상서버의 콘솔 화면에서 다음과 같이 확인할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/14/57f44550c7d071d6700ef8a86650c539_1618381721.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -52,7 +56,11 @@ System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이�
 
 \[새로운 가상서버 생성] 버튼을 클릭하여 복구할 OS 영역의 볼륨을 연결할 새로운 가상서버를 생성합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/14/7154147043d2407feca070ae30f095d0_1618388859.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -66,17 +74,29 @@ System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이�
 
 따라서 기존 데이터의 보존을 위해 복구하려는 가상서버를 재시작한 후, 스냅샷을 생성합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/14/05e55e903f2158b98ef6e91e253c4c3d_1618388878.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 <mark style="background-color:blue;">콘솔 > 서버 > 가상서버 스냅샷</mark>
 
 \[새로운 가상서버 스냅샷 생성] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/297a549be379f77b7f1f5198640cefdd_1618208882.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 복구가 필요한 가상서버를 선택하여 스냅샷을 생성합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/7792b78b4f80979e0346b27c0ed4f5eb_1618209255.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -86,11 +106,19 @@ System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이�
 
 생성한 스냅샷의 상세정보 탭에서 스냅샷으로 블록 스토리지 생성의 \[생성] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/57525a5e98f2b6bb2a6cb9ccd33ae5ec_1618209753.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 생성할 블록 스토리지의 이름을 입력한 후, \[생성] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/63ea74923c6c0760a90da2617a3360f3_1618209970.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -102,15 +130,27 @@ System Hang이 걸렸다고 판단될 경우, 가상서버의 OS 영역 데이�
 
 생성된 블록 스토리지의 \[연결] 버튼을 클릭합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/6f17128d01396bf9afd14b91da9ec08a_1618212565.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 블록 스토리지 연결 창에서 신규 가상서버를 선택하여 연결합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/8ac638ea60efa192e160d11eeae46666_1618212677.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 신규 가상서버에 연결된 OS 볼륨의 경로를 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/1b48ea37c39f20f29e7b733a1f8d4ea2_1618215275.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -138,7 +178,11 @@ $ sudo fdisk -l
 
 본 예제에서 복구할 OS 볼륨은 /dev/vdb1으로 연결되어 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/12/3f980474af71a8a7d6e6fa972a80d978_1618214766.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -203,4 +247,8 @@ $ sudo mount /dev/vdb1 /mnt
 
 mount를 수행한 경로로 이동하여 복구한 OS 영역의 데이터를 확인합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/04/14/3afc0c47894f7aee5edcb312ed6536e6_1618362946.png" alt=""><figcaption></figcaption></figure>
+
+</div>

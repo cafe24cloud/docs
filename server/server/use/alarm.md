@@ -12,13 +12,21 @@ description: 가상서버 모니터링 알람 설정 및 조회하는 방법은 
 
 가상서버 모니터링 알람을 수신할 관리자를 추가합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/01/06/769842fcb80584ca8b3bb21cc329dadd_1609912852.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 해당 계정 소유자 외의 관리자를 추가할 수 있습니다.
 
 관리자 추가 버튼을 클릭합니다.&#x20;
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/01/06/6c5d8e8242dd8b46a05c4aaaa6ddc9ee_1609910278.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 &#x20;
 
@@ -41,7 +49,11 @@ description: 가상서버 모니터링 알람 설정 및 조회하는 방법은 
 * E-mail : 클라우드 요금 결제/미납 등의 결제 관련 알림 제공
 * SMS : 클라우드 요금 결제/미납 등의 결제 관련 알림 제공
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/01/06/0af52e92e9e88ab4767c6f89c7dfd2b6_1609910544.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -57,7 +69,11 @@ description: 가상서버 모니터링 알람 설정 및 조회하는 방법은 
 
 모니터링 알람을 설정할 가상서버를 선택한 뒤 알람 설정 버튼을 클릭합니다. &#x20;
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/01/06/118a99fd28c71f6742faddaa5de8d2d4_1609910189.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 &#x20;
 
@@ -65,7 +81,11 @@ description: 가상서버 모니터링 알람 설정 및 조회하는 방법은 
 
 모니터링 알람 설정 팝업에서 알람 조건을 선택 및 추가합니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/01/06/2c3c9801e394c4d6731800b101fa1e03_1609895669.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 &#x20;
 
@@ -90,7 +110,11 @@ description: 가상서버 모니터링 알람 설정 및 조회하는 방법은 
   * 다만 알람은 5분 단위로 임계치 도달 여부를 확인하여 발송 됩니다.
   * 실질적인 트래픽 발생 시간과 알람 수신 시간은 최대 5분의 차이가 있을 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2022/04/06/e53d71c8f0674f728b5071584029a48b_1649204136.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 &#x20;
 
@@ -104,7 +128,11 @@ description: 가상서버 모니터링 알람 설정 및 조회하는 방법은 
 
 설정한 알람 기준에 도달하면 해당 규칙에 등록한 관리자의 Email 및 SMS로 모니터링 알람이 발송됩니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/01/06/29b4162a062a0c2b13fe5d81eb5279bc_1609910909.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -116,13 +144,21 @@ description: 가상서버 모니터링 알람 설정 및 조회하는 방법은 
 
 설정한 조건에 따라 발생한 알람은 "알람 내역" 메뉴에서 확인 할 수 있습니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/01/06/e636404c06edce0c69f44302e4e1b106_1609911860.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 모니터링 알람 내역에서는 선택한 기간에 발생한 알람의 내역을 확인할 수 있습니다.
 
 대상은 알람이 발생한 가상서버를 의미하며, 수신자는 알람을 수신한 관리자의 이름입니다.
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/01/06/5a92e4bf78775c75ea24973fb0ae43e5_1609900521.jpg" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 &#x20;
 

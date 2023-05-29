@@ -10,9 +10,7 @@ AWS Java v2 S3 SDK는 AWS에서 Java 코드를 통해 S3를 이용할 수 있도
 
 카페24 클라우드의 오브젝트 스토리지는 S3 API와 호환이 되므로 해당 SDK 사용이 가능합니다.&#x20;
 
-|                              매뉴얼 테스트 버전                              |                                                                                                                                             Java v2 S3 SDK 참고 링크                                                                                                                                            |
-| :------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| <p> AWS Java SDK version : 2.17.230</p><p>Java version : 11.0.11</p> | <p>문서 : <a href="https://docs.aws.amazon.com/ko_kr/sdk-for-java/latest/developer-guide/home.html">Developer guide - AWS SDK for Java 2.x</a></p><p>예제 : <a href="https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/s3/src/main/java/com/example/s3">Java v2 S3 examples</a></p> |
+<table><thead><tr><th width="355" align="center">매뉴얼 테스트 버전</th><th align="center">Java v2 S3 SDK 참고 링크</th></tr></thead><tbody><tr><td align="center"><p> AWS Java SDK version : 2.17.230</p><p>Java version : 11.0.11</p></td><td align="center"><p>문서 : <a href="https://docs.aws.amazon.com/ko_kr/sdk-for-java/latest/developer-guide/home.html">Developer guide - AWS SDK for Java 2.x</a></p><p>예제 : <a href="https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/s3/src/main/java/com/example/s3">Java v2 S3 examples</a></p></td></tr></tbody></table>
 
 
 

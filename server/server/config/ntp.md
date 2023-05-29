@@ -242,7 +242,11 @@ MS 항목 : 가상머신과 해당 원격지 NTP 서버의 결합 상태를 보�
 
 출력 결과 예시는 다음과 같습니다. 이처럼 \* 표시를 띄는 서버 정보가 있으면 동기화된 것입니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -273,7 +277,11 @@ $ chronyc -a tracking
 
 출력 결과 예시는 다음과 같습니다.&#x20;
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 
@@ -445,7 +453,11 @@ $ ntpq -p
 
 결과 예시는 다음과 같습니다.
 
+<div align="left">
+
 <figure><img src="../../../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 
 

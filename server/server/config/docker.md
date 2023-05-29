@@ -6,7 +6,11 @@ description: 가상서버에서 Docker를 정상적으로 사용하기 위해서
 
 ## 1. Docker란?
 
+<div align="left">
+
 <figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2021/03/12/36e485be398b33887ecefe6aa2688f3f_1615538493.PNG" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 Docker는 가상화된 공간에서 애플리케이션을 개발, 제공, 실행할 수 있는 플랫폼입니다.
 

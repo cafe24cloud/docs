@@ -10,7 +10,11 @@ description: 기술지원 시 필요한 Key File 등록 방법은 아래와 같�
 
 SSH 인증키를 이용하는 방식은 다음과 같습니다.
 
+<div align="left">
+
 <figure><img src="../../.gitbook/assets/KeyFile.png" alt=""><figcaption></figcaption></figure>
+
+</div>
 
 #### a. 카페24 엔지니어
 
