@@ -51,7 +51,7 @@
   * [블록 스토리지 스냅샷 사용 방법](storage/snapshot/undefined.md)
 * [오브젝트 스토리지](storage/object/README.md)
   * [오브젝트 스토리지 사용 방법](storage/object/use.md)
-  * [오브젝트 스토리지 데이터 암호화 적용 방법](storage/object/undefined.md)
+  * [오브젝트 스토리지 데이터 암호화 적용 방법](storage/object/sse-c.md)
   * [오브젝트 스토리지 S3cmd 사용 방법](storage/object/s3cmd.md)
   * [오브젝트 스토리지 API 사용 방법](storage/object/api/README.md)
     * [S3 Compatible API 사용 방법](storage/object/api/s3-compatible.md)
