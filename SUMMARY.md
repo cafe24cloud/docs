@@ -62,7 +62,7 @@
   * [오브젝트 스토리지 CORS 설정 방법](storage/object/cors.md)
   * [오브젝트 스토리지S3Browser 사용 방법](storage/object/s3browser.md)
   * [오브젝트 스토리지를 이용한 데이터 백업 방법](storage/object/backup.md)
-  * [오브젝트 스토리지 버전 관리 기능 사용 방법](storage/object/version.md)
+  [* [오브젝트 스토리지 버전 관리 기능 사용 방법](storage/object/version.md)]: #
 
 ## 네트워킹 <a href="#network" id="network"></a>
 
