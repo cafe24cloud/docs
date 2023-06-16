@@ -38,7 +38,7 @@ GRUB 부팅 프롬프트가 표시되면 화살표키를 사용하여 "Advanced 
 
 </div>
 
-우분투 복구 모드에서 키보드의 화살표키를 사용하여 "root Drop to root sheel prompt" 선택후 엔터키를 누릅니다.
+우분투 복구 모드에서 키보드의 화살표키를 사용하여 "root Drop to root shell prompt" 선택후 엔터키를 누릅니다.
 
 <div align="left">
 

@@ -64,7 +64,7 @@ GRUB 부트 프롬프트가 표시되면 첫 번째 부팅 커널을 선택하�
 
 * **"chroot /sysroot"** 명령으로 시스템에 엑세스 합니다.
 * "**passwd 계정명**" 명령어로 패스워드를 입력합니다. ex) passwd centos
-* "**vi /etc/ssh/sshd\_cofig**" 명령어로 파일을 수정합니다.
+* "**vi /etc/ssh/sshd\_config**" 명령어로 파일을 수정합니다.
 
 <div align="left">
 
