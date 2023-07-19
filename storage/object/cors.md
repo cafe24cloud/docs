@@ -230,6 +230,6 @@ cross-origin 웹 사이트 버킷에 대한 GET 요청 권한이 없기 때문�
 
 <div align="left">
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (5).png" alt=""><figcaption></figcaption></figure>
 
 </div>

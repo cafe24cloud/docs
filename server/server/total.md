@@ -30,7 +30,7 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 <div align="left">
 
-<figure><img src="https://filesystem.cafe24.com/hosting/cloud_service/2020/02/24/15bf717eeb660432396a287f9147e368_1582525122.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/2023-07-19 09 23 12.png" alt=""><figcaption></figcaption></figure>
 
 </div>
 
