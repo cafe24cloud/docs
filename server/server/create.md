@@ -24,11 +24,7 @@ OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 �
 
 \[새로 설치]를 클릭한 후, 원하는 OS 이미지를 선택합니다.
 
-<div align="left">
-
-<figure><img src="../../.gitbook/assets/2023-07-19 09 23 12.png" alt=""><figcaption></figcaption></figure>
-
-</div>
+<figure><img src="../../.gitbook/assets/2023-07-19 09 35 12.png" alt=""><figcaption></figcaption></figure>
 
 
 
