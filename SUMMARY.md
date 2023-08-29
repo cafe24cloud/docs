@@ -28,7 +28,7 @@
     * [NFS 구성 방법](server/server/config/nfs.md)
     * [APM 구성 방법](server/server/config/apm.md)
     * [Apache 웹서버 성능 튜닝 방법](server/server/config/tuning.md)
-    * [WordPress 사용 방법](server/server/config/wordpress.md)
+    * [WordPress 사용 방법](server/server/config/wordpress.md) #
   * [가상서버 문제 해결 방법](server/server/solution/README.md)
     * [접속 오류 해결 방법](server/server/solution/disconnect.md)
     * [OS 영역 복구 방법](server/snapshot/use.md)
