@@ -101,5 +101,5 @@ $ curl -sLf https://cloud-tech.cafe24.com | sh -
 생성된 계정 및 public key 파일을 자동으로 삭제되며, 서버로 SSH 접속이 불가능해 집니다.
 
 ```shell-session
-$ curl -sLf https://cloud-tech.cafe24.com | CAFE24DEL=yes sh –
+$ curl -sLf https://cloud-tech.cafe24.com | CAFE24DEL=yes sh -
 ```
