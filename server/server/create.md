@@ -4,6 +4,10 @@ description: 가상서버를 생성하는 방법은 아래와 같습니다.
 
 # 가상서버 생성 방법
 
+{% embed url="https://www.youtube.com/watch?v=83QPdG1behI" %}
+
+
+
 ## 1. 가상서버 생성하기
 
 <mark style="background-color:blue;">콘솔 > 서버 > 가상서버</mark>
