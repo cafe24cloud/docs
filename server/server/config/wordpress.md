@@ -51,7 +51,7 @@ SSH 접속을 위한 TCP 22번 포트와 웹 서비스 이용을 위한 TCP 80 �
 
 \[워드프레스 전용 OS로 설치]를 클릭한 후, 원하는 OS 이미지를 선택합니다.
 
-\+++  이미지 +++
+
 
 
 
@@ -200,8 +200,6 @@ $ cat /cafe24/wordpress_install.log
 반드시 설치 로그 확인 후, 작업을 진행해 주시기 바랍니다.
 {% endhint %}
 
-
-
 또한, 웹으로 워드프레스에 접속하여 정상적으로 설치되었는지 확인할 수 있습니다.
 
 접속 URL은 <mark style="color:blue;">http://{가상서버 공인 IP}</mark> 입니다.
@@ -273,8 +271,6 @@ mariadb from 11.0.3-MariaDB, client 15.2 for debian-linux-gnu (x86_64) using rea
 $ cat /cafe24/mariadb_password.txt
 oa9b7NXUWInmZn/DHxprlsf7Liw=
 ```
-
-
 
 <mark style="color:red;">보안을 위해 서비스 전에 반드시 아래의 명령어를 실행하여 root 패스워드 변경 등을 진행해 주시기 바랍니다.</mark>
 
