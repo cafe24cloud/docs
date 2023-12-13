@@ -51,7 +51,7 @@ SSH 접속을 위한 TCP 22번 포트와 웹 서비스 이용을 위한 TCP 80 �
 
 \[워드프레스 전용 OS로 설치]를 클릭한 후, 원하는 OS 이미지를 선택합니다.
 
-
+<figure><img src="../../../.gitbook/assets/스크린샷 2023-12-13 091008.png" alt=""><figcaption></figcaption></figure>
 
 
 
