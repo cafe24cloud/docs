@@ -113,9 +113,9 @@ password 필드에 원하는 패스워드를 기재합니다.
 
 ```yaml
 #cloud-config
-password: [비밀번호]
-chpasswd: { expire: False }
 ssh_pwauth: True
+password: cafe@$P@sswd
+chpasswd: { expire: False }
 ```
 
 
@@ -124,14 +124,14 @@ ssh_pwauth: True
 
 다음과 같이 특정 계정에 대한 패스워드를 설정할 수 있습니다.
 
-password 필드에는 원하는 패스워드를 기재합니다.
+설정할 계정명과 패스워드를 기재합니다.
 
 ```yaml
 #cloud-config
 ssh_pwauth: True
 chpasswd:
     list: |
-        [계정명]:[비밀번호]
+        centos:cafe@$P@sswd
     expire: False
 ```
 
@@ -163,10 +163,6 @@ cloud-init 패키지에서 기본으로 사용하는 /var/log/cloud-init.log 와
 
 ```yaml
 #cloud-config
-package_update: true
-package_upgrade: true
-repo-upgrade: true
-repo-upgrade: all
 output: {all: '| tee -a /var/log/cloud-init-output.log'} 
 ```
 
@@ -191,9 +187,9 @@ $ tail -f /var/log/cloud-init-output.log
 ```yaml
 #cloud-config
 runcmd:
-  # 방법1) 배열 형식의 입력 ','로 구분하여 작성.
+  # 방법1) 배열 형식의 입력 ','로 구분하여 작성
   - [ ls, -al, /root ]
-  # 방법2) 실제 OS에서의 명령어 입력 방식과 동일하게 작성.
+  # 방법2) 실제 OS에서의 명령어 입력 방식과 동일하게 작성
   - ls -al /root 
 ```
 
@@ -378,7 +374,7 @@ output: {all: '| tee -a /var/log/cloud-init-output.log'}
 #!/bin/bash
 sed -i $'s/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 systemctl restart sshd
-echo 'centos:[비밀번호]' | sudo chpasswd
+echo 'centos:cafe@$P@sswd' | sudo chpasswd
 ```
 
 &#x20;
