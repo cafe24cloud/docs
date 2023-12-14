@@ -319,7 +319,7 @@ timezone: Asia/Seoul
 
 ### (8) 응용 예시
 
-[4. cloud-init 스크립트 예시](script.md#4.-cloud-init)에서 알아본 모듈들을 혼합하여 다음과 같이 사용할 수 있습니다.
+[4. cloud-init 예시](script.md#4.-cloud-init)에서 알아본 모듈들을 혼합하여 다음과 같이 사용할 수 있습니다.
 
 ```yaml
 #cloud-config
@@ -413,7 +413,7 @@ timedatectl set-timezone Asia/Seoul
 
 ### (4) 응용 예시
 
-[5. Shell 스크립트 예시](script.md#5.-shell)에서 알아본 예제들을 혼합하여 다음과 같이 사용할 수 있습니다.
+[5. shell script 예시](script.md#5.-shell)에서 알아본 예제들을 혼합하여 다음과 같이 사용할 수 있습니다.
 
 ```shell
 #!/bin/bash
