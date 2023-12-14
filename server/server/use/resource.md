@@ -106,7 +106,7 @@ $ sudo du --max-depth=1 [디렉터리 경로] | sort -nr
 
 ## 3. CPU, Memory 사용률 확인하기
 
-### (1) CPU, Memory 리소스 관리의 필요성
+### (1) CPU, Memory 관리의 필요성
 
 #### **a. CPU**
 
