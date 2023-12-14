@@ -1,5 +1,5 @@
 ---
-description: 본 매뉴얼은 가상서버 생성, 접속 및 DNS와 SFTP 사용에 대한 일련의 과정을 설명합니다.
+description: 가상서버 생성, 접속 및 DNS와 SFTP 사용에 대한 일련의 과정을 설명합니다.
 ---
 
 # 가상서버 통합 매뉴얼
@@ -26,9 +26,9 @@ description: 본 매뉴얼은 가상서버 생성, 접속 및 DNS와 SFTP 사용
 
 OS 이미지는 사용 중에 변경할 수 없으며, OS 이미지 변경을 원할 시에는 가상서버를 삭제하고 다시 만들어야 합니다.
 
-\[새로 설치]를 클릭한 후, 원하는 OS 이미지를 선택합니다.
+\[기본 OS 이미지로 설치]를 클릭한 후, 원하는 OS 이미지를 선택합니다.
 
-<figure><img src="../../.gitbook/assets/2023-07-19 09 35 12.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/가상서버 생성-1.png" alt=""><figcaption></figcaption></figure>
 
 
 
