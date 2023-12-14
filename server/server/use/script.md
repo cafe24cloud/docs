@@ -124,8 +124,6 @@ ssh_pwauth: True
 
 다음과 같이 특정 계정에 대한 패스워드를 설정할 수 있습니다.
 
-계정명으로 root 혹은 OS 별 초기 계정을 입력합니다.
-
 password 필드에는 원하는 패스워드를 기재합니다.
 
 ```yaml
@@ -133,7 +131,7 @@ password 필드에는 원하는 패스워드를 기재합니다.
 ssh_pwauth: True
 chpasswd:
     list: |
-        centos:[비밀번호]
+        [계정명]:[비밀번호]
     expire: False
 ```
 
