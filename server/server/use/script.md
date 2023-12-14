@@ -66,10 +66,10 @@ shell script는 shell(운영체제의 명령 해석기)에서 처리하는 스�
 {% endhint %}
 
 * 자동 스크립트를 실행할 때 외부 환경의 접근이 필요할 경우, 해당 가상서버에 적절한 방화벽 설정이 되어 있어야 합니다.
-* 자동 스크립트를 적용한 스냅샷의 이미지로 새로운 가상서버를 생성할 경우, 자동 스크립트는 동일하게 동작합니다.  하지만 때에 따라 예외적인 상황도 존재하므로 스냅샷으로 가상서버를 생성할 때 이전과 동일한 스크립트를 적용하는 것을 권장합니다.
-* 입력된 스크립트는 root 사용자 권한으로 실행되며 파일 또한 root 사용자 소유권으로 생성됩니다.
+* 자동 스크립트를 적용한 스냅샷의 이미지로 새로운 가상서버를 생성할 경우, 자동 스크립트는 동일하게 동작합니다. 하지만 때에 따라 예외적인 상황도 존재하므로, 스냅샷으로 가상서버를 생성할 때 이전과 동일한 스크립트를 적용하는 것을 권장합니다.
+* 입력된 스크립트는 root 사용자 권한으로 실행되며, 파일 또한 root 사용자 소유권으로 생성됩니다.
 * 자동 스크립트에 지정된 명령은 대화형으로 실행할 수 없습니다. 따라서 패키지를 설치할 때 -y 옵션을 사용하는 등 스크립트가 중단되지 않도록 해야 합니다.
-* 자동 스크립트를 이용해 패키지 설치를 할 때 때에 따라 시간이 다소 소요될 수 있습니다.
+* 자동 스크립트를 이용해 패키지 설치를 할 때, 때에 따라 시간이 다소 소요될 수 있습니다.
 * 로그 설정으로 진행 상황을 확인할 수 있습니다.
 
 
@@ -87,8 +87,6 @@ shell script는 shell(운영체제의 명령 해석기)에서 처리하는 스�
 
 가상서버 및 오토스케일을 생성하는 팝업에서 다음 부분에 스크립트를 작성합니다.
 
-<mark style="color:red;">본 매뉴얼에서는 패스워드는 동일하게 "cafe@$P@sswd"로 설정하였으며, 적용 과정에서 변경해야 합니다.</mark>
-
 <div align="left">
 
 <figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
@@ -105,9 +103,9 @@ shell script는 shell(운영체제의 명령 해석기)에서 처리하는 스�
 
 ### (1) 초기 패스워드 설정
 
-**a. 일반 계정 패스워드 설정**
+**a. 일반 계정의 패스워드 설정**
 
-가상서버의 일반 계정(centos, ubuntu 등)의 패스워드를 다음 스크립트로 초기화 할 수 있습니다.
+가상서버의 일반 계정(centos, ubuntu 등)의 패스워드를 다음 스크립트로 초기화할 수 있습니다.
 
 ssh\_pwauth를 True로 입력하여 패스워드 방식으로 SSH 접속을 하도록 설정합니다.
 
@@ -115,14 +113,14 @@ password 필드에 원하는 패스워드를 기재합니다.
 
 ```yaml
 #cloud-config
-password: cafe@$P@sswd
+password: [비밀번호]
 chpasswd: { expire: False }
 ssh_pwauth: True
 ```
 
 
 
-#### b. 특정 계정 패스워드 설정
+#### b. 특정 계정의 패스워드 설정
 
 다음과 같이 특정 계정에 대한 패스워드를 설정할 수 있습니다.
 
@@ -135,7 +133,7 @@ password 필드에는 원하는 패스워드를 기재합니다.
 ssh_pwauth: True
 chpasswd:
     list: |
-        centos:cafe@$P@sswd
+        centos:[비밀번호]
     expire: False
 ```
 
@@ -145,7 +143,7 @@ chpasswd:
 
 ### (2) 패키지 업데이트/업그레이드
 
-다음 스크립트로 표준 cloud 배포판 이미지의 패키지 및 레퍼지토리를 update/upgrade 할 수 있습니다.
+다음 스크립트로 표준 cloud 배포판 이미지의 패키지 및 레퍼지토리를 업데이트/업그레이드할 수 있습니다.
 
 ```yaml
 #cloud-config
@@ -188,7 +186,7 @@ $ tail -f /var/log/cloud-init-output.log
 
 ### (4) selinux 비활성화
 
-runcmd 모듈을 사용해서 최초 부팅된 가상서버의 OS에서 명령어를 실행할 수 있습니다.
+**runcmd** 모듈을 사용해서 최초 부팅된 가상서버의 OS에서 명령어를 실행할 수 있습니다.
 
 다음 두 가지 방법으로 작성 가능합니다.
 
@@ -219,7 +217,7 @@ runcmd:
 
 ### (5) text 형식의 파일 생성
 
-**write\_files**을 사용하여 가상서버에 파일을 자동 생성 할 수 있습니다.
+**write\_files**을 사용하여 가상서버에 파일을 자동 생성할 수 있습니다.
 
 path에 대한 값으로 파일을 생성할 경로를 지정합니다.
 
@@ -269,11 +267,9 @@ cloud-init으로 가상서버에 패키지를 자동 설치할 수 있습니다.
 
 <mark style="color:red;">가상서버의 OS 이미지에서 지원하는 패키지를 설치하여야 합니다.</mark>
 
-&#x20;
-
 #### a. 패키지 설치
 
-packages를 사용해 패키지를 자동 설치합니다.
+**packages**를 사용해 패키지를 자동 설치합니다.
 
 예시와 같이 패키지명 또는 패키지의 특정 버전을 명시할 수 있습니다.
 
@@ -288,13 +284,11 @@ packages:
 
 #### b. APM 설치
 
-이를 응용하여 다음과 같이 APM(Apache+PHP+MariaDB)패키지를 한 번에 설치할 수 있습니다.
+다음과 같이 APM(Apache+PHP+MariaDB)패키지를 한 번에 설치할 수 있습니다.
 
 CentOS의 경우 httpd, Ubuntu의 경우 apache2 패키지를 설치합니다.
 
-필요에 따라 **runcmd**를 사용하여 데몬 enable 및 start를 하고
-
-**output**으로 cloud-init 스크립트에 대한 로그 파일을 남길 수 있습니다.
+필요에 따라 **runcmd**를 사용하여 데몬 enable 및 start를 하고, **output**으로 cloud-init 스크립트에 대한 로그 파일을 남길 수 있습니다.
 
 ```yaml
 #cloud-config
@@ -380,13 +374,13 @@ output: {all: '| tee -a /var/log/cloud-init-output.log'}
 
 ### (1) 초기 패스워드 설정
 
-가상서버의 일반계정(ex. centos, ubuntu..)의 패스워드를 다음 스크립트로 초기화 할 수 있습니다.
+가상서버의 일반 계정(centos, ubuntu 등)의 패스워드를 다음 스크립트로 초기화 할 수 있습니다.
 
 ```shell
 #!/bin/bash
 sed -i $'s/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 systemctl restart sshd
-echo 'centos:cafe@$P@sswd' | sudo chpasswd
+echo 'centos:[비밀번호]' | sudo chpasswd
 ```
 
 &#x20;
@@ -445,7 +439,3 @@ systemctl enable mariadb
 systemctl start httpd
 systemctl start mariadb
 ```
-
-
-
-&#x20;
