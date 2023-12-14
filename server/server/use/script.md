@@ -230,7 +230,7 @@ write_files:
 
 이를 응용하여 nginx 설치에 필요한 레퍼지토리 설정 파일을 생성하고 nginx를 설치할 수 있습니다.
 
-아래 예시는 CentOS 7 기준으로, 다른 OS의 경우 [nginx 공식문서](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)를 참고하여 작성해야 합니다.
+아래 예시는 CentOS 7 기준으로, 다른 OS의 경우 [nginx 공식 문서](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/)를 참고하여 작성해야 합니다.
 
 ```yaml
 #cloud-config
