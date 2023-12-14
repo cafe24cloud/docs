@@ -215,14 +215,14 @@ runcmd:
 
 path에 대한 값으로 파일을 생성할 경로를 지정합니다.
 
-contents의 값으로 해당 파일에 저장할 내용을 입력합니다.
+content의 값으로 해당 파일에 저장할 내용을 입력합니다.
 
 이때 파이프(|)를 사용하면 해당 value 값의 줄 바꿈을 인식하여 파일에 저장합니다.
 
 ```yaml
 #cloud-config
 write_files:
-  - path: 파일 경로
+  - path: /home/test.txt
     content: |
         Hello World!
         Hello Cloud-init! 
@@ -417,11 +417,11 @@ timedatectl set-timezone Asia/Seoul
 
 ```shell
 #!/bin/bash
-## 패스워드 접속 설정
+## 초기 패스워드 설정
 sed -i $'s/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 systemctl restart sshd
 echo 'centos:cafe@$P@sswd' | sudo chpasswd
-## 타임존 설정
+## timezone 설정
 timedatectl set-timezone Asia/Seoul
 ## 패키지 업데이트
 yum update
