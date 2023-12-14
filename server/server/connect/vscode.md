@@ -1,5 +1,5 @@
 ---
-description: 본 매뉴얼은 VSCode에서 카페24클라우드의 가상서버에 SSH 키페어 및 패스워드 방식으로 접속하는 방법을 안내합니다.
+description: VSCode에서 가상서버에 SSH 키페어 및 패스워드 방식으로 접속하는 방법은 아래와 같습니다.
 ---
 
 # VSCode 접속 방법
@@ -20,14 +20,12 @@ PC의 OS에 맞는 Visual Studio Code(VSCode)를 설치합니다.
 
 VSCode를 이용해서 접속할 가상서버를 생성합니다.
 
-가상서버 생성 방법은 &#x20;
-
-[\[가상서버 생성 방법\]](../create.md)을 참고해 주세요.
+가상서버 생성 방법은 [\[가상서버 생성 방법\]](../create.md)을 참고해 주세요.
 
 {% hint style="danger" %}
 <mark style="color:red;">**주의 사항**</mark>
 
-VSCode에서 SSH 접속을 하기 위해서는 해당 가상서버에서 Inbound 22번 포트가 허용되어야 합니다.  [\[방화벽 설정 방법\]](../../../security/security/config.md)&#x20;
+VSCode에서 SSH 접속을 하기 위해서는 해당 가상서버에서 Inbound 22번 포트가 허용되어야 합니다.  방화벽 설정 방법은 [\[방화벽 설정 방법\]](keypair.md#1.)을 참고해 주세요.
 {% endhint %}
 
 <div align="left">
@@ -52,13 +50,15 @@ VSCode를 연 다음, 다음 과정을 통해 가상서버 SSH 접속에 필요�
 
 ② 검색창에 **Remote Development**를 검색합니다.
 
-③ Install 클릭하여 확장 프로그램을 설치합니다.
+③ **Install**을 클릭하여 확장 프로그램을 설치합니다.
 
 <div align="left">
 
 <figure><img src="../../../.gitbook/assets/image (3) (4).png" alt=""><figcaption></figcaption></figure>
 
 </div>
+
+
 
 
 
@@ -103,7 +103,7 @@ F1 키를 눌러 명령어 입력창을 연 다음, **Remote-SSH: Open SSH Confi
 
 * Host : 생성한 SSH 커넥션의 이름
 * HostName : 가상머신의 공인 IP
-* User : 초기 사용자 계정 혹은 별도로 생성한 계정  [\[ 초기 사용자 계정 정보 \]](vscode.md#undefined)
+* User : 초기 사용자 계정 혹은 별도로 생성한 계정  [\[초기 사용자 계정 정보\]](vscode.md#undefined)
 * IdentityFile : 가상서버의 .pem 파일의 절대 경로
 
 ② 좌측 메뉴 하단에 생성된 원격 SSH 접속 메뉴를 클릭합니다.
@@ -283,6 +283,10 @@ VSCode에서 열어둔 SSH config 파일에 접속 정보를 입력합니다.
 <figure><img src="../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 </div>
+
+
+
+
 
 
 
