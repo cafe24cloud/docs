@@ -413,7 +413,7 @@ timedatectl set-timezone Asia/Seoul
 
 ### (4) 응용 예시
 
-[5. shell script 예시](script.md#5.-shell)에서 알아본 예제들을 혼합하여 다음과 같이 사용할 수 있습니다.
+[5. shell script 예시](script.md#5.-shell-script)에서 알아본 예제들을 혼합하여 다음과 같이 사용할 수 있습니다.
 
 ```shell
 #!/bin/bash
