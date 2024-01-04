@@ -566,7 +566,13 @@ httpd.conf 파일의 LogFormat에 XFF header를 추가하여 웹서버 access lo
 </IfModule>
 ```
 
-&#x20;
+{% hint style="info" %}
+<mark style="color:blue;">**참고사항**</mark>
+
+해당 X-Forwarede-For 설정은 HTTP 및 TERMINATED\_HTTPS 프로토콜에서만 사용 가능합니다.
+{% endhint %}
+
+
 
 #### c. Apache 재시작
 
