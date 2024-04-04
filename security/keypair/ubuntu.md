@@ -85,7 +85,7 @@ Ubuntu 22.04의 경우, /etc/ssh/sshd\_config.d/60-cloudimg-settings.conf 파일
 
 **(PasswordAuthentication의 값을 no에서 yes)**
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
 
 
