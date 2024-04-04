@@ -77,7 +77,7 @@
 * [방화벽](security/security/README.md)
   * [방화벽 설정 방법](security/security/config.md)
 * [SSH 키페어](security/keypair/README.md)
-  * [분실 시 해결 방법 - CentOS, Rocky](security/keypair/lost.md)
+  * [분실 시 해결 방법 - CentOS / Rocky / Almalinux](security/keypair/lost.md)
   * [분실 시 해결 방법 - Ubuntu](security/keypair/ubuntu.md)
   * [SSH 사용자 계정 추가 방법](security/keypair/useradd.md)
 * [인증서 관리](security/certificate/README.md)

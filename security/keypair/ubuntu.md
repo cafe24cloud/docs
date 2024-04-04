@@ -66,7 +66,7 @@ GRUB 부팅 프롬프트가 표시되면 화살표키를 사용하여 "Advanced 
 
 </div>
 
-키페어 접속 방식에서 "/etc/ssh/sshd\_config" 파일에서 PasswordAuthentication no 를 yes로파라미터를 업데이트합니다.\
+키페어 접속 방식에서 "/etc/ssh/sshd\_config" 파일에서 PasswordAuthentication no 를 yes로 파라미터를 업데이트합니다.\
 "**reboot now**" 명령어로 서버를 재부팅합니다.
 
 <div align="left">
@@ -81,13 +81,19 @@ GRUB 부팅 프롬프트가 표시되면 화살표키를 사용하여 "Advanced 
 
 </div>
 
+Ubuntu 22.04의 경우, /etc/ssh/sshd\_config.d/60-cloudimg-settings.conf 파일 수정을 추가로 진행합니다.
+
+**(PasswordAuthentication의 값을 no에서 yes)**
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 
 
 
 
 
-## 3. 패스워드접속 확인
+
+## 3. 패스워드 접속 확인
 
 계정으로 접속이 잘되는지 확인합니다.
 

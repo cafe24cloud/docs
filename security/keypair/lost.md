@@ -4,7 +4,7 @@ description: >-
   사용한 로그인 방식으로 변경하시기 바랍니다.
 ---
 
-# 분실 시 해결 방법 - CentOS, Rocky
+# 분실 시 해결 방법 - CentOS / Rocky / Almalinux
 
 ## 1. 싱글 유저 모드 진입
 
@@ -88,7 +88,7 @@ ESC 키를 누른 후, "**wq!**" 로 변경 사항을 저장합니다.&#x20;
 
 </div>
 
-Rocky 9 의 경우, /etc/ssh/sshd\_config.d/50-cloud-init.conf 파일 수정을 추가로 진행합니다. \
+Rocky 9 및 Almalinux 9의 경우, /etc/ssh/sshd\_config.d/50-cloud-init.conf 파일 수정을 추가로 진행합니다. \
 (**PasswordAuthentication의 값을 no 에서 yes**)
 
 <figure><img src="../../.gitbook/assets/rocky93.png" alt=""><figcaption></figcaption></figure>
